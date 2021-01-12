@@ -11,25 +11,32 @@
     </div>
     
     <div class="p-6">
-      <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
-        <li class="breadcrumb-item active">Event Live Streaming</li>
-      </ul>
+      <Breadcrumb :data="breadcrumbs" />
     </div>
-
+    
     <div class="h-full flex flex-row flex-wrap px-6">
       <slot></slot>
     </div>
   </main>
 </template>
 <script>
+import Breadcrumb from '@common/Breadcrumb'
 import Header from '@fragment/Base/Header'
 import SideBar from '@fragment/Base/Sidebar'
 
 export default {
   components: {
     Header, 
-    SideBar
+    SideBar,
+    Breadcrumb
+  },
+  data() {
+    return {
+      breadcrumbs: [
+        {name: 'Home', link: '/'},
+        {name: 'Event Live Streaming'}
+      ]
+    }
   }
 }
 </script>
@@ -38,31 +45,5 @@ export default {
   margin-left: 255px;
   margin-top: 64px;
   text-align: left;
-
-  .breadcrumb {
-    @apply flex;
-
-    &-item {
-      color: #e86b32;
-
-      &.active {
-        color: #aaaaaa;
-      }
-
-      &:first-child {
-        &::before {
-          display: none;
-        }
-      }
-
-      &:before {
-        content: "/";
-        display: inline-block;
-        padding-right: .5rem;
-        padding-left: .5rem;
-        color: #6c757d;
-      }
-    }
-  }
 }
 </style>

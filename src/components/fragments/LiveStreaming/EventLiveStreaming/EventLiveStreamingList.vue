@@ -1,5 +1,5 @@
 <template>
-  <template v-for="key in 5" :key="key">
+  <template v-for="key in 10" :key="key">
     <EventLiveStreamingItem />
   </template>
 </template>

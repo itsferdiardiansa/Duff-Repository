@@ -1,35 +1,91 @@
 <template>
   <aside class="sidebar animated faster">
-    <div class="px-6 py-5 h-16 bg-blue-700">
+    <div class="px-6 py-5 h-16 bg-indigo-900">
       <a href="javascript:void(0);" class="text-xl text-gray-50">
-        <span>Loket </span>
-        <strong class="font-black">CMS</strong>
+        <span>
+          Loket<strong class="font-black">CMS</strong>
+        </span>
       </a>
     </div>
 
-    <div class="flex flex-col p-6">
-      <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Live Streaming</p>
-
-      <a href="javascript:void(0);" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <!-- <i class="fa fa-television"></i> -->
-        Event Live Streaming
-      </a>
-
-      <a href="javascript:void(0);" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <!-- <i class="fad fa-comments text-xs mr-2"></i> -->
-        Event Calender
-      </a>
+    <div class="menu-list">
+      <MenuList :data="menus" />
     </div>
   </aside>
 </template>
 <script>
+import MenuList from './MenuList'
+
 export default {
-  
+  components: {
+    MenuList
+  },
+  data() {
+    return {
+      menus: [
+        {
+          title: 'Content Manager',
+          lists: [
+            {name: 'Hero'},
+            {name: 'Event Modules'},
+            {name: 'Thematic Page'},
+            {name: 'URL Redirection'},
+            {name: 'Hashtag'},
+            {name: 'Loket Ads'},
+            {name: 'Announcement'},
+            {name: 'Partner'},
+            {name: 'Footer'},
+          ]
+        },
+        {
+          title: 'Live Streaming',
+          lists: [
+            {name: 'Event Live Streaming'},
+            {name: 'Event Calender'}
+          ]
+        },
+        {
+          title: 'Content Manager',
+          lists: [
+            {name: 'Verified User'},
+            {name: 'Verified Document'}
+          ]
+        },
+        {
+          title: 'Operations',
+          lists: [
+            {name: 'Event'},
+            {name: 'Blacklisty Word'},
+            {name: 'Blacklisty Event'},
+            {name: 'Pivot Bank'},
+            {name: 'Failed Withdraw'},
+          ]
+        },
+        {
+          title: 'Discount',
+          lists: [
+            {name: 'Discount'}
+          ]
+        },
+        {
+          title: 'Feedback',
+          lists: [
+            {name: 'Feedback'}
+          ]
+        }
+      ]
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
 .sidebar {
-  @apply relative flex flex-col flex-wrap flex-none w-64;
-  @apply md:fixed md:top-0 md:z-30 md:h-screen md:shadow-xl text-left;
+  @apply w-64 z-50 max-h-full overflow-y-scroll;
+  @apply md:fixed md:top-0 md:shadow-xl text-left;
+
+  .menu-list {
+    @apply flex flex-col w-full overflow-y-scroll;
+    height: calc(100vh - 64px);
+  }
 }
 </style>

@@ -1,0 +1,80 @@
+{
+  "thematicPage": {
+    "status": true,
+    "result": {
+      "total": 2,
+      "per_page": 10,
+      "current_page": 1,
+      "last_page": 1,
+      "data": [
+        {
+          "hash_id": "xhiz60dt",
+          "name": "Event pilihan",
+          "header_image": "https://loket-development.s3.amazonaws.com/images/ss/blog/1588226070_xzQuLw.jpg",
+          "header_image_mobile": "https://loket-development.s3.amazonaws.com/images/ss/blog/1588093152_U74Oht.png",
+          "header_text": "Event pilihan",
+          "header_text_color": "#000000",
+          "description_text": "Event pilihan",
+          "description_text_color": "#000000",
+          "meta_title": "event-pilihan",
+          "path": "event-pilihan",
+          "custom_footer": false,
+          "custom_footer_image": "https://loket-development.s3.amazonaws.com/images/ss/blog/1591684217_tNxPVM.png",
+          "custom_content": null,
+          "updated_by": "qa@loket.com"
+        },
+        {
+          "hash_id": "dewktzhg",
+          "name": "Lorem Ipsum",
+          "header_image": "https://loket-development.s3.amazonaws.com/images/ss/blog/1544794728_WOZ7GL.jpg",
+          "header_image_mobile": "https://loket-development.s3.amazonaws.com/images/ss/blog/1544794741_d08llF.jpg",
+          "header_text": "Lorem ipsum",
+          "header_text_color": "#aa7942",
+          "description_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "description_text_color": "#0433ff",
+          "meta_title": "It has survived not only five centuries",
+          "path": "lorem-ipsum",
+          "custom_footer": false,
+          "custom_footer_image": "",
+          "custom_content": "<p><span >It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</span><br></p>",
+          "updated_by": "qa@loket.com"
+        }
+      ]
+    }
+  },
+  "eventLiveStreaming": {
+    "status": true,
+    "result": {
+      "message": "Success",
+      "per_page": 16,
+      "total": 13,
+      "current_record": 13,
+      "last_page": 1,
+      "current_page": 1,
+      "next": false,
+      "data": [
+        {
+          "id": 212,
+          "title": "Rock am Ring",
+          "subtitle": "Agoda Create Data Channel",
+          "thumbnail": "https://s3.amazonaws.com/loket-sandbox/images/banner/20201203014748_5fc7e1547268e.jpg",
+          "date": "Oct 22, 2020 - Oct 31, 2020",
+          "time": "01:00 - 04:00",
+          "event_id": "Event Id: 2378",
+          "author": "Rg Triawan"
+        },
+        {
+          "id": 217,
+          "title": "Advenced Agora",
+          "subtitle": "Agoda Create Data Channel",
+          "thumbnail": "https://s3.amazonaws.com/loket-sandbox/images/banner/20201203014748_5fc7e1547268e.jpg",
+          "date": "Oct 22, 2020 - Oct 31, 2020",
+          "time": "01:00 - 04:00",
+          "event_id": "Event Id: 2378",
+          "author": "Rg Triawan"
+        }
+      ],
+      "viewPagination": {}
+    }
+  }
+}

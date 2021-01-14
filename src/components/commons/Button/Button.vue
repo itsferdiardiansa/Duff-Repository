@@ -6,6 +6,7 @@
   </button>
 </template>
 <script>
+import { computed } from 'vue'
 export default {
   props: {
     label: {
@@ -21,9 +22,9 @@ export default {
       default: 'default'
     }
   },
-  computed: {
-    customClassName() {
-      const { variant, size } = this
+  setup(props) {
+    const customClassName = computed(() => {
+      const { variant, size } = props
       let className = []
 
       switch(variant) {
@@ -44,6 +45,10 @@ export default {
       }
 
       return className.join(' ')
+    })
+
+    return {
+      customClassName
     }
   }
 }

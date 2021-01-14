@@ -15,6 +15,7 @@
 </template>
 <script>
 import MenuList from './MenuList'
+import MenuCollections from '@mock/menu'
 
 export default {
   components: {
@@ -22,58 +23,7 @@ export default {
   },
   data() {
     return {
-      menus: [
-        {
-          title: 'Content Manager',
-          lists: [
-            {name: 'Hero'},
-            {name: 'Event Modules'},
-            {name: 'Thematic Page'},
-            {name: 'URL Redirection'},
-            {name: 'Hashtag'},
-            {name: 'Loket Ads'},
-            {name: 'Announcement'},
-            {name: 'Partner'},
-            {name: 'Footer'},
-          ]
-        },
-        {
-          title: 'Live Streaming',
-          lists: [
-            {name: 'Event Live Streaming'},
-            {name: 'Event Calender'}
-          ]
-        },
-        {
-          title: 'Content Manager',
-          lists: [
-            {name: 'Verified User'},
-            {name: 'Verified Document'}
-          ]
-        },
-        {
-          title: 'Operations',
-          lists: [
-            {name: 'Event'},
-            {name: 'Blacklisty Word'},
-            {name: 'Blacklisty Event'},
-            {name: 'Pivot Bank'},
-            {name: 'Failed Withdraw'},
-          ]
-        },
-        {
-          title: 'Discount',
-          lists: [
-            {name: 'Discount'}
-          ]
-        },
-        {
-          title: 'Feedback',
-          lists: [
-            {name: 'Feedback'}
-          ]
-        }
-      ]
+      menus: MenuCollections 
     }
   }
 }

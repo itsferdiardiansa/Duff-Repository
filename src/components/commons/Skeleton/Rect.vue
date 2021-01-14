@@ -1,40 +1,42 @@
 <template>
-  <span 
-    class="loader"
-    :style="customStyles">
-  </span>
+  <span class="loader" :style="customStyles"> </span>
 </template>
 <script>
+import { computed } from 'vue'
+
 export default {
   props: {
     width: {
       type: [Number, String],
-      default: null
+      default: null,
     },
     height: {
       type: [Number, String],
-      default: null
+      default: null,
     },
     rounded: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
-  computed: {
-    customStyles() {
+  setup(props) {
+    const customStyles = computed(() => {
+      let { width, height, rounded } = props
       let style = {}
 
-      if(this.width !== null)
-        style.width = this.width
+      if (width !== null) style.width = width
 
-      if(this.height !== null)
-        style.height = this.height
+      if (height !== null) style.height = height
 
-      style.borderRadius = this.rounded ? '4px' : 0
+      style.borderRadius = rounded ? '4px' : 0
 
       return style
+    })
+
+    return {
+      customStyles,
     }
-  }
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -53,7 +55,11 @@ export default {
   width: 100%;
   border-radius: 4px;
   background-color: rgb(206, 206, 206);
-  background-image: linear-gradient(89deg, rgb(200, 200, 200), rgb(200, 200, 200));
+  background-image: linear-gradient(
+    89deg,
+    rgb(200, 200, 200),
+    rgb(200, 200, 200)
+  );
   background-size: 99% 100%;
   background-repeat: no-repeat;
   animation: 1.3s linear 1ms infinite normal backwards running animation-slide;

@@ -31,8 +31,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-$separator: attr(data-content);
-
 .breadcrumb {
   @apply flex;
 

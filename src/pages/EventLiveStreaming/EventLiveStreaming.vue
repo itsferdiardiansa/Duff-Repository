@@ -16,11 +16,9 @@
           />
         </div>
       </form>
-  </div>
+    </div>
 
-    <div class="event-list mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5">
-      <EventLoader />
-      
+    <div class="event-list">
       <EventLiveStreamingList />
     </div>
   </div>
@@ -29,14 +27,17 @@
 import TextField from '@common/TextField'
 import Button from '@common/Button'
 import EventLiveStreamingList from '@fragment/LiveStreaming/EventLiveStreaming/EventLiveStreamingList'
-import EventLoader from '@fragment/LiveStreaming/EventLiveStreaming/EventLoader'
 
 export default {
   components: {
     TextField,
     Button, 
-    EventLiveStreamingList,
-    EventLoader
+    EventLiveStreamingList
   }  
 }
 </script>
+<style lang="scss" scoped>
+.event-list {
+  @apply mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5;
+}
+</style>

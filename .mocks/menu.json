@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Content Manager",
+    "lists": [
+      { "name": "Hero", "link": "" },
+      { "name": "Event Modules", "link": "" },
+      { "name": "Thematic Page", "link": "/thematic-page" },
+      { "name": "URL Redirection", "link": "" },
+      { "name": "Hashtag", "link": "" },
+      { "name": "Loket Ads", "link": "" },
+      { "name": "Announcement", "link": "" },
+      { "name": "Partner", "link": "" },
+      { "name": "Footer", "link": "" }
+    ]
+  },
+  {
+    "title": "Live Streaming",
+    "lists": [
+      { "name": "Event Live Streaming", "link": "/event-live-streaming" },
+      { "name": "Event Calender", "link": "" }
+    ]
+  },
+  {
+    "title": "Content Manager",
+    "lists": [
+      { "name": "Verified User", "link": "" },
+      { "name": "Verified Document", "link": "" }
+    ]
+  },
+  {
+    "title": "Operations",
+    "lists": [
+      { "name": "Event", "link": "" },
+      { "name": "Blacklisty Word", "link": "" },
+      { "name": "Blacklisty Event", "link": "" },
+      { "name": "Pivot Bank", "link": "" },
+      { "name": "Failed Withdraw", "link": "" }
+    ]
+  },
+  {
+    "title": "Discount",
+    "lists": [{ "name": "Discount", "link": "" }]
+  },
+  {
+    "title": "Feedback",
+    "lists": [{ "name": "Feedback", "link": "" }]
+  }
+]

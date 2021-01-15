@@ -1,5 +1,5 @@
 export default {
   isFetching: false,
-  onError: {},
+  onError: false,
   items: [],
 }

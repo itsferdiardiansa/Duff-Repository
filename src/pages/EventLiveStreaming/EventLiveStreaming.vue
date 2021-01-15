@@ -3,7 +3,7 @@
     <div class="pb-6">
       <form class="flex flex-wrap" action="javascript:void(0)">
         <div class="w-4/5">
-          <TextField 
+          <TextField
             placeholder="Search Event Online By Title"
             size="large"
             class="search-input"
@@ -13,6 +13,7 @@
         <div class="ml-9">
           <Button 
             label="Register New Event"
+            variant="dark" 
           />
         </div>
       </form>
@@ -29,11 +30,12 @@ import Button from '@common/Button'
 import EventLiveStreamingList from '@fragment/LiveStreaming/EventLiveStreaming/EventLiveStreamingList'
 
 export default {
+  layout: 'BlankLayout',
   components: {
     TextField,
-    Button, 
-    EventLiveStreamingList
-  }  
+    Button,
+    EventLiveStreamingList,
+  },
 }
 </script>
 <style lang="scss" scoped>

@@ -1,7 +1,6 @@
 const getters = {
-  getThematicPage: state => {
-    return state.items
-  }
+  getFetchStatus: state => state.isFetching,
+  getThematicPage: state => state.items,
 }
 
 export default getters

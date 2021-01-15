@@ -15,12 +15,15 @@ const routes = [
     component: () => import('@page/ThematicPage'),
   },
   {
-    path: '/:pathMatch(.*)*',
-    name: 'NotFound',
-    component: NotFound,
-    props: {
-      onErrorPage: true,
-    },
+    name: 'Page Not Found',
+    component: () => import('@layout/BlankLayout'),
+    children: [
+      {
+        path: '/:pathMatch(.*)*',
+        name: 'Error Page',
+        component: NotFound,
+      },
+    ],
   },
 ]
 

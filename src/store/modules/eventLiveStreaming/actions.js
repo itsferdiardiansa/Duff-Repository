@@ -8,16 +8,16 @@ const actions = {
     headers.append('cache-control', 'no-cache')
 
     try {
-      let headers = new Headers()
-      const response = await fetch(
-        process.env.API_URL + '/eventLiveStreaming',
-        { headers }
-      )
-      const collections = await response.json()
+      const collections = await this.$http({
+        url: process.env.API_URL + '/eventLiveStreaming',
+        timeout: 2000,
+        headers,
+      })
 
       commit('fetchSuccess', collections)
     } catch (e) {
-      console.error(e)
+      console.log(e)
+      commit('fetchFailed')
     }
   },
 }

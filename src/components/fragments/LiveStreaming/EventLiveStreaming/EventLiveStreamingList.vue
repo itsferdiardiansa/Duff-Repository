@@ -1,5 +1,8 @@
 <template>
-  <template v-if="!isFetching">
+  <template v-if="onError">
+    <EventError :handleClick="getEvents" />
+  </template>
+  <template v-else-if="!isFetching">
     <template v-for="(item, key) in filteredEvents" :key="key">
       <EventLiveStreamingItem :data="item" />
     </template>
@@ -13,11 +16,13 @@ import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import EventLiveStreamingItem from './EventLiveStreamingItem'
 import EventLoader from './EventLoader'
+import EventError from './EventError'
 
 export default {
   components: {
     EventLiveStreamingItem,
-    EventLoader
+    EventLoader,
+    EventError,
   },
   setup() {
     const store = useStore()
@@ -34,12 +39,18 @@ export default {
       return store.getters['eventLiveStreaming/getFetchStatus']
     })
 
+    const onError = computed(() => {
+      return store.getters['eventLiveStreaming/getFetchError']
+    })
+
     onMounted(getEvents)
 
     return {
       filteredEvents,
-      isFetching
+      isFetching,
+      onError,
+      getEvents,
     }
-  }
+  },
 }
 </script>

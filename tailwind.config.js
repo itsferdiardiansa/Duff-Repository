@@ -9,6 +9,13 @@ module.exports = {
   },
   plugins: [],
   variants: {
-    display: ['responsive', 'group-hover', 'group-focus'],
+    extend: {
+      opacity: ['disabled'],
+    },
+    display: [
+      'responsive', 
+      'group-hover', 
+      'group-focus'
+    ],
    }
 }

@@ -8,6 +8,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
+        'vue$': require.resolve('vue/dist/vue.esm-browser.js'),
         '@': resolve(),
         '@common': resolve('components/commons'),
         '@fragment': resolve('components/fragments'),
@@ -15,6 +16,9 @@ module.exports = {
         '@page': resolve('pages'),
         '@route': resolve('routes'),
         '@store': resolve('store'),
+        '@helper': resolve('helpers'),
+        '@asset': resolve('assets'),
+        '@icon': resolve('assets/icons'),
         '@mock': path.resolve(__dirname, '.mocks'),
       },
     },
@@ -29,5 +33,10 @@ module.exports = {
       }
       return args
     })
+
+    config.module
+      .rule('vue')
+      .use('vue-svg-inline-loader')
+      .loader('vue-svg-inline-loader')
   },
 }

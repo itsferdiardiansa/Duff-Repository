@@ -2,9 +2,7 @@
   <aside class="sidebar animated faster">
     <div class="px-6 py-5 h-16 bg-indigo-900">
       <a href="javascript:void(0);" class="text-xl text-gray-50">
-        <span>
-          Loket<strong class="font-black">CMS</strong>
-        </span>
+        <span> Loket<strong class="font-black">CMS</strong> </span>
       </a>
     </div>
 
@@ -14,18 +12,21 @@
   </aside>
 </template>
 <script>
+import { ref } from 'vue'
 import MenuList from './MenuList'
 import MenuCollections from '@mock/menu'
 
 export default {
   components: {
-    MenuList
+    MenuList,
   },
-  data() {
+  setup() {
+    let menus = ref(MenuCollections)
+
     return {
-      menus: MenuCollections 
+      menus,
     }
-  }
+  },
 }
 </script>
 <style lang="scss" scoped>

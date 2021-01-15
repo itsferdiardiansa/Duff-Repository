@@ -1,12 +1,23 @@
 const actions = {
   async fetchThematicPage({ commit }) {
+    let headers = new Headers()
+
+    commit('fetchStart')
+
+    headers.append('pragma', 'no-cache')
+    headers.append('cache-control', 'no-cache')
+
     try {
-      const response = await fetch(process.env.API_URL + '/thematicPage')
-      const collections = await response.json()
+      const collections = await this.$http({
+        url: process.env.API_URL + '/thematicPage',
+        timeout: 2000,
+        headers,
+      })
 
       commit('fetchSuccess', collections)
     } catch (e) {
-      console.error(e)
+      console.log(e)
+      commit('fetchFailed')
     }
   },
 }

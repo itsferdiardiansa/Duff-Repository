@@ -1,0 +1,25 @@
+@mixin variant {
+  &.default {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800;
+  }
+
+  &.primary {
+    @apply bg-blue-700 hover:bg-blue-800 text-gray-200;
+  }
+
+  &.danger {
+    @apply bg-red-700 hover:bg-red-800 text-gray-200;
+  }
+
+  &.warning {
+    @apply bg-yellow-500 hover:bg-yellow-600;
+  }
+
+  &.success {
+    @apply bg-green-500 hover:bg-green-600 text-gray-200;
+  }
+
+  &.dark {
+    @apply bg-gray-700 hover:bg-gray-800 text-gray-200;
+  }
+}

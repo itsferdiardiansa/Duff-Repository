@@ -1,25 +1,38 @@
-@mixin variant {
-  &.default {
-    @apply bg-gray-200 hover:bg-gray-300 text-gray-800;
+@mixin childContent($color) {
+  svg,
+  i {
+    @apply #{$color} fill-current focus:outline-none;
   }
+}
 
+@mixin variant {
   &.primary {
-    @apply bg-blue-700 hover:bg-blue-800 text-gray-200;
+    @apply bg-primary hover:bg-blue-800 text-gray-200;
+
+    @include childContent(text-gray-200);
   }
 
   &.danger {
-    @apply bg-red-700 hover:bg-red-800 text-gray-200;
+    @apply bg-danger hover:bg-red-800 text-gray-200;
+
+    @include childContent(text-gray-200);
   }
 
   &.warning {
-    @apply bg-yellow-500 hover:bg-yellow-600;
+    @apply bg-warning hover:bg-yellow-500 text-gray-800;
+
+    @include childContent(text-gray-800);
   }
 
   &.success {
-    @apply bg-green-500 hover:bg-green-600 text-gray-200;
+    @apply bg-success hover:bg-green-600 text-gray-200;
+
+    @include childContent(text-gray-200);
   }
 
   &.dark {
-    @apply bg-gray-700 hover:bg-gray-800 text-gray-200;
+    @apply bg-dark hover:bg-gray-800 text-gray-200;
+
+    @include childContent(text-gray-200);
   }
 }

@@ -2,13 +2,14 @@ import { mount } from '@vue/test-utils'
 import Button from '@common/Button'
 
 describe('Button component', () => {
-  let Component 
+  let customClass = ['btn']
+  let Component
 
-  beforeEach(async () => { 
+  beforeEach(async () => {
     Component = mount(Button, {
       propsData: {
-        onClick: jest.fn()
-      }
+        onClick: jest.fn(),
+      },
     })
 
     await Component.setProps({
@@ -17,12 +18,14 @@ describe('Button component', () => {
       size: '',
       onClick: jest.fn(),
       textBold: false,
-      disabled: false
-    }) 
+      disabled: false,
+    })
   })
 
-  it('will render button correctly', () => {
-    expect(Component.wrapper).toMatchSnapshot()
+  it('will render button correctly', async () => {
+    await Component.setProps({ variant: 'dark', label: 'Test snapshot' })
+
+    expect(Component.element).toMatchSnapshot()
   })
 
   it('will have a content', async () => {
@@ -33,26 +36,26 @@ describe('Button component', () => {
 
   it('will have a disabled button', async () => {
     await Component.setProps({ disabled: true })
-    
+
     expect(Component.element.disabled).toBeTruthy()
   })
 
   it('will have a bold text', async () => {
     await Component.setProps({ textBold: true })
 
-    expect(Component.attributes().class).toEqual('bold')
+    expect(Component.attributes().class).toContain('bold')
   })
 
   it('will not be rounded', async () => {
     await Component.setProps({ rounded: false })
 
-    expect(Component.attributes().class).toEqual('no-rounded')
+    expect(Component.attributes().class).toContain('no-rounded')
   })
 
   it('will have a size correctly', async () => {
-    let sizes = ['sm', 'base', 'lg']
+    let sizes = ['sm', 'lg']
 
-    for(let size of sizes) {
+    for (let size of sizes) {
       await Component.setProps({ size })
 
       expect(Component.attributes().class).toContain(size)
@@ -62,18 +65,18 @@ describe('Button component', () => {
   it('will have a background color correctly', async () => {
     let variants = ['primary', 'danger', 'warning', 'dark', 'success']
 
-    for(let variant of variants) {
+    for (let variant of variants) {
       await Component.setProps({ variant })
 
-      expect(Component.attributes().class).toEqual(variant)
+      expect(Component.attributes().class).toContain(variant)
     }
   })
 
   it('will clicked twice', async () => {
-    for(let i of [1,2]) {
-      await Component.vm.onClick()
+    for (let i of [1, 2]) {
+      await Component.find('button').trigger('click')
     }
 
-    expect(Component.vm.onClick).toHaveBeenCalledTimes(2)
+    expect(Component.emitted('click')).toHaveLength(2)
   })
 })

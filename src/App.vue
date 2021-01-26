@@ -1,15 +1,9 @@
 <template>
-  <MainLayout>
-    <router-view></router-view>
-  </MainLayout>
+  <router-view />
 </template>
 <script>
-import MainLayout from '@layout/MainLayout'
-
 export default {
   name: 'App',
-  components: {
-    MainLayout,
-  },
+  components: {},
 }
 </script>

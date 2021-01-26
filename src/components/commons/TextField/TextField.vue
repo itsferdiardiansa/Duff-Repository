@@ -1,42 +1,36 @@
 <template>
-  <input
-    :type="type"
-    :placeholder="placeholder"
-    :class="className"
-   />
+  <input :type="type" :placeholder="placeholder" :class="className" />
 </template>
 <script>
 export default {
   props: {
     type: {
       type: String,
-      default: 'text' // [text, email, password]
+      default: 'text', // text, email, password
     },
     placeholder: {
       type: String,
-      default: ''
+      default: '',
     },
     color: {
       type: String,
-      default: 'white'
-    }, 
+      default: 'white',
+    },
     size: {
       type: String,
-      default: 'default'
-    }
+      default: 'default',
+    },
   },
   computed: {
     className() {
       let className = ['input-text']
 
-      if(this.size === 'large')
-        className.push('large')
-      else if(this.size === 'small')
-        className.push('small')
+      if (this.size === 'large') className.push('large')
+      else if (this.size === 'small') className.push('small')
 
       return className.join(' ')
-    }
-  }
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>

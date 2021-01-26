@@ -4,14 +4,15 @@ import mockStore from '@mock/collections'
 
 let store
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({ json: () => mockStore.thematicPage })
-)
+const httpPlugins = store => {
+  store.$http = params => mockStore.thematicPage
+}
 
 const createStoreConfig = () => ({
   modules: {
     thematicPage,
   },
+  plugins: [httpPlugins],
 })
 
 beforeEach(() => {

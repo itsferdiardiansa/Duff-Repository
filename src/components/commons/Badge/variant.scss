@@ -1,0 +1,21 @@
+@mixin variant {
+  &.primary {
+    @apply bg-primary text-gray-200;
+  }
+
+  &.danger {
+    @apply bg-danger text-gray-200;
+  }
+
+  &.warning {
+    @apply bg-warning text-gray-800;
+  }
+
+  &.success {
+    @apply bg-success text-gray-200;
+  }
+
+  &.dark {
+    @apply bg-dark text-gray-200;
+  }
+}

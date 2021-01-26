@@ -1,4 +1,295 @@
 {
+  "verifiedUser": {
+    "result": [
+      {
+        "organizationName": {
+          "imgThumb": "https://s3.amazonaws.com/loket-sandbox/images/organization/20190712190520_5d2877806297a.png",
+          "title": "SS Staging Organizations",
+          "companyName": "MARIA",
+          "email": "example.com",
+          "phone": "12345678"
+        }
+      }
+    ]
+  },
+  "role": {
+    "result": [
+      {
+        "roleName": "admin hero",
+        "previlagesMenu": "Hero Menu, Section Menu"
+      },
+      {
+        "roleName": "LFB, SS Blog",
+        "previlagesMenu": "Blog Menu, Blog For Business"
+      }
+    ]
+  },
+  "listAdmin": {
+    "result": [
+      {
+        "roleName": "admin hero",
+        "email": "example@gmail.com",
+        "previlagesRole": "marketing",
+        "previlagesMenu": "Hero Menu, Section Menu"
+      },
+      {
+        "roleName": "LFB, SS Blog",
+        "email": "example@gmail.com",
+        "previlagesRole": "marketing",
+        "previlagesMenu": "Blog Menu, Blog For Business"
+      }
+    ]
+  },
+  "event": {
+    "result": [
+      {
+        "title": "Event On Boarding Core",
+        "imgThumb": "https://s3.amazonaws.com/loket-sandbox/images/organization/20190712190520_5d2877806297a.png",
+        "eventDate": "2021-01-01 14:00:00",
+        "eventType": "Public",
+        "status": {
+          "tier": true,
+          "role": "Published"
+        }
+      }
+    ]
+  },
+  "blacklistEvent": {
+    "result": [
+      {
+        "title": "Event On Boarding Core",
+        "createdDate": "2021-01-01 14:00:00",
+        "blacklistAt": "event name",
+        "reportedAt": "publish event"
+      }
+    ]
+  },
+  "discount": {
+    "result": [
+      {
+        "title": "Event On Boarding Core",
+        "eventName": "[INT] Simple Paid - SS - E008",
+        "link": "https://google.com",
+        "creator": "Loket inc",
+        "startDate": "2024-12-31 13:55:00",
+        "potentialGMV": "Rp 200.000.000,-",
+        "discount": {
+          "percentage": "10%",
+          "fixed": "Rp 10.000,-",
+          "amount": "Rp 15.765,-"
+        },
+        "reportedAt": "publish event"
+      }
+    ]
+  },
+  "feedback": {
+    "result": [
+      {
+        "email": "ferdi.ardiansa@go-jek.com",
+        "name": "Random",
+        "page": "Dashboard",
+        "section": "General",
+        "rate": 4
+      }
+    ]
+  },
+  "pivotBank": {
+    "result": [
+      {
+        "pivotBank": "BCA",
+        "bankNeo": "BCA",
+        "bankLPS": "BANK CENTRAL ASIA"
+      },
+      {
+        "pivotBank": "Mandiri",
+        "bankNeo": "Mandiri",
+        "bankLPS": "Mandiri"
+      },
+      {
+        "pivotBank": "Jenius",
+        "bankNeo": "BTPN",
+        "bankLPS": "BTPN"
+      },
+      {
+        "pivotBank": "Danamon",
+        "bankNeo": "Danamon",
+        "bankLPS": "Danamon"
+      },
+      {
+        "pivotBank": "BCA",
+        "bankNeo": "BCA",
+        "bankLPS": "BANK CENTRAL ASIA"
+      },
+      {
+        "pivotBank": "BCA",
+        "bankNeo": "BCA",
+        "bankLPS": "BANK CENTRAL ASIA"
+      }
+    ]
+  },
+  "failedWithdraw": {
+    "result": [
+      {
+        "title": "E-voucher link custom",
+        "date": "Jun 12, 2019 - Jan 17, 2020",
+        "time": "11:35 - 11:35",
+        "imgThumb": "https://s3.amazonaws.com/loket-sandbox/images/organization/20190712190520_5d2877806297a.png",
+        "email": "example@gmail.com",
+        "organizationName": "SS Staging",
+        "phone": "122345678",
+        "withdrawDetail": {
+          "date": "2019-09-13 12:09:21",
+          "amount": "Rp. 30.000",
+          "errorMsg": "{\"status\":false,\"result\":{\"error_code\":500,\"error_message\":null}}"
+        }
+      }
+    ]
+  },
+  "loketAds": {
+    "status": true,
+    "result": [
+      {
+        "name": "Loket Ads",
+        "category": "Concert",
+        "status": true
+      },
+      {
+        "name": "Gojek Ads",
+        "category": "Cinema",
+        "status": false
+      },
+      {
+        "name": "Facebook Ads",
+        "category": "Cinema",
+        "status": false
+      },
+      {
+        "name": "Google Ads",
+        "category": "Cinema",
+        "status": true
+      },
+      {
+        "name": "Apple Ads",
+        "category": "Cinema",
+        "status": false
+      }
+    ]
+  },
+  "partner": {
+    "status": true,
+    "result": [
+      {
+        "partnerName": "Tokopedia",
+        "icon": "https://www.loket.com/images/mitra/logo/tokopedia.png",
+        "status": true
+      },
+      {
+        "partnerName": "Gotix",
+        "icon": "https://www.loket.com/images/mitra/logo/gotix.png",
+        "status": false
+      },
+      {
+        "partnerName": "Traveloka",
+        "icon": "https://www.loket.com/images/mitra/logo/traveloka.png",
+        "status": false
+      },
+      {
+        "partnerName": "Tiket",
+        "icon": "https://www.loket.com/images/mitra/logo/tiketdotcom.png?v=07201827",
+        "status": true
+      },
+      {
+        "partnerName": "JD.id",
+        "icon": "https://www.loket.com/images/mitra/logo/jdid.png",
+        "status": false
+      }
+    ]
+  },
+  "announcement": {
+    "status": true,
+    "result": [
+      {
+        "title": "Loket Ads",
+        "content": "Concert",
+        "link": "https://google.com",
+        "expired": "2020-03-31 13:00:00",
+        "status": {
+          "tier": true,
+          "role": "for public"
+        }
+      },
+      {
+        "title": "Gojek Ads",
+        "content": "Cinema",
+        "link": "https://google.com",
+        "expired": "2020-03-31 13:00:00",
+        "status": {
+          "tier": true,
+          "role": "for public"
+        }
+      },
+      {
+        "title": "Facebook Ads",
+        "content": "Cinema",
+        "link": "https://google.com",
+        "expired": "2020-03-31 13:00:00",
+        "status": {
+          "tier": true,
+          "role": "for public"
+        }
+      },
+      {
+        "title": "Google Ads",
+        "content": "Cinema",
+        "link": "https://google.com",
+        "expired": "2020-03-31 13:00:00",
+        "status": {
+          "tier": false,
+          "role": "member only"
+        }
+      },
+      {
+        "title": "Apple Ads",
+        "content": "Cinema",
+        "link": "https://google.com",
+        "expired": "2020-03-31 13:00:00",
+        "status": {
+          "tier": true,
+          "role": "for public"
+        }
+      }
+    ]
+  },
+  "url_redirection": {
+    "status": true,
+    "result": [
+      {
+        "path": "Loket Indonesia",
+        "url": "https://loket.com",
+        "status": "active"
+      },
+      {
+        "path": "Gojek",
+        "url": "https://gojek.com",
+        "status": "active"
+      }
+    ]
+  },
+  "hero": {
+    "status": true,
+    "result": [
+      {
+        "title": "Pertama",
+        "url": "/event",
+        "status": "active"
+      },
+      {
+        "title": "Kedua",
+        "url": "/event",
+        "status": "active"
+      }
+    ]
+  },
   "thematicPage": {
     "status": true,
     "result": {

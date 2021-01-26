@@ -15,48 +15,28 @@
     </div>
 
     <div class="h-full flex flex-row flex-wrap px-6">
-      <slot></slot>
+      <transition name="slide" mode="out-in" appear>
+        <component :is="ChildComponent"></component>
+      </transition>
     </div>
-
-    <!-- <Modal :onConfirm="toggleClick">
-      <template v-slot:header> Confirmation </template>
-
-      <template v-slot:body>
-        <p class="text-sm text-gray-500">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-      </template>
-    </Modal> -->
   </main>
 </template>
 <script>
-import { computed, onMounted, reactive } from 'vue'
+import { computed, reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import Breadcrumb from '@common/Breadcrumb'
 import Header from '@fragment/Base/Header'
 import SideBar from '@fragment/Base/Sidebar'
-// import Modal from '@common/Modal'
 
 export default {
   components: {
     Header,
     SideBar,
     Breadcrumb,
-    // Modal,
   },
   setup() {
     const route = useRoute()
-    let onPageError = reactive(false)
-
-    let breadcrumbs = reactive([{ name: 'Home', link: '/' }])
+    let onPageError = reactive(route.name === 'Page Not Found')
 
     const contentTitle = computed(() => {
       return route.name
@@ -66,8 +46,12 @@ export default {
       alert('click ...')
     }
 
-    onMounted(() => {
-      breadcrumbs.push({ name: contentTitle })
+    const ChildComponent = computed(() => {
+      return route.meta.components.default
+    })
+
+    const breadcrumbs = computed(() => {
+      return route.meta.breadcrumbs
     })
 
     return {
@@ -75,14 +59,27 @@ export default {
       breadcrumbs,
       onPageError,
       toggleClick,
+      ChildComponent,
     }
   },
 }
 </script>
 <style lang="scss" scoped>
+.slide-leave-active,
+.slide-enter-active {
+  transition: 0.3s ease-in-out;
+}
+.slide-enter {
+  transform: translate(-100%, 0);
+}
+.slide-leave-to {
+  transform: translate(5%, 0);
+  opacity: 0;
+}
+
 .content {
-  margin-left: 255px;
-  margin-top: 64px;
+  margin-left: 225px;
+  margin-top: 55px;
   text-align: left;
 }
 </style>

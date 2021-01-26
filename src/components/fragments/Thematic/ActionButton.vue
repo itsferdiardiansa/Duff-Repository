@@ -3,31 +3,27 @@
     <div class="mr-2">
       <Button
         :data-title="data.path"
-        :onClick="handleClick(data)"
-        size="xs"
+        size="sm"
         variant="warning"
+        title="Edit"
+        @click="handleClick(data)"
       >
-        <img svg-inline class="w-4 fill-current text-gray-800" src="@icon/pencil.svg" />
-        <span class="ml-2">Edit</span>
+        <img svg-inline class="w-3" src="@icon/pencil.svg" />
       </Button>
     </div>
-
     <div class="mr-2">
-      <Button 
+      <Button
         :data-title="data.path"
-        size="xs"
+        :textBold="true"
+        size="sm"
+        variant="danger"
       >
-        <img svg-inline class="w-4 h-4 fill-current text-gray-800" src="@icon/delete.svg" />
-        <span class="ml-2">Delete</span>
+        <img svg-inline class="w-4 h-4" src="@icon/delete.svg" />
       </Button>
     </div>
 
     <div>
-      <Button 
-        :data-title="data.path"
-        size="xs"
-        variant="dark"
-      >
+      <Button :data-title="data.path" size="sm" variant="dark">
         <span>View</span>
       </Button>
     </div>
@@ -38,22 +34,22 @@ import Button from '@common/Button'
 
 export default {
   components: {
-    Button
+    Button,
   },
   props: {
     data: {
       type: Object,
-      default: () => { }
-    }
+      default: () => {},
+    },
   },
   setup() {
-    const handleClick = () => {
-      alert('Clicked ...')
+    const handleClick = data => {
+      console.log('Clicked ...', data)
     }
 
     return {
-      handleClick: () => handleClick
+      handleClick,
     }
-  }
+  },
 }
 </script>

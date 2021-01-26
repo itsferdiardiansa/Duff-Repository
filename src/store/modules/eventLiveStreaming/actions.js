@@ -10,13 +10,11 @@ const actions = {
     try {
       const collections = await this.$http({
         url: process.env.API_URL + '/eventLiveStreaming',
-        timeout: 2000,
         headers,
       })
 
       commit('fetchSuccess', collections)
     } catch (e) {
-      console.log(e)
       commit('fetchFailed')
     }
   },

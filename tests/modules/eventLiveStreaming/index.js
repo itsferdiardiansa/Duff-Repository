@@ -4,12 +4,15 @@ import mockStore from '@mock/collections'
 
 let store
 
-global.fetch = jest.fn(() => Promise.resolve(mockStore.eventLiveStreaming))
+const httpPlugins = store => {
+  store.$http = params => mockStore.eventLiveStreaming
+}
 
 const createStoreConfig = () => ({
   modules: {
     eventLiveStreaming,
   },
+  plugins: [httpPlugins],
 })
 
 beforeEach(() => {
@@ -22,7 +25,6 @@ describe('eventLiveStreaming module', () => {
   it('fetch and return success', async () => {
     await store.dispatch('eventLiveStreaming/fetchEvents')
 
-    console.log(mockStore.eventLiveStreaming.result)
     expect(store.getters['eventLiveStreaming/getEvents']).toEqual(
       mockStore.eventLiveStreaming.result.data
     )

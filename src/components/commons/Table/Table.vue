@@ -1,19 +1,13 @@
 <template>
   <table>
     <thead>
-      <TableHeadRow 
-        :data="allProps"
-        :handleSelectAllRows="selectAllRows" 
-      />
+      <TableHeadRow :data="allProps" :handleSelectAllRows="selectAllRows" />
     </thead>
     <tbody>
       <template v-if="isLoading">
-        <TableSkeleton 
-          :col="totalColumn" 
-          :row="rowLoader" 
-        />
+        <TableSkeleton :col="totalColumn" :row="rowLoader" />
       </template>
-      
+
       <TableContent :data="allProps" :selected="selectedRows">
         <template v-slot:content="props">
           <td :class="textColAlign(props.headers.align)">
@@ -25,18 +19,24 @@
       </TableContent>
     </tbody>
   </table>
+
+  <template v-if="withPagination">
+    <Pagination />
+  </template>
 </template>
 <script>
 import { computed, ref } from 'vue'
 import TableHeadRow from './TableHeadRow'
 import TableContent from './TableContent'
 import TableSkeleton from './TableSkeleton'
+import Pagination from '@common/Pagination'
 
 export default {
   components: {
     TableHeadRow,
     TableContent,
-    TableSkeleton
+    TableSkeleton,
+    Pagination,
   },
   props: {
     headers: {
@@ -57,20 +57,24 @@ export default {
     },
     isLoading: {
       type: Boolean,
-      default: false
+      default: false,
     },
     rowLoader: {
       type: Number,
-      default: 5
+      default: 5,
     },
     emptyDataComponent: {
       type: Object,
-      default: () => { }
+      default: () => {},
     },
     selectableRows: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
+    withPagination: {
+      type: Boolean,
+      default: true,
+    },
   },
   setup(props) {
     const textColAlign = align => (align ? `text-${align}` : '')
@@ -79,8 +83,8 @@ export default {
     const selectAllRows = e => {
       const { items } = props
 
-      if(!e.target.checked) return false
- 
+      if (!e.target.checked) return false
+
       selectedRows.value = items.map((item, key) => {
         return key
       })
@@ -88,57 +92,42 @@ export default {
 
     const totalColumn = computed(() => {
       const { headers, rowNumber } = props
-      
-      return headers.length + ((rowNumber) ? 1 : 0)
+
+      return headers.length + (rowNumber ? 1 : 0)
     })
 
     const checkboxHashId = computed(() => {
       return [
         Math.floor(1000 + Math.random() * 9000),
-        Math.floor(10000 + Math.random() * 90000)
+        Math.floor(10000 + Math.random() * 90000),
       ].join('-')
     })
 
     return {
-      allProps: computed(() => ({...props, selectedRows})),
+      allProps: computed(() => ({ ...props, selectedRows })),
       textColAlign,
-      totalColumn, 
+      totalColumn,
       checkboxHashId,
       selectedRows,
-      selectAllRows
+      selectAllRows,
     }
   },
 }
 </script>
 <style lang="scss">
-
 table {
   @apply w-full text-sm;
 
   thead {
     @apply text-center;
   }
-  
+
   th {
-    @apply uppercase leading-normal p-3 border-b-2 border-gray-700;
+    @apply uppercase leading-normal py-3 border-b-2 border-gray-700;
   }
 
   td {
-    @apply text-gray-600 leading-normal relative p-2 break-all;
-  }
-}
-
-.table {
-  // @apply min-w-full bg-gray-50 text-sm;
-  
-  &-head {
-    th {
-      @apply px-6 py-3 border-b-2 border-gray-300 leading-4 text-gray-800 tracking-wider;
-    }
-  }
-
-  &-col {
-    @apply px-6 py-4 border-b border-gray-500;
+    @apply text-gray-600 leading-normal relative py-3 break-all;
   }
 }
 </style>

@@ -1,0 +1,9 @@
+@mixin size {
+  &.sm {
+    @apply text-xs;
+  }
+
+  &.lg {
+    @apply text-base;
+  }
+}

@@ -19,14 +19,21 @@ function HttpRequest() {
 }
 
 HttpRequest.prototype.requestStream = function () {
-  const { controller, timeout } = this
+  const { timeout } = this
 
   const refresh = () => (this.controller = new AbortController())
 
+  // let _controller = controller
+
   const start = () =>
     setTimeout(() => {
-      controller.abort()
+      // _controller.abort()
+      // throw { message: 'Timeout' }
     }, timeout)
+
+  const clear = () => {
+    clearTimeout(start)
+  }
 
   const stop = () => {
     clearTimeout(start)
@@ -38,6 +45,7 @@ HttpRequest.prototype.requestStream = function () {
     start,
     stop,
     refresh,
+    clear,
   }
 }
 
@@ -49,7 +57,7 @@ HttpRequest.prototype.setup = async function ({ url, timeout, ...restParams }) {
     ...restParams,
     signal: this.controller.signal,
   }
-  this.timeout = timeout
+  this.timeout = timeout !== undefined ? timeout : this.timeout
   this.stream = this.requestStream()
 
   if (!url) {
@@ -65,15 +73,22 @@ HttpRequest.prototype.setup = async function ({ url, timeout, ...restParams }) {
 
   this.stream.start()
 
+  let options = { ...this.options }
+  // let signal = this.controller.signal
+
+  // console.log(options)
   try {
-    this.response = await fetch(url, { ...this.options })
+    this.response = await fetch(url, options)
     this.collections = await this.response.json()
 
+    this.stream.clear()
     return this.collections
   } catch (error) {
+    console.error('http', error)
+    // this.stream.stop()
     return error
   } finally {
-    this.stream.stop()
+    // this.stream.stop()
   }
 }
 

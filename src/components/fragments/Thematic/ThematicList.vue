@@ -1,20 +1,41 @@
 <template>
   <div class="container">
     <div class="wrapper">
-      <div class="p-6">
+      <div class="py-6 flex justify-between items-center">
         <h3 class="text-lg font-black">Page List</h3>
+
+        <Button
+          :textBold="true"
+          @click="createThematicPage"
+          label="Create Thematic Page"
+          variant="primary"
+        />
       </div>
 
-      <Table 
-        :headers="tHeaders" 
+      <Table
+        :headers="tHeaders"
         :items="filteredThematic"
         :emptyDataComponent="emptyDataComponent"
         :isLoading="isFetching"
-        :rowLoader="10"
+        :rowLoader="2"
         :selectableRows="true"
       >
         <template v-slot:status>
-          Pending
+          <div class="flex justify-center">
+            <Badge :textBold="true" size="sm" variant="dark" shape="circle">
+              Pending
+            </Badge>
+          </div>
+        </template>
+
+        <template v-slot:thematic>
+          <Badge
+            :textBold="true"
+            size="sm"
+            variant="danger"
+            shape="circle"
+            label="active"
+          />
         </template>
 
         <template v-slot:action="props">
@@ -32,26 +53,43 @@
 import { onMounted, computed, ref } from 'vue'
 import { useStore } from 'vuex'
 import Table from '@common/Table'
+import Badge from '@common/Badge'
+import Button from '@common/Button'
 import EmptyData from './EmptyData'
 import ActionButton from './ActionButton'
+import { useRouter } from 'vue-router'
 
 export default {
   components: {
     Table,
-    ActionButton
+    ActionButton,
+    Badge,
+    Button,
   },
   setup() {
     const store = useStore()
+    const router = useRouter()
 
     let tHeaders = ref([
-      { title: 'Author', accessor: 'updated_by', width: '15%', align: 'center' },
+      {
+        title: 'Author',
+        accessor: 'updated_by',
+        width: '15%',
+        align: 'center',
+      },
       { title: 'Token', accessor: 'hash_id', width: '10%', align: 'center' },
       { title: 'Status', accessor: 'status', width: '10%', align: 'center' },
       { title: 'Devices', accessor: 'hash_id', width: '10%', align: 'center' },
-      { title: 'Thematic', accessor: null },
+      { title: 'Thematic', accessor: 'thematic', align: 'center' },
       { title: 'Page Info', accessor: 'meta_title', width: '11%' },
       { title: 'Path', accessor: 'path', width: '11%', align: 'center' },
-      { title: 'Action', accessor: 'action', colSpan: 3, width: '25%', align: 'center' },
+      {
+        title: 'Action',
+        accessor: 'action',
+        colSpan: 3,
+        width: '25%',
+        align: 'center',
+      },
     ])
 
     const getThematic = () => {
@@ -67,13 +105,18 @@ export default {
 
     const emptyDataComponent = computed(() => EmptyData)
 
+    const createThematicPage = () => {
+      router.push('/thematic-page/create')
+    }
+
     onMounted(getThematic)
 
     return {
       isFetching,
       filteredThematic,
       tHeaders,
-      emptyDataComponent
+      emptyDataComponent,
+      createThematicPage,
     }
   },
 }

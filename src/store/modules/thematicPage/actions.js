@@ -10,7 +10,7 @@ const actions = {
     try {
       const collections = await this.$http({
         url: process.env.API_URL + '/thematicPage',
-        timeout: 2000,
+        timeout: 900,
         headers,
       })
 

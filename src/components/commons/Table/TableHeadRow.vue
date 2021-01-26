@@ -1,12 +1,12 @@
 <template>
   <tr>
-    <th width="2%">
+    <th width="4%">
       <template v-if="data.selectableRows">
-        <input 
-          type="checkbox" 
-          aria-label="select-all" 
+        <input
+          type="checkbox"
+          aria-label="select-all"
           name="select-all"
-          @click="handleSelectAllRows" 
+          @click="handleSelectAllRows"
         />
       </template>
 
@@ -21,6 +21,7 @@
         :colspan="item.colSpan"
         :class="[item.customClass]"
         :width="item.width"
+        :align="item.align"
       ></th>
     </template>
   </tr>
@@ -30,12 +31,12 @@ export default {
   props: {
     data: {
       type: Object,
-      default: () => { }
+      default: () => {},
     },
     handleSelectAllRows: {
       type: Function,
-      default: () => { }
-    }
-  }
+      default: () => {},
+    },
+  },
 }
 </script>

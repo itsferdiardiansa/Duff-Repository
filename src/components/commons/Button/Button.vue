@@ -1,10 +1,13 @@
 <template>
-  <button 
-    :class="customClass" 
+  <button
+    :class="customClass"
     :disabled="disabled"
-    @click="handleClick"
+    :title="title"
+    @click="handleClick($event)"
   >
-    <slot>{{ label }}</slot>
+    <div class="btn-wrapper">
+      <slot>{{ label }}</slot>
+    </div>
   </button>
 </template>
 <script>
@@ -16,51 +19,51 @@ export default {
       type: String,
       default: '',
     },
+    title: {
+      type: String,
+      default: '',
+    },
     variant: {
       type: String,
       default: '',
     },
     size: {
       type: String,
-      default: 'sm',
-    },
-    onClick: {
-      type: Function,
-      default: () => { },
+      default: '',
     },
     textBold: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     rounded: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const customClass = computed(() => {
       let { variant, size, textBold, disabled, rounded } = props
-      let _class = []
+      let _class = ['btn']
 
       _class.push(size)
 
-      if(variant) _class.push(variant)
-      
-      if(!rounded) _class.push('no-rounded')
+      if (variant) _class.push(variant)
 
-      if(textBold) _class.push('bold')
+      if (!rounded) _class.push('no-rounded')
 
-      if(disabled) _class.push('disabled')
-      
+      if (textBold) _class.push('bold')
+
+      if (disabled) _class.push('disabled')
+
       return _class.join(' ').trim()
     })
 
-    const handleClick = () => {
-      props.onClick()
+    const handleClick = e => {
+      emit('click', e)
     }
 
     return {
@@ -70,13 +73,13 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import './variant.scss';
 @import './size.scss';
 
-button {
-  @apply text-gray-50 focus:outline-none rounded py-2 px-3 transition duration-300 flex items-center justify-center;
-  @apply bg-gray-200 hover:bg-gray-300 text-gray-800;
+.btn {
+  @apply h-9 text-gray-50 focus:outline-none rounded px-3 transition duration-300;
+  @apply bg-gray-100 hover:bg-gray-300 text-gray-800 text-sm overflow-hidden whitespace-nowrap;
 
   @include variant;
 
@@ -94,5 +97,8 @@ button {
     @apply disabled:opacity-70 pointer-events-none;
   }
 
+  &-wrapper {
+    @apply flex-grow-0 flex items-center justify-center;
+  }
 }
 </style>

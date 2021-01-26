@@ -14,14 +14,14 @@ import Navbar from './Navbar'
 export default {
   components: {
     SearchForm,
-    Navbar
-  }
+    Navbar,
+  },
 }
 </script>
 <style lang="scss" scoped>
 .page-header {
   @apply h-16 fixed bg-indigo-800 w-full z-40 box-border;
   top: 0;
-  padding-left: 255px;
+  padding-left: 225px;
 }
 </style>

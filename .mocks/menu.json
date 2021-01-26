@@ -2,47 +2,57 @@
   {
     "title": "Content Manager",
     "lists": [
-      { "name": "Hero", "link": "" },
-      { "name": "Event Modules", "link": "" },
+      { "name": "Hero", "link": "/hero" },
+      {
+        "name": "Event Modules",
+        "link": "/event-modules",
+        "groups": [{ "name": "URL Redirection", "link": "/event-modules/url" }]
+      },
       { "name": "Thematic Page", "link": "/thematic-page" },
-      { "name": "URL Redirection", "link": "" },
+      { "name": "URL Redirection", "link": "/url-redirection" },
       { "name": "Hashtag", "link": "" },
-      { "name": "Loket Ads", "link": "" },
-      { "name": "Announcement", "link": "" },
-      { "name": "Partner", "link": "" },
-      { "name": "Footer", "link": "" }
+      { "name": "Loket Ads", "link": "/loket-ads" },
+      { "name": "Announcement", "link": "/announcement" },
+      { "name": "Partner", "link": "/partner" }
     ]
   },
   {
     "title": "Live Streaming",
     "lists": [
-      { "name": "Event Live Streaming", "link": "/event-live-streaming" },
+      { "name": "Event Live Streaming", "link": "" },
       { "name": "Event Calender", "link": "" }
     ]
   },
   {
-    "title": "Content Manager",
+    "title": "Verification",
     "lists": [
-      { "name": "Verified User", "link": "" },
-      { "name": "Verified Document", "link": "" }
+      { "name": "Verified User", "link": "/verified-user" },
+      { "name": "Verified Document", "link": "/verified-document" }
     ]
   },
   {
     "title": "Operations",
     "lists": [
-      { "name": "Event", "link": "" },
-      { "name": "Blacklisty Word", "link": "" },
-      { "name": "Blacklisty Event", "link": "" },
-      { "name": "Pivot Bank", "link": "" },
-      { "name": "Failed Withdraw", "link": "" }
+      { "name": "Event", "link": "/event" },
+      { "name": "Blacklist Word", "link": "/blacklist-word" },
+      { "name": "Blacklist Event", "link": "/blacklist-event" },
+      { "name": "Pivot Bank", "link": "/pivot-bank" },
+      { "name": "Failed Withdraw", "link": "/failed-withdraw" }
     ]
   },
   {
     "title": "Discount",
-    "lists": [{ "name": "Discount", "link": "" }]
+    "lists": [{ "name": "Discount", "link": "/discount" }]
   },
   {
     "title": "Feedback",
-    "lists": [{ "name": "Feedback", "link": "" }]
+    "lists": [{ "name": "Feedback", "link": "/feedback" }]
+  },
+  {
+    "title": "User Management",
+    "lists": [
+      { "name": "Role", "link": "/role" },
+      { "name": "List Admin", "link": "/list-admin" }
+    ]
   }
 ]

@@ -1,4 +1,6 @@
 <template>
+  <Button variant="primary" @click="getEvents">Refresh</Button>
+
   <template v-if="onError">
     <EventError :handleClick="getEvents" />
   </template>
@@ -17,12 +19,14 @@ import { useStore } from 'vuex'
 import EventLiveStreamingItem from './EventLiveStreamingItem'
 import EventLoader from './EventLoader'
 import EventError from './EventError'
+import Button from '@common/Button'
 
 export default {
   components: {
     EventLiveStreamingItem,
     EventLoader,
     EventError,
+    Button,
   },
   setup() {
     const store = useStore()

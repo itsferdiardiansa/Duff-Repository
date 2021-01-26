@@ -4,11 +4,11 @@
       <tr>
         <td class="text-center">
           <template v-if="data.selectableRows && data.rowNumber">
-            <input 
-              type="checkbox" 
+            <input
+              type="checkbox"
               v-model="selectedRows"
-              :name="`select-row-${data.checkboxHashId}-key`" 
-              :value="key" 
+              :name="`select-row-${data.checkboxHashId}-key`"
+              :value="key"
             />
           </template>
           <template v-else>
@@ -22,8 +22,8 @@
       </tr>
     </template>
   </template>
-  <template v-else-if="!data.items.length && !data.isFetching">
-    <tr >
+  <template v-else-if="!data.items.length && !data.isLoading">
+    <tr>
       <td class="text-center" :colspan="totalColumn">
         <template v-if="!data.emptyDataComponent">
           <label class="italic" v-text="data.emptyTableMessage"></label>
@@ -42,12 +42,12 @@ export default {
   props: {
     data: {
       type: Object,
-      default: () => {}
+      default: () => {},
     },
     selected: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   setup(props) {
     const textColAlign = align => (align ? `text-${align}` : '')
@@ -60,15 +60,16 @@ export default {
 
     const totalColumn = computed(() => {
       const { headers, rowNumber } = props.data
-      
-      return headers.length + ((rowNumber) ? 1 : 0)
+
+      return headers.length + (rowNumber ? 1 : 0)
     })
 
+    console.log(props.data)
     return {
       textColAlign,
       selectedRows,
-      totalColumn
+      totalColumn,
     }
-  }
+  },
 }
 </script>

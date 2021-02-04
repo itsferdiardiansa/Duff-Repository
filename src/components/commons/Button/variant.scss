@@ -1,38 +1,45 @@
-@mixin childContent($color) {
-  svg,
-  i {
-    @apply #{$color} fill-current focus:outline-none;
+$variants: (
+  'light': (
+    'inverse': 'border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-gray-50',
+    'base': 'bg-light text-gray-600', 
+  ),
+  'primary': (
+    'inverse': 'border-blue-600 text-blue-800 hover:bg-primary hover:text-gray-50',
+    'base': 'bg-primary hover:bg-blue-800 text-gray-200', 
+  ),
+  'danger': (
+    'inverse': 'border-red-600 text-red-600 hover:bg-danger hover:text-gray-50',
+    'base': 'bg-danger hover:bg-red-800 text-gray-200',
+  ),
+  'warning': (
+    'inverse': 'border-yellow-600 text-yellow-600 hover:bg-warning hover:text-gray-50',
+    'base': 'bg-warning hover:bg-yellow-500 text-gray-100',
+  ),
+  'success': (
+    'inverse': 'border-green-600 text-green-600 hover:bg-success hover:text-gray-50',
+    'base': 'bg-success hover:bg-green-600 text-gray-200',
+  ),
+  'dark': (
+    'inverse': 'border-gray-600 text-gray-600 hover:bg-dark hover:text-gray-50',
+    'base': 'bg-dark hover:bg-gray-800 text-gray-200'
+  ),
+);
+
+@mixin mergeChildContent($selectorClass, $childColor: 'text-gray-100') {
+  #{$selectorClass} {
+    @content;
   }
 }
 
 @mixin variant {
-  &.primary {
-    @apply bg-primary hover:bg-blue-800 text-gray-200;
+  @each $key, $tailwindClass in $variants {
+    @include mergeChildContent('&--#{$key}') {
+      @apply #{map-get($tailwindClass, 'base')} fill-current focus:outline-none;
 
-    @include childContent(text-gray-200);
-  }
-
-  &.danger {
-    @apply bg-danger hover:bg-red-800 text-gray-200;
-
-    @include childContent(text-gray-200);
-  }
-
-  &.warning {
-    @apply bg-warning hover:bg-yellow-500 text-gray-800;
-
-    @include childContent(text-gray-800);
-  }
-
-  &.success {
-    @apply bg-success hover:bg-green-600 text-gray-200;
-
-    @include childContent(text-gray-200);
-  }
-
-  &.dark {
-    @apply bg-dark hover:bg-gray-800 text-gray-200;
-
-    @include childContent(text-gray-200);
+      &-inverse {
+        @apply bg-transparent border #{map-get($tailwindClass, 'inverse')};
+      }
+    }
+    // @debug 'key: #{$key}, variant #{$tailwindClass}';
   }
 }

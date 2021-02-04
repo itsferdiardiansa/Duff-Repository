@@ -5,7 +5,6 @@
         :data-title="data.path"
         size="sm"
         title="Edit"
-        @click="handleClick(data)"
       >
         <img svg-inline class="w-3" src="@icon/pencil.svg" />
       </Button>
@@ -14,6 +13,7 @@
       <Button
         :data-title="data.path"
         :textBold="true"
+        @click="toggleClick"
         size="sm"
         variant="danger"
       >
@@ -34,6 +34,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    toggleClick: {
+      type: Function,
+      default: () => {}
+    }
   },
   setup() {
     const handleClick = data => {

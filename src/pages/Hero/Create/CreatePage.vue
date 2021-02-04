@@ -1,59 +1,98 @@
 <template>
   <div class="create-form">
     <Card class="p-4">
-      <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-        <div class="form-group">
-          <label class="form-control-label" for="grid-first-name">
-            Title
-          </label>
-          <input class="form-control" type="text" placeholder="Title" />
-        </div>
+      <form class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2" @submit.prevent="submitData">
+        <FormInput 
+          label="Title"
+          placeholder="Title" 
+          v-model="state.title"
+        />
 
-        <div class="form-group">
-          <label class="form-control-label" for="grid-first-name"> URL </label>
-          <input class="form-control" type="text" placeholder="URL" />
-        </div>
+        <FormInput 
+          label="URL"
+          placeholder="URL"
+          v-model="state.button_url" 
+        />
 
-        <div class="form-group">
-          <label class="form-control-label" for="grid-first-name">
-            Banner (1080x240)
-          </label>
-          <input class="w-full" type="file" />
-        </div>
+        <FormInput 
+          label="Banner (1080x240)"
+          type="file"
+          name="banner"
+          @change="handleFileInput"
+        />
 
-        <div class="form-group">
-          <label class="form-control-label" for="grid-first-name">
-            Mobile Banner (360x160)
-          </label>
-          <input class="w-full" type="file" />
-        </div>
+         <FormInput 
+          label="Mobile Banner (360x160)"
+          type="file"
+          name="banner_mobile"
+          @change="handleFileInput"
+        />
 
-        <div class="form-group">
-          <label class="form-control-label" for="grid-first-name">
-            Status
-          </label>
-          <div class="w-full flex items-center">
-            <input type="checkbox" id="checkbox" />
-            <label class="ml-2" for="checkbox">Active</label>
-          </div>
-        </div>
+        <!-- <FormInput 
+          label="Status"
+          labelCheckbox="Active"
+          type="checkbox"
+        /> -->
 
         <div style="margin-left: 20%">
-          <Button label="Save" variant="dark" />
+          <Button 
+            label="Save" 
+            variant="dark"
+            :icon="['fa', 'save']" 
+          />
         </div>
-      </div>
+      </form>
     </Card>
   </div>
 </template>
 <script>
+import { reactive } from 'vue'
 import Card from '@common/Card'
 import Button from '@common/Button'
+import FormInput from '@common/Form/Input'
+import { useStore } from 'vuex'
+
+const toBase64 = file => new Promise((resolve, reject) => {
+  const reader = new FileReader()
+  reader.readAsDataURL(file)
+  reader.onload = () => resolve(reader.result)
+  reader.onerror = error => reject(error)
+})
 
 export default {
   components: {
     Card,
     Button,
+    FormInput
   },
+  setup() {
+    const store = useStore()
+
+    const state = reactive({
+      title: '',
+      button_url: '',
+      banner: '',
+      banner_mobile: ''
+    })
+
+    const submitData = () => {
+      store.dispatch('hero/postData', state)
+    }
+
+    const handleFileInput = async e => {
+      const name = e.target.name
+      const file = e.target.files[0]
+
+      state[name] = await btoa(toBase64(file))
+      // console.log(await toBase64(file))
+    }
+ 
+    return {
+      state,
+      submitData,
+      handleFileInput
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

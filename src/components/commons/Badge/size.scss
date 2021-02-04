@@ -1,9 +1,61 @@
 @mixin size {
-  &.sm {
-    @apply text-xs;
+  &--xs {
+    @apply h-6 text-xs px-2;
+    
+    &.dot {
+      @apply h-4;
+    }
+
+    svg {
+      @apply h-2.5;
+    }
   }
 
-  &.lg {
-    @apply text-base;
+  &--sm {
+    @apply h-7 text-sm px-2.5;
+
+    &.dot {
+      @apply h-5;
+    }
+
+    svg {
+      @apply h-3;
+    }
+  }
+
+  &--base {
+    @apply h-9 px-3;
+
+    &.dot {
+      @apply h-6;
+    }
+
+    svg {
+      @apply h-3.5;
+    }
+  }
+
+  &--lg {
+    @apply h-12 text-lg px-4;
+
+    &.dot {
+      @apply h-8;
+    }
+
+    svg {
+      @apply h-4;
+    }
+  }
+
+  &--xl {
+    @apply h-14 text-xl px-5;
+
+    &.dot {
+      @apply h-10;
+    }
+
+    svg {
+      @apply h-5 mr-2;
+    }
   }
 }

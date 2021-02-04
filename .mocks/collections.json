@@ -207,58 +207,64 @@
   },
   "announcement": {
     "status": true,
-    "result": [
-      {
-        "title": "Loket Ads",
-        "content": "Concert",
-        "link": "https://google.com",
-        "expired": "2020-03-31 13:00:00",
-        "status": {
-          "tier": true,
-          "role": "for public"
+    "result": {
+      "currentPage": 55,
+      "pageSize": 5,
+      "total": 100,
+      "items": [
+        {
+          "id": 313,
+          "title": "Loket Ads",
+          "content": "Concert",
+          "link": "https://google.com",
+          "expired": "2020-03-31 13:00:00",
+          "status": {
+            "tier": true,
+            "role": "for public"
+          }
+        },
+        {
+          "title": "Gojek Ads",
+          "content": "Cinema",
+          "link": "https://google.com",
+          "expired": "2020-03-31 13:00:00",
+          "status": {
+            "tier": true,
+            "role": "for public"
+          }
+        },
+        {
+          "title": "Facebook Ads",
+          "content": "Cinema",
+          "link": "https://google.com",
+          "expired": "2020-03-31 13:00:00",
+          "status": {
+            "tier": true,
+            "role": "for public"
+          }
+        },
+        {
+          "title": "Google Ads",
+          "content": "Cinema",
+          "link": "https://google.com",
+          "expired": "2020-03-31 13:00:00",
+          "status": {
+            "tier": false,
+            "role": "member only"
+          }
+        },
+        {
+          "title": "Apple Ads",
+          "content": "Cinema",
+          "link": "https://google.com",
+          "expired": "2020-03-31 13:00:00",
+          "status": {
+            "tier": true,
+            "role": "for public"
+          }
         }
-      },
-      {
-        "title": "Gojek Ads",
-        "content": "Cinema",
-        "link": "https://google.com",
-        "expired": "2020-03-31 13:00:00",
-        "status": {
-          "tier": true,
-          "role": "for public"
-        }
-      },
-      {
-        "title": "Facebook Ads",
-        "content": "Cinema",
-        "link": "https://google.com",
-        "expired": "2020-03-31 13:00:00",
-        "status": {
-          "tier": true,
-          "role": "for public"
-        }
-      },
-      {
-        "title": "Google Ads",
-        "content": "Cinema",
-        "link": "https://google.com",
-        "expired": "2020-03-31 13:00:00",
-        "status": {
-          "tier": false,
-          "role": "member only"
-        }
-      },
-      {
-        "title": "Apple Ads",
-        "content": "Cinema",
-        "link": "https://google.com",
-        "expired": "2020-03-31 13:00:00",
-        "status": {
-          "tier": true,
-          "role": "for public"
-        }
-      }
-    ]
+      ]
+    }
   },
   "url_redirection": {
     "status": true,

@@ -1,35 +1,19 @@
 <template>
   <div class="flex justify-center">
     <div class="mr-2">
-      <Button
-        :data-title="data.path"
-        size="sm"
-        variant="warning"
-        title="Edit"
-        @click="handleClick(data)"
-      >
-        <img svg-inline class="w-3" src="@icon/pencil.svg" />
-      </Button>
-    </div>
-    <div class="mr-2">
-      <Button
-        :data-title="data.path"
-        :textBold="true"
-        size="sm"
-        variant="danger"
+      <Button 
+        variant="dark"
+        size="sm" 
+        :bold="true"
+        @click="handleClick" 
       >
         <img svg-inline class="w-4 h-4" src="@icon/delete.svg" />
-      </Button>
-    </div>
-
-    <div>
-      <Button :data-title="data.path" size="sm" variant="dark">
-        <span>View</span>
       </Button>
     </div>
   </div>
 </template>
 <script>
+import { useStore } from 'vuex'
 import Button from '@common/Button'
 
 export default {
@@ -42,9 +26,13 @@ export default {
       default: () => {},
     },
   },
-  setup() {
-    const handleClick = data => {
-      console.log('Clicked ...', data)
+  setup(props) {
+    const store = useStore()
+
+    const handleClick = () => {
+      const { hash_id } = props.data
+
+      store.dispatch('thematicPage/deleteData', hash_id)
     }
 
     return {

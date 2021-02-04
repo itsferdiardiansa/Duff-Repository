@@ -15,6 +15,12 @@
         <img svg-inline class="w-4 h-4" src="@icon/delete.svg" />
       </Button>
     </div>
+
+    <div class="mr-2">
+      <Button :data-title="data.path" size="sm" variant="warning">
+        <a :href="data.site" target="_blank">View</a>
+      </Button>
+    </div>
   </div>
 </template>
 <script>

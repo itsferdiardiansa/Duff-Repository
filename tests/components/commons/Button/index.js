@@ -71,12 +71,4 @@ describe('Button component', () => {
       expect(Component.attributes().class).toContain(variant)
     }
   })
-
-  it('will clicked twice', async () => {
-    for (let i of [1, 2]) {
-      await Component.find('button').trigger('click')
-    }
-
-    expect(Component.emitted('click')).toHaveLength(2)
-  })
 })

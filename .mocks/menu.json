@@ -1,58 +1,70 @@
 [
   {
+    "lists": [
+      { "name": "Home", "link": "/home", "icon": ["fa", "home"] }
+    ]
+  },
+  {
     "title": "Content Manager",
     "lists": [
-      { "name": "Hero", "link": "/hero" },
+      { "name": "Hero", "link": "/hero", "icon": ["fa", "bullhorn"] },
       {
         "name": "Event Modules",
-        "link": "/event-modules",
-        "groups": [{ "name": "URL Redirection", "link": "/event-modules/url" }]
+        "link": "",
+        "icon": ["fa", "server"],
+        "children": [
+          { "name": "Tabs & Carousel", "link": "", "icon": ["fa", "server"] },
+          { "name": "Top Selling", "link": "", "icon": ["fa", "server"] },
+          { "name": "Top Selling Metabase", "link": "", "icon": ["fa", "server"] },
+          { "name": "Featured Event", "link": "", "icon": ["fa", "server"] }
+        ]
       },
-      { "name": "Thematic Page", "link": "/thematic-page" },
-      { "name": "URL Redirection", "link": "/url-redirection" },
-      { "name": "Hashtag", "link": "" },
-      { "name": "Loket Ads", "link": "/loket-ads" },
-      { "name": "Announcement", "link": "/announcement" },
-      { "name": "Partner", "link": "/partner" }
+      { "name": "Thematic Page", "link": "/thematic-page", "icon": ["fas", "file-alt"] },
+      { "name": "URL Redirection", "link": "", "icon": ["fa", "link"] },
+      { "name": "Hashtag", "link": "", "icon": ["fa", "hashtag"] },
+      { "name": "Loket Ads", "link": "", "icon": ["fa", "list"] },
+      { "name": "Announcement", "link": "", "icon": ["fa", "bell"] },
+      { "name": "Partner", "link": "/partner", "icon": ["fa", "users"] },
+      { "name": "Footer", "link": "/footer", "icon": ["fa", "paw"] }
     ]
   },
   {
     "title": "Live Streaming",
     "lists": [
-      { "name": "Event Live Streaming", "link": "" },
-      { "name": "Event Calender", "link": "" }
+      { "name": "Event Live Streaming", "link": "", "icon": ["fa", "tv"] },
+      { "name": "Event Calender", "link": "", "icon": ["fa", "calendar"] }
     ]
   },
   {
     "title": "Verification",
     "lists": [
-      { "name": "Verified User", "link": "/verified-user" },
-      { "name": "Verified Document", "link": "/verified-document" }
+      { "name": "Verified User", "link": "", "icon": ["fa", "check"] },
+      { "name": "Verified Document", "link": "", "icon": ["fa", "folder"] }
     ]
   },
   {
     "title": "Operations",
     "lists": [
-      { "name": "Event", "link": "/event" },
-      { "name": "Blacklist Word", "link": "/blacklist-word" },
-      { "name": "Blacklist Event", "link": "/blacklist-event" },
-      { "name": "Pivot Bank", "link": "/pivot-bank" },
-      { "name": "Failed Withdraw", "link": "/failed-withdraw" }
+      { "name": "Event", "link": "", "icon": ["fa", "clock"] },
+      { "name": "Blacklist Word", "link": "", "icon": ["fa", "bookmark"] },
+      { "name": "Blacklist Event", "link": "", "icon": ["fa", "exclamation-circle"] },
+      { "name": "Pivot Bank", "link": "", "icon": ["fa", "folder"] },
+      { "name": "Failed Withdraw", "link": "", "icon": ["fa", "file-csv"] }
     ]
   },
   {
     "title": "Discount",
-    "lists": [{ "name": "Discount", "link": "/discount" }]
+    "lists": [{ "name": "Discount", "link": "", "icon": ["fa", "money-bill"] }]
   },
   {
     "title": "Feedback",
-    "lists": [{ "name": "Feedback", "link": "/feedback" }]
+    "lists": [{ "name": "Feedback", "link": "/feedback", "icon": ["fa", "list-alt"] }]
   },
   {
     "title": "User Management",
     "lists": [
-      { "name": "Role", "link": "/role" },
-      { "name": "List Admin", "link": "/list-admin" }
+      { "name": "Role", "link": "/role", "icon": ["fa", "cog"] },
+      { "name": "List Admin", "link": "/list-admin", "icon": ["fa", "users"] }
     ]
   }
 ]

@@ -1,133 +1,129 @@
 <template>
-  <table>
-    <thead>
-      <TableHeadRow :data="allProps" :handleSelectAllRows="selectAllRows" />
-    </thead>
-    <tbody>
-      <template v-if="isLoading">
-        <TableSkeleton :col="totalColumn" :row="rowLoader" />
-      </template>
+  <TableFilter 
+    v-if="withFilter"
+    :data="filteredOptions"
+  />
 
-      <TableContent :data="allProps" :selected="selectedRows">
-        <template v-slot:content="props">
-          <td :class="textColAlign(props.headers.align)">
-            <slot :data="props.item" :name="props.headers.accessor">
-              {{ props.item[props.headers.accessor] }}
-            </slot>
-          </td>
-        </template>
-      </TableContent>
-    </tbody>
+  <table class="table-content">
+    <TableHead v-bind="{...$props}" :handleSelectAllRows="selectAllRows" :selectedRows="selectedRows" />
+    
+    <TableBody :data="$props" :selectedRows="selectedRows" @onFailedFetchHandler="handleFailedFetch">
+      <template #content="{data: { item, headers }}">
+        <slot :data="item" :name="headers.accessor" />
+      </template>
+    </TableBody>
   </table>
 
-  <template v-if="withPagination">
-    <Pagination />
+  <template v-if="showPagination">
+    <Pagination 
+      :data="getPagination"
+    />
   </template>
 </template>
 <script>
-import { computed, ref } from 'vue'
-import TableHeadRow from './TableHeadRow'
-import TableContent from './TableContent'
-import TableSkeleton from './TableSkeleton'
+import { computed, reactive, unref, watch } from 'vue'
+import TableHead from './components/TableHead'
+import TableBody from './components/TableBody'
+import TableFilter from './components/TableFilter'
 import Pagination from '@common/Pagination'
+import collectObjectKeys from '@util/collectObjectKeys'
+import defaultProps from './props'
+import usePagination from './hooks/usePagination'
 
 export default {
   components: {
-    TableHeadRow,
-    TableContent,
-    TableSkeleton,
+    TableHead,
+    TableBody,
     Pagination,
+    TableFilter
   },
-  props: {
-    headers: {
-      type: [Array],
-      default: () => [],
-    },
-    items: {
-      type: [Array],
-      default: () => [],
-    },
-    emptyTableMessage: {
-      type: String,
-      default: 'Data kosong',
-    },
-    rowNumber: {
-      type: Boolean,
-      default: true,
-    },
-    isLoading: {
-      type: Boolean,
-      default: false,
-    },
-    rowLoader: {
-      type: Number,
-      default: 5,
-    },
-    emptyDataComponent: {
-      type: Object,
-      default: () => {},
-    },
-    selectableRows: {
-      type: Boolean,
-      default: false,
-    },
-    withPagination: {
-      type: Boolean,
-      default: true,
-    },
-  },
-  setup(props) {
-    const textColAlign = align => (align ? `text-${align}` : '')
-    const selectedRows = ref([])
+  emits: [
+    'onSearchCallback',
+    'onSelectedRowCallback',
+    'onFailedFetchHandler'
+  ],
+  props: defaultProps,
+  setup(props, { emit }) {
+    const getProps = computed(() => ({...props}))
+    const selectedRows = reactive({
+      ids: [],
+      items: []
+    })
+
+    const { getPagination } = usePagination(getProps)
+
+    const showPagination = computed(() => {
+      const { withPagination, showLoader, items } = unref(getProps)
+
+      return (!showLoader && items.length && withPagination)
+    })
 
     const selectAllRows = e => {
       const { items } = props
+      
+      if(!e.target.checked) {
+        selectedRows.ids = [] 
 
-      if (!e.target.checked) return false
+        return false
+      }
 
-      selectedRows.value = items.map((item, key) => {
+      selectedRows.ids = items.map((item, key) => {
         return key
       })
     }
 
-    const totalColumn = computed(() => {
-      const { headers, rowNumber } = props
+    const filteredOptions = computed(() => {
+      let { filterOptions, items } = props
 
-      return headers.length + (rowNumber ? 1 : 0)
+      return filterOptions.length ? filterOptions : collectObjectKeys(items)
     })
 
-    const checkboxHashId = computed(() => {
-      return [
-        Math.floor(1000 + Math.random() * 9000),
-        Math.floor(10000 + Math.random() * 90000),
-      ].join('-')
-    })
+     watch(
+      () => selectedRows.ids,
+      (ids) => {
+        selectedRows.items = ids.map(item => {
+          return props.items[item]
+        })
+
+        emit('onSelectedRowCallback', selectedRows)
+      }
+    )
 
     return {
-      allProps: computed(() => ({ ...props, selectedRows })),
-      textColAlign,
-      totalColumn,
-      checkboxHashId,
       selectedRows,
       selectAllRows,
+      filteredOptions,
+      getPagination,
+      showPagination,
+      handleFailedFetch: () => alert('Fetch')
     }
   },
 }
 </script>
 <style lang="scss">
-table {
+.table-content {
   @apply w-full text-sm;
 
-  thead {
+  &__head {
     @apply text-center;
+  
+    th {
+      @apply uppercase leading-normal py-3 border-b-2 border-gray-700;
+    }
   }
 
-  th {
-    @apply uppercase leading-normal py-3 border-b-2 border-gray-700;
-  }
+  &__body {
+    &-row {
+      @apply hover:bg-blue-100 transition duration-500 ease-in-out;
 
-  td {
-    @apply text-gray-600 leading-normal relative py-3 break-all;
+      &.selected {
+        @apply bg-blue-100;
+      }
+    }
+
+    &-col {
+      @apply text-gray-600 leading-normal relative py-4 break-all text-center;
+    }
   }
 }
 </style>

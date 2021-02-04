@@ -1,17 +1,19 @@
 <template>
   <div class="container">
     <div class="wrapper">
+
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :isLoading="isFetching"
+        :showLoader="isFetching"
         :rowLoader="2"
       >
-        <template v-slot:roleName="{ data }">
-          <div>
-            <p class="mb-2">{{ data.roleName }}</p>
-            <p class="text-xs">{{ data.email }}</p>
-          </div>
+        <template #adminAccess="{ data: { is_super_admin } }">
+          <Badge 
+            :variant="getVariant(is_super_admin)"
+          >
+            {{ (is_super_admin) ? 'inactive' : 'active' }}
+          </Badge>
         </template>
 
         <template v-slot:action="{ data }">
@@ -22,15 +24,16 @@
   </div>
 </template>
 <script>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 import Table from '@common/Table'
-import data from '@mock/collections'
+import Badge from '@common/Badge'
 import ActionButton from './ActionButton'
 
 export default {
   components: {
     Table,
+    Badge,
     ActionButton,
   },
   setup() {
@@ -39,12 +42,13 @@ export default {
     let tHeaders = ref([
       {
         title: 'Role Name',
-        accessor: 'roleName',
+        accessor: 'name',
         width: '20%',
         align: 'left',
       },
-      { title: 'Previleges Role', accessor: 'previlagesRole', align: 'left' },
-      { title: 'Previleges Menu', accessor: 'previlagesMenu', align: 'left' },
+      { title: 'Email', accessor: 'email', align: 'left' },
+      { title: 'Admin Access', accessor: 'adminAccess' },
+      { title: 'Created at', accessor: 'created_at', align: 'left' },
       {
         title: 'Action',
         accessor: 'action',
@@ -53,18 +57,29 @@ export default {
       },
     ])
 
+    const getAdmin = () => {
+      store.dispatch('admin/fetchData')
+    }
+
     const filteredData = computed(() => {
-      return data.listAdmin.result
+      return store.getters['admin/getAdmin']
     })
 
     const isFetching = computed(() => {
-      return store.getters['thematicPage/getFetchStatus']
+      return store.getters['admin/getFetchStatus']
     })
+
+    const getVariant = status => (
+      (status) ? 'success' : 'warning'
+    )
+
+    onMounted(getAdmin)
 
     return {
       isFetching,
       filteredData,
       tHeaders,
+      getVariant
     }
   },
 }

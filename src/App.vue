@@ -1,9 +1,15 @@
 <template>
-  <router-view />
+  <AppWrapper>
+    <router-view />
+  </AppWrapper>
 </template>
 <script>
+import AppWrapper from '@lib/appWrapper'
+
 export default {
   name: 'App',
-  components: {},
+  components: {
+    AppWrapper
+  },
 }
 </script>

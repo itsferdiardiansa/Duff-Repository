@@ -132,6 +132,18 @@ const routes = [
     ],
   },
   {
+    path: '/footer',
+    name: 'Footer',
+    component: () => import('@page/Footer'),
+    children: [
+      {
+        path: 'footer-detail',
+        name: 'Footer Menu Detail',
+        component: () => import('@page/Partner/Create'),
+      },
+    ],
+  },
+  {
     path: '/verified-user',
     name: 'Verified User',
     component: () => import('@page/VerifiedUser'),
@@ -147,13 +159,6 @@ const routes = [
     path: '/verified-document',
     name: 'Verified Document',
     component: () => import('@page/VerifiedDocument'),
-    children: [
-      {
-        path: 'add',
-        name: 'Add Verified User',
-        component: () => import('@page/VerifiedUser/Add'),
-      },
-    ],
   },
   {
     path: '/event',

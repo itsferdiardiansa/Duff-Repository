@@ -1,14 +1,24 @@
 <template>
   <div class="container">
+    <Modal 
+      :isShow="isShow" 
+      :onConfirm="toggleModal" 
+      :onCancel="toggleModal" 
+    >
+      <template v-slot:body>
+        <p>This is confirmation message</p>
+      </template>
+    </Modal>
+
     <div class="wrapper">
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :isLoading="isFetching"
+        :showLoader="isFetching"
         :rowLoader="2"
       >
         <template v-slot:action="props">
-          <ActionButton :data="props.data" />
+          <ActionButton :data="props.data" :toggleClick="toggleModal" />
         </template>
       </Table>
     </div>
@@ -18,6 +28,7 @@
 import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
 import Table from '@common/Table'
+import Modal from '@common/Modal'
 import data from '@mock/collections'
 import ActionButton from './ActionButton'
 
@@ -25,9 +36,11 @@ export default {
   components: {
     Table,
     ActionButton,
+    Modal
   },
   setup() {
     const store = useStore()
+    const isShow = ref(false)
 
     let tHeaders = ref([
       {
@@ -54,10 +67,16 @@ export default {
       return store.getters['thematicPage/getFetchStatus']
     })
 
+    const toggleModal = () => {
+      isShow.value = !isShow.value
+    }
+
     return {
       isFetching,
       filteredData,
       tHeaders,
+      isShow,
+      toggleModal,
     }
   },
 }

@@ -7,8 +7,15 @@
     </div>
 
     <div class="btn-create float-right">
-      <Button :textBold="true" @click="addVerifiedUser" variant="primary">
-        Add Verified User
+      <Button 
+        variant="dark" 
+        :rounded="true"
+        :bold="true"
+        :disabled="true"
+        :icon="['fa', ]"
+        @click="addVerifiedUser"
+      > 
+        Add Verified Users
       </Button>
     </div>
   </div>

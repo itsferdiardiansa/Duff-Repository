@@ -2,7 +2,7 @@
   <div class="container">
     <Card>
       <div class="wrapper">
-        <ContentHeader />
+        <!-- <ContentHeader /> -->
 
         <div class="mt-2">
           <ContentLIst />
@@ -13,13 +13,13 @@
 </template>
 <script>
 import Card from '@common/Card'
-import ContentHeader from '@fragment/VerifiedDocument/Header'
+// import ContentHeader from '@fragment/VerifiedDocument/Header'
 import ContentLIst from '@fragment/VerifiedDocument/List'
 
 export default {
   components: {
     Card,
-    ContentHeader,
+    // ContentHeader,
     ContentLIst,
   },
 }

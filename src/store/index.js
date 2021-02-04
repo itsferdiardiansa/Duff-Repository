@@ -1,5 +1,4 @@
 import { createLogger, createStore } from 'vuex'
-import http from '@helper/http'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -19,11 +18,11 @@ files.keys().forEach(file => {
  *
  * @param {Object} store
  */
-const httpPlugins = store => {
-  store.$http = params => http.setup(params)
-}
+// const httpPlugins = store => {
+//   store.$http = params => http.setup(params)
+// }
 
-let _plugins = [httpPlugins]
+let _plugins = []
 
 if (!isProduction) _plugins.push(createLogger())
 

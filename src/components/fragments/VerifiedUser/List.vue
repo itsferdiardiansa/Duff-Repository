@@ -5,8 +5,9 @@
         :headers="tHeaders"
         :items="filteredData"
         :emptyDataComponent="emptyDataComponent"
-        :isLoading="isFetching"
+        :showLoader="isFetching"
         :rowLoader="2"
+        @onSearchCallback="handleSearch"
       >
         <template v-slot:organizationName="props">
           <div class="flex">
@@ -75,11 +76,16 @@ export default {
 
     const emptyDataComponent = computed(() => EmptyData)
 
+    const handleSearch = e => {
+      console.log(e)
+    }
+
     return {
       isFetching,
       filteredData,
       tHeaders,
       emptyDataComponent,
+      handleSearch
     }
   },
 }

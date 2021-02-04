@@ -3,48 +3,62 @@
     <div class="wrapper">
       <Table
         :headers="tHeaders"
-        :items="filteredData"
+        :items="[]"
         :emptyDataComponent="emptyDataComponent"
-        :isLoading="isFetching"
+        :showLoader="requestStatus.fetch"
         :rowLoader="2"
+        :onFailedFetchHandler="getHero"
       >
-        <template v-slot:status="props">
-          <Badge
-            :textBold="true"
-            size="sm"
-            variant="danger"
-            shape="circle"
-            :label="props.data.status"
-          />
+        <template #banner="{ data }">
+          <img :src="data.banner" class="h-10 m-auto" />
         </template>
 
-        <template v-slot:order="props">
-          <OrderButton :data="props.data" />
+        <template #url="{ data }">
+          <a :href="data.button_url" target="_blank">{{ data.button_url }}</a>
         </template>
 
-        <template v-slot:action="props">
-          <ActionButton :data="props.data" />
+        <template #description="{ data }">
+          <div class="flex items-center">
+            <label class="mr-4">Color title: </label>
+            <div :style="{backgroundColor: data.title_color}" class="w-6 h-6 rounded border-gray-100 border"></div>
+          </div>
+
+          <div class="flex items-center">
+            <label class="mr-4">Color description: </label>
+            <div :style="{backgroundColor: data.description_color}" class="w-6 h-6 rounded border-gray-100 border"></div>
+          </div>
+        </template>
+
+        <template #status>
+          Actieve
+        </template>
+
+        <template #order="{ data }">
+          <OrderButton :data="data" />
+        </template>
+
+        <template #action="{ data }">
+          <ActionButton :data="data" />
         </template>
       </Table>
     </div>
   </div>
 </template>
 <script>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref, unref } from 'vue'
 import { useStore } from 'vuex'
 import Table from '@common/Table'
-import Badge from '@common/Badge'
-import EmptyData from './EmptyData'
+import { ErrorTable, EmptyTable } from '@common/Table'
+// import Badge from '@common/Badge'
 import ActionButton from './ActionButton'
 import OrderButton from './OrderButton'
-import data from '@mock/collections'
 
 export default {
   components: {
     Table,
     OrderButton,
     ActionButton,
-    Badge,
+    // Badge,
   },
   setup() {
     const store = useStore()
@@ -53,12 +67,13 @@ export default {
       {
         title: 'Title',
         accessor: 'title',
-        width: '30%',
         align: 'left',
       },
-      { title: 'URL', accessor: 'url', width: '10%', align: 'center' },
+      { title: 'Banner', accessor: 'banner', width: '10%' },
+      { title: 'Url', accessor: 'url' },
+      { title: 'Description', accessor: 'description', align: 'left' },
       { title: 'Order', accessor: 'order', width: '10%', align: 'center' },
-      { title: 'Status', accessor: 'status', width: '10%', align: 'center' },
+      { title: 'Status', accessor: 'status', width: '15%', align: 'center' },
       {
         title: 'Action',
         accessor: 'action',
@@ -68,18 +83,29 @@ export default {
       },
     ])
 
+    const getHero = () => {
+      store.dispatch('hero/fetchData')
+    }
+
     const filteredData = computed(() => {
-      return data.hero.result
+      return store.getters['hero/getHero']
     })
 
-    const isFetching = computed(() => {
-      return store.getters['thematicPage/getFetchStatus']
+    const requestStatus = computed(() => {
+      return store.getters['hero/getRequestStatus']
     })
 
-    const emptyDataComponent = computed(() => EmptyData)
+    const emptyDataComponent = computed(() => {
+      const request = unref(requestStatus)
+      
+      return (request.error.status) ? ErrorTable : EmptyTable
+    })
+
+    onMounted(getHero)
 
     return {
-      isFetching,
+      getHero,
+      requestStatus,
       filteredData,
       tHeaders,
       emptyDataComponent,

@@ -1,5 +1,5 @@
 const actions = {
-  async fetchEvents({ commit }) {
+  async fetchAnnouncement({ commit }) {
     let headers = new Headers()
 
     commit('fetchStart')

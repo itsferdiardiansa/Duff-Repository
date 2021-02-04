@@ -4,20 +4,23 @@
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :isLoading="isFetching"
+        :showLoader="isFetching"
         :rowLoader="2"
+        :selectableRows="true"
+        :pagination="paginationData"
+        @onSelectedRowCallback="handleSelectRow"
       >
-        <template v-slot:link="props">
+        <template #link="props">
           <a :href="props.data.link" target="_blank" class="underline"
             >Selengkapnya</a
           >
         </template>
 
-        <template v-slot:status="props">
+        <template #status="props">
           <Status :data="props.data.status" />
         </template>
 
-        <template v-slot:action="props">
+        <template #action="props">
           <ActionButton :data="props.data" />
         </template>
       </Table>
@@ -25,10 +28,9 @@
   </div>
 </template>
 <script>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 import Table from '@common/Table'
-import data from '@mock/collections'
 import ActionButton from './ActionButton'
 import Status from './Status'
 
@@ -46,9 +48,8 @@ export default {
         title: 'Title',
         accessor: 'title',
         width: '30%',
-        align: 'left',
       },
-      { title: 'Content', accessor: 'content', align: 'left' },
+      { title: 'Content', accessor: 'content' },
       { title: 'Link', accessor: 'link', align: 'center' },
       { title: 'Status', accessor: 'status', width: '9%', align: 'center' },
       { title: 'Expired', accessor: 'expired', align: 'center' },
@@ -60,18 +61,41 @@ export default {
       },
     ])
 
-    const filteredData = computed(() => {
-      return data.announcement.result
-    })
+    const getAnnouncement = () => {
+      store.dispatch('announcement/fetchData')
+    }
 
-    const isFetching = computed(() => {
-      return store.getters['thematicPage/getFetchStatus']
+    const filteredData = computed(() => (
+      store.getters['announcement/getAnnouncement']
+    ))
+
+    const paginationData = computed(() => (
+      store.getters['announcement/getPagination']
+    ))
+
+    const isFetching = computed(() => (
+      store.getters['announcement/getFetchStatus']
+    ))
+
+    const searchFilter = data => {
+      console.log(data, 'List')
+    }
+
+    const handleSelectRow = () => {
+      // console.log(data)
+    }
+
+    onMounted(() => {
+      getAnnouncement()
     })
 
     return {
       isFetching,
       filteredData,
+      paginationData,
       tHeaders,
+      searchFilter,
+      handleSelectRow
     }
   },
 }

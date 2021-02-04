@@ -4,7 +4,7 @@
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :isLoading="isFetching"
+        :showLoader="isFetching"
         :rowLoader="2"
       >
         <template v-slot:event_detail="props">

@@ -5,7 +5,7 @@
         :headers="tHeaders"
         :items="filteredData"
         :emptyDataComponent="emptyDataComponent"
-        :isLoading="isFetching"
+        :showLoader="isFetching"
         :rowLoader="2"
       >
         <template v-slot:imgThumb="props">

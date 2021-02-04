@@ -7,12 +7,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        default: colors.coolGray['200'],
+        default: colors.coolGray['100'],
+        light: colors.coolGray['200'],
         primary: colors.blue['600'],
         danger: colors.red['600'],
-        warning: colors.yellow['400'],
-        success: colors.green['500'],
-        dark: colors.coolGray['700'],
+        warning: colors.yellow['600'],
+        success: colors.green['600'],
+        dark: colors.coolGray['600'],
       },
     },
   },

@@ -4,20 +4,21 @@
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :isLoading="isFetching"
+        :showLoader="isFetching"
         :rowLoader="2"
+        :selectableRows="true"
       >
-        <template v-slot:link="props">
+        <template #link="props">
           <a :href="props.data.link" target="_blank" class="underline"
             >Selengkapnya</a
           >
         </template>
 
-        <template v-slot:status="props">
+        <template #status="props">
           <Status :data="props.data.status" />
         </template>
 
-        <template v-slot:action="props">
+        <template #action="props">
           <ActionButton :data="props.data" />
         </template>
       </Table>
@@ -71,7 +72,7 @@ export default {
     return {
       isFetching,
       filteredData,
-      tHeaders,
+      tHeaders
     }
   },
 }

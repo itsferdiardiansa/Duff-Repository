@@ -1,5 +1,5 @@
 const getters = {
-  getFetchStatus: state => state.isFetching,
+  getRequestStatus: state => ({fetch: state.isFetching, error: state.onError}),
   getThematicPage: state => state.items,
 }
 

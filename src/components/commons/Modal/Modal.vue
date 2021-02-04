@@ -3,7 +3,7 @@
     <div
       class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
     >
-      <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+      <div class="fixed inset-0 transition-opacity" aria-hidden="true" @click="onBlur">
         <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
       </div>
 
@@ -24,11 +24,15 @@
                 class="text-lg leading-6 font-medium text-gray-900"
                 id="modal-headline"
               >
-                <slot name="header"></slot>
+                <slot name="header">
+                  Confirmation
+                </slot>
               </h3>
 
               <div class="mt-2">
-                <slot name="body"></slot>
+                <slot name="body">
+                  This is confirmation message
+                </slot>
               </div>
             </div>
           </div>
@@ -38,10 +42,10 @@
           class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"
           v-if="withConfirmation"
         >
-          <button type="button" class="btn-confirm" @click="handleConfirm">
+          <button type="button" class="btn-confirm" @click="onConfirm">
             Yes
           </button>
-          <button type="button" class="btn-cancel" @click="toggleModal">
+          <button type="button" class="btn-cancel" @click="onCancel">
             No
           </button>
         </div>
@@ -50,8 +54,6 @@
   </div>
 </template>
 <script>
-import { ref } from 'vue'
-
 export default {
   props: {
     withConfirmation: {
@@ -62,29 +64,29 @@ export default {
       type: Function,
       default: () => {},
     },
-  },
-  setup(props) {
-    let isShow = ref(true)
-
-    const toggleModal = () => {
-      isShow.value = !isShow.value
+    onCancel: {
+      type: Function,
+      default: () => {},
+    },
+    isShow: {
+      type: Boolean,
+      default: false
     }
-
-    const handleConfirm = () => {
-      props.onConfirm()
+  },
+  setup(props,  a) {
+    const onBlur = () => {
+      console.log(props, a)
     }
 
     return {
-      isShow,
-      toggleModal,
-      handleConfirm,
+      onBlur
     }
   },
 }
 </script>
 <style lang="scss" scoped>
 .modal-body {
-  @apply inline-block align-bottom bg-white rounded-lg text-left;
+  @apply inline-block align-bottom bg-white rounded-lg text-left z-50;
   @apply overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full;
 
   .btn-confirm {

@@ -13,6 +13,11 @@ export const router = createRouter({
       redirect: '/hero',
       children: [...DashboardRoutes],
     },
+    {
+      path: '/ui-kit',
+      name: 'UI Kit',
+      component: () => import(/** webpackChunkName "lk-admin-ui-kit" */ '@page/UIKit')
+    }
   ],
 })
 

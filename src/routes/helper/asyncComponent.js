@@ -1,6 +1,6 @@
 import { nextTick } from 'vue'
 
-const DEFAULT_TITLE = 'CMS'
+const DEFAULT_TITLE = 'Admin'
 
 export default function asyncComponent(router) {
   /* eslint-disable no-unused-vars */

@@ -4,10 +4,10 @@
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :isLoading="isFetching"
+        :showLoader="isFetching"
         :rowLoader="2"
       >
-        <template v-slot:action="{ data }">
+        <template #action="{ data }">
           <ActionButton :data="data" />
         </template>
       </Table>
@@ -15,10 +15,9 @@
   </div>
 </template>
 <script>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 import Table from '@common/Table'
-import data from '@mock/collections'
 import ActionButton from './ActionButton'
 
 export default {
@@ -32,11 +31,10 @@ export default {
     let tHeaders = ref([
       {
         title: 'Role Name',
-        accessor: 'roleName',
-        width: '20%',
-        align: 'left',
+        accessor: 'name',
+        width: '20%'
       },
-      { title: 'Previleges Menu', accessor: 'previlagesMenu', align: 'left' },
+      { title: 'Created at', accessor: 'created_at' },
       {
         title: 'Action',
         accessor: 'action',
@@ -45,13 +43,19 @@ export default {
       },
     ])
 
+    const fetchData = () => {
+      store.dispatch('role/fetchRole')
+    }
+
     const filteredData = computed(() => {
-      return data.role.result
+      return store.getters['role/getRole']
     })
 
     const isFetching = computed(() => {
-      return store.getters['thematicPage/getFetchStatus']
+      return store.getters['role/getFetchStatus']
     })
+
+    onMounted(fetchData)
 
     return {
       isFetching,

@@ -4,48 +4,20 @@
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :isLoading="isFetching"
+        :showLoader="isFetching"
         :rowLoader="2"
       >
-        <template v-slot:eventName="{ data }">
-          <div>
-            <a :href="data.link" class="text-yellow-600 text-base">{{
-              data.title
-            }}</a>
-
-            <p class="text-xs">
-              creator: <span>{{ data.creator }}</span>
-            </p>
-          </div>
-        </template>
-
-        <template v-slot:discount="{ data }">
-          <div class="">
-            <p>
-              Percentage: <span>{{ data.discount.percentage }}</span>
-            </p>
-            <p>
-              Fixed: <span class="font-black">{{ data.discount.fixed }}</span>
-            </p>
-          </div>
-        </template>
-
-        <template v-slot:discountAmount="{ data }">
-          <p class="font-black">{{ data.discount.amount }}</p>
-        </template>
-
-        <template v-slot:action="props">
-          <ActionButton :data="props.data" />
+        <template #action="{ data }">
+          <ActionButton :data="data" />
         </template>
       </Table>
     </div>
   </div>
 </template>
 <script>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 import Table from '@common/Table'
-import data from '@mock/collections'
 import ActionButton from './ActionButton'
 
 export default {
@@ -75,13 +47,19 @@ export default {
       },
     ])
 
+    const getFeedback = () => {
+      store.dispatch('feedback/fetchData')
+    }
+
     const filteredData = computed(() => {
-      return data.feedback.result
+      return store.getters['feedback/getFeedback']
     })
 
     const isFetching = computed(() => {
-      return store.getters['thematicPage/getFetchStatus']
+      return store.getters['feedback/getFetchStatus']
     })
+
+    onMounted(getFeedback)
 
     return {
       isFetching,

@@ -5,10 +5,11 @@
         <h3 class="text-lg font-black">Page List</h3>
 
         <Button
-          :textBold="true"
-          @click="createThematicPage"
           label="Create Thematic Page"
           variant="primary"
+          :bold="true"
+          :icon="['fa', 'plus']"
+          @click="createThematicPage"
         />
       </div>
 
@@ -16,91 +17,73 @@
         :headers="tHeaders"
         :items="filteredThematic"
         :emptyDataComponent="emptyDataComponent"
-        :isLoading="isFetching"
+        :showLoader="requestStatus.fetch"
         :rowLoader="2"
-        :selectableRows="true"
+        :onFailedFetchHandler="getThematic"
       >
-        <template v-slot:status>
-          <div class="flex justify-center">
-            <Badge :textBold="true" size="sm" variant="dark" shape="circle">
-              Pending
-            </Badge>
+        <template #header_image="{data}">
+          <img :src="data.header_image" />
+        </template>
+
+        <template #header_image_mobile="{data}">
+          <img :src="data.header_image_mobile" />
+        </template>
+
+        <template #page_info="{data}">
+          <div class="text-left">
+            <h3 class="font-bold" v-text="data.header_text"></h3>
+            <p v-text="data.description_text"></p>
           </div>
         </template>
 
-        <template v-slot:thematic>
-          <Badge
-            :textBold="true"
-            size="sm"
-            variant="danger"
-            shape="circle"
-            label="active"
-          />
-        </template>
 
-        <template v-slot:action="props">
-          <ActionButton :data="props.data" />
+        <template #action="{data}">
+          <ActionButton :data="data" />
         </template>
       </Table>
-
-      <div
-        class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8 bg-gray-50"
-      ></div>
     </div>
   </div>
 </template>
 <script>
 import { onMounted, computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import Table from '@common/Table'
-import Badge from '@common/Badge'
+// import Badge from '@common/Badge'
 import Button from '@common/Button'
 import EmptyData from './EmptyData'
 import ActionButton from './ActionButton'
-import { useRouter } from 'vue-router'
 
 export default {
   components: {
     Table,
-    ActionButton,
-    Badge,
+    // Badge,
     Button,
+    ActionButton
   },
   setup() {
     const store = useStore()
     const router = useRouter()
 
     let tHeaders = ref([
-      {
-        title: 'Author',
-        accessor: 'updated_by',
-        width: '15%',
-        align: 'center',
-      },
-      { title: 'Token', accessor: 'hash_id', width: '10%', align: 'center' },
-      { title: 'Status', accessor: 'status', width: '10%', align: 'center' },
-      { title: 'Devices', accessor: 'hash_id', width: '10%', align: 'center' },
-      { title: 'Thematic', accessor: 'thematic', align: 'center' },
-      { title: 'Page Info', accessor: 'meta_title', width: '11%' },
+      { title: 'Banner', accessor: 'header_image', width: '10%' },
+      { title: 'Banner Mobile', accessor: 'header_image_mobile', width: '10%', align: 'center' },
+      { title: 'Thematic Name', accessor: 'name', width: '15%', align: 'center' },
+      { title: 'Page Info', accessor: 'meta_title' },
+      { title: 'Created At', accessor: 'created_at', width: '11%', align: 'center' },
       { title: 'Path', accessor: 'path', width: '11%', align: 'center' },
-      {
-        title: 'Action',
-        accessor: 'action',
-        colSpan: 3,
-        width: '25%',
-        align: 'center',
-      },
+      { title: 'Action', accessor: 'action', align: 'center' },
     ])
 
     const getThematic = () => {
-      store.dispatch('thematicPage/fetchThematicPage')
+      store.dispatch('thematicPage/fetchData')
     }
     const filteredThematic = computed(() => {
       return store.getters['thematicPage/getThematicPage']
     })
 
-    const isFetching = computed(() => {
-      return store.getters['thematicPage/getFetchStatus']
+     const requestStatus = computed(() => {
+      return store.getters['thematicPage/getRequestStatus']
     })
 
     const emptyDataComponent = computed(() => EmptyData)
@@ -109,14 +92,18 @@ export default {
       router.push('/thematic-page/create')
     }
 
+    const getPath = path => '/e/' +path
+
     onMounted(getThematic)
 
     return {
-      isFetching,
+      requestStatus,
       filteredThematic,
+      getThematic,
       tHeaders,
       emptyDataComponent,
       createThematicPage,
+      getPath
     }
   },
 }

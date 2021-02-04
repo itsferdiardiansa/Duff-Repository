@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div :class="`${prefixClass}-container`">
     <Card>
       <div class="wrapper">
         <ContentHeader />
@@ -22,6 +22,9 @@ export default {
     ContentHeader,
     ContentLIst,
   },
+  setup() {
+
+  }
 }
 </script>
 <style lang="scss" scoped>

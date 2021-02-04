@@ -3,15 +3,26 @@
     :class="customClass"
     :disabled="disabled"
     :title="title"
-    @click="handleClick($event)"
   >
-    <div class="btn-wrapper">
-      <slot>{{ label }}</slot>
+    <div :class="`${prefixClass}-button--wrapper`">
+      <template v-if="icon.length">
+        <div :class="`${prefixClass}-button--icon`">
+          <font-awesome-icon :icon="icon" />
+        </div>
+      </template>
+
+      <template v-if="hasSlot || label.length">
+        <div :class="[`${prefixClass}-button--label`, {'has-icon': icon.length}]">
+          <slot>
+            {{ label }}
+          </slot>
+        </div>
+      </template>
     </div>
   </button>
 </template>
 <script>
-import { computed } from 'vue'
+import { computed, getCurrentInstance } from 'vue'
 
 export default {
   props: {
@@ -23,15 +34,33 @@ export default {
       type: String,
       default: '',
     },
+    tooltip: {
+      type: String,
+      default: ''
+    },
+    inverse: {
+      type: Boolean,
+      default: false
+    },
     variant: {
       type: String,
-      default: '',
+      default: 'light',
+      validator: function(variant) {
+        return ~['primary', 'danger', 'warning', 'dark', 'success', 'light'].indexOf(variant)
+      }
     },
     size: {
       type: String,
-      default: '',
+      default: 'base',
+      validator: function(variant) {
+        return ~['xs', 'sm', 'base', 'lg', 'xl'].indexOf(variant)
+      }
     },
-    textBold: {
+    icon: {
+      type: Array,
+      default: () => []
+    },
+    bold: {
       type: Boolean,
       default: false,
     },
@@ -43,32 +72,57 @@ export default {
       type: Boolean,
       default: true,
     },
+    pill: {
+      type: Boolean,
+      default: false
+    }
   },
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
+    let root = getCurrentInstance()
+
+    const getVariantClass = (prefixBtnClass) => {
+      const { inverse, variant } = props 
+      let btnClass = `${prefixBtnClass}--${variant}`
+
+      if(inverse) btnClass += '-inverse'
+      
+      return btnClass
+    }
+
     const customClass = computed(() => {
-      let { variant, size, textBold, disabled, rounded } = props
-      let _class = ['btn']
+      const { data: { prefixClass } } = root
+      const { size, disabled, rounded, bold, pill } = props
+      const btnClass = prefixClass.concat('-button')
+      let _class = [btnClass]
 
-      _class.push(size)
+      _class.push(getVariantClass(btnClass))
 
-      if (variant) _class.push(variant)
+      if(size) _class.push(btnClass.concat('--' + size))
 
-      if (!rounded) _class.push('no-rounded')
+      if (bold) _class.push('text-bold')
 
-      if (textBold) _class.push('bold')
+      if(pill)
+        _class.push('pill')
+      else
+        if (!rounded) _class.push('no-rounded')
 
       if (disabled) _class.push('disabled')
 
-      return _class.join(' ').trim()
+      return [_class.join(' ')]
     })
 
     const handleClick = e => {
       emit('click', e)
     }
 
+    const hasSlot = computed(() => (
+      !!slots.default
+    ))
+
     return {
       customClass,
       handleClick,
+      hasSlot
     }
   },
 }
@@ -77,9 +131,9 @@ export default {
 @import './variant.scss';
 @import './size.scss';
 
-.btn {
-  @apply h-9 text-gray-50 focus:outline-none rounded px-3 transition duration-300;
-  @apply bg-gray-100 hover:bg-gray-300 text-gray-800 text-sm overflow-hidden whitespace-nowrap;
+.#{$prefixClass}-button {
+  @apply h-9 focus:outline-none rounded px-3 transition duration-300 relative;
+  @apply hover:bg-gray-300 text-gray-800 overflow-hidden whitespace-nowrap;
 
   @include variant;
 
@@ -89,16 +143,28 @@ export default {
     @apply rounded-none;
   }
 
-  &.bold {
+  &.pill {
+    @apply rounded-full;
+  }
+
+  &.text-bold {
     @apply font-bold;
   }
 
   &.disabled {
     @apply disabled:opacity-70 pointer-events-none;
   }
+  
+  &--wrapper {
+    @apply flex-grow-0 flex flex-wrap items-center justify-center;
+  }
 
-  &-wrapper {
-    @apply flex-grow-0 flex items-center justify-center;
+  &--label {
+    @apply pt-0.5;
+
+    &.has-icon {
+      @apply ml-2;
+    }
   }
 }
 </style>

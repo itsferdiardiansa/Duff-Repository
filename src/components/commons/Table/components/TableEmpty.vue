@@ -4,7 +4,7 @@
       <img svg-inline class="h-full w-full" src="@icon/empty.svg" />
     </div>
 
-    <label class="text-lg font-medium">Empty Data</label>
+    <label class="text-lg font-medium">No data found</label>
   </div>
 </template>
 <script>

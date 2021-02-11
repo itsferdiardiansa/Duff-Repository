@@ -1,0 +1,404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/Button will have a disabled attribute correctly 1`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--xl disabled"
+  disabled=""
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <div
+      class="lk-button--icon"
+    >
+      <font-awesome-icon-stub />
+    </div>
+    <div
+      class="lk-button--label has-icon"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a icon correctly 1`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--xl"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <div
+      class="lk-button--icon"
+    >
+      <font-awesome-icon-stub />
+    </div>
+    <div
+      class="lk-button--label has-icon"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a inverse variant color correctly 1`] = `
+<button
+  class="lk-button lk-button--primary-inverse lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a inverse variant color correctly 2`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a label correctly 1`] = `
+<button
+  class="lk-button lk-button--light lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a pill correctly 1`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--xl pill disabled"
+  disabled=""
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <div
+      class="lk-button--icon"
+    >
+      <font-awesome-icon-stub />
+    </div>
+    <div
+      class="lk-button--label has-icon"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a size correctly 1`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--xs"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a size correctly 2`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--sm"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a size correctly 3`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a size correctly 4`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--lg"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a size correctly 5`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--xl"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a text bold correctly 1`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--xl text-bold pill disabled"
+  disabled=""
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <div
+      class="lk-button--icon"
+    >
+      <font-awesome-icon-stub />
+    </div>
+    <div
+      class="lk-button--label has-icon"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a variant color correctly 1`] = `
+<button
+  class="lk-button lk-button--primary lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a variant color correctly 2`] = `
+<button
+  class="lk-button lk-button--danger lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a variant color correctly 3`] = `
+<button
+  class="lk-button lk-button--warning lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a variant color correctly 4`] = `
+<button
+  class="lk-button lk-button--dark lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will have a variant color correctly 5`] = `
+<button
+  class="lk-button lk-button--success lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <div
+      class="lk-button--label"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will not a rounded correctly 1`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--xl no-rounded disabled"
+  disabled=""
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <div
+      class="lk-button--icon"
+    >
+      <font-awesome-icon-stub />
+    </div>
+    <div
+      class="lk-button--label has-icon"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;
+
+exports[`common/Button will render and match snapshot 1`] = `
+<button
+  class="lk-button lk-button--light lk-button--base"
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <!--v-if-->
+    <!--v-if-->
+  </div>
+</button>
+`;
+
+exports[`common/Button will trigger click event correctly 1`] = `
+<button
+  class="lk-button lk-button--danger-inverse lk-button--xl text-bold pill disabled"
+  disabled=""
+>
+  <div
+    class="lk-button--wrapper"
+  >
+    <div
+      class="lk-button--icon"
+    >
+      <font-awesome-icon-stub />
+    </div>
+    <div
+      class="lk-button--label has-icon"
+    >
+      
+      This is common button
+      
+    </div>
+  </div>
+</button>
+`;

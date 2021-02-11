@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/Skeleton will render with specific height 1`] = `
+<span
+  class="lk-skeleton--rect"
+  style="border-radius: 4px; width: 200px; height: 2rem;"
+/>
+`;
+
+exports[`common/Skeleton will render with specific width 1`] = `
+<span
+  class="lk-skeleton--rect"
+  style="border-radius: 4px; width: 200px;"
+/>
+`;
+
+exports[`common/Skeleton will render without being rounded 1`] = `
+<span
+  class="lk-skeleton--rect"
+  style="border-radius: 0; width: 200px; height: 2rem;"
+/>
+`;
+
+exports[`common/Skeleton will renders ans math snapshot 1`] = `
+<span
+  class="lk-skeleton--rect"
+  style="border-radius: 4px;"
+/>
+`;

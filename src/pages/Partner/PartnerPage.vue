@@ -2,10 +2,10 @@
   <div class="container">
     <Card>
       <div class="wrapper">
-        <ContentHeader />
+        <!-- <ContentHeader /> -->
 
         <div class="mt-2">
-          <ContentLIst />
+          <ContentList />
         </div>
       </div>
     </Card>
@@ -13,14 +13,14 @@
 </template>
 <script>
 import Card from '@common/Card'
-import ContentHeader from '@fragment/Partner/Header'
-import ContentLIst from '@fragment/Partner/List'
+// import ContentHeader from '@fragment/Partner/Header'
+import ContentList from '@fragment/Partner/List'
 
 export default {
   components: {
     Card,
-    ContentHeader,
-    ContentLIst,
+    // ContentHeader,
+    ContentList,
   },
 }
 </script>

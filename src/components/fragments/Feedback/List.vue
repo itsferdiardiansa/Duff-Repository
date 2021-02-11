@@ -4,21 +4,21 @@
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :showLoader="isFetching"
-        :rowLoader="2"
+        :isFetching="requestStatus.fetch"
+        :onError="requestStatus.error.status"
       >
         <template #action="{ data }">
-          <ActionButton :data="data" />
+          <ActionButton :data="actionButtons" :item="data" /> 
         </template>
       </Table>
     </div>
   </div>
 </template>
 <script>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import { useStore } from 'vuex'
-import Table from '@common/Table'
-import ActionButton from './ActionButton'
+import Table, { ActionButton } from '@common/Table'
+// import ActionButton from './ActionButton'
 
 export default {
   components: {
@@ -28,17 +28,18 @@ export default {
   setup() {
     const store = useStore()
 
-    let tHeaders = ref([
+    const tHeaders = ref([
       {
         title: 'Email',
         accessor: 'email',
-        width: '20%',
+        width: '15%',
         align: 'left',
       },
-      { title: 'Name', accessor: 'name', width: '20%', align: 'left' },
-      { title: 'Page', accessor: 'page', align: 'center' },
-      { title: 'Section', accessor: 'section', align: 'center' },
-      { title: 'Rate', accessor: 'rate', align: 'center' },
+      { title: 'Name', accessor: 'name', width: '15%' },
+      { title: 'Page', accessor: 'page' },
+      { title: 'Section', accessor: 'section' },
+      { title: 'Responded by', accessor: 'responded_by' },
+      { title: 'Read by', accessor: 'read_by' },
       {
         title: 'Action',
         accessor: 'action',
@@ -47,24 +48,63 @@ export default {
       },
     ])
 
+    const actionButtons = reactive([
+      {
+        variant: 'dark',
+        icon: ['fa', 'marker'],
+        text: 'Mark as responded',
+        bold: true,
+        onClickFn: (e, data) => {
+          markAsResponded(e, data)
+        }
+      },
+      {
+        variant: 'dark',
+        icon: ['fa', 'bookmark'],
+        text: 'Mark as read',
+        inverse: true,
+        bold: true,
+        onClickFn: (e, data) => {
+          markAsRead(e, data)
+        }
+      }
+    ])
+
     const getFeedback = () => {
       store.dispatch('feedback/fetchData')
     }
 
+    const markAsResponded = (e, data) => {
+      store.dispatch('feedback/markAsResponded', {
+        data,
+        action: 'form.create',
+        status: 'success',
+      })
+    }
+
+    const markAsRead = (e, data) => {
+      store.dispatch('feedback/markAsRead', {
+        data,
+        action: 'form.create',
+        status: 'success',
+      })
+    }
+
     const filteredData = computed(() => {
-      return store.getters['feedback/getFeedback']
+      return store.getters['feedback/getItems']
     })
 
-    const isFetching = computed(() => {
-      return store.getters['feedback/getFetchStatus']
+    const requestStatus = computed(() => {
+      return store.getters['feedback/getRequestStatus']
     })
 
     onMounted(getFeedback)
 
     return {
-      isFetching,
+      requestStatus,
       filteredData,
       tHeaders,
+      actionButtons
     }
   },
 }

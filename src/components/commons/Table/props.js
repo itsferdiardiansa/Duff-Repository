@@ -7,7 +7,7 @@ export default {
     type: [Array],
     default: () => [],
   },
-  emptyTableMessage: {
+  emptyMessage: {
     type: String,
     default: 'Empty data',
   },
@@ -15,17 +15,25 @@ export default {
     type: Boolean,
     default: true,
   },
-  showLoader: {
+  isFetching: {
     type: Boolean,
     default: false,
+  },
+  onError: {
+    type: Boolean,
+    default: false
   },
   rowLoader: {
     type: Number,
     default: 5,
   },
-  emptyDataComponent: {
+  emptyComponent: {
     type: Object,
     default: () => {},
+  },
+  errorComponent: {
+    type: Object,
+    default: () => {}
   },
   onFailedFetchHandler: {
     type: Function,
@@ -49,7 +57,7 @@ export default {
   },
   withFilter: {
     type: Boolean,
-    default: true
+    default: false
   },
   filterOptions: {
     type: Array,

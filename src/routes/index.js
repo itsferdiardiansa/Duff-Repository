@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DashboardRoutes from './dashboard'
-import asyncComponent from './helper/asyncComponent'
-import MAIN_LAYOUT from '@layout/MainLayout'
+import setupRouter from './guard/setupRouter'
+import NotFoundPage from '@page/Error/404'
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -9,20 +9,29 @@ export const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: MAIN_LAYOUT,
+      component: () =>
+        import(/** webpackChunkName "layout.main" */ '@layout/MainLayout'),
       redirect: '/hero',
       children: [...DashboardRoutes],
     },
     {
-      path: '/ui-kit',
-      name: 'UI Kit',
-      component: () => import(/** webpackChunkName "lk-admin-ui-kit" */ '@page/UIKit')
-    }
+      name: 'Page Not Found',
+      path: '/:pathMatch(.*)*',
+      component: NotFoundPage,
+    },
   ],
 })
 
-export const setupRouter = app => {
-  asyncComponent(router)
+if (process.env.NODE_ENV === 'development')
+  router.addRoute({
+    path: '/ui-kit',
+    name: 'UI Kit',
+    component: () =>
+      import(/** webpackChunkName "lk-admin-ui-kit" */ '@page/UIKit'),
+  })
+
+export const createAppRouter = app => {
+  setupRouter(router, app)
 
   app.use(router)
 }

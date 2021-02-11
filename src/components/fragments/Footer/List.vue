@@ -1,12 +1,21 @@
 <template>
   <div class="container">
     <div class="wrapper">
+      <div class="py-6 flex justify-end items-center">
+        <Button
+          label="Add Group"
+          variant="primary"
+          :bold="true"
+          :icon="['fa', 'plus']"
+          @click="createFooter"
+        />
+      </div>
+
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :emptyDataComponent="emptyDataComponent"
-        :showLoader="requestStatus.fetch"
-        :rowLoader="2"
+        :isFetching="requestStatus.fetch"
+        :onError="requestStatus.error.status"
         :onFailedFetchHandler="getFooter"
       >
         <template #position="{ data }">
@@ -14,28 +23,38 @@
         </template>
 
         <template #action="{ data }">
-          <ActionButton :data="data" />
+          <ActionButton :data="actionButtons" :item="data" />
         </template>
       </Table>
     </div>
   </div>
+
+  <Modal
+    title="Delete confirmation"
+    description="Are you sure you want to delete this item?"
+    :onConfirmFn="deleteData"
+  />
 </template>
 <script>
-import { computed, onMounted, ref, unref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
-import Table from '@common/Table'
-import { ErrorTable, EmptyTable } from '@common/Table'
-import ActionButton from './ActionButton'
+import { useRouter } from 'vue-router'
+import Table, { ActionButton } from '@common/Table'
+import Modal from '@common/Modal'
+import Button from '@common/Button'
 
 export default {
   components: {
     Table,
     ActionButton,
+    Modal,
+    Button
   },
   setup() {
     const store = useStore()
-
-    let tHeaders = ref([
+    const router = useRouter()
+    
+    const tHeaders = ref([
       {
         title: 'Section Name',
         accessor: 'name',
@@ -54,6 +73,36 @@ export default {
       },
     ])
 
+    const actionButtons = ref([
+      {
+        icon: ['fa', 'pencil-alt'],
+        variant: 'dark',
+        onClickFn: (e, data) => {
+          router.push({ name: 'Update Footer', params: {data: JSON.stringify(data)} })
+        }
+      },
+      {
+        icon: ['fa', 'trash'],
+        variant: 'dark',
+        onClickFn: (e, data) => {
+          toggleModal(e, data)
+        }
+      },
+      {
+        icon: ['fa', 'plus'],
+        text: 'Add Menu',
+        bold: true, 
+        variant: 'dark',
+        onClickFn: (e, { hash_id }) => {
+          router.push({ name: 'Footer Detail List', params: { hash_id } })
+        }
+      }
+    ])
+
+    const toggleModal = (e, data) => {
+      self.$modal.show(data)
+    }
+
     const getFooter = () => {
       store.dispatch('footer/fetchData')
     }
@@ -66,15 +115,28 @@ export default {
       return store.getters['footer/getRequestStatus']
     })
 
-    const emptyDataComponent = computed(() => {
-      const request = unref(requestStatus)
-      
-      return (request.error.status) ? ErrorTable : EmptyTable
-    })
+    const deleteData = ({ hash_id }) => {
+      store.dispatch('footer/deleteData', {
+        hash_id,
+        action: 'form.delete',
+        status: 'success'
+      })
+    }
 
-    const getPosition = position => (
-      (position === "0") ? '1 - Left Position' : '2 - Center Position'
-    )
+    const getPosition = position => {
+      const list = [
+        {value: 0, text: 'Position Top'},
+        {value: 1, text: 'Position Right'},
+        {value: 2, text: 'Position Bottom'},
+        {value: 3, text: 'Position Left'}
+      ]
+
+      return list.find(item => item.value == position).text
+    }
+
+    const createFooter = () => {
+      router.push('/footer/create')
+    }
 
     onMounted(getFooter)
 
@@ -83,8 +145,10 @@ export default {
       requestStatus,
       filteredData,
       tHeaders,
-      emptyDataComponent,
-      getPosition
+      actionButtons,
+      getPosition,
+      deleteData,
+      createFooter
     }
   },
 }

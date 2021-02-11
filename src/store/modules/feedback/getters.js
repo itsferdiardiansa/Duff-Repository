@@ -1,6 +1,6 @@
 const getters = {
-  getFetchStatus: state => state.isFetching,
-  getFeedback: state => state.items,
+  getRequestStatus: state => ({fetch: state.isFetching, error: state.onError}),
+  getItems: state => state.items,
 }
 
 export default getters

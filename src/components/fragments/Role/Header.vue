@@ -1,15 +1,13 @@
 <template>
-  <div class="content-header flex items-center justify-between">
-    <div class="flex items-center">
-      <div class="title">
-        <h2 class="font-bold text-2xl">Role CMSLOKET</h2>
-      </div>
-    </div>
-
-    <div class="btn-create float-right">
-      <Button :textBold="true" @click="addRole" variant="primary">
-        Add Role
-      </Button>
+  <div class="content-header flex items-center justify-end">
+    <div class="btn-create">
+      <Button 
+        variant="primary"
+        label="Add Role"
+        :icon="['fa', 'plus']"
+        :bold="true" 
+        @click="addRole" 
+      />
     </div>
   </div>
 </template>

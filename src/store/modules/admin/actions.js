@@ -10,7 +10,7 @@ const actions = {
       
       commit('fetchSuccess', collections)
     } catch (error) { 
-      console.log(error)
+      commit('fetchFailed', error)
     }
   },
 }

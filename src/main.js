@@ -1,13 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { createApp } from 'vue'
 import App from './App.vue'
-import { setupRouter } from '@route'
+import { createAppRouter } from '@route'
 import store from '@store'
 import { FontAwesomeIcon } from '@plugin/fontAwesome'
-import '@style/index.scss'
 import AlertPlugin from '@plugin/alert'
+import '@style/index.scss'
 
 const app = createApp(App)
-
 
 app.use(AlertPlugin)
 
@@ -18,7 +18,7 @@ app.use(store)
 app.component('font-awesome-icon', FontAwesomeIcon)
 
 // Vue router
-setupRouter(app)
+createAppRouter(app)
 
 // Mount app
 app.mount('#app')

@@ -7,7 +7,12 @@
     </div>
 
     <div class="btn-create float-right">
-      <Button :textBold="true" @click="addAdmin" variant="primary">
+      <Button 
+        variant="primary"
+        :icon="['fa', 'plus']"
+        :bold="true" 
+        @click="addAdmin" 
+      >
         Add Admin
       </Button>
     </div>

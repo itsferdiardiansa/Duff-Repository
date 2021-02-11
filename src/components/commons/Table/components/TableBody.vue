@@ -1,12 +1,12 @@
 <template>
-  <tbody class="table-content__body">
-     <template v-if="data.showLoader">
+  <tbody :class="`${prefixClass}-table--body`">
+     <template v-if="data.isFetching">
       <TableSkeleton :col="totalColumn" :row="data.rowLoader" />
     </template>
 
     <TableContent :data="data" :selected="selectedRows" @onFailedFetchHandler="handleFailedFetch">
       <template #content="props">
-        <td class="table-content__body-col" :class="textColAlign(props.headers.align)">
+        <td :class="[`${prefixClass}-table--body-col`, textColAlign(props.headers.align)]">
           <slot name="content" :data="props">
             {{ props.item[props.headers.accessor] }}
           </slot>

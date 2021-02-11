@@ -6,11 +6,14 @@ const mutations = {
   fetchSuccess(state, payload) {
     state.isFetching = false
     state.onError = false
-    state.items = payload.result.data
+    state.items = payload?.result?.data
   },
-  fetchFailed(state) {
+  fetchFailed(state, payload) {
     state.isFetching = false
-    state.onError = true
+    state.onError = {
+      status: true,
+      data: payload
+    }
   },
 }
 

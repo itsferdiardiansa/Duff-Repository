@@ -1,63 +1,66 @@
 <template>
-  <div class="create-form">
-    <Card class="p-4">
-      <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-        <div class="form-group">
-          <label class="form-control-label" for="grid-first-name"> Name </label>
-          <input class="form-control" type="text" />
-        </div>
+  <Card class="w-full">
+    <Form>
+      <FormItem label="Name">
+        <Input placeholder="Name" v-model="state.form.name" autofocus />
+      </FormItem>
 
-        <div class="form-group">
-          <label class="form-control-label" for="grid-first-name">
-            Email
-          </label>
-          <input class="form-control" type="text" />
-        </div>
+      <FormItem label="Email">
+        <Input placeholder="Email" v-model="state.form.email" />
+      </FormItem>
 
-        <div class="form-group">
-          <label class="form-control-label" for="grid-first-name">
-            Status
-          </label>
-          <div class="w-full">
-            <select class="w-1/4 border py-2 px-4">
-              <option selected>Admin</option>
-              <option>Marketing</option>
-            </select>
-          </div>
-        </div>
+      <FormItem label="Role">
+        <Select
+          class="w-4/12"
+          v-model="state.form.status"
+          :items="state.statusList"
+        />
+      </FormItem>
 
-        <div style="margin-left: 20%">
-          <Button label="Create" variant="dark" />
-        </div>
-      </div>
-    </Card>
-  </div>
+      <FormItem>
+        <Button
+          type="submit"
+          variant="dark"
+          label="Create"
+          class="w-28"
+          :icon="['fa', 'save']"
+          :bold="true"
+        />
+      </FormItem>
+    </Form>
+  </Card>
 </template>
 <script>
+import { reactive } from 'vue'
 import Card from '@common/Card'
 import Button from '@common/Button'
+import Form, { FormItem, Input, Select } from '@common/Form'
 
 export default {
   components: {
     Card,
     Button,
+    Form,
+    FormItem,
+    Input,
+    Select,
+  },
+  setup() {
+    const state = reactive({
+      form: {
+        name: '',
+        email: '',
+        status: 1,
+      },
+      statusList: [
+        { value: 1, text: 'Admin' },
+        { value: 2, text: 'Marketing' },
+      ],
+    })
+
+    return {
+      state,
+    }
   },
 }
 </script>
-<style lang="scss" scoped>
-.create-form {
-  @apply w-full;
-
-  .form-group {
-    @apply flex items-center mb-6;
-
-    .form-control-label {
-      @apply w-1/4 block uppercase tracking-wide text-xs font-bold mb-2;
-    }
-
-    .form-control {
-      @apply w-full border rounded py-3 px-4;
-    }
-  }
-}
-</style>

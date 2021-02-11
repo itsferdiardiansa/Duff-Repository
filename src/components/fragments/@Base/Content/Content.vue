@@ -1,16 +1,14 @@
 <template>
-  <main class="content bg-gray-100">
-    <div class="page-content px-6 py-6 shadow-md bg-gray-50">
-      <div class="container">
-        <h3 class="text-2xl font-bold" v-text="contentTitle"></h3>
-      </div>
-    </div>
+  <main class="app-content">
+    <!-- <div class="app-content--header">
+      <h3>{{ contentTitle }}</h3>
+    </div> -->
 
-    <div class="p-6">
+    <div class="app-content--breadcrumb">
       <Breadcrumb :data="breadcrumbs" />
     </div>
 
-    <div class="h-full flex flex-row flex-wrap px-6">
+    <div class="app-content--main">
       <transition name="slide" mode="out-in" appear>
         <component :is="ChildComponent"></component>
       </transition>
@@ -18,6 +16,7 @@
   </main>
 </template>
 <script>
+/* eslint-disable vue/no-unused-components */
 import { computed, reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import Breadcrumb from '@common/Breadcrumb'
@@ -39,7 +38,7 @@ export default {
     })
 
     const ChildComponent = computed(() => {
-      return route.meta.components.default
+      return route.meta.components.render.default
     })
 
     const breadcrumbs = computed(() => {
@@ -56,9 +55,25 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.content {
-  margin-left: 225px;
-  margin-top: 55px;
-  text-align: left;
+.app-content {
+  @apply text-left bg-gray-100;
+  margin-left: $pageContentPaddingLeft;
+  margin-top: $pageContentPaddingTop;
+
+  &--header {
+    @apply px-6 py-6 shadow-md bg-gray-50;
+
+    h3 {
+      @apply text-2xl font-bold;
+    }
+  }
+
+  &--breadcrumb {
+    @apply p-6;
+  }
+
+  &--main {
+    @apply h-full flex flex-row flex-wrap px-6;
+  }
 }
 </style>

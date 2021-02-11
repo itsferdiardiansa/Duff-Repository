@@ -14,12 +14,46 @@ export default {
       data: params
     })
   },
+  update: params => {
+    return http.request({
+      url: `/thematic-page/${params.hash_id}`,
+      method: 'POST',
+      data: params
+    })
+  },
   delete: params => {
     return http.request({
-      url: `/thematic-page/${params}`,
+      url: `/thematic-page/${params.hash_id}`,
       method: 'DELETE',
       data: {
         name
+      }
+    })
+  },
+  detail: params => {
+    return http.request({
+      url: `/thematic-page/${params.hash_id}`,
+      method: 'GET',
+      params: {
+        params
+      }
+    })
+  },
+  createEvent: params => {
+    return http.request({
+      url: `/thematic-page/${params.hash_id}/event`,
+      method: 'POST',
+      data: {
+        params
+      }
+    }) 
+  },
+  deleteEvent: params => {
+    return http.request({
+      url: `/thematic-page/${params.hash_id}`,
+      method: 'DELETE',
+      data: {
+        params
       }
     })
   }

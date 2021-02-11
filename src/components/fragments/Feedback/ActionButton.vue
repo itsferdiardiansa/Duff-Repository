@@ -2,13 +2,11 @@
   <div class="flex justify-center">
     <div class="mr-2">
       <Button
-        :data-title="data.path"
         size="sm"
         variant="dark"
+        :icon="['fa', 'mark']"
         @click="handleClick(data)"
-      >
-        <img svg-inline class="w-3" src="@icon/pencil.svg" />
-      </Button>
+      />
     </div>
   </div>
 </template>

@@ -1,12 +1,17 @@
 <template>
   <div class="container">
     <div class="wrapper">
+      <Modal
+        title="Delete confirmation"
+        description="Are you sure you want to delete this item?"
+        :onConfirmFn="deleteData"
+      />
+
       <Table
         :headers="tHeaders"
-        :items="[]"
-        :emptyDataComponent="emptyDataComponent"
-        :showLoader="requestStatus.fetch"
-        :rowLoader="2"
+        :items="filteredData"
+        :isFetching="requestStatus.fetch"
+        :onError="requestStatus.error.status"
         :onFailedFetchHandler="getHero"
       >
         <template #banner="{ data }">
@@ -38,7 +43,7 @@
         </template>
 
         <template #action="{ data }">
-          <ActionButton :data="data" />
+          <ActionButton :data="actionButtons" :item="data" />
         </template>
       </Table>
     </div>
@@ -47,10 +52,10 @@
 <script>
 import { computed, onMounted, ref, unref } from 'vue'
 import { useStore } from 'vuex'
-import Table from '@common/Table'
+import Table, { ActionButton } from '@common/Table'
 import { ErrorTable, EmptyTable } from '@common/Table'
+import Modal from '@common/Modal'
 // import Badge from '@common/Badge'
-import ActionButton from './ActionButton'
 import OrderButton from './OrderButton'
 
 export default {
@@ -58,12 +63,13 @@ export default {
     Table,
     OrderButton,
     ActionButton,
+    Modal
     // Badge,
   },
   setup() {
     const store = useStore()
 
-    let tHeaders = ref([
+    const tHeaders = ref([
       {
         title: 'Title',
         accessor: 'title',
@@ -71,7 +77,7 @@ export default {
       },
       { title: 'Banner', accessor: 'banner', width: '10%' },
       { title: 'Url', accessor: 'url' },
-      { title: 'Description', accessor: 'description', align: 'left' },
+      { title: 'Description', accessor: 'description' },
       { title: 'Order', accessor: 'order', width: '10%', align: 'center' },
       { title: 'Status', accessor: 'status', width: '15%', align: 'center' },
       {
@@ -82,6 +88,27 @@ export default {
         align: 'center',
       },
     ])
+
+    const actionButtons = ref([
+      {
+        icon: ['fa', 'trash'],
+        variant: 'dark',
+        onClickFn: (e, data) => {
+          toggleModal(e, data)
+        }
+      }
+    ])
+
+    const toggleModal = (e, data) => {
+      self.$modal.show(data)
+    }
+
+    const deleteData = ({ hash_id }) => {
+      store.dispatch('hero/deleteData', {
+        hash_id,
+        action: 'form.delete',
+      })
+    }
 
     const getHero = () => {
       store.dispatch('hero/fetchData')
@@ -109,6 +136,8 @@ export default {
       filteredData,
       tHeaders,
       emptyDataComponent,
+      actionButtons,
+      deleteData
     }
   },
 }

@@ -1,5 +1,8 @@
 export default {
   isFetching: false,
-  onError: {}, 
+  onError: {
+    status: false,
+    data: {}
+  }, 
   items: []
 }

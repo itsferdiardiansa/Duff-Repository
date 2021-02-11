@@ -1,42 +1,34 @@
 const path = require('path')
-const setupEnv = require('./config/env/setupEnv')
+const setupEnv = require('./build/setupEnv')
+const createDevProxy = require('./build/createDevProxy')
+const globalEnv = setupEnv()
 
 function resolve(dir = '') {
   return path.resolve(__dirname, 'src', dir)
 }
 
-const root = process.cwd()
-const globalEnv = setupEnv()
-
 function setup(env) {
   return {
-    devServer: {
-      port: env.MP2_APP_PORT,
-      proxy: {
-        '^/api': {
-          target: 'http://localhost:8081',
-          changeOrigin: true,
-          secure: false,
-          pathRewrite: {'^/api': '/api'},
-          logLevel: 'debug' 
-        },
-      }
-    },
+    productionSourceMap: false,
+    devServer: createDevProxy(env),
     css: {
       loaderOptions: {
         scss: {
-          additionalData: `@import "./src/styles/_variables.scss";`
+          additionalData: `@import "./src/styles/_variables.scss";`,
         },
-      }
+      },
     },
     configureWebpack: {
       resolve: {
         alias: {
-          'vue$': require.resolve('vue/dist/vue.esm-browser.js'),
+          vue$: require.resolve('vue/dist/vue.esm-browser.js'),
           '@': resolve(),
           '@common': resolve('components/commons'),
+          '@base': resolve('components/fragments/@Base'),
           '@fragment': resolve('components/fragments'),
           '@layout': resolve('layouts'),
+          '@mixin': resolve('mixins'),
+          '@directive': resolve('directives'),
           '@page': resolve('pages'),
           '@route': resolve('routes'),
           '@store': resolve('store'),
@@ -53,17 +45,7 @@ function setup(env) {
     },
     chainWebpack: config => {
       config.plugin('define').tap(args => {
-        let _base = args[0]['process.env']
-        
-        args[0]['process.env'] = {
-          ..._base,
-          ...env
-        }
-        return args
-      })
-      
-      config.plugin('html').tap(args => {
-        args[0].title = JSON.parse(env.MP2_APP_TITLE)
+        args[0] = env
 
         return args
       })

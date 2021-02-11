@@ -1,8 +1,8 @@
 <template>
-  <div class="table-filter">
-    <div class="table-filter__category">
-      <label class="table-filter__title">Category</label>
-      <select class="table-filter__select" v-model="category">
+  <div :class="`${prefixClass}-table-filter`">
+    <div :class="`${prefixClass}-table-filter--category`">
+      <label :class="`${prefixClass}-table-filter--title`">Category</label>
+      <select :class="`${prefixClass}-table-filter--select`" v-model="category">
         <option value="">All</option>
         <template v-for="(item, key) in data" :key="key">
           <option :value="item" v-text="snakeToTitle(item)" v-if="item !== 'action'"></option>
@@ -10,8 +10,8 @@
       </select>
     </div>
 
-    <div class="table-filter__input-form form-group">
-      <input class="form-control" type="text" placeholder="Search or filter results" v-model="keyword" @keyup="handleInput" />
+    <div :class="`${prefixClass}-table-filter--input-form`">
+      <!-- <input class="form-control" type="text" placeholder="Search or filter results" v-model="keyword" @keyup="handleInput" /> -->
     </div>
   </div>
 </template>
@@ -56,14 +56,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.table-filter {
+.#{$prefixClass}-table-filter {
   @apply mb-2 flex items-center text-base text-gray-500 justify-between;
 
-  &__title {
+  &--title {
     @apply text-base mr-6 font-bold;  
   }
 
-  &__select {
+  &--select {
     @apply border h-10 px-3 capitalize;
 
     &:focus {
@@ -71,7 +71,7 @@ export default {
     }
   }
 
-  &__input-form {
+  &--input-form {
     @apply w-96;
   }
 

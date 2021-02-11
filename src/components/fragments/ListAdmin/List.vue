@@ -5,7 +5,8 @@
       <Table
         :headers="tHeaders"
         :items="filteredData"
-        :showLoader="isFetching"
+        :isFetching="requestStatus.fetch"
+        :onError="requestStatus.error.status"
         :rowLoader="2"
       >
         <template #adminAccess="{ data: { is_super_admin } }">
@@ -62,11 +63,11 @@ export default {
     }
 
     const filteredData = computed(() => {
-      return store.getters['admin/getAdmin']
+      return store.getters['admin/getItems']
     })
 
-    const isFetching = computed(() => {
-      return store.getters['admin/getFetchStatus']
+    const requestStatus = computed(() => {
+      return store.getters['admin/getRequestStatus']
     })
 
     const getVariant = status => (
@@ -76,7 +77,7 @@ export default {
     onMounted(getAdmin)
 
     return {
-      isFetching,
+      requestStatus,
       filteredData,
       tHeaders,
       getVariant

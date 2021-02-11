@@ -4,12 +4,16 @@
   </AppWrapper>
 </template>
 <script>
-import AppWrapper from '@lib/appWrapper'
+/* eslint-disable */
+import AppWrapper from '@base/AppWrapper'
+import LoadingComponent from '@fragment/@Base/Loading'
 
 export default {
-  name: 'App',
+  name: 'AppRoot',
   components: {
-    AppWrapper
+    AppWrapper,
+    LoadingComponent,
   },
+  setup() {},
 }
 </script>

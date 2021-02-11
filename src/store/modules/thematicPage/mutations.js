@@ -8,7 +8,7 @@ const mutations = {
   },
   fetchSuccess(state, payload) {
     state.isFetching = false
-    state.items = payload.result.data
+    state.items = payload?.result?.data
   },
   fetchFailed(state, payload) {
     state.isFetching = false

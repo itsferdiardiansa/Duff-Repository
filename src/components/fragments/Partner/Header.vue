@@ -7,9 +7,13 @@
     </div>
 
     <div class="btn-create float-right">
-      <Button :textBold="true" @click="createPArtner" variant="primary">
-        Create
-      </Button>
+      <Button 
+        variant="primary"
+        label="Create"
+        :bold="true"
+        :icon="['fa', 'plus']"
+        @click="createPArtner" 
+      />
     </div>
   </div>
 </template>

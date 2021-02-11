@@ -1,128 +1,219 @@
 <template>
-  <div class="create-form">
-    <Card class="p-4">
-      <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-        <div class="pb-6">
-          <h3 class="font-black text-2xl">Thematic Content</h3>
-        </div>
+  <Card class="w-full">
+    <Form 
+        class="w-10/12"
+        :isFetching="requestStatus.fetch" 
+        :onSubmitFn="handleSubmit"
+      >
+        <Section title="Thematic Content">
+          <template #content>
+            <FormItem label="Thematic Name">
+              <Input 
+                placeholder="Thematic Name"
+                v-model="state.form.name"
+                autofocus 
+              />
+            </FormItem>
 
-        <div>
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Thematic Name
-            </label>
-            <input class="form-control" type="text" placeholder="Title" />
-          </div>
+            <FormItem label="Header Text">
+              <Input 
+                placeholder="Header Text"
+                v-model="state.form.header_text"
+                reqiured
+              />
 
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Header Text
-            </label>
-            <input class="form-control" type="text" />
-          </div>
+              <ColorPicker 
+                :inline="false"
+                v-model="state.form.header_text_color"
+              />
+            </FormItem>
 
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Description Text
-            </label>
-            <textarea class="w-full form-control" rows="5"></textarea>
-          </div>
+            <FormItem label="Description">
+              <Textarea 
+                v-model="state.form.description_text" 
+              />
 
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Custom Content
-            </label>
-            <textarea class="w-full form-control" rows="5"></textarea>
-          </div>
-        </div>
-      </div>
+              <ColorPicker 
+                :inline="false"
+                v-model="state.form.description_text_color"
+              />
+            </FormItem>
 
-      <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-        <div class="py-6">
-          <h3 class="font-black text-2xl">Thematic Page Info</h3>
-        </div>
+            <FormItem label="Custom Content">
+              <Textarea 
+                v-model="state.form.custom_content" 
+              />
+            </FormItem>
+          </template>
+        </Section>
 
-        <div>
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Path URL
-            </label>
-            <input
-              class="form-control"
-              type="text"
-              placeholder="Path Thematic Page"
-            />
-          </div>
+        <Section title="Thematic Page Info">
+          <template #content>
+            <FormItem label="Meta Title">
+              <Input 
+                placeholder="Meta title"
+                v-model="state.form.meta_title"
+                autofocus 
+              />
+            </FormItem>
 
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Meta Title
-            </label>
-            <input
-              class="form-control"
-              type="text"
-              placeholder="Blog Meta Keyword"
-            />
-          </div>
+            <FormItem label="Path">
+              <Input 
+                placeholder="Path"
+                v-model="state.form.path"
+                autofocus 
+              />
+            </FormItem>
 
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Custom Footer
-            </label>
-            <div class="w-full">
-              <select class="w-1/4 border py-2 px-4">
-                <option selected>Yes</option>
-                <option selected>No</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
+            <FormItem label="Custom Footer">
+              <Select 
+                class="w-28"
+                :items="[{value: '0', text: 'No'}, {value: '1', text: 'Yes'}]"
+                v-model="state.form.custom_footer"
+              />
+            </FormItem>
+          </template>
+        </Section>
 
-      <div class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-        <div class="py-6">
-          <h3 class="font-black text-2xl">Thematic Page Image</h3>
-        </div>
+        <Section title="Thematic Page Image">
+          <template #content>
+            <FormItem label="Header Image">
+              <Input 
+                type="file"
+                name="header_image"
+                @change="handleFileInput"
+              />
+            </FormItem>
 
-        <div>
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Desktop Banner
-            </label>
-            <input class="w-full" type="file" />
-          </div>
+            <FormItem label="Header Image Mobile">
+              <Input 
+                type="file"
+                name="header_image_mobile"
+                @change="handleFileInput"
+              />
+            </FormItem>
 
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Mobile Banner
-            </label>
-            <input class="w-full" type="file" />
-          </div>
+            <FormItem label="Footer Image">
+              <Input 
+                type="file"
+                name="custom_footer_image"
+                @change="handleFileInput"
+              />
+            </FormItem>
 
-          <div class="form-group">
-            <label class="form-control-label" for="grid-first-name">
-              Custom Footer
-            </label>
-            <input class="w-full" type="file" />
-          </div>
-
-          <div style="margin-left: 20%">
-            <Button label="Save" variant="dark" />
-          </div>
-        </div>
-      </div>
-    </Card>
-  </div>
+            <FormItem>
+              <Button 
+                class="w-28"
+                :label="isCreateForm ? 'Create': 'Update'" 
+                :variant="isCreateForm ? 'dark' : 'warning'"
+                :icon="['fa', 'save']"
+                :bold="true" 
+              />
+            </FormItem>
+          </template>
+        </Section>
+    </Form>
+  </Card>
 </template>
 <script>
+/* eslint-disable */
+import { reactive, ref, computed, unref, onMounted } from 'vue'
+import { useStore } from 'vuex'
+import { useRoute } from 'vue-router'
 import Card from '@common/Card'
+import Form, { FormItem, Input, Textarea, Select } from '@common/Form'
+import Section from '@common/Layout/Section'
 import Button from '@common/Button'
+import ColorPicker from '@common/ColorPicker'
+import { toBase64 } from '@util/imageProcessing'
 
 export default {
   components: {
     Card,
     Button,
+    Form, 
+    FormItem,
+    Input,
+    Textarea,
+    Select,
+    ColorPicker,
+    Section
   },
+  setup() {
+    const store = useStore()
+    const route = useRoute()
+    const isCreateForm = ref(true)
+    const state = reactive({
+      form: {
+        name: '',
+        header_image: '',
+        header_image_mobile: '', 
+        header_text: '',
+        header_text_color: '',
+        description_text: '',
+        description_text_color: '',
+        meta_title: '',
+        path: '',
+        custom_footer: "0",
+        custom_footer_image: '',
+        custom_content: ''
+      }
+    })
+    
+    const requestStatus = computed(() => {
+      return store.getters['thematicPage/getRequestStatus']
+    })
+
+    const handleSubmit = () => {
+      unref(isCreateForm) ? postData() : updateData()
+    }
+
+    const postData = () => {
+      store.dispatch('thematicPage/postData', {
+        data: unref(state.form),
+        action: 'form.create',
+        redirectUrl: '/thematic-page',
+        status: 'success',
+      })
+    }
+
+    const updateData = () => {
+      store.dispatch('thematicPage/updateData', {
+        data: unref(state.form),
+        action: 'form.update',
+        redirectUrl: '/thematic-page',
+        status: 'success',
+      })
+    }
+
+    const handleFileInput = async e => {
+      const name = e.target.name
+      const file = e.target.files[0]
+
+      state[name] = btoa(await toBase64(file))
+    }
+
+    onMounted(() => {
+      setTimeout(() => {
+        if(route.path === '/thematic-page/update') {
+          state.form = {
+            ...unref(state.form),
+            ...JSON.parse(route.params?.data)
+          }
+  
+          isCreateForm.value = false
+        }
+      }, 2000)
+    })
+
+    return {
+      state,
+      isCreateForm,
+      handleSubmit,
+      handleFileInput,
+      requestStatus
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

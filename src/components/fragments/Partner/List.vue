@@ -1,13 +1,28 @@
 <template>
   <div class="container">
     <div class="wrapper">
+      <Modal
+        title="Delete confirmation"
+        description="Are you sure you want to delete this item?"
+        :onConfirmFn="deleteData"
+      />
+
+      <div class="py-6 flex justify-end items-center">
+        <Button
+          label="Create Partner"
+          variant="primary"
+          :bold="true"
+          :icon="['fa', 'plus']"
+          @click="createPartner"
+        />
+      </div>
+
       <Table
         :headers="tHeaders"
-        :items="filteredData"
-        :emptyDataComponent="emptyDataComponent"
-        :showLoader="isFetching"
-        :rowLoader="2"
-        :selectableRows="true"
+        :items="filteredPartner"
+        :isFetching="requestStatus.fetch"
+        :onError="requestStatus.error.status"
+        :onFailedFetchHandler="fetchData"
       >
         <template #status="{ data }">
           <div class="flex items-center justify-center">
@@ -33,32 +48,37 @@
         </template>
 
         <template #action="{ data }">
-          <ActionButton :data="data" />
+          <ActionButton :data="actionButtons" :item="data" />
         </template>
       </Table>
     </div>
   </div>
 </template>
 <script>
-import { computed, onMounted, ref } from 'vue'
+import { onMounted, computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import Table from '@common/Table'
+import Table, { ActionButton } from '@common/Table'
 import Badge from '@common/Badge'
+import Button from '@common/Button'
+import Modal from '@common/Modal'
 import EmptyData from './EmptyData'
-import ActionButton from './ActionButton'
 import OrderButton from './OrderButton'
 
 export default {
   components: {
     Table,
-    OrderButton,
-    ActionButton,
     Badge,
+    Button,
+    Modal,
+    ActionButton,
+    OrderButton
   },
   setup() {
     const store = useStore()
+    const router = useRouter()
 
-    let tHeaders = ref([
+    const tHeaders = ref([
       {
         title: 'Partner Name',
         accessor: 'name',
@@ -76,28 +96,61 @@ export default {
         align: 'center',
       },
     ])
+    
+    const actionButtons = ref([
+      {
+        icon: ['fa', 'trash'],
+        variant: 'dark',
+        onClickFn: (e, data) => {
+          toggleModal(e, data)
+        }
+      }
+    ])
 
-    const getPartner = () => {
-      store.dispatch('partner/fetchData')
+    const toggleModal = (e, data) => {
+      self.$modal.show(data)
     }
 
-    const filteredData = computed(() => {
+    const fetchData = () => {
+      store.dispatch('partner/fetchData')
+    }
+    const filteredPartner = computed(() => {
       return store.getters['partner/getPartner']
     })
 
-    const isFetching = computed(() => {
-      return store.getters['partner/getFetchStatus']
+    const deleteData = ({ hash_id }) => {
+      store.dispatch('partner/deleteData', {
+        hash_id,
+        action: 'form.delete',
+        message: 'Succesfully delete',
+        status: 'success'
+      })
+    }
+
+     const requestStatus = computed(() => {
+      return store.getters['partner/getRequestStatus']
     })
 
     const emptyDataComponent = computed(() => EmptyData)
 
-    onMounted(getPartner)
+    const createPartner = () => {
+      router.push('/partner/create')
+    }
+
+    const getPath = path => '/e/' +path
+
+    onMounted(fetchData)
 
     return {
-      isFetching,
-      filteredData,
+      requestStatus,
+      filteredPartner,
+      fetchData,
       tHeaders,
       emptyDataComponent,
+      createPartner,
+      getPath,
+      actionButtons,
+      deleteData
     }
   },
 }

@@ -1,8 +1,12 @@
 <template>
-  <span class="loader" :style="customStyles"> </span>
+  <span
+    ref="skeletonRectEl"
+    :class="`${prefixClass}-skeleton--rect`"
+    :style="customStyles"
+  />
 </template>
 <script>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 export default {
   props: {
@@ -20,6 +24,8 @@ export default {
     },
   },
   setup(props) {
+    const skeletonRectEl = ref()
+
     const customStyles = computed(() => {
       let { width, height, rounded } = props
       let style = {}
@@ -34,6 +40,7 @@ export default {
     })
 
     return {
+      skeletonRectEl,
       customStyles,
     }
   },
@@ -49,7 +56,8 @@ export default {
     background-position: 300px center;
   }
 }
-.loader {
+
+.#{$prefixClass}-skeleton--rect {
   display: inline-block;
   height: 22px;
   width: 100%;

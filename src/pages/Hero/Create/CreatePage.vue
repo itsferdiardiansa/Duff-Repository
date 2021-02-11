@@ -1,55 +1,58 @@
 <template>
-  <div class="create-form">
-    <Card class="p-4">
-      <form class="px-8 pt-6 pb-8 mb-4 flex flex-col my-2" @submit.prevent="submitData">
-        <FormInput 
-          label="Title"
+  <Card class="w-full">
+    <Form
+      class="w-10/12"
+      :isFetching="requestStatus.fetch" 
+      :onSubmitFn="handleSubmit"
+    >
+      <FormItem label="Title">
+        <Input 
           placeholder="Title" 
           v-model="state.title"
         />
+      </FormItem>
 
-        <FormInput 
-          label="URL"
-          placeholder="URL"
-          v-model="state.button_url" 
+      <FormItem label="URL">
+        <Input 
+          placeholder="URL" 
+          v-model="state.button_url"
         />
+      </FormItem>
 
-        <FormInput 
-          label="Banner (1080x240)"
+      <FormItem label="Banner (1080x240)">
+        <Input 
           type="file"
           name="banner"
           @change="handleFileInput"
         />
+      </FormItem>
 
-         <FormInput 
-          label="Mobile Banner (360x160)"
+      <FormItem label="Mobile Banner (360x160)">
+        <Input 
           type="file"
           name="banner_mobile"
           @change="handleFileInput"
         />
+      </FormItem>
 
-        <!-- <FormInput 
-          label="Status"
-          labelCheckbox="Active"
-          type="checkbox"
-        /> -->
-
-        <div style="margin-left: 20%">
-          <Button 
-            label="Save" 
-            variant="dark"
-            :icon="['fa', 'save']" 
-          />
-        </div>
-      </form>
-    </Card>
-  </div>
+      <FormItem>
+        <Button 
+          type="submit"
+          variant="dark"
+          label="Create"
+          class="w-28"
+          :icon="['fa', 'save']"
+          :bold="true"
+        />
+      </FormItem>
+    </Form>
+  </Card>
 </template>
 <script>
-import { reactive } from 'vue'
+import { computed, reactive, unref } from 'vue'
 import Card from '@common/Card'
 import Button from '@common/Button'
-import FormInput from '@common/Form/Input'
+import Form, { FormItem, Input } from '@common/Form'
 import { useStore } from 'vuex'
 
 const toBase64 = file => new Promise((resolve, reject) => {
@@ -63,7 +66,9 @@ export default {
   components: {
     Card,
     Button,
-    FormInput
+    Form, 
+    FormItem, 
+    Input
   },
   setup() {
     const store = useStore()
@@ -75,8 +80,17 @@ export default {
       banner_mobile: ''
     })
 
-    const submitData = () => {
-      store.dispatch('hero/postData', state)
+    const requestStatus = computed(() => {
+      return store.getters['hero/getRequestStatus']
+    })
+
+    const handleSubmit = () => {
+      store.dispatch('hero/postData', {
+        data: unref(state),
+        action: 'form.create',
+        redirectUrl: '/hero',
+        status: 'success',
+      })
     }
 
     const handleFileInput = async e => {
@@ -84,31 +98,14 @@ export default {
       const file = e.target.files[0]
 
       state[name] = await btoa(toBase64(file))
-      // console.log(await toBase64(file))
     }
  
     return {
       state,
-      submitData,
-      handleFileInput
+      handleSubmit,
+      handleFileInput,
+      requestStatus
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-.create-form {
-  @apply w-full;
-
-  .form-group {
-    @apply flex items-center mb-6;
-
-    .form-control-label {
-      @apply w-1/4 block uppercase tracking-wide text-xs font-bold mb-2;
-    }
-
-    .form-control {
-      @apply w-full border rounded py-3 px-4;
-    }
-  }
-}
-</style>

@@ -13,16 +13,36 @@
     ]
   },
   "role": {
-    "result": [
-      {
-        "roleName": "admin hero",
-        "previlagesMenu": "Hero Menu, Section Menu"
-      },
-      {
-        "roleName": "LFB, SS Blog",
-        "previlagesMenu": "Blog Menu, Blog For Business"
+      "message": "Success Get Role",
+      "result": {
+          "data": [
+              {
+                  "created_at": "2018-11-05 15:14:21",
+                  "hash_id": "lx5qe0tm",
+                  "id": "2",
+                  "name": "LFB, SS Blog",
+                  "previlege": [
+                      {
+                          "created_at": "2018-11-05 15:14:21",
+                          "hash_id": "ppyp8ndc",
+                          "id": 5,
+                          "id_privilege": 601,
+                          "id_role": 2,
+                          "updated_at": "2018-11-05 15:14:21"
+                      },
+                      {
+                          "created_at": "2018-11-05 15:14:21",
+                          "hash_id": "svj357su",
+                          "id": 6,
+                          "id_privilege": 701,
+                          "id_role": 2,
+                          "updated_at": "2018-11-05 15:14:21"
+                      }
+                  ],
+                  "updated_at": "2018-11-05 15:14:21"
+              }
+          ]
       }
-    ]
   },
   "listAdmin": {
     "result": [

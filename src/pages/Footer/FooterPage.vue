@@ -3,7 +3,7 @@
     <Card>
       <div class="wrapper">
         <div class="mt-2">
-          <ContentLIst />
+          <ContentList />
         </div>
       </div>
     </Card>
@@ -11,12 +11,12 @@
 </template>
 <script>
 import Card from '@common/Card'
-import ContentLIst from '@fragment/Footer/List'
+import ContentList from '@fragment/Footer/List'
 
 export default {
   components: {
     Card,
-    ContentLIst,
+    ContentList,
   },
 }
 </script>

@@ -1,37 +1,22 @@
 <template>
-  <LayoutHeader />
-  <LayoutSideBar />
-  <LayoutContent />
+  <div class="app-container">
+    <LayoutHeader />
+    <LayoutSideBar />
+    <LayoutContent />
+  </div>
 </template>
 <script>
-import LayoutHeader from '@fragment/@Base/Header'
-import LayoutSideBar from '@fragment/@Base/Sidebar'
-import LayoutContent from '@fragment/@Base/Content'
+/* eslint-disable vue/no-unused-components */
+/* eslint-disable no-unused-vars */
+import LayoutHeader from '@base/Header'
+import LayoutSideBar from '@base/Sidebar'
+import LayoutContent from '@base/Content'
 
 export default {
   components: {
     LayoutHeader,
     LayoutSideBar,
-    LayoutContent
-  }
+    LayoutContent,
+  },
 }
 </script>
-<style lang="scss" scoped>
-.slide-leave-active,
-.slide-enter-active {
-  transition: 0.3s ease-in-out;
-}
-.slide-enter {
-  transform: translate(-100%, 0);
-}
-.slide-leave-to {
-  transform: translate(5%, 0);
-  opacity: 0;
-}
-
-.content {
-  margin-left: 225px;
-  margin-top: 55px;
-  text-align: left;
-}
-</style>

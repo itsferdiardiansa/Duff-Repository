@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div class="wrapper">
-      <div class="py-6 flex justify-between items-center">
-        <h3 class="text-lg font-black">Page List</h3>
-
+      <div class="py-6 flex justify-end items-center">
         <Button
           label="Create Thematic Page"
           variant="primary"
@@ -16,9 +14,8 @@
       <Table
         :headers="tHeaders"
         :items="filteredThematic"
-        :emptyDataComponent="emptyDataComponent"
-        :showLoader="requestStatus.fetch"
-        :rowLoader="2"
+        :isFetching="requestStatus.fetch"
+        :onError="requestStatus.error.status"
         :onFailedFetchHandler="getThematic"
       >
         <template #header_image="{data}">
@@ -37,35 +34,42 @@
         </template>
 
 
-        <template #action="{data}">
-          <ActionButton :data="data" />
+        <template #action="{ data }">
+          <ActionButton :data="actionButtons" :item="data" />
         </template>
       </Table>
     </div>
   </div>
+
+  <Modal
+    title="Delete confirmation"
+    description="Are you sure you want to delete this item?"
+    :onConfirmFn="deleteData"
+  />
 </template>
 <script>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, computed, ref, unref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import Table from '@common/Table'
+import Table, { ActionButton } from '@common/Table'
+import { ErrorTable, EmptyTable } from '@common/Table'
 // import Badge from '@common/Badge'
 import Button from '@common/Button'
-import EmptyData from './EmptyData'
-import ActionButton from './ActionButton'
+import Modal from '@common/Modal'
 
 export default {
   components: {
     Table,
     // Badge,
     Button,
+    Modal,
     ActionButton
   },
   setup() {
     const store = useStore()
     const router = useRouter()
 
-    let tHeaders = ref([
+    const tHeaders = ref([
       { title: 'Banner', accessor: 'header_image', width: '10%' },
       { title: 'Banner Mobile', accessor: 'header_image_mobile', width: '10%', align: 'center' },
       { title: 'Thematic Name', accessor: 'name', width: '15%', align: 'center' },
@@ -75,9 +79,39 @@ export default {
       { title: 'Action', accessor: 'action', align: 'center' },
     ])
 
+    const actionButtons = ref([
+      {
+        icon: ['fa', 'pencil-alt'],
+        variant: 'dark',
+        onClickFn: (e, data) => {
+          router.push({ name: 'Update Thematic Page', params: {data: JSON.stringify(data)} })
+        }
+      },
+      {
+        icon: ['fa', 'trash'],
+        variant: 'dark',
+        onClickFn: (e, data) => {
+          toggleModal(e, data)
+        }
+      }
+    ])
+
     const getThematic = () => {
       store.dispatch('thematicPage/fetchData')
     }
+
+    const toggleModal = (e, data) => {
+      self.$modal.show(data)
+    }
+    
+    const deleteData = ({ hash_id }) => {
+      store.dispatch('thematicPage/deleteData', {
+        hash_id,
+        action: 'form.delete',
+        status: 'success'
+      })
+    }
+
     const filteredThematic = computed(() => {
       return store.getters['thematicPage/getThematicPage']
     })
@@ -86,7 +120,11 @@ export default {
       return store.getters['thematicPage/getRequestStatus']
     })
 
-    const emptyDataComponent = computed(() => EmptyData)
+    const emptyDataComponent = computed(() => {
+      const request = unref(requestStatus)
+      
+      return (request.error.status) ? ErrorTable : EmptyTable
+    })
 
     const createThematicPage = () => {
       router.push('/thematic-page/create')
@@ -103,7 +141,9 @@ export default {
       tHeaders,
       emptyDataComponent,
       createThematicPage,
-      getPath
+      getPath,
+      actionButtons, 
+      deleteData
     }
   },
 }

@@ -1,0 +1,8 @@
+# Test
+__tests__/
+tests/
+
+# App Config
+build/
+tailwind.config.js
+vue.config.js

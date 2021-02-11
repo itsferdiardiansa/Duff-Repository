@@ -1,56 +1,57 @@
-
 import { createApp } from 'vue'
-import Alert from '@common/Alert'
+import Alert from './components/Alert'
 import globalSetting from '@plugin/globalSetting'
 import { FontAwesomeIcon } from '@plugin/fontAwesome'
 import Emitter from 'mitt'
+import uuid from '@util/uuid'
 
-const createElement = (rootContainer, app) => {
-  const root = rootContainer._container
+const createElement = () => {
+  const root = document.querySelector('#app')
   const div = document.createElement('div')
-  const uuid = `lk-alert-${app._component.__hmrId}-${new Date().getTime()}`
-
-  div.setAttribute('id', uuid)
+  const elementId = uuid('lk-alert')
+  
+  div.setAttribute('id', elementId)
 
   root.appendChild(div)
 
-  return uuid
+  return elementId
 }
 
-const AlertPlugin = {
-  install: (app) => {
-    if(app.config.globalProperties.$alert) 
-      return
-
-    let rootContainer
-    let appAlert
-    
-    const $alert = {
-      show: (...args) => {
-        let { $emitter } = appAlert._context.provides
-        
-        $emitter.emit('show-alert', ...args)
-      },
-      init: async () => {
+export const AlertPlugin = (app) => {
+  let rootContainer
+  let instance
+  
+  const $alert = {
+    show: (...args) => {
+      let { $emitter } = instance._context.provides
+      
+      $emitter.emit('show-alert', ...args)
+    },
+    init: async () => {
+      try {
         rootContainer = await app
-        appAlert = createApp(Alert)
+        instance = createApp(Alert)
         
-        const uuid = createElement(rootContainer, app)
+        const elementId = createElement(rootContainer, app)
         
-        appAlert.mixin(globalSetting)
+        instance.mixin(globalSetting)
         
-        appAlert.component('FontAwesomeIcon', FontAwesomeIcon)
+        instance.component('FontAwesomeIcon', FontAwesomeIcon)
         
-        appAlert.provide('$emitter', new Emitter())
+        instance.provide('$emitter', new Emitter())
 
-        appAlert.mount(`#${uuid}`)
+        instance.mount(`#${elementId}`)
+      } catch(error) {
+        console.error('We\'re failed to create alert', error)
       }
     }
-
-    $alert.init()
-
-    window.$alert = $alert
   }
+
+  $alert.init()
+
+  window.$alert = $alert
 }
 
-export default AlertPlugin
+export default {
+  install: AlertPlugin
+}

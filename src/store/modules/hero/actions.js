@@ -13,29 +13,57 @@ const actions = {
       commit('fetchFailed', error)
     }
   },
-  async postData({ commit }, params) {
+  async postData({ commit }, payload) {
     commit('fetchStart')
 
     try {
-      const response = await HeroService.create(params)
+      const response = await HeroService.create(payload.data)
       const collections = await response.data
-
-      console.log(collections)
+    
+      commit('fetchSuccess', {...payload, ...collections})
     } catch(error) {
-      commit('fetchFailed', error)
+      commit('fetchFailed', {
+        ...payload, 
+        status: 'failed', 
+        message: 'Failed to create data', 
+        error
+      })
     }
   },
-  async deleteData({ commit, dispatch }, params) {
+  async updateData({ commit }, payload) {
+    commit('fetchStart')
+
+    try {
+      const response = await HeroService.update(payload.data)
+      const collections = await response.data
+    
+      commit('fetchSuccess', {...payload, ...collections})
+    } catch(error) {
+      commit('fetchFailed', {
+        ...payload, 
+        status: 'failed', 
+        message: 'Failed to create data', 
+        error
+      })
+    }
+  },
+  async deleteData({ commit, dispatch }, payload) {
     commit('fetchStart')
     
     try {
-      const response = await HeroService.delete(params)
-      
-      await response.data
+      const response = await HeroService.delete(payload.hash_id)
+      const collections = await response.data
 
-      dispatch('fetchData')
+      commit('fetchSuccess', {...payload, ...collections})
     } catch(error) {
-      commit('fetchFailed', error)
+      commit('fetchFailed', {
+        ...payload, 
+        status: 'failed', 
+        message: 'Failed to delete data', 
+        error
+      })
+    } finally {
+      dispatch('fetchData')
     }
   }
 }

@@ -1,23 +1,26 @@
 <template>
-  <TableFilter 
-    v-if="withFilter"
-    :data="filteredOptions"
-  />
+  <TableFilter v-if="withFilter" :data="filteredOptions" />
 
-  <table class="table-content">
-    <TableHead v-bind="{...$props}" :handleSelectAllRows="selectAllRows" :selectedRows="selectedRows" />
-    
-    <TableBody :data="$props" :selectedRows="selectedRows" @onFailedFetchHandler="handleFailedFetch">
-      <template #content="{data: { item, headers }}">
+  <table :class="`${prefixClass}-table`">
+    <TableHead
+      v-bind="{ ...$props }"
+      :handleSelectAllRows="selectAllRows"
+      :selectedRows="selectedRows"
+    />
+
+    <TableBody
+      :data="$props"
+      :selectedRows="selectedRows"
+      @onFailedFetchHandler="handleFailedFetch"
+    >
+      <template #content="{ data: { item, headers } }">
         <slot :data="item" :name="headers.accessor" />
       </template>
     </TableBody>
   </table>
 
   <template v-if="showPagination">
-    <Pagination 
-      :data="getPagination"
-    />
+    <Pagination :data="getPagination" />
   </template>
 </template>
 <script>
@@ -26,7 +29,7 @@ import TableHead from './components/TableHead'
 import TableBody from './components/TableBody'
 import TableFilter from './components/TableFilter'
 import Pagination from '@common/Pagination'
-import collectObjectKeys from '@util/collectObjectKeys'
+import { collectObjectKeys } from '@util/object'
 import defaultProps from './props'
 import usePagination from './hooks/usePagination'
 
@@ -35,34 +38,30 @@ export default {
     TableHead,
     TableBody,
     Pagination,
-    TableFilter
+    TableFilter,
   },
-  emits: [
-    'onSearchCallback',
-    'onSelectedRowCallback',
-    'onFailedFetchHandler'
-  ],
+  emits: ['onSearchCallback', 'onSelectedRowCallback', 'onFailedFetchHandler'],
   props: defaultProps,
   setup(props, { emit }) {
-    const getProps = computed(() => ({...props}))
+    const getProps = computed(() => ({ ...props }))
     const selectedRows = reactive({
       ids: [],
-      items: []
+      items: [],
     })
 
     const { getPagination } = usePagination(getProps)
 
     const showPagination = computed(() => {
-      const { withPagination, showLoader, items } = unref(getProps)
+      const { withPagination, isFetching, items } = unref(getProps)
 
-      return (!showLoader && items.length && withPagination)
+      return !isFetching && items.length && withPagination
     })
 
     const selectAllRows = e => {
       const { items } = props
-      
-      if(!e.target.checked) {
-        selectedRows.ids = [] 
+
+      if (!e.target.checked) {
+        selectedRows.ids = []
 
         return false
       }
@@ -78,9 +77,9 @@ export default {
       return filterOptions.length ? filterOptions : collectObjectKeys(items)
     })
 
-     watch(
+    watch(
       () => selectedRows.ids,
-      (ids) => {
+      ids => {
         selectedRows.items = ids.map(item => {
           return props.items[item]
         })
@@ -95,24 +94,24 @@ export default {
       filteredOptions,
       getPagination,
       showPagination,
-      handleFailedFetch: () => alert('Fetch')
+      handleFailedFetch: () => alert('Fetch'),
     }
   },
 }
 </script>
 <style lang="scss">
-.table-content {
+.#{$prefixClass}-table {
   @apply w-full text-sm;
 
-  &__head {
+  &--head {
     @apply text-center;
-  
+
     th {
       @apply uppercase leading-normal py-3 border-b-2 border-gray-700;
     }
   }
 
-  &__body {
+  &--body {
     &-row {
       @apply hover:bg-blue-100 transition duration-500 ease-in-out;
 

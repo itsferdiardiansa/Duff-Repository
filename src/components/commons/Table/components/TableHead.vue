@@ -1,5 +1,5 @@
 <template>
-  <thead class="table-content__head">
+  <thead :class="`${prefixClass}-table--head`">
     <tr>
       <th width="4%">
         <template v-if="selectableRows">

@@ -1,24 +1,24 @@
 <template>
-  <aside class="sidebar animated faster">
+  <aside class="app-sidebar">
     <AppLogo />
 
-    <Menu>
-      <MenuList :data="menus" />
-    </Menu>
+    <LayoutMenu>
+      <ListMenu :data="menus" />
+    </LayoutMenu>
   </aside>
 </template>
 <script>
 import { ref } from 'vue'
 import AppLogo from './AppLogo'
-import Menu from './Menu'
-import MenuList from './MenuList'
+import LayoutMenu from './Menu'
+import ListMenu from './MenuList'
 import MenuCollections from '@mock/menu'
 
 export default {
   components: {
     AppLogo,
-    Menu,
-    MenuList,
+    LayoutMenu,
+    ListMenu,
   },
   setup() {
     let menus = ref(MenuCollections)
@@ -30,7 +30,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.sidebar {
+.app-sidebar {
   @apply w-64 z-50 max-h-full overflow-y-scroll;
   @apply md:fixed md:top-0 md:shadow-xl text-left;
 }

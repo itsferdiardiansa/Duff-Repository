@@ -1,51 +1,4 @@
-import NotFound from '@page/Error/404'
-import menuLists from '@mock/menu.json'
-
-function buildComponentDirectory(arr) {
-  return arr.join('/')
-}
-
-function buildRoute() {
-  let args = [].concat(...Array.prototype.slice.call(arguments)) || {}
-  let formatComponentName = name => {
-    return name.replace(/[^A-Z]/gi, '')
-  }
-
-  let result
-
-  this.filter(item => item.link).forEach(item => {
-    let children = []
-
-    /* eslint-disable no-unused-vars */
-    // let groups = []
-    let componentName = [formatComponentName(item.name)]
-
-    if (Object.hasOwnProperty.call(item, 'children')) {
-      children = buildRoute.call(item.children, { parent: componentName })
-    }
-
-    if (Object.hasOwnProperty.call(...args, 'parent')) {
-      let data = { ...args }
-
-      componentName.push(data[0].parent[0])
-    }
-
-    let _c = buildComponentDirectory(componentName.reverse())
-
-    result = {
-      path: item.link,
-      name: item.name,
-      component: () => import(`@page/${_c}`),
-      children,
-    }
-  })
-
-  return result
-}
-
-let adminRoutes = menuLists.map(item => {
-  return buildRoute.call(item.lists)
-})
+/* eslint-disable no-unused-vars */
 
 /**
  * A dashboard routes
@@ -54,197 +7,128 @@ const routes = [
   {
     path: '/hero',
     name: 'Hero',
-    component: () => import('@page/Hero'),
+    component: () => import(/* webpackChunkName: 'page.hero' */ '@page/Hero'),
     children: [
       {
         path: 'create',
         name: 'Create Hero',
-        component: () => import('@page/Hero/Create'),
+        component: () => import(/* webpackChunkName: 'page.hero.form' */ '@page/Hero/Create'),
       },
     ],
-  },
-  {
-    path: '/event-live-streaming',
-    name: 'Event Live Streaming',
-    component: () => import('@page/EventLiveStreaming'),
   },
   {
     path: '/thematic-page',
     name: 'Thematic Page',
-    component: () => import('@page/ThematicPage'),
-    meta: {
-      params: true,
-    },
+    component: () => import(/* webpackChunkName: 'page.thematic-page' */ '@page/ThematicPage'),
     children: [
       {
         path: 'create',
         name: 'Create Thematic Page',
-        component: () => import('@page/ThematicPage/Create'),
+        component: () => import(/* webpackChunkName: 'page.thematic-page.form' */ '@page/ThematicPage/Create'),
       },
-    ],
-  },
-  {
-    path: '/url-redirection',
-    name: 'URL Redirection',
-    component: () => import('@page/URLRedirection'),
-    children: [
       {
-        path: 'create',
-        name: 'Create URL Redirection',
-        component: () => import('@page/URLRedirection/Create'),
-      },
-    ],
-  },
-  {
-    path: '/loket-ads',
-    name: 'Loket Ads',
-    component: () => import('@page/LoketAds'),
-    children: [
-      {
-        path: 'create',
-        name: 'Create LoketADS',
-        component: () => import('@page/LoketAds/Create'),
-      },
-    ],
-  },
-  {
-    path: '/announcement',
-    name: 'Announcement',
-    component: () => import('@page/Announcement'),
-    children: [
-      {
-        path: 'create',
-        name: 'Create Announcement',
-        component: () => import('@page/Announcement/Create'),
+        path: 'update',
+        name: 'Update Thematic Page',
+        component: () => import(/* webpackChunkName: 'page.thematic-page.form' */ '@page/ThematicPage/Create'),
       },
     ],
   },
   {
     path: '/partner',
     name: 'Partner',
-    component: () => import('@page/Partner'),
+    component: () => import(/* webpackChunkName: 'page.partner' */ '@page/Partner'),
     children: [
       {
         path: 'create',
         name: 'Create Partner',
-        component: () => import('@page/Partner/Create'),
+        component: () => import(/* webpackChunkName: 'page.partner.form' */ '@page/Partner/Create'),
       },
     ],
   },
   {
     path: '/footer',
     name: 'Footer',
-    component: () => import('@page/Footer'),
+    component: () => import(/* webpackChunkName: 'page.partner' */ '@page/Footer'),
     children: [
       {
-        path: 'footer-detail',
-        name: 'Footer Menu Detail',
-        component: () => import('@page/Partner/Create'),
+        path: 'create',
+        name: 'Create Footer',
+        component: () => import(/* webpackChunkName: 'page.partner.form' */ '@page/Footer/FooterForm'),
       },
-    ],
-  },
-  {
-    path: '/verified-user',
-    name: 'Verified User',
-    component: () => import('@page/VerifiedUser'),
-    children: [
       {
-        path: 'add',
-        name: 'Add Verified User',
-        component: () => import('@page/VerifiedUser/Add'),
+        path: 'update',
+        name: 'Update Footer',
+        component: () => import(/* webpackChunkName: 'page.partner.form' */ '@page/Footer/FooterForm'),
       },
-    ],
-  },
-  {
-    path: '/verified-document',
-    name: 'Verified Document',
-    component: () => import('@page/VerifiedDocument'),
-  },
-  {
-    path: '/event',
-    name: 'Event',
-    component: () => import('@page/Event'),
-  },
-  {
-    path: '/blacklist-word',
-    name: 'Blacklist Word',
-    component: () => import('@page/BlacklistWord'),
-    children: [
       {
-        path: 'add',
-        name: 'Add Word',
-        component: () => import('@page/BlacklistWord/Add'),
-      },
-    ],
-  },
-  {
-    path: '/blacklist-event',
-    name: 'Blacklist Event',
-    component: () => import('@page/BlacklistEvent'),
-  },
-  {
-    path: '/pivot-bank',
-    name: 'Pivot Bank',
-    component: () => import('@page/PivotBank'),
-    children: [
-      {
-        path: 'add',
-        name: 'Add Pivot Bank',
-        component: () => import('@page/PivotBank/Add'),
-      },
-    ],
-  },
-  {
-    path: '/failed-withdraw',
-    name: 'Failed Withdraw',
-    component: () => import('@page/FailedWithdraw'),
-  },
-  {
-    path: '/discount',
-    name: 'Discount',
-    component: () => import('@page/Discount'),
-    children: [
-      {
-        path: 'add',
-        name: 'Add Discount',
-        component: () => import('@page/Discount/Add'),
+        path: 'list',
+        name: 'Footer Detail List',
+        component: () => import(/* webpackChunkName: 'page.partner.form' */ '@page/Footer/MenuList'),
+        children: [
+          {
+            path: 'create',
+            name: 'Create Footer Detail',
+            component: () => import(/* webpackChunkName: 'page.partner.form' */ '@page/Footer/FormDetail'),
+          },
+          {
+            path: 'update',
+            name: 'Update Footer Detail',
+            component: () => import(/* webpackChunkName: 'page.partner.form' */ '@page/Footer/FormDetail'),
+          },
+        ]
       },
     ],
   },
   {
     path: '/feedback',
     name: 'Feedback',
-    component: () => import('@page/Feedback'),
+    component: () => import(/* webpackChunkName: 'page.feedback' */ '@page/Feedback'),
   },
   {
     path: '/role',
     name: 'Role',
-    component: () => import('@page/Role'),
+    component: () => import(/* webpackChunkName: 'page.role' */ '@page/Role'),
     children: [
       {
         path: 'add',
         name: 'Add Role',
-        component: () => import('@page/Role/Add'),
+        component: () => import(/* webpackChunkName: 'page.role.form' */ '@page/Role/Add'),
+      },
+      {
+        path: 'update',
+        name: 'Update Role',
+        component: () => import(/* webpackChunkName: 'page.role.form' */ '@page/Role/Add'),
       },
     ],
   },
   {
     path: '/list-admin',
     name: 'List Admin',
-    component: () => import('@page/ListAdmin'),
+    component: () => import(/* webpackChunkName: 'page.admin' */ '@page/ListAdmin'),
     children: [
       {
         path: 'add',
         name: 'Add Admin',
-        component: () => import('@page/ListAdmin/Add'),
+        component: () => import(/* webpackChunkName: 'page.admin.form' */ '@page/ListAdmin/Add'),
       },
     ],
   },
   {
-    name: 'Page Not Found',
-    path: '/:pathMatch(.*)*',
-    component: NotFound,
-    props: {},
+    path: '/notification',
+    name: 'Notification',
+    component: () => import(/* webpackChunkName: 'page.notification' */ '@page/Notification'),
+    children: [
+      {
+        path: 'add',
+        name: 'Add Notification',
+        component: () => import(/* webpackChunkName: 'page.notification.form' */ '@page/Notification/Add'),
+      },
+      {
+        path: 'update',
+        name: 'Update Notification',
+        component: () => import(/* webpackChunkName: 'page.notification.form' */ '@page/Notification/Add'),
+      },
+    ],
   },
 ]
 

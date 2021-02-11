@@ -1,12 +1,11 @@
 <template>
-  <div
+  <span
     :class="customClass"
-    :title="title"
   >
     <div :class="`${prefixClass}-badge--wrapper`" v-if="!dot">
       <template v-if="icon.length">
         <div :class="`${prefixClass}-badge--icon`">
-          <font-awesome-icon :icon="icon" />
+          <font-awesome-icon :icon="icon" ref="iconEl" />
         </div>
       </template>
 
@@ -18,66 +17,18 @@
         </div>
       </template>
     </div>
-  </div>
+  </span>
 </template>
 <script>
-import { computed, getCurrentInstance } from 'vue'
+import { computed, getCurrentInstance, ref } from 'vue'
+import defaultProps from './props'
 
 export default {
-  props: {
-    label: {
-      type: String,
-      default: '',
-    },
-    title: {
-      type: String,
-      default: '',
-    },
-    tooltip: {
-      type: String,
-      default: ''
-    },
-    inverse: {
-      type: Boolean,
-      default: false
-    },
-    variant: {
-      type: String,
-      default: 'light',
-      validator: function(variant) {
-        return ~['primary', 'danger', 'warning', 'dark', 'success', 'light'].indexOf(variant)
-      }
-    },
-    size: {
-      type: String,
-      default: 'base',
-      validator: function(variant) {
-        return ~['xs', 'sm', 'base', 'lg', 'xl'].indexOf(variant)
-      }
-    },
-    icon: {
-      type: Array,
-      default: () => []
-    },
-    bold: {
-      type: Boolean,
-      default: true,
-    },
-    rounded: {
-      type: Boolean,
-      default: true,
-    },
-    pill: {
-      type: Boolean,
-      default: false
-    },
-    dot: {
-      type: Boolean,
-      default: false
-    }
-  },
+  name: 'CMBadge',
+  props: defaultProps,
   setup(props, { slots }) {
     let root = getCurrentInstance()
+    let iconEl = ref()
 
     const getVariantClass = (prefixBtnClass) => {
       const { inverse, variant } = props 
@@ -90,24 +41,24 @@ export default {
 
     const customClass = computed(() => {
       const { data: { prefixClass } } = root
-      const { size, rounded, bold, pill, dot, label } = props
+      const { size, rounded, bold, pill, dot } = props
       const btnClass = prefixClass.concat('-badge')
-      let _class = [btnClass]
+      let customClass = [btnClass]
 
-      _class.push(getVariantClass(btnClass))
+      customClass.push(getVariantClass(btnClass))
 
-      if(size) _class.push(btnClass.concat('--' + size))
+      if(size) customClass.push(btnClass.concat('--' + size))
 
-      if (bold) _class.push('text-bold')
+      if (bold) customClass.push('text-bold')
 
       if(pill)
-        _class.push('pill')
+        customClass.push('pill')
       else
-        if (!rounded) _class.push('no-rounded')
+        if (!rounded) customClass.push('no-rounded')
 
-      if(dot && (!hasSlot.value && !label.length)) _class.push('dot')
+      if(dot) customClass.push('dot')
 
-      return [_class.join(' ')]
+      return [customClass.join(' ')]
     })
 
     const hasSlot = computed(() => (
@@ -116,7 +67,8 @@ export default {
 
     return {
       customClass,
-      hasSlot
+      hasSlot,
+      iconEl
     }
   },
 }

@@ -1,8 +1,15 @@
 <template>
-  <template v-if="data.items.length && !data.showLoader">
+  <template v-if="data.onError && !data.isFetching">
+    <tr :ref="countDataRows">
+      <td :class="`${prefixClass}-table--body-col`" :colspan="totalColumn">
+        <component :is="getErrorComponent"></component>
+      </td>
+    </tr>
+  </template>
+  <template v-else-if="data.items.length && !data.isFetching">
     <template v-for="(item, key) in data.items" :key="key">
       <tr :class="getRowClass(key)" :ref="countDataRows">
-        <td class="table-content__body-col">
+        <td :class="`${prefixClass}-table--body-col`">
           <template v-if="data.selectableRows && data.rowNumber">
             <input
               type="checkbox"
@@ -23,21 +30,18 @@
       </tr>
     </template>
   </template>
-  <template v-else-if="!data.items.length && !data.showLoader">
+  <template v-else-if="!data.items.length && !data.isFetching">
     <tr :ref="countDataRows">
-      <td class="table-content__body-col" :colspan="totalColumn">
-        <template v-if="!data.emptyDataComponent">
-          <label class="italic" v-text="data.emptyTableMessage"></label>
-        </template>
-        <template v-else>
-          <component :is="data.emptyDataComponent"></component>
-        </template>
+      <td :class="`${prefixClass}-table--body-col`" :colspan="totalColumn">
+        <component :is="getEmptyCoponent"></component>
       </td>
     </tr>
   </template>
 </template> 
 <script>
 import { computed , defineComponent, ref } from 'vue'
+import errorComponentDefault from './TableError'
+import emptyComponentDefault from './TableEmpty'
 
 export default defineComponent({
   props: {
@@ -70,7 +74,7 @@ export default defineComponent({
 
     const checkboxHashId = computed(() => {
       return [
-        Math.floor(1000 + Math.random() * 9000),
+        new Date().getTime(),
         Math.floor(10000 + Math.random() * 90000),
       ].join('-')
     })
@@ -94,6 +98,18 @@ export default defineComponent({
       dataRows.value.push(el)
     }
 
+    const getErrorComponent = computed(() => {
+      const { data: { errorComponent } } = props
+      
+      return errorComponent || errorComponentDefault
+    })
+
+    const getEmptyCoponent = computed(() => {
+      const { data: { emptyComponent } } = props
+
+      return emptyComponent || emptyComponentDefault
+    })
+
     return {
       ...props,
       dataRows,
@@ -103,7 +119,9 @@ export default defineComponent({
       handleClick,
       getKey,
       getRowClass,
-      countDataRows
+      countDataRows,
+      getErrorComponent,
+      getEmptyCoponent
     }
   },
 })

@@ -1,32 +1,32 @@
-import { createStore } from 'vuex'
-import eventLiveStreaming from '@store/modules/eventLiveStreaming'
-import mockStore from '@mock/collections'
+// import { createStore } from 'vuex'
+// import eventLiveStreaming from '@store/modules/eventLiveStreaming'
+// import mockStore from '@mock/collections'
 
-let store
+// let store
 
-const httpPlugins = store => {
-  store.$http = params => mockStore.eventLiveStreaming
-}
+// const httpPlugins = store => {
+//   store.$http = params => mockStore.eventLiveStreaming
+// }
 
-const createStoreConfig = () => ({
-  modules: {
-    eventLiveStreaming,
-  },
-  plugins: [httpPlugins],
-})
+// const createStoreConfig = () => ({
+//   modules: {
+//     eventLiveStreaming,
+//   },
+//   plugins: [httpPlugins],
+// })
 
-beforeEach(() => {
-  const storeConfig = createStoreConfig()
+// beforeEach(() => {
+//   const storeConfig = createStoreConfig()
 
-  store = createStore(storeConfig)
-})
+//   store = createStore(storeConfig)
+// })
 
-describe('eventLiveStreaming module', () => {
-  it('fetch and return success', async () => {
-    await store.dispatch('eventLiveStreaming/fetchEvents')
+// describe('eventLiveStreaming module', () => {
+//   it('fetch and return success', async () => {
+//     await store.dispatch('eventLiveStreaming/fetchEvents')
 
-    expect(store.getters['eventLiveStreaming/getEvents']).toEqual(
-      mockStore.eventLiveStreaming.result.data
-    )
-  })
-})
+//     expect(store.getters['eventLiveStreaming/getEvents']).toEqual(
+//       mockStore.eventLiveStreaming.result.data
+//     )
+//   })
+// })

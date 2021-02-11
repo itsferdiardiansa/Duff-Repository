@@ -1,9 +1,9 @@
 @mixin size {
   &--xs {
-    @apply h-6 text-xs px-2;
+    @apply h-5 text-xs px-1;
     
     &.dot {
-      @apply h-4;
+      @apply h-2 rounded-full;
     }
 
     svg {
@@ -12,10 +12,10 @@
   }
 
   &--sm {
-    @apply h-7 text-sm px-2.5;
+    @apply h-7 text-sm px-1.5;
 
     &.dot {
-      @apply h-5;
+      @apply h-3 rounded-full;
     }
 
     svg {
@@ -24,10 +24,10 @@
   }
 
   &--base {
-    @apply h-9 px-3;
+    @apply h-9 px-2;
 
     &.dot {
-      @apply h-6;
+      @apply h-4 rounded-full;
     }
 
     svg {
@@ -36,10 +36,10 @@
   }
 
   &--lg {
-    @apply h-12 text-lg px-4;
+    @apply h-12 text-lg px-2.5;
 
     &.dot {
-      @apply h-8;
+      @apply h-5 rounded-full;
     }
 
     svg {
@@ -48,10 +48,10 @@
   }
 
   &--xl {
-    @apply h-14 text-xl px-5;
+    @apply h-14 text-xl px-3;
 
     &.dot {
-      @apply h-10;
+      @apply h-6 rounded-full;
     }
 
     svg {

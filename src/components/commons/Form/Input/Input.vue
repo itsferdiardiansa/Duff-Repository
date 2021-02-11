@@ -1,40 +1,33 @@
 <template>
-  <div :class="`${prefixClass}-form-control`">
-    <label 
-      :class="`${prefixClass}-form-control--label`"
-      v-if="label"
-    >
-      {{ label }}
-    </label>
-
-    <div class="w-full relative" :class="{'has-icon': icon.length, 'has-error': onError}">
-      <template v-if="icon.length">
+  <div :class="[`${prefixClass}-control--input`, {'has-icon': icon.length, 'has-error': onError}]">
+    <template v-if="icon.length">
+      <span class="icon">
         <font-awesome-icon :icon="icon" :class="`${prefixClass}-form-control--icon`" />
-      </template>
+      </span>
+    </template>
 
-      <input 
-        :class="`${prefixClass}-form-control--input`" 
-        :type="type"
-        :placeholder="placeholder"
-        :value="modelValue"
-        :id="getElUid"
-        v-bind="$attrs"
-        @keyup="handleChange" 
-        @change="$emit('change', $event)"
-        @input="$emit('update:modelValue', (type === 'checkbox') ? $event.target.checked : $event.target.value)"
-      />
+    <input 
+      :class="`${prefixClass}-input`" 
+      :type="type"
+      :placeholder="placeholder"
+      :value="modelValue"
+      :id="getElUid"
+      v-bind="$attrs"
+      @keyup="handleChange" 
+      @change="$emit('change', $event)"
+      @input="$emit('update:modelValue', (type === 'checkbox') ? $event.target.checked : $event.target.value)"
+    />
 
-      <label v-if="type === 'checkbox'" :for="getElUid">{{ labelCheckbox }}</label>
+    <label v-if="type === 'checkbox'" :for="getElUid">{{ labelCheckbox }}</label>
 
-      <template v-if="onError && errorMessage">
-        <span class="text-red-400 text-sm italic">{{ errorMessage }}</span>
-      </template>
-    </div>
+    <template v-if="onError && errorMessage">
+      <span class="text-red-400 text-sm italic">{{ errorMessage }}</span>
+    </template>
   </div>
 </template>
 <script>
 import debounce from '@util/debounce'
-import { computed, getCurrentInstance } from 'vue'
+import { computed, getCurrentInstance, ref } from 'vue'
 
 export default {
   emits: [
@@ -82,6 +75,8 @@ export default {
     }
   },
   setup(props) {
+    const inputEl = ref()
+
     const handleChange = debounce(e => {
       const { onChange } = props
 
@@ -95,49 +90,30 @@ export default {
     })
     return {
       handleChange,
-      getElUid
+      getElUid,
+      inputEl
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-.input-text {
-  @apply w-full rounded py-1 px-2 text-sm border-0;
-
-  &.large {
-    @apply h-10 text-lg;
+<style lang="scss">
+.#{$prefixClass}-control--input {
+  @apply relative;
+  
+  &.has-error {
+    input {
+      @apply border-red-400;
+    }
   }
 
-  &:focus {
-    @apply outline-none;
-  }
-}
-
-.#{$prefixClass}-form-control {
-  @apply flex items-center mb-6;
-
-  .has-icon {
-    .#{$prefixClass}-form-control--input {
+  &.has-icon {
+    input {
       @apply pl-10;
     }
   }
 
-  .has-error {
-    .#{$prefixClass}-form-control--input {
-      @apply border-red-400 mb-2;
-    }
-  }
-
-  &--label {
-    @apply w-1/4 block uppercase tracking-wide text-xs font-bold mb-2;
-  }
-
-  &--icon {
-    @apply h-4 absolute top-4 my-auto pl-4 text-gray-400 fill-current;
-  }
-
-  &--input {
-    @apply w-full border rounded py-3 px-4;
+  input {
+    @apply w-full border rounded py-1 px-4;
 
     &[type="file"] {
       @apply w-auto inline border-0 focus:outline-none px-0;
@@ -145,6 +121,14 @@ export default {
 
     &[type="checkbox"] {
       @apply w-auto inline mr-2;
+    }
+  }
+
+  .icon {
+    @apply absolute top-2.5 my-auto pl-4; 
+
+    svg {
+      @apply h-4 text-gray-400 fill-current;
     }
   }
 }

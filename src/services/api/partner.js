@@ -6,5 +6,28 @@ export default {
       url: '/partner/',
       params
     })
+  },
+  create: params => {
+    return http.request({
+      url: '/partner/',
+      method: 'POST',
+      data: params
+    })
+  },
+  update: params => {
+    return http.request({
+      url: `/partner/${params.hash_id}`,
+      method: 'POST',
+      data: params
+    })
+  },
+  delete: params => {
+    return http.request({
+      url: `/partner/${params}`,
+      method: 'DELETE',
+      data: {
+        name
+      }
+    })
   }
 }

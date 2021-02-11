@@ -1,7 +1,7 @@
 [
   {
     "lists": [
-      { "name": "Home", "link": "/home", "icon": ["fa", "home"] }
+      { "name": "Home", "link": "/", "icon": ["fa", "home"] }
     ]
   },
   {
@@ -25,7 +25,8 @@
       { "name": "Loket Ads", "link": "", "icon": ["fa", "list"] },
       { "name": "Announcement", "link": "", "icon": ["fa", "bell"] },
       { "name": "Partner", "link": "/partner", "icon": ["fa", "users"] },
-      { "name": "Footer", "link": "/footer", "icon": ["fa", "paw"] }
+      { "name": "Footer", "link": "/footer", "icon": ["fa", "paw"] },
+      { "name": "Notification", "link": "/notification", "icon": ["fa", "envelope"] }
     ]
   },
   {

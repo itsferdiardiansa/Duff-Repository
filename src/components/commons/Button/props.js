@@ -3,19 +3,29 @@ export default {
     type: String,
     default: '',
   },
-  title: {
-    type: String,
-    default: '',
+  inverse: {
+    type: Boolean,
+    default: false
   },
   variant: {
     type: String,
-    default: '',
+    default: 'light',
+    validator: function(variant) {
+      return ~['primary', 'danger', 'warning', 'dark', 'success', 'light'].indexOf(variant)
+    }
   },
   size: {
     type: String,
-    default: '',
+    default: 'base',
+    validator: function(variant) {
+      return ~['xs', 'sm', 'base', 'lg', 'xl'].indexOf(variant)
+    }
   },
-  textBold: {
+  icon: {
+    type: Array,
+    default: () => []
+  },
+  bold: {
     type: Boolean,
     default: false,
   },
@@ -26,5 +36,9 @@ export default {
   rounded: {
     type: Boolean,
     default: true,
+  },
+  pill: {
+    type: Boolean,
+    default: false
   },
 }

@@ -1,18 +1,16 @@
 <template>
-  <button
-    :class="customClass"
-    :disabled="disabled"
-    :title="title"
-  >
+  <button :class="customClass" :disabled="disabled">
     <div :class="`${prefixClass}-button--wrapper`">
       <template v-if="icon.length">
         <div :class="`${prefixClass}-button--icon`">
-          <font-awesome-icon :icon="icon" />
+          <font-awesome-icon :icon="icon" ref="iconEl" />
         </div>
       </template>
 
       <template v-if="hasSlot || label.length">
-        <div :class="[`${prefixClass}-button--label`, {'has-icon': icon.length}]">
+        <div
+          :class="[`${prefixClass}-button--label`, { 'has-icon': icon.length }]"
+        >
           <slot>
             {{ label }}
           </slot>
@@ -22,107 +20,59 @@
   </button>
 </template>
 <script>
-import { computed, getCurrentInstance } from 'vue'
+import { computed, getCurrentInstance, ref } from 'vue'
+import defaultProps from './props'
 
 export default {
-  props: {
-    label: {
-      type: String,
-      default: '',
-    },
-    title: {
-      type: String,
-      default: '',
-    },
-    tooltip: {
-      type: String,
-      default: ''
-    },
-    inverse: {
-      type: Boolean,
-      default: false
-    },
-    variant: {
-      type: String,
-      default: 'light',
-      validator: function(variant) {
-        return ~['primary', 'danger', 'warning', 'dark', 'success', 'light'].indexOf(variant)
-      }
-    },
-    size: {
-      type: String,
-      default: 'base',
-      validator: function(variant) {
-        return ~['xs', 'sm', 'base', 'lg', 'xl'].indexOf(variant)
-      }
-    },
-    icon: {
-      type: Array,
-      default: () => []
-    },
-    bold: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    rounded: {
-      type: Boolean,
-      default: true,
-    },
-    pill: {
-      type: Boolean,
-      default: false
-    }
-  },
+  name: 'CButton',
+  props: defaultProps,
+  emits: ['increment'],
   setup(props, { emit, slots }) {
     let root = getCurrentInstance()
+    let iconEl = ref()
 
-    const getVariantClass = (prefixBtnClass) => {
-      const { inverse, variant } = props 
+    const getVariantClass = prefixBtnClass => {
+      const { inverse, variant } = props
       let btnClass = `${prefixBtnClass}--${variant}`
 
-      if(inverse) btnClass += '-inverse'
-      
+      if (inverse) btnClass += '-inverse'
+
       return btnClass
     }
 
     const customClass = computed(() => {
-      const { data: { prefixClass } } = root
+      const {
+        data: { prefixClass },
+      } = root
       const { size, disabled, rounded, bold, pill } = props
       const btnClass = prefixClass.concat('-button')
-      let _class = [btnClass]
+      let customClass = [btnClass]
 
-      _class.push(getVariantClass(btnClass))
+      customClass.push(getVariantClass(btnClass))
 
-      if(size) _class.push(btnClass.concat('--' + size))
+      if (size) customClass.push(btnClass.concat('--' + size))
 
-      if (bold) _class.push('text-bold')
+      if (bold) customClass.push('text-bold')
 
-      if(pill)
-        _class.push('pill')
-      else
-        if (!rounded) _class.push('no-rounded')
+      if (pill) customClass.push('pill')
+      else if (!rounded) customClass.push('no-rounded')
 
-      if (disabled) _class.push('disabled')
+      if (disabled) customClass.push('disabled')
 
-      return [_class.join(' ')]
+      return [customClass.join(' ')]
     })
 
     const handleClick = e => {
       emit('click', e)
     }
 
-    const hasSlot = computed(() => (
-      !!slots.default
-    ))
+    const hasSlot = computed(() => !!slots.default)
 
     return {
       customClass,
       handleClick,
-      hasSlot
+      hasSlot,
+      iconEl,
     }
   },
 }
@@ -154,7 +104,7 @@ export default {
   &.disabled {
     @apply disabled:opacity-70 pointer-events-none;
   }
-  
+
   &--wrapper {
     @apply flex-grow-0 flex flex-wrap items-center justify-center;
   }

@@ -1,14 +1,14 @@
-import * as utils from '@util/textFormat'
+import * as utils from '@util/textFormat';
 
 export default {
   data() {
     return {
-      prefixClass: 'lk',
+      prefixClass: MP2_PREFIX_CLASS,
       theme: 'light',
-      i18n: 'ID'
-    }
+      i18n: 'ID',
+    };
   },
   methods: {
-    ...utils
-  }  
-}
+    ...utils,
+  },
+};

@@ -10,7 +10,7 @@ exports[`common/Card will render children correctly 1`] = `
 
 exports[`common/Card will render match snapshot 1`] = `
 <div
-  class="lk-card"
+  class="ss-card"
 >
   
   

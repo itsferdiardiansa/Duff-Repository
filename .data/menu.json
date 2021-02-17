@@ -1,8 +1,6 @@
 [
   {
-    "lists": [
-      { "name": "Home", "link": "/", "icon": ["fa", "home"] }
-    ]
+    "lists": [{ "name": "Home", "link": "/", "icon": ["fa", "home"] }]
   },
   {
     "title": "Content Manager",
@@ -15,18 +13,30 @@
         "children": [
           { "name": "Tabs & Carousel", "link": "", "icon": ["fa", "server"] },
           { "name": "Top Selling", "link": "", "icon": ["fa", "server"] },
-          { "name": "Top Selling Metabase", "link": "", "icon": ["fa", "server"] },
+          {
+            "name": "Top Selling Metabase",
+            "link": "",
+            "icon": ["fa", "server"]
+          },
           { "name": "Featured Event", "link": "", "icon": ["fa", "server"] }
         ]
       },
-      { "name": "Thematic Page", "link": "/thematic-page", "icon": ["fas", "file-alt"] },
+      {
+        "name": "Thematic Page",
+        "link": "/thematic-page",
+        "icon": ["fas", "file-alt"]
+      },
       { "name": "URL Redirection", "link": "", "icon": ["fa", "link"] },
       { "name": "Hashtag", "link": "", "icon": ["fa", "hashtag"] },
       { "name": "Loket Ads", "link": "", "icon": ["fa", "list"] },
       { "name": "Announcement", "link": "", "icon": ["fa", "bell"] },
       { "name": "Partner", "link": "/partner", "icon": ["fa", "users"] },
       { "name": "Footer", "link": "/footer", "icon": ["fa", "paw"] },
-      { "name": "Notification", "link": "/notification", "icon": ["fa", "envelope"] }
+      {
+        "name": "Notification",
+        "link": "/notification",
+        "icon": ["fa", "envelope"]
+      }
     ]
   },
   {
@@ -48,7 +58,11 @@
     "lists": [
       { "name": "Event", "link": "", "icon": ["fa", "clock"] },
       { "name": "Blacklist Word", "link": "", "icon": ["fa", "bookmark"] },
-      { "name": "Blacklist Event", "link": "", "icon": ["fa", "exclamation-circle"] },
+      {
+        "name": "Blacklist Event",
+        "link": "",
+        "icon": ["fa", "exclamation-circle"]
+      },
       { "name": "Pivot Bank", "link": "", "icon": ["fa", "folder"] },
       { "name": "Failed Withdraw", "link": "", "icon": ["fa", "file-csv"] }
     ]
@@ -59,7 +73,9 @@
   },
   {
     "title": "Feedback",
-    "lists": [{ "name": "Feedback", "link": "/feedback", "icon": ["fa", "list-alt"] }]
+    "lists": [
+      { "name": "Feedback", "link": "/feedback", "icon": ["fa", "list-alt"] }
+    ]
   },
   {
     "title": "User Management",

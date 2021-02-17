@@ -1,60 +1,65 @@
-import CAxios from './axios'
-import errorCode from './vars/errorCode'
-
-// a while until we finish working on the login page
-const getToken = () => {
-  return sessionStorage.getItem('access_token')
-}
+import CAxios from './axios';
+import errorCode from './vars/errorCode';
+import TokenManager from '@util/token';
+import router from '@route';
 
 const transform = {
   preRequestHooks: (config, options) => {
-    const { joinPrefix } = options
+    const { joinPrefix } = options;
 
-    if (joinPrefix) config.url = MP2_API_PREFIX + config.url
+    if (joinPrefix) config.url = MP2_API_PREFIX + config.url;
 
-    return config
+    return config;
   },
   requestInterceptors: config => {
-    const token = getToken()
+    const token = TokenManager.getToken();
 
-    config.headers.Clientkey = MP2_API_KEY
+    config.headers.Clientkey = MP2_API_KEY;
 
-    if (token) config.headers.Authorization = 'Bearer ' + token
+    if (token) config.headers.Authorization = 'Bearer ' + token;
 
-    return config
+    return config;
   },
   requestIngterceptorsError: error => {
-    let opr = error
+    let opr = error;
 
-    return opr
+    return opr;
   },
   responseInterceptors: response => {
-    return response
+    return response;
   },
   responseInterceptorsError: error => {
-    const { response, code, message } = error || {}
-    const err = error?.toString?.() ?? ''
+    const { response, code, message } = error || {};
 
     try {
       if (errorCode.includes(code) || Boolean(~message.indexOf('timeout'))) {
         self.$alert.show({
           variant: 'danger',
           content: '<b>Request timeout</b>',
-        })
+        });
       }
-      if (err?.includes('Network Error')) {
+
+      if (message?.includes('Network Error')) {
         self.$alert.show({
           variant: 'danger',
           content: '<b>Please check you internet connnection</b>',
-        })
+        });
       }
 
-      throw response
+      if (response?.status === 403) {
+        TokenManager.flush();
+        setTimeout(() => {
+          router.push({ name: 'Login' });
+        }, 2000);
+      }
+
+      // throw error
     } catch (error) {
-      throw response
+      throw new Error(error);
     }
+    return Promise.reject(error);
   },
-}
+};
 
 const initHttp = () => {
   return new CAxios({
@@ -65,7 +70,7 @@ const initHttp = () => {
     requestOptions: {
       joinPrefix: true,
     },
-  })
-}
+  });
+};
 
-export default initHttp()
+export default initHttp();

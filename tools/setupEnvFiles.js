@@ -1,16 +1,22 @@
-import { config } from '@vue/test-utils'
-import { FontAwesomeIcon } from '@plugin/fontAwesome'
-import { AlertPlugin } from '@plugin/alert'
-import globalSetting from '@plugin/globalSetting'
-import { RouterLink } from 'vue-router'
-import './routerMock'
+import { RouterLink } from 'vue-router';
+import { config } from '@vue/test-utils';
+import { FontAwesomeIcon } from '@plugin/fontAwesome';
+import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
+import { AlertPlugin } from '@plugin/alert';
+import globalSetting from '@plugin/globalSetting';
+import store from '@store';
+import './setupEnvVars';
+import './storeMock';
+import './routerMock';
+
+registerRequireContextHook();
 
 const mockRoute = {
   path: '/',
-}
+};
 const mockRouter = {
   push: jest.fn(),
-}
+};
 
 config.global = {
   components: {
@@ -22,9 +28,9 @@ config.global = {
     $route: mockRoute,
     $router: mockRouter,
   },
-  // plugins: [router]
-}
+  plugins: [store],
+};
 
-config.plugins.VueWrapper.install(AlertPlugin)
+config.plugins.VueWrapper.install(AlertPlugin);
 
-global.$handleClick = jest.fn()
+global.$handleClick = jest.fn();

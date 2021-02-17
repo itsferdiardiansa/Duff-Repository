@@ -11,10 +11,20 @@ module.exports = {
     '^.+\\.vue$': 'vue-jest',
   },
   collectCoverage: false,
-  collectCoverageFrom: ['src/**/*.{js,vue}', '!src/main.js'],
+  collectCoverageFrom: [
+    'src/**/*.{js,vue}',
+    '!src/main.js',
+    '!src/services/**/*.js',
+    '!src/pages/**/*.{js,vue}',
+    '!src/routes/**/*.js',
+    '!src/store/**/*.js',
+    '!src/layouts/**/*.{js,vue}',
+  ],
   setupFiles: ['./tools/client.js', './tools/setupEnvFiles.js'],
+  setupFilesAfterEnv: ['./tools/setupConsole.js'],
   moduleNameMapper: {
-    '^@mock(.*)$': '<rootDir>/.mocks$1',
+    '^@data(.*)$': '<rootDir>/data$1',
+    '^@build(.*)$': '<rootDir>/build$1',
     '^@common(.*)$': '<rootDir>/src/components/commons$1',
     '^@fragment(.*)$': '<rootDir>/src/components/fragments$1',
     '^@base(.*)$': '<rootDir>/src/components/fragments/@Base$1',
@@ -26,6 +36,8 @@ module.exports = {
     '^@route(.*)$': '<rootDir>/src/routes$1',
     '^@page(.*)$': '<rootDir>/src/pages$1',
     '^@layout(.*)$': '<rootDir>/src/layouts$1',
+    '^@service(.*)$': '<rootDir>/src/services$1',
     '^@icon(.*)$': '<rootDir>/src/assets/icons$1',
+    '^__mock__(.*)$': '<rootDir>__mocks__$1',
   },
-}
+};

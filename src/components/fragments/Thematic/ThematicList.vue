@@ -18,21 +18,20 @@
         :onError="requestStatus.error.status"
         :onFailedFetchHandler="getThematic"
       >
-        <template #header_image="{data}">
-          <img :src="data.header_image" />
+        <template #header_image="{ data }">
+          <img class="h-10 inline-block" :src="data.header_image" />
         </template>
 
-        <template #header_image_mobile="{data}">
-          <img :src="data.header_image_mobile" />
+        <template #header_image_mobile="{ data }">
+          <img class="h-10 inline-block" :src="data.header_image_mobile" />
         </template>
 
-        <template #page_info="{data}">
+        <template #page_info="{ data }">
           <div class="text-left">
             <h3 class="font-bold" v-text="data.header_text"></h3>
             <p v-text="data.description_text"></p>
           </div>
         </template>
-
 
         <template #action="{ data }">
           <ActionButton :data="actionButtons" :item="data" />
@@ -48,14 +47,14 @@
   />
 </template>
 <script>
-import { onMounted, computed, ref, unref } from 'vue'
-import { useRouter } from 'vue-router'
-import { useStore } from 'vuex'
-import Table, { ActionButton } from '@common/Table'
-import { ErrorTable, EmptyTable } from '@common/Table'
+import { onMounted, computed, ref, unref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
+import Table, { ActionButton } from '@common/Table';
+import { ErrorTable, EmptyTable } from '@common/Table';
 // import Badge from '@common/Badge'
-import Button from '@common/Button'
-import Modal from '@common/Modal'
+import Button from '@common/Button';
+import Modal from '@common/Modal';
 
 export default {
   components: {
@@ -63,76 +62,89 @@ export default {
     // Badge,
     Button,
     Modal,
-    ActionButton
+    ActionButton,
   },
   setup() {
-    const store = useStore()
-    const router = useRouter()
+    const store = useStore();
+    const router = useRouter();
 
     const tHeaders = ref([
       { title: 'Banner', accessor: 'header_image', width: '10%' },
-      { title: 'Banner Mobile', accessor: 'header_image_mobile', width: '10%', align: 'center' },
-      { title: 'Thematic Name', accessor: 'name', width: '15%', align: 'center' },
+      {
+        title: 'Banner Mobile',
+        accessor: 'header_image_mobile',
+        width: '10%',
+        align: 'center',
+      },
+      {
+        title: 'Thematic Name',
+        accessor: 'name',
+        width: '15%',
+        align: 'center',
+      },
       { title: 'Page Info', accessor: 'meta_title' },
-      { title: 'Created At', accessor: 'created_at', width: '11%', align: 'center' },
       { title: 'Path', accessor: 'path', width: '11%', align: 'center' },
+      { title: 'Created At', accessor: 'created_at', align: 'center' },
       { title: 'Action', accessor: 'action', align: 'center' },
-    ])
+    ]);
 
     const actionButtons = ref([
       {
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          router.push({ name: 'Update Thematic Page', params: {data: JSON.stringify(data)} })
-        }
+          router.push({
+            name: 'Update Thematic Page',
+            params: { data: JSON.stringify(data) },
+          });
+        },
       },
       {
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          toggleModal(e, data)
-        }
-      }
-    ])
+          toggleModal(e, data);
+        },
+      },
+    ]);
 
     const getThematic = () => {
-      store.dispatch('thematicPage/fetchData')
-    }
+      store.dispatch('thematicPage/fetchData');
+    };
 
     const toggleModal = (e, data) => {
-      self.$modal.show(data)
-    }
-    
+      self.$modal.show(data);
+    };
+
     const deleteData = ({ hash_id }) => {
       store.dispatch('thematicPage/deleteData', {
         hash_id,
         action: 'form.delete',
-        status: 'success'
-      })
-    }
+        status: 'success',
+      });
+    };
 
     const filteredThematic = computed(() => {
-      return store.getters['thematicPage/getThematicPage']
-    })
+      return store.getters['thematicPage/getThematicPage'];
+    });
 
-     const requestStatus = computed(() => {
-      return store.getters['thematicPage/getRequestStatus']
-    })
+    const requestStatus = computed(() => {
+      return store.getters['thematicPage/getRequestStatus'];
+    });
 
     const emptyDataComponent = computed(() => {
-      const request = unref(requestStatus)
-      
-      return (request.error.status) ? ErrorTable : EmptyTable
-    })
+      const request = unref(requestStatus);
+
+      return request.error.status ? ErrorTable : EmptyTable;
+    });
 
     const createThematicPage = () => {
-      router.push('/thematic-page/create')
-    }
+      router.push('/thematic-page/create');
+    };
 
-    const getPath = path => '/e/' +path
+    const getPath = path => '/e/' + path;
 
-    onMounted(getThematic)
+    onMounted(getThematic);
 
     return {
       requestStatus,
@@ -142,11 +154,11 @@ export default {
       emptyDataComponent,
       createThematicPage,
       getPath,
-      actionButtons, 
-      deleteData
-    }
+      actionButtons,
+      deleteData,
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .container {

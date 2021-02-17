@@ -1,28 +1,18 @@
 <template>
-  <div class="container">
-    <Card>
-      <div class="wrapper">
-        <!-- <ContentHeader /> -->
-
-        <div class="mt-2">
-          <ContentList />
-        </div>
-      </div>
-    </Card>
-  </div>
+  <ContentWrapper>
+    <ContentList />
+  </ContentWrapper>
 </template>
 <script>
-import Card from '@common/Card'
-// import ContentHeader from '@fragment/Partner/Header'
-import ContentList from '@fragment/Partner/List'
+import ContentWrapper from '@base/Content/ContentWrapper';
+import ContentList from '@fragment/Partner/List';
 
 export default {
   components: {
-    Card,
-    // ContentHeader,
+    ContentWrapper,
     ContentList,
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .wrapper {

@@ -1,57 +1,66 @@
-import { createApp } from 'vue'
-import Alert from './components/Alert'
-import globalSetting from '@plugin/globalSetting'
-import { FontAwesomeIcon } from '@plugin/fontAwesome'
-import Emitter from 'mitt'
-import uuid from '@util/uuid'
+/* eslint-disable */
+import { createApp, inject } from 'vue';
+import Alert from './components/Alert';
+import globalSetting from '@plugin/globalSetting';
+import { FontAwesomeIcon } from '@plugin/fontAwesome';
+import Emitter from 'mitt';
+import uuid from '@util/uuid';
 
-const createElement = () => {
-  const root = document.querySelector('#app')
-  const div = document.createElement('div')
-  const elementId = uuid('lk-alert')
-  
-  div.setAttribute('id', elementId)
+const createElement = (instance, app) => {
+  const root = document.querySelector('#app');
+  const div = document.createElement('div');
+  const elementId = uuid(`${MP2_PREFIX_CLASS}-alert`);
 
-  root.appendChild(div)
+  div.setAttribute('id', elementId);
+  div.setAttribute('role', 'alert');
+  // console.log(root.innerHTML)
 
-  return elementId
-}
+  // document.removeChild(alertEl)
+  // document.getElementsByTagName('role="alert"').remove()
+  // if(alertEl !== null) return false
+  // console.log('alert', Object.keys(alertEl), alertEl._vnode)
+  // if(alertEl) return false
+  root.appendChild(div);
 
-export const AlertPlugin = (app) => {
-  let rootContainer
-  let instance
-  
+  return elementId;
+};
+
+export const AlertPlugin = app => {
+  const alertEl = document.querySelector('[role="alert"]');
+  let rootContainer;
+  let instance;
+
+  if (alertEl) return false;
+
   const $alert = {
     show: (...args) => {
-      let { $emitter } = instance._context.provides
-      
-      $emitter.emit('show-alert', ...args)
+      let { $emitter } = instance._context.provides;
+
+      $emitter.emit('show-alert', ...args);
     },
     init: async () => {
       try {
-        rootContainer = await app
-        instance = createApp(Alert)
-        
-        const elementId = createElement(rootContainer, app)
-        
-        instance.mixin(globalSetting)
-        
-        instance.component('FontAwesomeIcon', FontAwesomeIcon)
-        
-        instance.provide('$emitter', new Emitter())
+        rootContainer = await app;
+        instance = createApp(Alert);
 
-        instance.mount(`#${elementId}`)
-      } catch(error) {
-        console.error('We\'re failed to create alert', error)
+        instance.mixin(globalSetting);
+        instance.component('FontAwesomeIcon', FontAwesomeIcon);
+        instance.provide('$emitter', new Emitter());
+
+        const elementId = createElement(instance, app);
+
+        if (elementId) instance.mount(`#${elementId}`);
+      } catch (error) {
+        console.error("We're failed to create alert", error);
       }
-    }
-  }
+    },
+  };
 
-  $alert.init()
+  $alert.init();
 
-  window.$alert = $alert
-}
+  window.$alert = $alert;
+};
 
 export default {
-  install: AlertPlugin
-}
+  install: AlertPlugin,
+};

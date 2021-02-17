@@ -9,7 +9,7 @@
     </div>
 
     <div class="app-content--main">
-      <transition name="slide" mode="out-in" appear>
+      <transition name="fade-slide" mode="out-in" appear>
         <component :is="ChildComponent"></component>
       </transition>
     </div>
@@ -17,11 +17,11 @@
 </template>
 <script>
 /* eslint-disable vue/no-unused-components */
-import { computed, reactive } from 'vue'
-import { useRoute } from 'vue-router'
-import Breadcrumb from '@common/Breadcrumb'
-import Header from '@fragment/@Base/Header'
-import SideBar from '@fragment/@Base/Sidebar'
+import { computed, reactive } from 'vue';
+import { useRoute } from 'vue-router';
+import Breadcrumb from '@common/Breadcrumb';
+import Header from '@fragment/@Base/Header';
+import SideBar from '@fragment/@Base/Sidebar';
 
 export default {
   components: {
@@ -30,29 +30,29 @@ export default {
     Breadcrumb,
   },
   setup() {
-    const route = useRoute()
-    let onPageError = reactive(route.name === 'Page Not Found')
+    const route = useRoute();
+    let onPageError = reactive(route.name === 'Page Not Found');
 
     const contentTitle = computed(() => {
-      return route.name
-    })
+      return route.name;
+    });
 
     const ChildComponent = computed(() => {
-      return route.meta.components.render.default
-    })
+      return route.meta.components.render.default;
+    });
 
     const breadcrumbs = computed(() => {
-      return route.meta.breadcrumbs
-    })
+      return route.meta.breadcrumbs;
+    });
 
     return {
       contentTitle,
       breadcrumbs,
       onPageError,
       ChildComponent,
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .app-content {

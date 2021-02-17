@@ -1,20 +1,26 @@
-const path = require('path')
-const setupEnv = require('./build/setupEnv')
-const createDevProxy = require('./build/createDevProxy')
-const globalEnv = setupEnv()
+const path = require('path');
+const setupEnv = require('./build/setupEnv');
+const createDevProxy = require('./build/createDevProxy');
+const globalEnv = setupEnv();
 
 function resolve(dir = '') {
-  return path.resolve(__dirname, 'src', dir)
+  return path.resolve(__dirname, 'src', dir);
 }
 
 function setup(env) {
   return {
+    publicPath:
+      process.env.NODE_ENV === 'production' ? process.env.MP2_ASSETS_URL : '/',
     productionSourceMap: false,
     devServer: createDevProxy(env),
     css: {
       loaderOptions: {
         scss: {
-          additionalData: `@import "./src/styles/_variables.scss";`,
+          additionalData: `
+            @import "./src/styles/index.scss";
+            
+            $prefixClass: ${env.MP2_PREFIX_CLASS};
+          `,
         },
       },
     },
@@ -39,23 +45,23 @@ function setup(env) {
           '@icon': resolve('assets/icons'),
           '@style': resolve('styles'),
           '@service': resolve('services'),
-          '@mock': path.resolve(__dirname, '.mocks'),
+          '@data': path.resolve(__dirname, 'data'),
         },
       },
     },
     chainWebpack: config => {
       config.plugin('define').tap(args => {
-        args[0] = env
+        args[0] = env;
 
-        return args
-      })
+        return args;
+      });
 
       config.module
         .rule('vue')
         .use('vue-svg-inline-loader')
-        .loader('vue-svg-inline-loader')
+        .loader('vue-svg-inline-loader');
     },
-  }
+  };
 }
 
-module.exports = setup(globalEnv)
+module.exports = setup(globalEnv);

@@ -1,8 +1,8 @@
 <template>
-  <button :class="customClass" :disabled="disabled">
+  <button :class="customClass" :disabled="disabled || isLoading">
     <div :class="`${prefixClass}-button--wrapper`">
       <template v-if="icon.length">
-        <div :class="`${prefixClass}-button--icon`">
+        <div :class="`${prefixClass}-button--icon`" v-if="!isLoading">
           <font-awesome-icon :icon="icon" ref="iconEl" />
         </div>
       </template>
@@ -10,72 +10,81 @@
       <template v-if="hasSlot || label.length">
         <div
           :class="[`${prefixClass}-button--label`, { 'has-icon': icon.length }]"
+          v-if="!isLoading"
         >
           <slot>
             {{ label }}
           </slot>
+        </div>
+
+        <div :class="`${prefixClass}-button--spinner`" v-else>
+          <Spinner :width="20" :height="20" />
         </div>
       </template>
     </div>
   </button>
 </template>
 <script>
-import { computed, getCurrentInstance, ref } from 'vue'
-import defaultProps from './props'
+import { computed, getCurrentInstance, ref } from 'vue';
+import Spinner from '@common/Loader/Spinner';
+import defaultProps from './props';
 
 export default {
   name: 'CButton',
   props: defaultProps,
   emits: ['increment'],
+  components: {
+    Spinner,
+  },
   setup(props, { emit, slots }) {
-    let root = getCurrentInstance()
-    let iconEl = ref()
+    let root = getCurrentInstance();
+    let iconEl = ref();
 
     const getVariantClass = prefixBtnClass => {
-      const { inverse, variant } = props
-      let btnClass = `${prefixBtnClass}--${variant}`
+      const { inverse, variant } = props;
+      let btnClass = `${prefixBtnClass}--${variant}`;
 
-      if (inverse) btnClass += '-inverse'
+      if (inverse) btnClass += '-inverse';
 
-      return btnClass
-    }
+      return btnClass;
+    };
 
     const customClass = computed(() => {
       const {
         data: { prefixClass },
-      } = root
-      const { size, disabled, rounded, bold, pill } = props
-      const btnClass = prefixClass.concat('-button')
-      let customClass = [btnClass]
+      } = root;
+      const { size, disabled, rounded, bold, pill } = props;
+      const btnClass = prefixClass.concat('-button');
+      let customClass = [btnClass];
 
-      customClass.push(getVariantClass(btnClass))
+      customClass.push(getVariantClass(btnClass));
 
-      if (size) customClass.push(btnClass.concat('--' + size))
+      if (size) customClass.push(btnClass.concat('--' + size));
 
-      if (bold) customClass.push('text-bold')
+      if (bold) customClass.push('text-bold');
 
-      if (pill) customClass.push('pill')
-      else if (!rounded) customClass.push('no-rounded')
+      if (pill) customClass.push('pill');
+      else if (!rounded) customClass.push('no-rounded');
 
-      if (disabled) customClass.push('disabled')
+      if (disabled) customClass.push('disabled');
 
-      return [customClass.join(' ')]
-    })
+      return [customClass.join(' ')];
+    });
 
     const handleClick = e => {
-      emit('click', e)
-    }
+      emit('click', e);
+    };
 
-    const hasSlot = computed(() => !!slots.default)
+    const hasSlot = computed(() => !!slots.default);
 
     return {
       customClass,
       handleClick,
       hasSlot,
       iconEl,
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss">
 @import './variant.scss';
@@ -106,7 +115,7 @@ export default {
   }
 
   &--wrapper {
-    @apply flex-grow-0 flex flex-wrap items-center justify-center;
+    @apply h-full flex-grow-0 flex flex-wrap items-center justify-center;
   }
 
   &--label {
@@ -115,6 +124,10 @@ export default {
     &.has-icon {
       @apply ml-2;
     }
+  }
+
+  &--spinner {
+    @apply w-full h-full flex items-center justify-center;
   }
 }
 </style>

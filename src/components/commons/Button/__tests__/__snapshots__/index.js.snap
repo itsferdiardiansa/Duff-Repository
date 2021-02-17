@@ -2,376 +2,422 @@
 
 exports[`common/Button will have a disabled attribute correctly 1`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--xl disabled"
+  class="ss-button ss-button--danger-inverse ss-button--xl disabled"
   disabled=""
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
+    
     <div
-      class="lk-button--icon"
+      class="ss-button--icon"
     >
       <font-awesome-icon-stub />
     </div>
+    
+    
     <div
-      class="lk-button--label has-icon"
+      class="ss-button--label has-icon"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a icon correctly 1`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--xl"
+  class="ss-button ss-button--danger-inverse ss-button--xl"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
+    
     <div
-      class="lk-button--icon"
+      class="ss-button--icon"
     >
       <font-awesome-icon-stub />
     </div>
+    
+    
     <div
-      class="lk-button--label has-icon"
+      class="ss-button--label has-icon"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a inverse variant color correctly 1`] = `
 <button
-  class="lk-button lk-button--primary-inverse lk-button--base"
+  class="ss-button ss-button--primary-inverse ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a inverse variant color correctly 2`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--base"
+  class="ss-button ss-button--danger-inverse ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a label correctly 1`] = `
 <button
-  class="lk-button lk-button--light lk-button--base"
+  class="ss-button ss-button--light ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a pill correctly 1`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--xl pill disabled"
+  class="ss-button ss-button--danger-inverse ss-button--xl pill disabled"
   disabled=""
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
+    
     <div
-      class="lk-button--icon"
+      class="ss-button--icon"
     >
       <font-awesome-icon-stub />
     </div>
+    
+    
     <div
-      class="lk-button--label has-icon"
+      class="ss-button--label has-icon"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a size correctly 1`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--xs"
+  class="ss-button ss-button--danger-inverse ss-button--xs"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a size correctly 2`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--sm"
+  class="ss-button ss-button--danger-inverse ss-button--sm"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a size correctly 3`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--base"
+  class="ss-button ss-button--danger-inverse ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a size correctly 4`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--lg"
+  class="ss-button ss-button--danger-inverse ss-button--lg"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a size correctly 5`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--xl"
+  class="ss-button ss-button--danger-inverse ss-button--xl"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a text bold correctly 1`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--xl text-bold pill disabled"
+  class="ss-button ss-button--danger-inverse ss-button--xl text-bold pill disabled"
   disabled=""
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
+    
     <div
-      class="lk-button--icon"
+      class="ss-button--icon"
     >
       <font-awesome-icon-stub />
     </div>
+    
+    
     <div
-      class="lk-button--label has-icon"
+      class="ss-button--label has-icon"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a variant color correctly 1`] = `
 <button
-  class="lk-button lk-button--primary lk-button--base"
+  class="ss-button ss-button--primary ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a variant color correctly 2`] = `
 <button
-  class="lk-button lk-button--danger lk-button--base"
+  class="ss-button ss-button--danger ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a variant color correctly 3`] = `
 <button
-  class="lk-button lk-button--warning lk-button--base"
+  class="ss-button ss-button--warning ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a variant color correctly 4`] = `
 <button
-  class="lk-button lk-button--dark lk-button--base"
+  class="ss-button ss-button--dark ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will have a variant color correctly 5`] = `
 <button
-  class="lk-button lk-button--success lk-button--base"
+  class="ss-button ss-button--success ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
+    
     <div
-      class="lk-button--label"
+      class="ss-button--label"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will not a rounded correctly 1`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--xl no-rounded disabled"
+  class="ss-button ss-button--danger-inverse ss-button--xl no-rounded disabled"
   disabled=""
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
+    
     <div
-      class="lk-button--icon"
+      class="ss-button--icon"
     >
       <font-awesome-icon-stub />
     </div>
+    
+    
     <div
-      class="lk-button--label has-icon"
+      class="ss-button--label has-icon"
     >
       
       This is common button
       
     </div>
+    
   </div>
 </button>
 `;
 
 exports[`common/Button will render and match snapshot 1`] = `
 <button
-  class="lk-button lk-button--light lk-button--base"
+  class="ss-button ss-button--light ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
     <!--v-if-->
     <!--v-if-->
@@ -381,24 +427,21 @@ exports[`common/Button will render and match snapshot 1`] = `
 
 exports[`common/Button will trigger click event correctly 1`] = `
 <button
-  class="lk-button lk-button--danger-inverse lk-button--xl text-bold pill disabled"
-  disabled=""
+  class="ss-button ss-button--light ss-button--base"
 >
   <div
-    class="lk-button--wrapper"
+    class="ss-button--wrapper"
   >
+    <!--v-if-->
+    
     <div
-      class="lk-button--icon"
-    >
-      <font-awesome-icon-stub />
-    </div>
-    <div
-      class="lk-button--label has-icon"
+      class="ss-button--label"
     >
       
-      This is common button
+      Click me!
       
     </div>
+    
   </div>
 </button>
 `;

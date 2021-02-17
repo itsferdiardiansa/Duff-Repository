@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: ['./public/index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -11,7 +11,7 @@ module.exports = {
         light: colors.coolGray['200'],
         primary: colors.blue['600'],
         danger: colors.red['600'],
-        warning: colors.yellow['600'],
+        warning: colors.yellow['500'],
         success: colors.green['600'],
         dark: colors.coolGray['600'],
       },
@@ -27,4 +27,4 @@ module.exports = {
     },
     display: ['responsive', 'group-hover', 'group-focus'],
   },
-}
+};

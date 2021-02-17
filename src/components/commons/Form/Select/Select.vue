@@ -1,20 +1,36 @@
 <template>
-  <div :class="`${prefixClass}-control--input`">
-    <div :class="`${prefixClass}-select`">
-      <div @click="toggleDropdown" @blur="toggleDropdown" :class="`${prefixClass}-select--button`">
+  <div
+    ref="dropdownEl"
+    :class="`${prefixClass}-control--input`"
+    @keydown.prevent="onKeyInteraction"
+  >
+    <div :class="getSelectClass">
+      <div
+        @click="toggleDropdown"
+        @blur="toggleDropdown"
+        :class="`${prefixClass}-select--button`"
+        tabindex="0"
+      >
         <span class="button-label">
-          {{ selectedItem?.text }}
+          {{ getSelectedLabel }}
         </span>
         <span class="button-icon">
-          <font-awesome-icon :icon="icon" class="h-4" />
+          <font-awesome-icon :icon="iconSuffix" class="h-4" />
         </span>
       </div>
 
-      <transition name="slide" appear>
-        <div :class="`${prefixClass}-select--dropdown`" v-if="isCollapsed">
+      <transition name="slide-top" appear>
+        <div :class="`${prefixClass}-select--dropdown`" v-show="isCollapsed">
           <ul class="dropdown-list">
             <template v-for="(item, key) in items" :key="key">
-              <li class="dropdown-item" v-text="item.text" @click="selectItem(item)"></li>
+              <li
+                class="dropdown-item"
+                v-text="getLabel(item, key)"
+                @mouseenter="onMouseInteraction($event, key)"
+                @mouseleave="onMouseInteraction($event, key)"
+                @click="selectItem(item)"
+                @keydown.enter="selectItem(item)"
+              ></li>
             </template>
           </ul>
         </div>
@@ -24,56 +40,182 @@
 </template>
 <script>
 /* eslint-disable */
-import { computed, reactive, ref, unref } from 'vue'
+import { computed, getCurrentInstance, reactive, ref, unref, watch } from 'vue';
 
 export default {
-  emits: [
-    'update:modelValue'
-  ],
+  name: 'CMSelect',
+  emits: ['change', 'update:modelValue'],
   props: {
+    modelValue: {
+      type: [String, Number, Boolean],
+    },
     items: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
-    modelValue: {
-      type: [String, Number]
-    }
+    keyname: {
+      type: String,
+    },
+    placeholder: {
+      type: String,
+      default: 'Please select',
+    },
   },
   setup(props, { emit }) {
-    const { items, modelValue } = props
-    const isCollapsed = ref(false)
+    const dropdownEl = ref();
+    const { items, modelValue } = props;
+    const isCollapsed = ref(false);
+    const itemIndex = ref(-1);
+    const selectedValue = ref('');
 
-    const toggleDropdown = () => {
-      isCollapsed.value = !isCollapsed.value
-    }
+    const toggleDropdown = e => {
+      if (!isCollapsed.value && e?.type === 'blur') return false;
 
-    const icon = computed(() => {
-      return (unref(isCollapsed)) ? ['fa', 'chevron-circle-up'] : ['fa', 'chevron-circle-down']  
-    })
+      isCollapsed.value = !isCollapsed.value;
+      itemIndex.value = -1;
+    };
+
+    const iconSuffix = computed(() => {
+      return ['fa', 'chevron-circle-up'];
+    });
+
+    const getLabel = (item, key) => {
+      const { keyname } = props;
+
+      return item?.label || item;
+    };
+
+    const getSelectClass = computed(() => {
+      const {
+        data: { prefixClass },
+      } = getCurrentInstance();
+
+      return [
+        `${prefixClass}-select`,
+        {
+          [`${prefixClass}-select--collapsed`]: unref(isCollapsed),
+        },
+      ];
+    });
 
     const selectedItem = computed(() => {
-      const { items, modelValue } = props
+      const { items, modelValue, keyname, placeholder } = props;
 
-      isCollapsed.value = false
+      isCollapsed.value = false;
 
-      return (unref(items).find(item => {
-        return item.value == modelValue
-      }))
-    })
+      const findLabel = unref(items).find((item, key) => {
+        const value = keyname !== undefined ? item[keyname] : item;
+
+        return value == selectedValue.value;
+      });
+
+      return keyname === undefined ? findLabel : findLabel?.label;
+    });
+
+    const getSelectedLabel = computed(() => {
+      const { placeholder, modelValue } = props;
+
+      return unref(selectedItem) !== undefined
+        ? unref(selectedItem)
+        : placeholder;
+    });
 
     const selectItem = item => {
-      emit('update:modelValue', item.value)
-    }
+      const { keyname } = props;
+
+      if (typeof item === 'object' && keyname === undefined) {
+        console.warn('Please set keyname as prop => :keyname="value"');
+        return;
+      }
+
+      const value = keyname !== undefined ? item[keyname] : item;
+
+      selectedValue.value = value;
+      isCollapsed.value = false;
+
+      emit('update:modelValue', value);
+      emit('change', value);
+    };
+
+    const resetSelectedClass = () => {
+      const el = unref(dropdownEl);
+      const listItems = el.getElementsByClassName('dropdown-item');
+
+      for (let item of listItems) {
+        item.classList.remove('dropdown-item--selected');
+      }
+    };
+
+    const onKeyInteraction = (e, item) => {
+      const { items } = props;
+      const { keyCode } = e;
+      const el = unref(dropdownEl);
+      const listItems = el.getElementsByClassName('dropdown-item');
+
+      if (keyCode === 13) {
+        selectItem(unref(items)[itemIndex.value]);
+      }
+
+      if (keyCode === 27) isCollapsed.value = false;
+
+      if ([38, 40].includes(keyCode)) {
+        if (isCollapsed.value)
+          if (keyCode === 38)
+            itemIndex.value <= 0
+              ? (itemIndex.value = listItems.length - 1)
+              : itemIndex.value--;
+          else
+            itemIndex.value >= listItems.length - 1
+              ? (itemIndex.value = 0)
+              : itemIndex.value++;
+
+        resetSelectedClass();
+
+        listItems[itemIndex.value]?.classList.add('dropdown-item--selected');
+      }
+
+      if (!isCollapsed.value && keyCode === 40) isCollapsed.value = true;
+    };
+
+    const onMouseInteraction = (e, key) => {
+      const {
+        type,
+        target: { className, classList },
+      } = e;
+      const action = type === 'mouseenter' ? 'add' : 'remove';
+
+      resetSelectedClass();
+
+      if (classList.contains('dropdown-item')) {
+        classList[action]('dropdown-item--selected');
+
+        if (type === 'mouseenter') itemIndex.value = key;
+        else itemIndex.value = -1;
+      }
+    };
+
+    watch(
+      () => props.modelValue,
+      val => {
+        selectedValue.value = val;
+      }
+    );
 
     return {
-      icon,
+      dropdownEl,
+      iconSuffix,
+      getLabel,
+      getSelectClass,
+      getSelectedLabel,
       isCollapsed,
       toggleDropdown,
       selectItem,
-      selectedItem
-    }
-  }
-}
+      selectedItem,
+      onKeyInteraction,
+      onMouseInteraction,
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .#{$prefixClass}-select {
@@ -89,6 +231,10 @@ export default {
 
     .button-icon {
       @apply ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none;
+
+      svg {
+        @apply inline-block transition-transform;
+      }
     }
   }
 
@@ -99,7 +245,19 @@ export default {
       @apply max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm;
 
       .dropdown-item {
-        @apply cursor-pointer text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-indigo-700 hover:text-gray-100;
+        @apply cursor-pointer text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9;
+
+        &--selected {
+          @apply bg-indigo-700 text-gray-100;
+        }
+      }
+    }
+  }
+
+  &--collapsed {
+    .button-icon {
+      svg {
+        @apply -rotate-180 transform;
       }
     }
   }

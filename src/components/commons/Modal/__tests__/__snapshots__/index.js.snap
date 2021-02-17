@@ -2,17 +2,17 @@
 
 exports[`common/Modal will rendered with passing a descripotio 1`] = `
 <div
-  class="lk-modal"
+  class="ss-modal slide-top-enter-from slide-top-enter-active"
 >
   <div
-    class="lk-modal--container"
+    class="ss-modal--container"
   >
     <div
       aria-hidden="true"
-      class="lk-modal--overlay"
+      class="ss-modal--overlay"
     >
       <div
-        class="lk-modal--overlay-bg"
+        class="ss-modal--overlay-bg"
       />
     </div>
     <span
@@ -21,14 +21,14 @@ exports[`common/Modal will rendered with passing a descripotio 1`] = `
       ​
     </span>
     <div
-      class="lk-modal--body fade-slide-enter-from fade-slide-enter-active"
+      class="ss-modal--body"
       role="dialog"
     >
       <div
-        class="lk-modal--panel"
+        class="ss-modal--panel"
       >
         <div
-          class="lk-modal--panel-content"
+          class="ss-modal--panel-content"
         >
           <h3
             class="content-header"
@@ -47,16 +47,17 @@ exports[`common/Modal will rendered with passing a descripotio 1`] = `
         </div>
       </div>
       <div
-        class="lk-modal--footer"
+        class="ss-modal--footer"
       >
         <button
-          class="lk-button lk-button--success lk-button--base text-bold"
+          class="ss-button ss-button--success ss-button--base text-bold"
         >
           <div
-            class="lk-button--wrapper"
+            class="ss-button--wrapper"
           >
+            
             <div
-              class="lk-button--icon"
+              class="ss-button--icon"
             >
               <svg
                 class=""
@@ -69,23 +70,27 @@ exports[`common/Modal will rendered with passing a descripotio 1`] = `
                 />
               </svg>
             </div>
+            
+            
             <div
-              class="lk-button--label has-icon"
+              class="ss-button--label has-icon"
             >
               
               Yes
               
             </div>
+            
           </div>
         </button>
         <button
-          class="lk-button lk-button--danger lk-button--base text-bold"
+          class="ss-button ss-button--danger ss-button--base text-bold"
         >
           <div
-            class="lk-button--wrapper"
+            class="ss-button--wrapper"
           >
+            
             <div
-              class="lk-button--icon"
+              class="ss-button--icon"
             >
               <svg
                 class=""
@@ -98,13 +103,16 @@ exports[`common/Modal will rendered with passing a descripotio 1`] = `
                 />
               </svg>
             </div>
+            
+            
             <div
-              class="lk-button--label has-icon"
+              class="ss-button--label has-icon"
             >
               
               No
               
             </div>
+            
           </div>
         </button>
       </div>
@@ -115,17 +123,17 @@ exports[`common/Modal will rendered with passing a descripotio 1`] = `
 
 exports[`common/Modal will rendered with passing title 1`] = `
 <div
-  class="lk-modal"
+  class="ss-modal slide-top-enter-from slide-top-enter-active"
 >
   <div
-    class="lk-modal--container"
+    class="ss-modal--container"
   >
     <div
       aria-hidden="true"
-      class="lk-modal--overlay"
+      class="ss-modal--overlay"
     >
       <div
-        class="lk-modal--overlay-bg"
+        class="ss-modal--overlay-bg"
       />
     </div>
     <span
@@ -134,14 +142,14 @@ exports[`common/Modal will rendered with passing title 1`] = `
       ​
     </span>
     <div
-      class="lk-modal--body fade-slide-enter-from fade-slide-enter-active"
+      class="ss-modal--body"
       role="dialog"
     >
       <div
-        class="lk-modal--panel"
+        class="ss-modal--panel"
       >
         <div
-          class="lk-modal--panel-content"
+          class="ss-modal--panel-content"
         >
           <h3
             class="content-header"
@@ -160,16 +168,17 @@ exports[`common/Modal will rendered with passing title 1`] = `
         </div>
       </div>
       <div
-        class="lk-modal--footer"
+        class="ss-modal--footer"
       >
         <button
-          class="lk-button lk-button--success lk-button--base text-bold"
+          class="ss-button ss-button--success ss-button--base text-bold"
         >
           <div
-            class="lk-button--wrapper"
+            class="ss-button--wrapper"
           >
+            
             <div
-              class="lk-button--icon"
+              class="ss-button--icon"
             >
               <svg
                 class=""
@@ -182,23 +191,27 @@ exports[`common/Modal will rendered with passing title 1`] = `
                 />
               </svg>
             </div>
+            
+            
             <div
-              class="lk-button--label has-icon"
+              class="ss-button--label has-icon"
             >
               
               Yes
               
             </div>
+            
           </div>
         </button>
         <button
-          class="lk-button lk-button--danger lk-button--base text-bold"
+          class="ss-button ss-button--danger ss-button--base text-bold"
         >
           <div
-            class="lk-button--wrapper"
+            class="ss-button--wrapper"
           >
+            
             <div
-              class="lk-button--icon"
+              class="ss-button--icon"
             >
               <svg
                 class=""
@@ -211,13 +224,16 @@ exports[`common/Modal will rendered with passing title 1`] = `
                 />
               </svg>
             </div>
+            
+            
             <div
-              class="lk-button--label has-icon"
+              class="ss-button--label has-icon"
             >
               
               No
               
             </div>
+            
           </div>
         </button>
       </div>
@@ -228,17 +244,17 @@ exports[`common/Modal will rendered with passing title 1`] = `
 
 exports[`common/Modal will rendered with snapshot 1`] = `
 <div
-  class="lk-modal"
+  class="ss-modal slide-top-enter-from slide-top-enter-active"
 >
   <div
-    class="lk-modal--container"
+    class="ss-modal--container"
   >
     <div
       aria-hidden="true"
-      class="lk-modal--overlay"
+      class="ss-modal--overlay"
     >
       <div
-        class="lk-modal--overlay-bg"
+        class="ss-modal--overlay-bg"
       />
     </div>
     <span
@@ -247,14 +263,14 @@ exports[`common/Modal will rendered with snapshot 1`] = `
       ​
     </span>
     <div
-      class="lk-modal--body fade-slide-enter-from fade-slide-enter-active"
+      class="ss-modal--body"
       role="dialog"
     >
       <div
-        class="lk-modal--panel"
+        class="ss-modal--panel"
       >
         <div
-          class="lk-modal--panel-content"
+          class="ss-modal--panel-content"
         >
           <h3
             class="content-header"
@@ -273,16 +289,17 @@ exports[`common/Modal will rendered with snapshot 1`] = `
         </div>
       </div>
       <div
-        class="lk-modal--footer"
+        class="ss-modal--footer"
       >
         <button
-          class="lk-button lk-button--success lk-button--base text-bold"
+          class="ss-button ss-button--success ss-button--base text-bold"
         >
           <div
-            class="lk-button--wrapper"
+            class="ss-button--wrapper"
           >
+            
             <div
-              class="lk-button--icon"
+              class="ss-button--icon"
             >
               <svg
                 class=""
@@ -295,23 +312,27 @@ exports[`common/Modal will rendered with snapshot 1`] = `
                 />
               </svg>
             </div>
+            
+            
             <div
-              class="lk-button--label has-icon"
+              class="ss-button--label has-icon"
             >
               
               Yes
               
             </div>
+            
           </div>
         </button>
         <button
-          class="lk-button lk-button--danger lk-button--base text-bold"
+          class="ss-button ss-button--danger ss-button--base text-bold"
         >
           <div
-            class="lk-button--wrapper"
+            class="ss-button--wrapper"
           >
+            
             <div
-              class="lk-button--icon"
+              class="ss-button--icon"
             >
               <svg
                 class=""
@@ -324,13 +345,16 @@ exports[`common/Modal will rendered with snapshot 1`] = `
                 />
               </svg>
             </div>
+            
+            
             <div
-              class="lk-button--label has-icon"
+              class="ss-button--label has-icon"
             >
               
               No
               
             </div>
+            
           </div>
         </button>
       </div>

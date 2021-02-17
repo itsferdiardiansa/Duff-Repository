@@ -5,25 +5,32 @@ export default {
   },
   inverse: {
     type: Boolean,
-    default: false
+    default: false,
   },
   variant: {
     type: String,
     default: 'light',
-    validator: function(variant) {
-      return ~['primary', 'danger', 'warning', 'dark', 'success', 'light'].indexOf(variant)
-    }
+    validator: function (variant) {
+      return ~[
+        'primary',
+        'danger',
+        'warning',
+        'dark',
+        'success',
+        'light',
+      ].indexOf(variant);
+    },
   },
   size: {
     type: String,
     default: 'base',
-    validator: function(variant) {
-      return ~['xs', 'sm', 'base', 'lg', 'xl'].indexOf(variant)
-    }
+    validator: function (variant) {
+      return ~['xs', 'sm', 'base', 'lg', 'xl'].indexOf(variant);
+    },
   },
   icon: {
     type: Array,
-    default: () => []
+    default: () => [],
   },
   bold: {
     type: Boolean,
@@ -39,6 +46,10 @@ export default {
   },
   pill: {
     type: Boolean,
-    default: false
+    default: false,
   },
-}
+  isLoading: {
+    type: Boolean,
+    default: false,
+  },
+};

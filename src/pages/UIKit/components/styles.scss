@@ -1,0 +1,68 @@
+.#{$prefixClass}-form {
+  &-control {
+    @apply grid grid-cols-2 md:grid-cols-12 gap-1 md:gap-4;
+    margin-bottom: 24px;
+
+    @include screen-md {
+      margin-bottom: 31px;
+    }
+
+    &--label {
+      @apply col-span-2 font-semibold;
+    }
+
+    &--wrapper {
+      @apply w-full col-span-10;
+
+      &.col-full {
+        grid-column: 1 / full;
+      }
+      @include screen-md {
+        @for $col from 1 through 12 {
+          &.col-#{$col} {
+            grid-column: #{$col} / full;
+          }
+        }
+      }
+
+      &--input,
+      &--textarea {
+        input {
+          @apply transition-all duration-500;
+        }
+      }
+    }
+
+    .#{$prefixClass}-control {
+      &--label {
+        width: 30%;
+      }
+
+      &--input {
+        input {
+          @apply focus:outline-none;
+        }
+      }
+    }
+
+    &.has-feedback {
+      margin-bottom: 0px;
+
+      .#{$prefixClass}-control {
+        &--input {
+          input {
+            @apply border border-red-500 rounded duration-500;
+          }
+        }
+
+        &--textarea {
+          @apply border border-red-500 rounded duration-500;
+        }
+
+        &--info {
+          @apply text-sm font-semibold text-red-500 my-1 md:my-2;
+        }
+      }
+    }
+  }
+}

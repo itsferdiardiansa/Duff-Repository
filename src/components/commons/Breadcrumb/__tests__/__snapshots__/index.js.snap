@@ -2,7 +2,7 @@
 
 exports[`common/Breadcrumb will render and match snapshot 1`] = `
 <ul
-  class="lk-breadcrumb"
+  class="ss-breadcrumb"
 >
   
   
@@ -11,67 +11,73 @@ exports[`common/Breadcrumb will render and match snapshot 1`] = `
 
 exports[`common/Breadcrumb will render the item according to the property data provided 1`] = `
 <ul
-  class="lk-breadcrumb"
+  class="ss-breadcrumb"
 >
   
   <li
-    class="lk-breadcrumb--item"
+    class="ss-breadcrumb--item"
   >
     <button
-      class="lk-button lk-button--primary lk-button--sm no-rounded"
+      class="ss-button ss-button--primary ss-button--sm no-rounded"
     >
       <div
-        class="lk-button--wrapper"
+        class="ss-button--wrapper"
       >
         <!--v-if-->
+        
         <div
-          class="lk-button--label"
+          class="ss-button--label"
         >
           
           Home
           
         </div>
+        
       </div>
     </button>
   </li>
   <li
-    class="lk-breadcrumb--item"
+    class="ss-breadcrumb--item"
   >
     <button
-      class="lk-button lk-button--primary lk-button--sm no-rounded"
+      class="ss-button ss-button--primary ss-button--sm no-rounded"
     >
       <div
-        class="lk-button--wrapper"
+        class="ss-button--wrapper"
       >
         <!--v-if-->
+        
         <div
-          class="lk-button--label"
+          class="ss-button--label"
         >
           
           Role
           
         </div>
+        
       </div>
     </button>
   </li>
   <li
-    class="lk-breadcrumb--item"
+    class="ss-breadcrumb--item"
   >
     <button
-      class="lk-button lk-button--primary-inverse lk-button--sm no-rounded disabled"
+      class="ss-button ss-button--primary-inverse ss-button--sm no-rounded disabled"
       disabled=""
     >
       <div
-        class="lk-button--wrapper"
+        class="ss-button--wrapper"
       >
         <!--v-if-->
+        
         <div
-          class="lk-button--label"
+          class="ss-button--label"
         >
           
           Add Role
           
         </div>
+        
       </div>
     </button>
   </li>

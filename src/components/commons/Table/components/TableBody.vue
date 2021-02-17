@@ -1,14 +1,23 @@
 <template>
   <tbody :class="`${prefixClass}-table--body`">
-     <template v-if="data.isFetching">
+    <template v-if="data.isFetching">
       <TableSkeleton :col="totalColumn" :row="data.rowLoader" />
     </template>
 
-    <TableContent :data="data" :selected="selectedRows" @onFailedFetchHandler="handleFailedFetch">
+    <TableContent
+      :data="data"
+      :selected="selectedRows"
+      @onFailedFetchHandler="handleFailedFetch"
+    >
       <template #content="props">
-        <td :class="[`${prefixClass}-table--body-col`, textColAlign(props.headers.align)]">
+        <td
+          :class="[
+            `${prefixClass}-table--body-col`,
+            textColAlign(props.headers.align),
+          ]"
+        >
           <slot name="content" :data="props">
-            {{ props.item[props.headers.accessor] }}
+            <div v-html="props.item[props.headers.accessor]"></div>
           </slot>
         </td>
       </template>
@@ -16,49 +25,47 @@
   </tbody>
 </template>
 <script>
-import { computed, unref } from 'vue'
-import TableContent from './TableContent'
-import TableSkeleton from './TableSkeleton'
+import { computed, unref } from 'vue';
+import TableContent from './TableContent';
+import TableSkeleton from './TableSkeleton';
 
 export default {
   components: {
     TableContent,
-    TableSkeleton
+    TableSkeleton,
   },
   props: {
     selectedRows: {
       type: Object,
-      default: () => { }
+      default: () => {},
     },
     selectAllRows: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
     data: {
       type: Object,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
-  emits: [
-    'onSearchCallback',
-    'onSelectedRowCallback',
-    'onFailedFetchHandler'
-  ],
+  emits: ['onSearchCallback', 'onSelectedRowCallback', 'onFailedFetchHandler'],
   setup(props) {
-    const { data: { onFailedFetchHandler } } = unref(props)
-    const textColAlign = align => (align ? `text-${align}` : '')
-    
-    const totalColumn = computed(() => {
-      const { headers, rowNumber } = props.data
+    const {
+      data: { onFailedFetchHandler },
+    } = unref(props);
+    const textColAlign = align => (align ? `text-${align}` : '');
 
-      return headers.length + (rowNumber ? 1 : 0)
-    })
+    const totalColumn = computed(() => {
+      const { headers, rowNumber } = props.data;
+
+      return headers.length + (rowNumber ? 1 : 0);
+    });
 
     return {
       textColAlign,
       totalColumn,
-      handleFailedFetch: () => onFailedFetchHandler()
-    }
-  }
-}
+      handleFailedFetch: () => onFailedFetchHandler(),
+    };
+  },
+};
 </script>

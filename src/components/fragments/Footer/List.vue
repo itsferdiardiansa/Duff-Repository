@@ -36,24 +36,25 @@
   />
 </template>
 <script>
-import { computed, onMounted, ref } from 'vue'
-import { useStore } from 'vuex'
-import { useRouter } from 'vue-router'
-import Table, { ActionButton } from '@common/Table'
-import Modal from '@common/Modal'
-import Button from '@common/Button'
+import { computed, onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+import Table, { ActionButton } from '@common/Table';
+import Modal from '@common/Modal';
+import Button from '@common/Button';
 
 export default {
   components: {
     Table,
     ActionButton,
     Modal,
-    Button
+    Button,
   },
   setup() {
-    const store = useStore()
-    const router = useRouter()
-    
+    const store = useStore();
+    const router = useRouter();
+
+    console.log(router);
     const tHeaders = ref([
       {
         title: 'Section Name',
@@ -71,74 +72,77 @@ export default {
         width: '25%',
         align: 'center',
       },
-    ])
+    ]);
 
     const actionButtons = ref([
       {
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          router.push({ name: 'Update Footer', params: {data: JSON.stringify(data)} })
-        }
+          router.push({
+            name: 'Update Footer',
+            params: { data: JSON.stringify(data) },
+          });
+        },
       },
       {
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          toggleModal(e, data)
-        }
+          toggleModal(e, data);
+        },
       },
       {
         icon: ['fa', 'plus'],
         text: 'Add Menu',
-        bold: true, 
+        bold: true,
         variant: 'dark',
         onClickFn: (e, { hash_id }) => {
-          router.push({ name: 'Footer Detail List', params: { hash_id } })
-        }
-      }
-    ])
+          router.push({ name: 'Footer Detail List', params: { hash_id } });
+        },
+      },
+    ]);
 
     const toggleModal = (e, data) => {
-      self.$modal.show(data)
-    }
+      self.$modal.show(data);
+    };
 
     const getFooter = () => {
-      store.dispatch('footer/fetchData')
-    }
+      store.dispatch('footer/fetchData');
+    };
 
     const filteredData = computed(() => {
-      return store.getters['footer/getFooter']
-    })
+      return store.getters['footer/getFooter'];
+    });
 
     const requestStatus = computed(() => {
-      return store.getters['footer/getRequestStatus']
-    })
+      return store.getters['footer/getRequestStatus'];
+    });
 
     const deleteData = ({ hash_id }) => {
       store.dispatch('footer/deleteData', {
         hash_id,
         action: 'form.delete',
-        status: 'success'
-      })
-    }
+        status: 'success',
+      });
+    };
 
     const getPosition = position => {
       const list = [
-        {value: 0, text: 'Position Top'},
-        {value: 1, text: 'Position Right'},
-        {value: 2, text: 'Position Bottom'},
-        {value: 3, text: 'Position Left'}
-      ]
+        { value: 0, text: 'Position Top' },
+        { value: 1, text: 'Position Right' },
+        { value: 2, text: 'Position Bottom' },
+        { value: 3, text: 'Position Left' },
+      ];
 
-      return list.find(item => item.value == position).text
-    }
+      return list.find(item => item.value == position).text;
+    };
 
     const createFooter = () => {
-      router.push('/footer/create')
-    }
+      router.push('/footer/create');
+    };
 
-    onMounted(getFooter)
+    onMounted(getFooter);
 
     return {
       getFooter,
@@ -148,10 +152,10 @@ export default {
       actionButtons,
       getPosition,
       deleteData,
-      createFooter
-    }
+      createFooter,
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .container {

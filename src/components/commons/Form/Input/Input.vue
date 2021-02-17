@@ -1,24 +1,40 @@
 <template>
-  <div :class="[`${prefixClass}-control--input`, {'has-icon': icon.length, 'has-error': onError}]">
+  <div
+    :class="[
+      `${prefixClass}-control--input`,
+      { 'has-icon': icon.length, 'has-error': onError },
+    ]"
+  >
     <template v-if="icon.length">
       <span class="icon">
-        <font-awesome-icon :icon="icon" :class="`${prefixClass}-form-control--icon`" />
+        <font-awesome-icon
+          :icon="icon"
+          :class="`${prefixClass}-form-control--icon`"
+        />
       </span>
     </template>
 
-    <input 
-      :class="`${prefixClass}-input`" 
+    <input
+      :class="`${prefixClass}-input`"
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
       :id="getElUid"
       v-bind="$attrs"
-      @keyup="handleChange" 
+      autocomplete="off"
+      @keyup="handleChange"
       @change="$emit('change', $event)"
-      @input="$emit('update:modelValue', (type === 'checkbox') ? $event.target.checked : $event.target.value)"
+      @input="
+        $emit(
+          'update:modelValue',
+          type === 'checkbox' ? $event.target.checked : $event.target.value
+        )
+      "
     />
 
-    <label v-if="type === 'checkbox'" :for="getElUid">{{ labelCheckbox }}</label>
+    <label v-if="type === 'checkbox'" :for="getElUid">{{
+      labelCheckbox
+    }}</label>
 
     <template v-if="onError && errorMessage">
       <span class="text-red-400 text-sm italic">{{ errorMessage }}</span>
@@ -26,44 +42,42 @@
   </div>
 </template>
 <script>
-import debounce from '@util/debounce'
-import { computed, getCurrentInstance, ref } from 'vue'
+import debounce from '@util/debounce';
+import { computed, getCurrentInstance, ref } from 'vue';
 
 export default {
-  emits: [
-    'update:modelValue'
-  ],
+  emits: ['update:modelValue'],
   props: {
     modelValue: {
       type: [String, Boolean, Number],
-      default: ''
+      default: '',
     },
     label: {
       type: String,
-      default: ''
+      default: '',
     },
     labelCheckbox: {
       type: String,
-      default: ''
+      default: '',
     },
     icon: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     onError: {
       type: Boolean,
-      default: false
+      default: false,
     },
     errorMessage: {
       type: String,
-      default: ''
+      default: '',
     },
     type: {
       type: String,
       default: 'text', // text, email, password
-      validator: function(variant) {
-        return ~['text', 'email', 'password', 'file', 'checkbox'].indexOf(variant)
-      }
+      validator: function (variant) {
+        return ~['text', 'email', 'password'].indexOf(variant);
+      },
     },
     placeholder: {
       type: String,
@@ -71,35 +85,38 @@ export default {
     },
     onChange: {
       type: Function,
-      default: () => { }
-    }
+      default: () => {},
+    },
   },
   setup(props) {
-    const inputEl = ref()
+    const inputEl = ref();
 
     const handleChange = debounce(e => {
-      const { onChange } = props
+      const { onChange } = props;
 
-      onChange(e.target.value, e)
-    }, 100)
+      onChange(e.target.value, e);
+    }, 100);
 
     const getElUid = computed(() => {
-      const { uid, type: { __hmrId } } = getCurrentInstance()
+      const {
+        uid,
+        type: { __hmrId },
+      } = getCurrentInstance();
 
-      return `input-${uid}-${__hmrId}`
-    })
+      return `input-${uid}-${__hmrId}`;
+    });
     return {
       handleChange,
       getElUid,
-      inputEl
-    }
-  }
-}
+      inputEl,
+    };
+  },
+};
 </script>
 <style lang="scss">
 .#{$prefixClass}-control--input {
   @apply relative;
-  
+
   &.has-error {
     input {
       @apply border-red-400;
@@ -115,17 +132,17 @@ export default {
   input {
     @apply w-full border rounded py-1 px-4;
 
-    &[type="file"] {
+    &[type='file'] {
       @apply w-auto inline border-0 focus:outline-none px-0;
     }
 
-    &[type="checkbox"] {
+    &[type='checkbox'] {
       @apply w-auto inline mr-2;
     }
   }
 
   .icon {
-    @apply absolute top-2.5 my-auto pl-4; 
+    @apply absolute top-2.5 my-auto pl-4;
 
     svg {
       @apply h-4 text-gray-400 fill-current;

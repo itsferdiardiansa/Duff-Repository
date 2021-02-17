@@ -8,11 +8,11 @@
   </aside>
 </template>
 <script>
-import { ref } from 'vue'
-import AppLogo from './AppLogo'
-import LayoutMenu from './Menu'
-import ListMenu from './MenuList'
-import MenuCollections from '@mock/menu'
+import { ref } from 'vue';
+import AppLogo from './AppLogo';
+import LayoutMenu from './Menu';
+import ListMenu from './MenuList';
+import MenuCollections from '@data/menu';
 
 export default {
   components: {
@@ -21,13 +21,13 @@ export default {
     ListMenu,
   },
   setup() {
-    let menus = ref(MenuCollections)
+    let menus = ref(MenuCollections);
 
     return {
       menus,
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .app-sidebar {

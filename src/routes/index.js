@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import DashboardRoutes from './dashboard'
-import setupRouter from './guard/setupRouter'
-import NotFoundPage from '@page/Error/404'
+import { createRouter, createWebHistory } from 'vue-router';
+import DashboardRoutes from './dashboard';
+import setupRouter from './guard/setupRouter';
+import NotFoundPage from '@page/Error/404';
 
-export const router = createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
@@ -13,6 +13,15 @@ export const router = createRouter({
         import(/** webpackChunkName "layout.main" */ '@layout/MainLayout'),
       redirect: '/hero',
       children: [...DashboardRoutes],
+      meta: {
+        authRequired: true,
+      },
+    },
+    {
+      name: 'Login',
+      path: '/login',
+      component: () =>
+        import(/* webpackChunkName "page.login" */ '@page/Login'),
     },
     {
       name: 'Page Not Found',
@@ -20,7 +29,7 @@ export const router = createRouter({
       component: NotFoundPage,
     },
   ],
-})
+});
 
 if (process.env.NODE_ENV === 'development')
   router.addRoute({
@@ -28,10 +37,12 @@ if (process.env.NODE_ENV === 'development')
     name: 'UI Kit',
     component: () =>
       import(/** webpackChunkName "lk-admin-ui-kit" */ '@page/UIKit'),
-  })
+  });
 
 export const createAppRouter = app => {
-  setupRouter(router, app)
+  setupRouter(router, app);
 
-  app.use(router)
-}
+  app.use(router);
+};
+
+export default router;

@@ -13,8 +13,14 @@
   transform: translateX(30px);
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+/**
+ * Base Fade Animation 
+ *
+ */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+  opacity: 1;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

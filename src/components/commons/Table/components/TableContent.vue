@@ -37,11 +37,11 @@
       </td>
     </tr>
   </template>
-</template> 
+</template>
 <script>
-import { computed , defineComponent, ref } from 'vue'
-import errorComponentDefault from './TableError'
-import emptyComponentDefault from './TableEmpty'
+import { computed, defineComponent, ref } from 'vue';
+import errorComponentDefault from './TableError';
+import emptyComponentDefault from './TableEmpty';
 
 export default defineComponent({
   props: {
@@ -54,61 +54,63 @@ export default defineComponent({
       default: () => {},
     },
   },
-  emits: [
-    'onFailedFetchHandler'
-  ],
+  emits: ['onFailedFetchHandler'],
   setup(props, { emit }) {
-    const dataRows = ref([])
+    const dataRows = ref([]);
 
     let selectedRows = computed(() => {
-      const { selected } = props
+      const { selected } = props;
 
-      return selected
-    })
+      return selected;
+    });
 
     const totalColumn = computed(() => {
-      const { headers, rowNumber } = props.data
+      const { headers, rowNumber } = props.data;
 
-      return headers.length + (rowNumber ? 1 : 0)
-    })
+      return headers.length + (rowNumber ? 1 : 0);
+    });
 
     const checkboxHashId = computed(() => {
       return [
         new Date().getTime(),
         Math.floor(10000 + Math.random() * 90000),
-      ].join('-')
-    })
-    
-    const getKey = (item, key) => {
-      return Reflect.has(item, 'id') ? item.id : key
-    }
+      ].join('-');
+    });
 
-    const getRowClass = id => ([
-      'table-content__body-row',
+    const getKey = (item, key) => {
+      return Reflect.has(item, 'id') ? item.id : key;
+    };
+
+    const getRowClass = id => [
+      'table-content--body-row',
       {
-        'selected': selectedRows.value.ids.includes(id)
-      }
-    ])
+        selected: selectedRows.value.ids.includes(id),
+      },
+    ];
 
     const handleClick = (item, key) => {
-      emit('setSelectedRow', {item, key})
-    }
+      emit('setSelectedRow', { item, key });
+    };
 
     const countDataRows = el => {
-      dataRows.value.push(el)
-    }
+      dataRows.value.push(el);
+    };
 
     const getErrorComponent = computed(() => {
-      const { data: { errorComponent } } = props
-      
-      return errorComponent || errorComponentDefault
-    })
+      const {
+        data: { errorComponent },
+      } = props;
+
+      return errorComponent || errorComponentDefault;
+    });
 
     const getEmptyCoponent = computed(() => {
-      const { data: { emptyComponent } } = props
+      const {
+        data: { emptyComponent },
+      } = props;
 
-      return emptyComponent || emptyComponentDefault
-    })
+      return emptyComponent || emptyComponentDefault;
+    });
 
     return {
       ...props,
@@ -121,8 +123,8 @@ export default defineComponent({
       getRowClass,
       countDataRows,
       getErrorComponent,
-      getEmptyCoponent
-    }
+      getEmptyCoponent,
+    };
   },
-})
+});
 </script>

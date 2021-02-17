@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/Pagination it does not render the next navigation when it is on the last page 1`] = `
+<div
+  class="ss-pagination"
+>
+  <div
+    class="ss-pagination--info"
+  >
+    <p>
+       Showing 
+      <span>
+        91
+      </span>
+       to 
+      <span>
+        100
+      </span>
+       of 
+      <span>
+        100
+      </span>
+       results 
+    </p>
+  </div>
+  <div
+    class="ss-pagination--page"
+  >
+    <span
+      class="nav-btn prev"
+    >
+      <img
+        svg-inline=""
+      />
+    </span>
+    
+    <span
+      class="page-number"
+    >
+      6
+    </span>
+    <span
+      class="page-number"
+    >
+      7
+    </span>
+    <span
+      class="page-number"
+    >
+      8
+    </span>
+    <span
+      class="page-number"
+    >
+      9
+    </span>
+    <span
+      class="page-number active"
+    >
+      10
+    </span>
+    
+    <!--v-if-->
+  </div>
+</div>
+`;
+
+exports[`common/Pagination it does not render the prev navigation when it is on the first page 1`] = `
+<div
+  class="ss-pagination"
+>
+  <div
+    class="ss-pagination--info"
+  >
+    <p>
+       Showing 
+      <span>
+        1
+      </span>
+       to 
+      <span>
+        10
+      </span>
+       of 
+      <span>
+        100
+      </span>
+       results 
+    </p>
+  </div>
+  <div
+    class="ss-pagination--page"
+  >
+    <!--v-if-->
+    
+    <span
+      class="page-number active"
+    >
+      1
+    </span>
+    <span
+      class="page-number"
+    >
+      2
+    </span>
+    <span
+      class="page-number"
+    >
+      3
+    </span>
+    <span
+      class="page-number"
+    >
+      4
+    </span>
+    <span
+      class="page-number"
+    >
+      5
+    </span>
+    
+    <span
+      class="nav-btn next"
+    >
+      <img
+        svg-inline=""
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`common/Pagination will not render if it does not have a total_page value 1`] = `<!--v-if-->`;
+
+exports[`common/Pagination will render and match snapshot 1`] = `
+<div
+  class="ss-pagination"
+>
+  <div
+    class="ss-pagination--info"
+  >
+    <p>
+       Showing 
+      <span>
+        1
+      </span>
+       to 
+      <span>
+        10
+      </span>
+       of 
+      <span>
+        20
+      </span>
+       results 
+    </p>
+  </div>
+  <div
+    class="ss-pagination--page"
+  >
+    <!--v-if-->
+    
+    <span
+      class="page-number active"
+    >
+      1
+    </span>
+    <span
+      class="page-number"
+    >
+      2
+    </span>
+    
+    <span
+      class="nav-btn next"
+    >
+      <img
+        svg-inline=""
+      />
+    </span>
+  </div>
+</div>
+`;

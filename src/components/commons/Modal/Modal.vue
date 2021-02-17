@@ -1,19 +1,19 @@
 <template>
-  <div :class="`${prefixClass}-modal`" v-if="isShow" ref="modalEl">
-    <div :class="`${prefixClass}-modal--container`">
-      <div
-        :class="`${prefixClass}-modal--overlay`"
-        aria-hidden="true"
-        @click="onBlur"
-      >
-        <div :class="`${prefixClass}-modal--overlay-bg`"></div>
-      </div>
+  <transition name="slide-top" appear>
+    <div :class="`${prefixClass}-modal`" v-if="isShow" ref="modalEl">
+      <div :class="`${prefixClass}-modal--container`">
+        <div
+          :class="`${prefixClass}-modal--overlay`"
+          aria-hidden="true"
+          @click="onBlur"
+        >
+          <div :class="`${prefixClass}-modal--overlay-bg`"></div>
+        </div>
 
-      <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
-        >&#8203;</span
-      >
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
+          >&#8203;</span
+        >
 
-      <transition name="fade-slide" appear>
         <div
           :class="`${prefixClass}-modal--body`"
           role="dialog"
@@ -59,13 +59,13 @@
             />
           </div>
         </div>
-      </transition>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 <script>
-import { ref } from 'vue'
-import Button from '@common/Button'
+import { ref } from 'vue';
+import Button from '@common/Button';
 
 export default {
   name: 'CMModal',
@@ -95,35 +95,35 @@ export default {
     },
   },
   created() {
-    self.$modal = this.modal
+    self.$modal = this.modal;
   },
   setup(props) {
-    const modalEl = ref()
-    const modalBodyEl = ref()
-    const modalFooterEl = ref()
-    const modalConfirmBtnEl = ref()
-    const modalCancelBtnEl = ref()
-    const isShow = ref(false)
-    let currentData
+    const modalEl = ref();
+    const modalBodyEl = ref();
+    const modalFooterEl = ref();
+    const modalConfirmBtnEl = ref();
+    const modalCancelBtnEl = ref();
+    const isShow = ref(false);
+    let currentData;
 
     const handleConfirm = () => {
-      isShow.value = false
+      isShow.value = false;
 
-      props.onConfirmFn(currentData)
-    }
+      props.onConfirmFn(currentData);
+    };
 
     const handleCancel = () => {
-      isShow.value = false
+      isShow.value = false;
 
-      props.onCancelFn()
-    }
+      props.onCancelFn();
+    };
 
     const modal = {
       show: data => {
-        isShow.value = true
-        currentData = data
+        isShow.value = true;
+        currentData = data;
       },
-    }
+    };
 
     return {
       modal,
@@ -135,9 +135,9 @@ export default {
       isShow,
       handleConfirm,
       handleCancel,
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .#{$prefixClass}-modal {

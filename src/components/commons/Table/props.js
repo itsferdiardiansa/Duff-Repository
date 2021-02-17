@@ -21,7 +21,7 @@ export default {
   },
   onError: {
     type: Boolean,
-    default: false
+    default: false,
   },
   rowLoader: {
     type: Number,
@@ -33,11 +33,15 @@ export default {
   },
   errorComponent: {
     type: Object,
-    default: () => {}
+    default: () => {},
   },
   onFailedFetchHandler: {
     type: Function,
-    default: () => {}
+    default: () => {},
+  },
+  onPageChange: {
+    type: Function,
+    default: () => {},
   },
   selectableRows: {
     type: Boolean,
@@ -50,17 +54,17 @@ export default {
   pagination: {
     type: Object,
     default: () => ({
-      currentPage: 1,
-      pageSize: 5,
-      total: 0
-    })
+      current_page: 1,
+      per_page: 5,
+      total_page: 0,
+    }),
   },
   withFilter: {
     type: Boolean,
-    default: false
+    default: false,
   },
   filterOptions: {
     type: Array,
-    default: () => []
-  }
-}
+    default: () => [],
+  },
+};

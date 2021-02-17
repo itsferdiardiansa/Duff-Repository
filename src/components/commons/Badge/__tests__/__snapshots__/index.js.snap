@@ -2,19 +2,19 @@
 
 exports[`common/Badge will have a disabled attribute correctly 1`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--xl text-bold"
+  class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold"
   disabled="true"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <div
-      class="lk-badge--icon"
+      class="ss-badge--icon"
     >
       <font-awesome-icon-stub />
     </div>
     <div
-      class="lk-badge--label has-icon"
+      class="ss-badge--label has-icon"
     >
       
       This is common badge
@@ -26,7 +26,7 @@ exports[`common/Badge will have a disabled attribute correctly 1`] = `
 
 exports[`common/Badge will have a dot correctly 1`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--xl text-bold pill dot"
+  class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold pill dot"
   disabled="true"
 >
   <!--v-if-->
@@ -35,18 +35,18 @@ exports[`common/Badge will have a dot correctly 1`] = `
 
 exports[`common/Badge will have a icon correctly 1`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--xl text-bold"
+  class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <div
-      class="lk-badge--icon"
+      class="ss-badge--icon"
     >
       <font-awesome-icon-stub />
     </div>
     <div
-      class="lk-badge--label has-icon"
+      class="ss-badge--label has-icon"
     >
       
       This is common badge
@@ -58,14 +58,14 @@ exports[`common/Badge will have a icon correctly 1`] = `
 
 exports[`common/Badge will have a inverse variant color correctly 1`] = `
 <span
-  class="lk-badge lk-badge--primary-inverse lk-badge--xs text-bold"
+  class="ss-badge ss-badge--primary-inverse ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -77,14 +77,14 @@ exports[`common/Badge will have a inverse variant color correctly 1`] = `
 
 exports[`common/Badge will have a inverse variant color correctly 2`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--xs text-bold"
+  class="ss-badge ss-badge--danger-inverse ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -96,14 +96,14 @@ exports[`common/Badge will have a inverse variant color correctly 2`] = `
 
 exports[`common/Badge will have a label correctly 1`] = `
 <span
-  class="lk-badge lk-badge--light lk-badge--xs text-bold"
+  class="ss-badge ss-badge--light ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -115,19 +115,19 @@ exports[`common/Badge will have a label correctly 1`] = `
 
 exports[`common/Badge will have a pill correctly 1`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--xl text-bold pill"
+  class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold pill"
   disabled="true"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <div
-      class="lk-badge--icon"
+      class="ss-badge--icon"
     >
       <font-awesome-icon-stub />
     </div>
     <div
-      class="lk-badge--label has-icon"
+      class="ss-badge--label has-icon"
     >
       
       This is common badge
@@ -139,14 +139,14 @@ exports[`common/Badge will have a pill correctly 1`] = `
 
 exports[`common/Badge will have a size correctly 1`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--xs text-bold"
+  class="ss-badge ss-badge--danger-inverse ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -158,14 +158,14 @@ exports[`common/Badge will have a size correctly 1`] = `
 
 exports[`common/Badge will have a size correctly 2`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--sm text-bold"
+  class="ss-badge ss-badge--danger-inverse ss-badge--sm text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -177,14 +177,14 @@ exports[`common/Badge will have a size correctly 2`] = `
 
 exports[`common/Badge will have a size correctly 3`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--base text-bold"
+  class="ss-badge ss-badge--danger-inverse ss-badge--base text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -196,14 +196,14 @@ exports[`common/Badge will have a size correctly 3`] = `
 
 exports[`common/Badge will have a size correctly 4`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--lg text-bold"
+  class="ss-badge ss-badge--danger-inverse ss-badge--lg text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -215,14 +215,14 @@ exports[`common/Badge will have a size correctly 4`] = `
 
 exports[`common/Badge will have a size correctly 5`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--xl text-bold"
+  class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -234,7 +234,7 @@ exports[`common/Badge will have a size correctly 5`] = `
 
 exports[`common/Badge will have a text bold correctly 1`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--xl text-bold pill dot"
+  class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold pill dot"
   disabled="true"
 >
   <!--v-if-->
@@ -243,14 +243,14 @@ exports[`common/Badge will have a text bold correctly 1`] = `
 
 exports[`common/Badge will have a variant color correctly 1`] = `
 <span
-  class="lk-badge lk-badge--primary lk-badge--xs text-bold"
+  class="ss-badge ss-badge--primary ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -262,14 +262,14 @@ exports[`common/Badge will have a variant color correctly 1`] = `
 
 exports[`common/Badge will have a variant color correctly 2`] = `
 <span
-  class="lk-badge lk-badge--danger lk-badge--xs text-bold"
+  class="ss-badge ss-badge--danger ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -281,14 +281,14 @@ exports[`common/Badge will have a variant color correctly 2`] = `
 
 exports[`common/Badge will have a variant color correctly 3`] = `
 <span
-  class="lk-badge lk-badge--warning lk-badge--xs text-bold"
+  class="ss-badge ss-badge--warning ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -300,14 +300,14 @@ exports[`common/Badge will have a variant color correctly 3`] = `
 
 exports[`common/Badge will have a variant color correctly 4`] = `
 <span
-  class="lk-badge lk-badge--dark lk-badge--xs text-bold"
+  class="ss-badge ss-badge--dark ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -319,14 +319,14 @@ exports[`common/Badge will have a variant color correctly 4`] = `
 
 exports[`common/Badge will have a variant color correctly 5`] = `
 <span
-  class="lk-badge lk-badge--success lk-badge--xs text-bold"
+  class="ss-badge ss-badge--success ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <div
-      class="lk-badge--label"
+      class="ss-badge--label"
     >
       
       This is common badge
@@ -338,19 +338,19 @@ exports[`common/Badge will have a variant color correctly 5`] = `
 
 exports[`common/Badge will not a rounded correctly 1`] = `
 <span
-  class="lk-badge lk-badge--danger-inverse lk-badge--xl text-bold no-rounded"
+  class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold no-rounded"
   disabled="true"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <div
-      class="lk-badge--icon"
+      class="ss-badge--icon"
     >
       <font-awesome-icon-stub />
     </div>
     <div
-      class="lk-badge--label has-icon"
+      class="ss-badge--label has-icon"
     >
       
       This is common badge
@@ -362,10 +362,10 @@ exports[`common/Badge will not a rounded correctly 1`] = `
 
 exports[`common/Badge will render and match snapshot 1`] = `
 <span
-  class="lk-badge lk-badge--light lk-badge--xs text-bold"
+  class="ss-badge ss-badge--light ss-badge--xs text-bold"
 >
   <div
-    class="lk-badge--wrapper"
+    class="ss-badge--wrapper"
   >
     <!--v-if-->
     <!--v-if-->

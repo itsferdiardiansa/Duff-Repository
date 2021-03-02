@@ -27,7 +27,11 @@ exports[`fragment/Partner/ActionForm will post data on failed and bring up an al
 
     <div
       data-v-app=""
+<<<<<<< HEAD
       id="ss-alert_90343143211614656554146"
+=======
+      id="ss-alert_20445302711614656457776"
+>>>>>>> 07781563751eb567815a4473b1228b7585a15975
       role="alert"
     >
       <div
@@ -71,7 +75,7 @@ exports[`fragment/Partner/ActionForm will post data on success and bring up an a
 
     <div
       data-v-app=""
-      id="ss-alert_90343143211614656554146"
+      id="ss-alert_20445302711614656457776"
       role="alert"
     >
       <div
@@ -259,7 +263,11 @@ exports[`fragment/Partner/ActionForm will render and match snapshot 1`] = `
         name="description"
       >
         <textarea
+<<<<<<< HEAD
           id="tiny-vue_49138270121614656554129"
+=======
+          id="tiny-vue_47674822521614656457761"
+>>>>>>> 07781563751eb567815a4473b1228b7585a15975
           visibility="hidden"
         />
       </div>
@@ -513,7 +521,11 @@ exports[`fragment/Partner/ActionForm will render the spinner during the request 
         name="description"
       >
         <textarea
+<<<<<<< HEAD
           id="tiny-vue_20732158571614656554341"
+=======
+          id="tiny-vue_6949054871614656457874"
+>>>>>>> 07781563751eb567815a4473b1228b7585a15975
           visibility="hidden"
         />
       </div>
@@ -760,7 +772,11 @@ exports[`fragment/Partner/ActionForm will render the text and color for the form
         name="description"
       >
         <textarea
+<<<<<<< HEAD
           id="tiny-vue_11976018081614656554357"
+=======
+          id="tiny-vue_52095851781614656457894"
+>>>>>>> 07781563751eb567815a4473b1228b7585a15975
           visibility="hidden"
         />
       </div>
@@ -1030,7 +1046,11 @@ exports[`fragment/Partner/ActionForm will render with error validation on all fi
         name="description"
       >
         <textarea
+<<<<<<< HEAD
           id="tiny-vue_4084212331614656554162"
+=======
+          id="tiny-vue_63797806831614656457786"
+>>>>>>> 07781563751eb567815a4473b1228b7585a15975
           visibility="hidden"
         />
       </div>

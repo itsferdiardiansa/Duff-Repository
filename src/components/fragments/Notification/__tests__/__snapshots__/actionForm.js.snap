@@ -27,7 +27,7 @@ exports[`fragment/Notification/ActionForm will post data on failed and bring up 
 
     <div
       data-v-app=""
-      id="ss-alert_60333798111614833181397"
+      id="ss-alert_22906689111614839174803"
       role="alert"
     >
       <div
@@ -73,7 +73,7 @@ exports[`fragment/Notification/ActionForm will post data on success and bring up
 
     <div
       data-v-app=""
-      id="ss-alert_60333798111614833181397"
+      id="ss-alert_22906689111614839174803"
       role="alert"
     >
       <div
@@ -159,7 +159,7 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
         name="description"
       >
         <textarea
-          id="tiny-vue_38421088621614833181359"
+          id="tiny-vue_75246413821614839174781"
           visibility="hidden"
         />
       </div>
@@ -227,7 +227,7 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--dark ss-button--base text-bold"
@@ -321,7 +321,7 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
         name="description"
       >
         <textarea
-          id="tiny-vue_35163785571614833181561"
+          id="tiny-vue_6373317071614839175008"
           visibility="hidden"
         />
       </div>
@@ -389,7 +389,7 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--dark ss-button--base text-bold"
@@ -476,7 +476,7 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
         name="description"
       >
         <textarea
-          id="tiny-vue_1735453181614833181612"
+          id="tiny-vue_67040120881614839175065"
           visibility="hidden"
         />
       </div>
@@ -544,7 +544,7 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--warning ss-button--base text-bold"
@@ -642,7 +642,7 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
         name="description"
       >
         <textarea
-          id="tiny-vue_3731691131614833181403"
+          id="tiny-vue_26512965231614839174808"
           visibility="hidden"
         />
       </div>
@@ -722,7 +722,7 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--dark ss-button--base text-bold"

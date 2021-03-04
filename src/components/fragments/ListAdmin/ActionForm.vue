@@ -1,51 +1,38 @@
 <template>
   <Form ref="formEl" :model="state.form" @submit="handleSubmit">
     <FormControl
-      label="Title"
+      label="Name"
       :rules="{
-        title: [{ required: true, message: 'Title is required' }],
+        name: [{ required: true, message: 'Name is required' }],
       }"
     >
-      <Input
-        placeholder="Title"
-        name="Title"
-        v-model="state.form.title"
-        autofocus
+      <Input placeholder="Role Name" v-model="state.form.name" autofocus />
+    </FormControl>
+
+    <FormControl
+      label="Email"
+      :rules="{
+        email: [{ required: true, message: 'Email is required' }],
+      }"
+    >
+      <Input placeholder="Email" v-model="state.form.email" autofocus />
+    </FormControl>
+
+    <FormControl
+      label="Role"
+      :colspan="2"
+      :rules="{
+        id_role: [{ required: true, message: 'Role is required' }],
+      }"
+    >
+      <Select
+        type="button"
+        variant="dark"
+        keyname="id"
+        placeholder="Please select role"
+        :items="state.roleList"
+        v-model="state.form.id_role"
       />
-    </FormControl>
-
-    <FormControl
-      label="Button URL"
-      :rules="{
-        button_url: [{ required: true, message: 'Button URL is required' }],
-      }"
-    >
-      <Input
-        placeholder="Button URL"
-        name="ldp_id"
-        v-model="state.form.button_url"
-        autofocus
-      />
-    </FormControl>
-
-    <FormControl
-      label="Banner"
-      :rules="{
-        banner: [{ required: true, message: 'Banner is required' }],
-      }"
-    >
-      <FileUpload name="banner" v-model="state.form.banner" />
-    </FormControl>
-
-    <FormControl
-      label="Banner"
-      :rules="{
-        banner_mobile: [
-          { required: true, message: 'Banner Mobile is required' },
-        ],
-      }"
-    >
-      <FileUpload name="banner_mobile" v-model="state.form.banner_mobile" />
     </FormControl>
 
     <FormControl :offset="3">
@@ -63,11 +50,18 @@
 <script>
 /* eslint-disable */
 import { onMounted, reactive, ref, unref } from 'vue';
-import Form, { FormControl, FileUpload, Input, Textarea } from '@common/Form';
+import Form, {
+  FormControl,
+  FileUpload,
+  Input,
+  Textarea,
+  Select,
+} from '@common/Form';
 import Button from '@common/Button';
+import { Rect as RectSkeleton } from '@common/Skeleton';
 
 export default {
-  name: 'HeroActionForm',
+  name: 'AdminActionForm',
   components: {
     Button,
     Form,
@@ -75,6 +69,8 @@ export default {
     FileUpload,
     Input,
     Textarea,
+    Select,
+    RectSkeleton,
   },
   emits: ['submit'],
   props: {
@@ -99,11 +95,14 @@ export default {
     const formEl = ref();
     const state = reactive({
       form: {
-        title: '',
-        button_url: '',
-        banner: '',
-        banner_mobile: '',
+        name: '',
+        email: '',
+        id_role: 1,
       },
+      roleList: [
+        { id: 1, label: 'Admin' },
+        { id: 2, label: 'Marketing' },
+      ],
     });
 
     const handleSubmit = () => {
@@ -120,7 +119,9 @@ export default {
     onMounted(() => {
       const { data, isCreate } = props;
 
-      if (data && !isCreate) state.form = data;
+      if (data && !isCreate) {
+        state.form = data;
+      }
     });
 
     return {

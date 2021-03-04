@@ -55,6 +55,9 @@ export default defineComponent({
     colspan: {
       type: Number,
     },
+    offset: {
+      type: Number,
+    },
   },
   created() {},
   setup(props, context) {
@@ -134,12 +137,14 @@ export default defineComponent({
 
     const renderWrapperInputControl = (inputElement, infoElement) => {
       const { data } = instance;
-      const { colspan, label } = props;
+      const { colspan, offset, label } = props;
       let customClass = [`${data.prefixClass}-form-control--wrapper`];
+
+      if (offset) customClass.push(`col-offset-${offset}`);
 
       if (colspan) customClass.push(`col-${colspan}`);
 
-      if (!label && !colspan) customClass.push(`col-full`);
+      if (!label && !offset) customClass.push(`col-full`);
 
       return h(
         'div',

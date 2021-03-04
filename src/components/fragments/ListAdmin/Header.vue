@@ -1,17 +1,15 @@
 <template>
-  <div class="content-header flex items-center justify-between">
-    <div class="flex items-center">
-      <div class="title">
-        <h2 class="font-bold text-2xl">List Admin CMSLOKET</h2>
-      </div>
+  <div class="top-list">
+    <div class="top-list--title">
+      <h2 class="font-bold text-2xl">List Admin CMSLOKET</h2>
     </div>
 
-    <div class="btn-create float-right">
-      <Button 
+    <div class="top-list--create">
+      <Button
         variant="primary"
         :icon="['fa', 'plus']"
-        :bold="true" 
-        @click="addAdmin" 
+        :bold="true"
+        @click="addAdmin"
       >
         Add Admin
       </Button>
@@ -19,23 +17,36 @@
   </div>
 </template>
 <script>
-import { useRouter } from 'vue-router'
-import Button from '@common/Button'
+import { useRouter } from 'vue-router';
+import Button from '@common/Button';
 
 export default {
   components: {
     Button,
   },
   setup() {
-    const router = useRouter()
+    const router = useRouter();
 
     const addAdmin = () => {
-      router.push('/list-admin/add')
-    }
+      router.push('/list-admin/create');
+    };
 
     return {
       addAdmin,
-    }
+    };
   },
-}
+};
 </script>
+<style lang="scss" scoped>
+.top-list {
+  @apply flex items-center justify-between;
+
+  &--title {
+    @apply flex items-center;
+  }
+
+  &--create {
+    @apply float-right;
+  }
+}
+</style>

@@ -22,7 +22,7 @@ exports[`fragment/Hero/ActionForm will post data on failed and bring up an alert
 
     <div
       data-v-app=""
-      id="ss-alert_13211621011614833178915"
+      id="ss-alert_18552893611614839172419"
       role="alert"
     >
       <div
@@ -68,7 +68,7 @@ exports[`fragment/Hero/ActionForm will post data on success and bring up an aler
 
     <div
       data-v-app=""
-      id="ss-alert_13211621011614833178915"
+      id="ss-alert_18552893611614839172419"
       role="alert"
     >
       <div
@@ -265,7 +265,7 @@ exports[`fragment/Hero/ActionForm will render and match snapshot 1`] = `
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--dark ss-button--base text-bold"
@@ -470,7 +470,7 @@ exports[`fragment/Hero/ActionForm will render the spinner during the request pro
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--dark ss-button--base text-bold"
@@ -668,7 +668,7 @@ exports[`fragment/Hero/ActionForm will render the text and color for the form up
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--warning ss-button--base text-bold"
@@ -889,7 +889,7 @@ exports[`fragment/Hero/ActionForm will render with error validation on all field
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--dark ss-button--base text-bold"

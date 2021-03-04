@@ -59,7 +59,7 @@
       <FileUpload name="hero" v-model="state.form.hero" />
     </FormControl>
 
-    <FormControl :colspan="3">
+    <FormControl :offset="3">
       <Button
         type="submit"
         :label="isCreate ? 'Create' : 'Update'"

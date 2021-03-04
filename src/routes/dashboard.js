@@ -161,11 +161,19 @@ const routes = [
       import(/* webpackChunkName: 'page.admin' */ '@page/ListAdmin'),
     children: [
       {
-        path: 'add',
-        name: 'Add Admin',
+        path: 'create',
+        name: 'Create Admin',
         component: () =>
           import(
-            /* webpackChunkName: 'page.admin.form' */ '@page/ListAdmin/Add'
+            /* webpackChunkName: 'page.admin.form.create' */ '@page/ListAdmin/Create'
+          ),
+      },
+      {
+        path: 'update',
+        name: 'Update Admin',
+        component: () =>
+          import(
+            /* webpackChunkName: 'page.admin.form.update' */ '@page/ListAdmin/Update'
           ),
       },
     ],

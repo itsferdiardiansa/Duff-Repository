@@ -34,13 +34,13 @@
 <script>
 import { computed, onMounted, reactive, ref } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 import Table, {
   EmptyTable as emptyComponent,
   ActionButton,
 } from '@common/Table';
 import Badge from '@common/Badge';
 import Modal from '@common/Modal';
-import { useRouter } from 'vue-router';
 
 export default {
   components: {

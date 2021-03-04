@@ -36,7 +36,7 @@
       <Input placeholder="Link" v-model="state.form.action_text" />
     </FormControl>
 
-    <FormControl :colspan="3">
+    <FormControl :offset="3">
       <Button
         type="submit"
         :label="isCreate ? 'Create' : 'Update'"

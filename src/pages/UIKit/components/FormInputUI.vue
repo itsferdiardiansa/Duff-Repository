@@ -10,7 +10,7 @@
       </div>
 
       <Form ref="form" :model="state" @submit="onSubmit">
-        <FormControl :colspan="3" :rules="emailRules">
+        <FormControl :offset="3" :rules="emailRules">
           <Input
             placeholder="Please input email"
             autocomplete="off"
@@ -57,7 +57,7 @@
         </FormControl>
 
         <FormControl
-          :colspan="3"
+          :offset="3"
           :rules="{
             description: [
               { required: true, message: 'Please input description' },
@@ -68,7 +68,7 @@
         </FormControl>
 
         <FormControl
-          :colspan="3"
+          :offset="3"
           :rules="{
             role: [{ required: true, message: 'Please select roles' }],
           }"
@@ -82,7 +82,7 @@
         </FormControl>
 
         <FormControl
-          :colspan="3"
+          :offset="3"
           :rules="{
             isPublic: [{ required: true, message: 'Please select public' }],
           }"
@@ -99,7 +99,7 @@
         </FormControl>
 
         <FormControl
-          :colspan="3"
+          :offset="3"
           :rules="{
             banner: [{ required: true, message: 'Banner is required' }],
           }"
@@ -112,7 +112,7 @@
           @changePage="onPaginationChange"
         />
 
-        <FormControl :colspan="3">
+        <FormControl :offset="3">
           <Button label="Login" type="submit" variant="dark" class="mt-2" />
         </FormControl>
       </Form>

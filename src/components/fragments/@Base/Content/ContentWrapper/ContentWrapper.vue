@@ -1,7 +1,7 @@
 <template>
   <Card class="content">
     <div class="content--wrapper">
-      <div class="content--header">
+      <div class="content--header" v-if="$slots.header">
         <slot name="header" />
       </div>
 

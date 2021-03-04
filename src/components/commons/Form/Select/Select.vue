@@ -40,7 +40,15 @@
 </template>
 <script>
 /* eslint-disable */
-import { computed, getCurrentInstance, reactive, ref, unref, watch } from 'vue';
+import {
+  computed,
+  getCurrentInstance,
+  onMounted,
+  reactive,
+  ref,
+  unref,
+  watch,
+} from 'vue';
 
 export default {
   name: 'CMSelect',
@@ -66,7 +74,7 @@ export default {
     const { items, modelValue } = props;
     const isCollapsed = ref(false);
     const itemIndex = ref(-1);
-    const selectedValue = ref('');
+    const selectedValue = ref();
 
     const toggleDropdown = e => {
       if (!isCollapsed.value && e?.type === 'blur') return false;
@@ -200,6 +208,12 @@ export default {
         selectedValue.value = val;
       }
     );
+
+    onMounted(() => {
+      const { modelValue } = props;
+
+      selectedValue.value = modelValue;
+    });
 
     return {
       dropdownEl,

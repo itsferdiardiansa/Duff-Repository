@@ -20,7 +20,7 @@ exports[`fragment/Role/ActionForm will post data on failed and bring up an alert
 
     <div
       data-v-app=""
-      id="ss-alert_55511490411614833185505"
+      id="ss-alert_89807056711614839177938"
       role="alert"
     >
       <div
@@ -66,7 +66,7 @@ exports[`fragment/Role/ActionForm will post data on success and bring up an aler
 
     <div
       data-v-app=""
-      id="ss-alert_55511490411614833185505"
+      id="ss-alert_89807056711614839177938"
       role="alert"
     >
       <div
@@ -161,7 +161,7 @@ exports[`fragment/Role/ActionForm will render and match snapshot 1`] = `
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--dark ss-button--base text-bold"
@@ -264,7 +264,7 @@ exports[`fragment/Role/ActionForm will render the spinner during the request pro
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--dark ss-button--base text-bold"
@@ -360,7 +360,7 @@ exports[`fragment/Role/ActionForm will render the text and color for the form up
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--warning ss-button--base text-bold"
@@ -471,7 +471,7 @@ exports[`fragment/Role/ActionForm will render with error validation on all field
   >
     <!---->
     <div
-      class="ss-form-control--wrapper col-3"
+      class="ss-form-control--wrapper col-offset-3"
     >
       <button
         class="ss-button ss-button--dark ss-button--base text-bold"

@@ -24,7 +24,7 @@
       />
     </FormControl>
 
-    <FormControl :colspan="3">
+    <FormControl :offset="3">
       <Button
         type="submit"
         :label="isCreate ? 'Create' : 'Update'"

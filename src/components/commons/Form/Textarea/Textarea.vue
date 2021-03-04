@@ -109,4 +109,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" src="@common/Form/style.scss" scoped></style>

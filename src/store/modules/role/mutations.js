@@ -16,6 +16,30 @@ const mutations = {
       body: { ...payload },
     };
   },
+  fetchPrivilegesStart(state) {
+    state.privileges = {
+      ...state.privileges,
+      isFetching: true,
+      onError: false,
+    };
+  },
+  fetchPrivilegesSuccess(state, payload) {
+    state.privileges = {
+      ...state.privileges,
+      isFetching: false,
+      items: payload?.result,
+    };
+  },
+  fetchPrivilegesFailed(state, payload) {
+    state.privileges = {
+      ...state.privileges,
+      isFetching: false,
+      onError: {
+        status: true,
+        body: { ...payload },
+      },
+    };
+  },
 };
 
 export default mutations;

@@ -2,10 +2,17 @@ export default {
   isFetching: false,
   onError: {
     status: false,
-    data: {},
+    body: {},
   },
   items: [],
-  previleges: [],
+  privileges: {
+    isFetching: false,
+    items: [],
+    onError: {
+      status: false,
+      body: {},
+    },
+  },
   form: {
     name: '',
     previleges: [],

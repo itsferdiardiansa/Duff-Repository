@@ -1,22 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fragment/Notification/ActionForm will overide local data when in update mode 1`] = `
+exports[`fragment/Role/ActionForm will overide local data when in update mode 1`] = `
 Object {
   "form": Object {
-    "description": <p>Type your description here</p>,
-    "hero": "/7343bxx==",
-    "is_active": "1",
-    "ldp_id": "123456",
-    "logo": "/9xbg6dsds==",
-    "name": "Notification name has been updated",
-    "position": "1",
-    "site": "https://google.com",
-    "tagline": "tagline",
+    "name": "Role name has been update",
+    "privileges": Array [],
   },
 }
 `;
 
-exports[`fragment/Notification/ActionForm will post data on failed and bring up an alert 1`] = `
+exports[`fragment/Role/ActionForm will post data on failed and bring up an alert 1`] = `
 <body>
   
   
@@ -27,7 +20,7 @@ exports[`fragment/Notification/ActionForm will post data on failed and bring up 
 
     <div
       data-v-app=""
-      id="ss-alert_60333798111614833181397"
+      id="ss-alert_55511490411614833185505"
       role="alert"
     >
       <div
@@ -53,7 +46,7 @@ exports[`fragment/Notification/ActionForm will post data on failed and bring up 
           <div
             class="ss-alert--content"
           >
-            cms.notification.create.success
+            cms.role.create.success
           </div>
         </div>
       </div>
@@ -62,7 +55,7 @@ exports[`fragment/Notification/ActionForm will post data on failed and bring up 
 </body>
 `;
 
-exports[`fragment/Notification/ActionForm will post data on success and bring up an alert then redirect it to the list 1`] = `
+exports[`fragment/Role/ActionForm will post data on success and bring up an alert then redirect it to the list 1`] = `
 <body>
   
   
@@ -73,7 +66,7 @@ exports[`fragment/Notification/ActionForm will post data on success and bring up
 
     <div
       data-v-app=""
-      id="ss-alert_60333798111614833181397"
+      id="ss-alert_55511490411614833185505"
       role="alert"
     >
       <div
@@ -99,7 +92,7 @@ exports[`fragment/Notification/ActionForm will post data on success and bring up
           <div
             class="ss-alert--content"
           >
-            cms.notification.create.success
+            cms.role.create.success
           </div>
         </div>
       </div>
@@ -108,7 +101,7 @@ exports[`fragment/Notification/ActionForm will post data on success and bring up
 </body>
 `;
 
-exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
+exports[`fragment/Role/ActionForm will render and match snapshot 1`] = `
 <form
   class="ss-form"
 >
@@ -119,7 +112,7 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
     <div
       class="ss-form-control--label"
     >
-      Title
+      Role Name
     </div>
     <div
       class="ss-form-control--wrapper"
@@ -134,7 +127,7 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
           autofocus=""
           class="ss-input"
           id="input-4-undefined"
-          placeholder="Title"
+          placeholder="Role Name"
           type="text"
         />
         <!--v-if-->
@@ -149,75 +142,16 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
     <div
       class="ss-form-control--label"
     >
-      Description
+      Previleges
     </div>
     <div
       class="ss-form-control--wrapper"
     >
       <div
-        class="ss-control--textarea"
-        name="description"
+        class="ss-control--checkbox ck-button ck-dark"
       >
-        <textarea
-          id="tiny-vue_38421088621614833181359"
-          visibility="hidden"
-        />
-      </div>
-      <!---->
-    </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Link
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div
-        class="ss-control--input"
-      >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          class="ss-input"
-          id="input-9-undefined"
-          placeholder="Link"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <!---->
-    </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Action Text
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div
-        class="ss-control--input"
-      >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          class="ss-input"
-          id="input-11-undefined"
-          placeholder="Link"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
+        
+        
       </div>
       <!---->
     </div>
@@ -270,7 +204,7 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
 </form>
 `;
 
-exports[`fragment/Notification/ActionForm will render the spinner during the request process 1`] = `
+exports[`fragment/Role/ActionForm will render the spinner during the request process 1`] = `
 <form
   class="ss-form"
 >
@@ -281,7 +215,7 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
     <div
       class="ss-form-control--label"
     >
-      Title
+      Role Name
     </div>
     <div
       class="ss-form-control--wrapper"
@@ -295,8 +229,8 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-89-undefined"
-          placeholder="Title"
+          id="input-63-undefined"
+          placeholder="Role Name"
           type="text"
         />
         <!--v-if-->
@@ -311,75 +245,16 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
     <div
       class="ss-form-control--label"
     >
-      Description
+      Previleges
     </div>
     <div
       class="ss-form-control--wrapper"
     >
       <div
-        class="ss-control--textarea"
-        name="description"
+        class="ss-control--checkbox ck-button ck-dark"
       >
-        <textarea
-          id="tiny-vue_35163785571614833181561"
-          visibility="hidden"
-        />
-      </div>
-      <!---->
-    </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Link
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div
-        class="ss-control--input"
-      >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          class="ss-input"
-          id="input-94-undefined"
-          placeholder="Link"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <!---->
-    </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Action Text
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div
-        class="ss-control--input"
-      >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          class="ss-input"
-          id="input-96-undefined"
-          placeholder="Link"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
+        
+        
       </div>
       <!---->
     </div>
@@ -425,7 +300,7 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
 </form>
 `;
 
-exports[`fragment/Notification/ActionForm will render the text and color for the form update 1`] = `
+exports[`fragment/Role/ActionForm will render the text and color for the form update 1`] = `
 <form
   class="ss-form"
 >
@@ -436,7 +311,7 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
     <div
       class="ss-form-control--label"
     >
-      Title
+      Role Name
     </div>
     <div
       class="ss-form-control--wrapper"
@@ -450,8 +325,8 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-104-undefined"
-          placeholder="Title"
+          id="input-73-undefined"
+          placeholder="Role Name"
           type="text"
         />
         <!--v-if-->
@@ -466,75 +341,16 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
     <div
       class="ss-form-control--label"
     >
-      Description
+      Previleges
     </div>
     <div
       class="ss-form-control--wrapper"
     >
       <div
-        class="ss-control--textarea"
-        name="description"
+        class="ss-control--checkbox ck-button ck-dark"
       >
-        <textarea
-          id="tiny-vue_1735453181614833181612"
-          visibility="hidden"
-        />
-      </div>
-      <!---->
-    </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Link
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div
-        class="ss-control--input"
-      >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          class="ss-input"
-          id="input-109-undefined"
-          placeholder="Link"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <!---->
-    </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Action Text
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div
-        class="ss-control--input"
-      >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          class="ss-input"
-          id="input-111-undefined"
-          placeholder="Link"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
+        
+        
       </div>
       <!---->
     </div>
@@ -587,7 +403,7 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
 </form>
 `;
 
-exports[`fragment/Notification/ActionForm will render with error validation on all fields and match snapshot 1`] = `
+exports[`fragment/Role/ActionForm will render with error validation on all fields and match snapshot 1`] = `
 <form
   class="ss-form"
 >
@@ -598,7 +414,7 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
     <div
       class="ss-form-control--label"
     >
-      Title
+      Role Name
     </div>
     <div
       class="ss-form-control--wrapper"
@@ -612,8 +428,8 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-22-undefined"
-          placeholder="Title"
+          id="input-17-undefined"
+          placeholder="Role Name"
           type="text"
         />
         <!--v-if-->
@@ -622,7 +438,7 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
       <div
         class="ss-control--info slide-top-enter-from slide-top-enter-active"
       >
-        Title is required
+        Role name is required
       </div>
     </div>
   </div>
@@ -632,88 +448,21 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
     <div
       class="ss-form-control--label"
     >
-      Description
+      Previleges
     </div>
     <div
       class="ss-form-control--wrapper"
     >
       <div
-        class="ss-control--textarea"
-        name="description"
+        class="ss-control--checkbox ck-button ck-dark"
       >
-        <textarea
-          id="tiny-vue_3731691131614833181403"
-          visibility="hidden"
-        />
+        
+        
       </div>
       <div
         class="ss-control--info slide-top-enter-from slide-top-enter-active"
       >
-        Description is required
-      </div>
-    </div>
-  </div>
-  <div
-    class="ss-form-control has-feedback"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Link
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div
-        class="ss-control--input"
-      >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          class="ss-input"
-          id="input-27-undefined"
-          placeholder="Link"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <div
-        class="ss-control--info slide-top-enter-from slide-top-enter-active"
-      >
-        Link is required
-      </div>
-    </div>
-  </div>
-  <div
-    class="ss-form-control has-feedback"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Action Text
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div
-        class="ss-control--input"
-      >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          class="ss-input"
-          id="input-29-undefined"
-          placeholder="Link"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <div
-        class="ss-control--info slide-top-enter-from slide-top-enter-active"
-      >
-        Action text is required
+        Privileges is required
       </div>
     </div>
   </div>

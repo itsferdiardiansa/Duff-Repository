@@ -1,0 +1,373 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fragment/Role/List will render and match snapshot 1`] = `
+<div class="list">
+  <!--v-if-->
+  <!--v-if-->
+  <table class="ss-table">
+    <thead class="ss-table--head" headers="[object Object],[object Object],[object Object],[object Object],[object Object]" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" isfetching="false" pagination="[object Object]" emptymessage="Empty data" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="false" filteroptions="">
+      <tr>
+        <th width="4%">
+          <!--v-if--><span>#</span>
+        </th>
+        <th class="" width="20%">Role Name</th>
+        <th class="">Previlage</th>
+        <th class="">Created at</th>
+        <th class="">Updated at</th>
+        <th colspan="1" class="" align="center">Action</th>
+      </tr>
+    </thead>
+    <tbody class="ss-table--body">
+      <!--v-if-->
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>1</label></td>
+        <td class="ss-table--body-col">
+          <div>dav create an role has been update</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-26T06:51:08Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-26T08:06:46Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183642">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183642">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>2</label></td>
+        <td class="ss-table--body-col">
+          <div>new role updated</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-16T05:15:58Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-03-04T04:22:43Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183648">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183648">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>3</label></td>
+        <td class="ss-table--body-col">
+          <div>new name</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-16T05:02:58Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-16T05:02:58Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183654">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183654">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>4</label></td>
+        <td class="ss-table--body-col">
+          <div>updated yess</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-15T11:03:01Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-16T05:19:10Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183659">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183659">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>5</label></td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-15T10:56:18Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-15T10:56:18Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183670">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183670">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>6</label></td>
+        <td class="ss-table--body-col">
+          <div>Make new role</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T08:07:44Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T08:07:44Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183675">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183675">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>7</label></td>
+        <td class="ss-table--body-col">
+          <div>New top</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T05:37:11Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T05:37:11Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183687">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183687">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>8</label></td>
+        <td class="ss-table--body-col">
+          <div>New create</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T05:35:56Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T05:35:56Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183694">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183694">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>9</label></td>
+        <td class="ss-table--body-col">
+          <div>Anyone</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T04:41:04Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T04:41:04Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183702">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183702">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>10</label></td>
+        <td class="ss-table--body-col">
+          <div>Error everywhere</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div class="previlage-col"></div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T04:40:34Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-10T04:40:34Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183708">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base" data-id="1614833183708">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="ss-pagination">
+    <div class="ss-pagination--info">
+      <p> Showing <span>1</span> to <span>10</span> of <span>20</span> results </p>
+    </div>
+    <div class="ss-pagination--page">
+      <!--v-if--><span class="page-number active">1</span><span class="page-number">2</span><span class="nav-btn next"><img svg-inline=""></span>
+    </div>
+  </div>
+</div>
+`;

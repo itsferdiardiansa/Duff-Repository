@@ -47,7 +47,9 @@ export default {
   },
   setup(props, { emit }) {
     const checkboxState = computed(() => {
-      return props.modelValue;
+      let modelValue = [].concat(props.modelValue);
+
+      return modelValue;
     });
 
     const getClass = computed(() => {
@@ -76,7 +78,7 @@ export default {
       const itemIndex = unref(checkboxState).findIndex(item => item == value);
       let val = [].concat(unref(checkboxState));
 
-      if (checked) val.push(event.target.value);
+      if (checked) val.push(parseInt(event.target.value));
       else val.splice(itemIndex, 1);
 
       emit('update:modelValue', val);
@@ -124,7 +126,7 @@ $variants: ('primary', 'danger', 'warning', 'dark', 'success', 'light');
   }
 
   &-item {
-    @apply inline-flex items-center mr-2 cursor-pointer;
+    @apply inline-flex items-center mr-2 cursor-pointer my-1;
   }
 
   &-label {

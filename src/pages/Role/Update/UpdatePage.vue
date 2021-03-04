@@ -28,13 +28,13 @@ export default {
     const formData = reactive({});
 
     const requestStatus = computed(() => {
-      return store.getters['partner/getRequestStatus'];
+      return store.getters['role/getRequestStatus'];
     });
 
     const handleSubmit = data => {
-      store.dispatch('partner/updateData', {
+      store.dispatch('role/updateData', {
         action: 'form.create',
-        redirectUrl: '/partner',
+        redirectUrl: '/role',
         data,
       });
     };
@@ -44,7 +44,6 @@ export default {
         params: { data },
       } = route;
 
-      console.log(route);
       if (data) {
         Object.assign(formData, JSON.parse(data));
       } else router.push('/role');

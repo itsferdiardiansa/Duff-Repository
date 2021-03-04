@@ -1,0 +1,80 @@
+{
+  "message": "cms.role.list.success",
+  "result": {
+    "current_page": 1,
+    "data": [
+      {
+        "id": 63,
+        "name": "dav create an role has been update",
+        "created_at": "2021-02-26T06:51:08Z",
+        "updated_at": "2021-02-26T08:06:46Z",
+        "hash_id": "54edc36b-066c-4619-849a-fabdb9a45c56"
+      },
+      {
+        "id": 60,
+        "name": "new role updated",
+        "created_at": "2021-02-16T05:15:58Z",
+        "updated_at": "2021-03-04T04:22:43Z",
+        "hash_id": "35eebb69-199b-428c-96e3-cc16c1d8aa5b"
+      },
+      {
+        "id": 55,
+        "name": "new name",
+        "created_at": "2021-02-16T05:02:58Z",
+        "updated_at": "2021-02-16T05:02:58Z",
+        "hash_id": "d3f149e0-6d9d-4b95-aa52-b101b1ffecd6"
+      },
+      {
+        "id": 52,
+        "name": "updated yess",
+        "created_at": "2021-02-15T11:03:01Z",
+        "updated_at": "2021-02-16T05:19:10Z",
+        "hash_id": "af84afbd-82be-4bc4-9118-33df82709f36"
+      },
+      {
+        "id": 39,
+        "name": "",
+        "created_at": "2021-02-15T10:56:18Z",
+        "updated_at": "2021-02-15T10:56:18Z",
+        "hash_id": ""
+      },
+      {
+        "id": 37,
+        "name": "Make new role",
+        "created_at": "2021-02-10T08:07:44Z",
+        "updated_at": "2021-02-10T08:07:44Z",
+        "hash_id": "2a3aa454-e62c-4080-afd1-dee54cc79f3c"
+      },
+      {
+        "id": 35,
+        "name": "New top",
+        "created_at": "2021-02-10T05:37:11Z",
+        "updated_at": "2021-02-10T05:37:11Z",
+        "hash_id": "1256c139-1d2b-4fd4-8cb9-1d4eec370278"
+      },
+      {
+        "id": 34,
+        "name": "New create",
+        "created_at": "2021-02-10T05:35:56Z",
+        "updated_at": "2021-02-10T05:35:56Z",
+        "hash_id": "20d455ea-6a6f-4164-9ff8-ed856816894a"
+      },
+      {
+        "id": 32,
+        "name": "Anyone",
+        "created_at": "2021-02-10T04:41:04Z",
+        "updated_at": "2021-02-10T04:41:04Z",
+        "hash_id": "60dae110-83d9-4a8b-90e7-6f956ea22c14"
+      },
+      {
+        "id": 31,
+        "name": "Error everywhere",
+        "created_at": "2021-02-10T04:40:34Z",
+        "updated_at": "2021-02-10T04:40:34Z",
+        "hash_id": "57341e8b-d124-4dac-84e0-c65465ce778c"
+      }
+    ],
+    "per_page": 10,
+    "total_page": 2
+  }
+}

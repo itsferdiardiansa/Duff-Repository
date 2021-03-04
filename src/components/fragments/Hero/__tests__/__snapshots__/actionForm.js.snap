@@ -22,7 +22,7 @@ exports[`fragment/Hero/ActionForm will post data on failed and bring up an alert
 
     <div
       data-v-app=""
-      id="ss-alert_11228141111614821062009"
+      id="ss-alert_13211621011614833178915"
       role="alert"
     >
       <div
@@ -68,7 +68,7 @@ exports[`fragment/Hero/ActionForm will post data on success and bring up an aler
 
     <div
       data-v-app=""
-      id="ss-alert_11228141111614821062009"
+      id="ss-alert_13211621011614833178915"
       role="alert"
     >
       <div
@@ -506,7 +506,7 @@ exports[`fragment/Hero/ActionForm will render the spinner during the request pro
 </form>
 `;
 
-exports[`fragment/Hero/ActionForm will render the text, override local state and color for the form update 1`] = `
+exports[`fragment/Hero/ActionForm will render the text and color for the form update 1`] = `
 <form
   class="ss-form"
 >

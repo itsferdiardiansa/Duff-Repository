@@ -15,12 +15,14 @@
         privileges: [{ required: true, message: 'Privileges is required' }],
       }"
     >
-      <Checkbox :items="[{ value: 101, label: 'Hero' }]" />
+      <Checkbox
+        type="button"
+        variant="dark"
+        keyname="id"
+        :items="privilegesList"
+        v-model="state.form.privileges"
+      />
     </FormControl>
-
-    <RectSkeleton height="15px" />
-    <RectSkeleton height="15px" />
-    <RectSkeleton height="15px" />
 
     <FormControl :colspan="3">
       <Button
@@ -36,7 +38,15 @@
 </template>
 <script>
 /* eslint-disable */
-import { onMounted, reactive, ref, unref } from 'vue';
+import {
+  computed,
+  nextTick,
+  onMounted,
+  reactive,
+  ref,
+  unref,
+  watch,
+} from 'vue';
 import Form, {
   FormControl,
   FileUpload,
@@ -46,9 +56,10 @@ import Form, {
 } from '@common/Form';
 import Button from '@common/Button';
 import { Rect as RectSkeleton } from '@common/Skeleton';
+import { useStore } from 'vuex';
 
 export default {
-  name: 'PartnerActionForm',
+  name: 'RoleActionForm',
   components: {
     Button,
     Form,
@@ -80,6 +91,7 @@ export default {
   },
   setup(props, { emit }) {
     const formEl = ref();
+    const store = useStore();
     const state = reactive({
       form: {
         name: '',
@@ -87,6 +99,16 @@ export default {
       },
     });
 
+    const privilegesList = computed(() => {
+      const privileges = store.getters['role/getPrivilegesItems'];
+
+      const filtered = Object.keys(privileges).map(key => ({
+        id: key,
+        label: privileges[key],
+      }));
+
+      return filtered;
+    });
     const handleSubmit = () => {
       const { withValidation } = props;
       const form = unref(formEl);
@@ -98,15 +120,25 @@ export default {
       });
     };
 
+    const fetchPrivileges = () => {
+      store.dispatch('role/fetchPrivileges');
+    };
+
     onMounted(() => {
       const { data, isCreate } = props;
 
-      if (data && !isCreate) state.form = { ...state.form, ...data };
+      if (data && !isCreate) {
+        state.form = data;
+        state.form.privileges = [];
+      }
+
+      fetchPrivileges();
     });
 
     return {
       formEl,
       state,
+      privilegesList,
       handleSubmit,
     };
   },

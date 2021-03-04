@@ -120,7 +120,7 @@ export default {
     onMounted(() => {
       const { data, isCreate } = props;
 
-      if (data && !isCreate) Object.assign(state.form, data);
+      if (data && !isCreate) state.form = data;
     });
 
     return {

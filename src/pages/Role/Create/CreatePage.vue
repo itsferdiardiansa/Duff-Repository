@@ -19,13 +19,13 @@ export default {
     const store = useStore();
 
     const requestStatus = computed(() => {
-      return store.getters['partner/getRequestStatus'];
+      return store.getters['role/getRequestStatus'];
     });
 
     const handleSubmit = data => {
-      store.dispatch('partner/postData', {
+      store.dispatch('role/postData', {
         action: 'form.create',
-        redirectUrl: '/partner',
+        redirectUrl: '/role',
         data,
       });
     };

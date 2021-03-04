@@ -76,7 +76,6 @@ export default {
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          console.log(data);
           router.push({
             name: 'Update Role',
             params: { data: JSON.stringify(data) },

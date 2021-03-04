@@ -51,9 +51,18 @@ const actions = {
       dispatch('fetchData', payload.params);
     }
   },
-  // async fetchPrivileges({ commit, dispatch }) {
+  async fetchPrivileges({ commit }) {
+    commit('fetchPrivilegesStart');
 
-  // }
+    try {
+      const response = await RoleService.getPrivileges();
+      const collections = await response.data;
+
+      commit('fetchPrivilegesSuccess', collections);
+    } catch (error) {
+      commit('fetchPrivilegesFailed', { requestData: {}, responseData: error });
+    }
+  },
 };
 
 export default actions;

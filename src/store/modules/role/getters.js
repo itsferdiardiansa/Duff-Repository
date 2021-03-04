@@ -1,7 +1,11 @@
 const getters = {
-  getRequestStatus: state => ({fetch: state.isFetching, error: state.onError}),
+  getRequestStatus: state => ({
+    fetch: state.isFetching,
+    error: state.onError,
+  }),
   getItems: state => state.items,
-  getFormData: state => state.form
-}
+  getFormData: state => state.form,
+  getPagination: state => state.pagination,
+};
 
-export default getters
+export default getters;

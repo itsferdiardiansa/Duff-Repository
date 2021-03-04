@@ -1,0 +1,17 @@
+import { createStore } from 'vuex';
+import state from '@store/modules/notification/state';
+import getters from '@store/modules/notification/getters';
+import mutations from '@store/modules/notification/mutations';
+import actions from '@store/modules/notification/actions';
+
+export default createStore({
+  modules: {
+    notification: {
+      namespaced: true,
+      state,
+      getters,
+      mutations,
+      actions,
+    }
+  }
+});

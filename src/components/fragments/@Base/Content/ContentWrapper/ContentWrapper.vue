@@ -28,6 +28,10 @@ export default {
     @apply p-6;
   }
 
+  &--header {
+    @apply h-10 py-4 box-content;
+  }
+
   &--main {
     @apply relative;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="content-container">
     <Card>
       <div class="wrapper">
         <ContentHeader />
@@ -12,9 +12,9 @@
   </div>
 </template>
 <script>
-import Card from '@common/Card'
-import ContentHeader from '@fragment/ListAdmin/Header'
-import ContentList from '@fragment/ListAdmin/List'
+import Card from '@common/Card';
+import ContentHeader from '@fragment/ListAdmin/Header';
+import ContentList from '@fragment/ListAdmin/List';
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
     ContentHeader,
     ContentList,
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .wrapper {

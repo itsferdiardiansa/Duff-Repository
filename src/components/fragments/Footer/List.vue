@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="content-container">
     <div class="wrapper">
       <div class="py-6 flex justify-end items-center">
         <Button
@@ -158,7 +158,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.container {
+.content-container {
   @apply relative;
 
   .wrapper {

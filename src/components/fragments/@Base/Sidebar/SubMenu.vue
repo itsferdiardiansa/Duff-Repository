@@ -1,13 +1,18 @@
 <template>
-  <div class="menu-item" :class="{ active: activeLink === item.link, inactive: !item.link }" @click="selectMenuItem">
-    <router-link
-      :to="item.link"
-      :disabled="!item.link"
-    >
-      <font-awesome-icon :icon="item.icon" class="w-3.5 mr-2" v-if="item.icon" />
-      <span v-text="item.name"></span>
+  <div
+    class="menu-item"
+    :class="{ active: activeLink === item.link, inactive: !item.link }"
+    @click="selectMenuItem"
+  >
+    <router-link :to="item.link" :disabled="!item.link">
+      <font-awesome-icon
+        :icon="item.icon"
+        :class="getMenuItemIcon(isCollapsed)"
+        v-if="item.icon"
+      />
+      <span v-text="item.name" v-if="!isCollapsed"></span>
     </router-link>
-  
+
     <template v-if="isHasChildren">
       <div class="menu-item-collapsed">
         <template v-for="item in item.children || []" :key="item.link">
@@ -16,45 +21,51 @@
       </div>
     </template>
   </div>
-  
 </template>
 <script>
-import { computed, getCurrentInstance, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { computed, getCurrentInstance, inject, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 
 export default {
- props: {
+  props: {
     item: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   setup(props) {
-    const router = useRoute()
-    const { parent } = getCurrentInstance()
+    const router = useRoute();
+    const { parent } = getCurrentInstance();
+    const sidebarContext = inject('sidebarContext');
 
     const activeLink = computed(() => {
-      return router.path
-    })
+      return router.path;
+    });
 
     const isHasChildren = computed(() => {
-      return Reflect.has(props.item, 'children')
-    })
+      return Reflect.has(props.item, 'children');
+    });
+
+    const getMenuItemIcon = isCollapsed => {
+      return isCollapsed ? 'menu-item--icon-collapse' : 'menu-item--icon';
+    };
 
     const selectMenuItem = () => {
-      parent.emit('setIndexMenuItem', 12)
-    }
-    
-    onMounted(() => {
-      parent.emit('setOrderMenuItem')
-    })
+      parent.emit('setIndexMenuItem', 12);
+    };
 
-    return {  
+    onMounted(() => {
+      parent.emit('setOrderMenuItem');
+    });
+
+    return {
+      isCollapsed: sidebarContext.isCollapsed,
       activeLink,
       isHasChildren,
-      selectMenuItem
-    }
-  }
-}
+      selectMenuItem,
+      getMenuItemIcon,
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .menu-item {
@@ -86,6 +97,10 @@ export default {
     a {
       @apply pl-10 hidden;
     }
+  }
+
+  &--icon {
+    @apply w-3.5 mr-2;
   }
 }
 </style>

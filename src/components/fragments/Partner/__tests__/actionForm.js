@@ -1,9 +1,20 @@
 import { mount } from '@vue/test-utils';
+import { createStore } from 'vuex';
 import AppWrapper from '@base/AppWrapper';
 import ActionForm from '@fragment/Partner/ActionForm';
-import storeConfig from '__mock__/partner/storeConfig';
+import partnerModules from '@store/modules/partner';
 
 describe('fragment/Partner/ActionForm', () => {
+  let store;
+
+  beforeAll(() => {
+    store = createStore({
+      modules: {
+        partner: partnerModules,
+      },
+    });
+  });
+
   it('will render and match snapshot', () => {
     const Component = mount(<ActionForm />);
 
@@ -34,14 +45,14 @@ describe('fragment/Partner/ActionForm', () => {
       </AppWrapper>,
       {
         global: {
-          plugins: [storeConfig],
+          plugins: [store],
         },
       }
     );
 
     const data = {};
 
-    await Component.vm.$store.dispatch('postData', {
+    await Component.vm.$store.dispatch('partner/postData', {
       data,
       action: 'form.create',
       redirectUrl: '/partner',
@@ -57,7 +68,7 @@ describe('fragment/Partner/ActionForm', () => {
       </AppWrapper>,
       {
         global: {
-          plugins: [storeConfig],
+          plugins: [store],
         },
       }
     );
@@ -67,7 +78,7 @@ describe('fragment/Partner/ActionForm', () => {
       data: { message: 'internal.error', result: {} },
     });
 
-    await Component.vm.$store.dispatch('postData', {
+    await Component.vm.$store.dispatch('partner/postData', {
       action: 'form.create',
     });
 
@@ -77,7 +88,6 @@ describe('fragment/Partner/ActionForm', () => {
   it('will submit by pinning props as a callback', async () => {
     const handleSubmit = jest.fn();
     const formData = {
-      name: 'Partner name',
       tagline: 'tagline',
       site: 'https://google.com',
       description: '<p>Type your description here</p>',
@@ -120,7 +130,6 @@ describe('fragment/Partner/ActionForm', () => {
 
   it('will overide local data when in update mode', async () => {
     const formData = {
-      name: 'Partner name',
       tagline: 'tagline',
       site: 'https://google.com',
       description: '<p>Type your description here</p>',

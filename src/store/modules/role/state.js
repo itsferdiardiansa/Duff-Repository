@@ -2,11 +2,12 @@ export default {
   isFetching: false,
   onError: {
     status: false,
-    data: {}
-  }, 
+    data: {},
+  },
   items: [],
+  previleges: [],
   form: {
     name: '',
-    previleges: []
-  }
-}
+    previleges: [],
+  },
+};

@@ -1,34 +1,37 @@
 <template>
-  <div class="content-header flex items-center justify-end">
-    <div class="btn-create">
-      <Button 
-        variant="primary"
-        label="Add Notification"
-        :icon="['fa', 'plus']"
-        :bold="true" 
-        @click="addNotification" 
-      />
-    </div>
+  <div class="create-notification">
+    <Button
+      variant="primary"
+      label="Add Notification"
+      :icon="['fa', 'plus']"
+      :bold="true"
+      @click="addNotification"
+    />
   </div>
 </template>
 <script>
-import { useRouter } from 'vue-router'
-import Button from '@common/Button'
+import { useRouter } from 'vue-router';
+import Button from '@common/Button';
 
 export default {
   components: {
     Button,
   },
   setup() {
-    const router = useRouter()
+    const router = useRouter();
 
     const addNotification = () => {
-      router.push('/notification/add')
-    }
+      router.push('/notification/create');
+    };
 
     return {
       addNotification,
-    }
+    };
   },
-}
+};
 </script>
+<style lang="scss" scoped>
+.create-notification {
+  @apply flex items-center justify-end;
+}
+</style>

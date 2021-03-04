@@ -1,21 +1,16 @@
 <template>
-  <div class="container">
-    <div class="thematic-page">
-      <ThematicList />
-    </div>
-  </div>
+  <ContentWrapper>
+    <ContentList />
+  </ContentWrapper>
 </template>
 <script>
-import ThematicList from '@fragment/Thematic/ThematicList'
+import ContentWrapper from '@base/Content/ContentWrapper';
+import ContentList from '@fragment/Thematic/List';
 
 export default {
   components: {
-    ThematicList
-  }  
-}
+    ContentWrapper,
+    ContentList,
+  },
+};
 </script>
-<style lang="scss" scoped>
-.thematic-page {
-  @apply mx-auto;
-}
-</style>

@@ -1,32 +1,46 @@
 <template>
-  <div class="container">
-    <div class="wrapper">
-      <Table
-        :headers="tHeaders"
-        :items="filteredData"
-        :isFetching="requestStatus.fetch"
-        :onError="requestStatus.error.status"
-      >
-        <template #action="{ data }">
-          <ActionButton :data="actionButtons" :item="data" /> 
-        </template>
-      </Table>
-    </div>
+  <div class="list">
+    <Table
+      :headers="tHeaders"
+      :items="filteredData"
+      :isFetching="requestStatus.fetch"
+      :onError="requestStatus.error.status"
+      :pagination="pagination"
+      :onPageChange="handlePageChange"
+    >
+      <template #read_by_slice="{ data }">
+        <div class="read-by-col">
+          <template v-for="(item, key) in data.read_by_slice" :key="key">
+            <Badge variant="primary" :label="item" />
+          </template>
+        </div>
+      </template>
+
+      <template #responded_by="{ data }">
+        <Badge variant="primary" :label="data.responded_by" />
+      </template>
+
+      <template #action="{ data }">
+        <ActionButton :data="actionButtons" :item="data" />
+      </template>
+    </Table>
   </div>
 </template>
 <script>
-import { computed, onMounted, reactive, ref } from 'vue'
-import { useStore } from 'vuex'
-import Table, { ActionButton } from '@common/Table'
-// import ActionButton from './ActionButton'
+import { computed, onMounted, reactive, ref } from 'vue';
+import { useStore } from 'vuex';
+import Table, { ActionButton } from '@common/Table';
+import Badge from '@common/Badge';
 
 export default {
   components: {
     Table,
+    Badge,
     ActionButton,
   },
   setup() {
-    const store = useStore()
+    const store = useStore();
+    const params = reactive({ page: 1, limit: 5 });
 
     const tHeaders = ref([
       {
@@ -39,14 +53,14 @@ export default {
       { title: 'Page', accessor: 'page' },
       { title: 'Section', accessor: 'section' },
       { title: 'Responded by', accessor: 'responded_by' },
-      { title: 'Read by', accessor: 'read_by' },
+      { title: 'Read by', accessor: 'read_by_slice' },
       {
         title: 'Action',
         accessor: 'action',
         colSpan: 1,
         align: 'center',
       },
-    ])
+    ]);
 
     const actionButtons = reactive([
       {
@@ -55,8 +69,8 @@ export default {
         text: 'Mark as responded',
         bold: true,
         onClickFn: (e, data) => {
-          markAsResponded(e, data)
-        }
+          markAsResponded(e, data);
+        },
       },
       {
         variant: 'dark',
@@ -65,56 +79,76 @@ export default {
         inverse: true,
         bold: true,
         onClickFn: (e, data) => {
-          markAsRead(e, data)
-        }
-      }
-    ])
+          markAsRead(e, data);
+        },
+      },
+    ]);
 
-    const getFeedback = () => {
-      store.dispatch('feedback/fetchData')
-    }
+    const fetchData = () => {
+      store.dispatch('feedback/fetchData', params);
+    };
 
     const markAsResponded = (e, data) => {
       store.dispatch('feedback/markAsResponded', {
-        data,
         action: 'form.create',
-        status: 'success',
-      })
-    }
+        data,
+        params,
+      });
+    };
 
     const markAsRead = (e, data) => {
       store.dispatch('feedback/markAsRead', {
-        data,
         action: 'form.create',
-        status: 'success',
-      })
-    }
+        data,
+        params,
+      });
+    };
 
     const filteredData = computed(() => {
-      return store.getters['feedback/getItems']
-    })
+      return store.getters['feedback/getItems'];
+    });
+
+    const pagination = computed(() => {
+      return store.getters['feedback/getPagination'];
+    });
 
     const requestStatus = computed(() => {
-      return store.getters['feedback/getRequestStatus']
-    })
+      return store.getters['feedback/getRequestStatus'];
+    });
 
-    onMounted(getFeedback)
+    const handlePageChange = pageParams => {
+      Object.assign(params, pageParams);
+
+      fetchData();
+    };
+
+    onMounted(fetchData);
 
     return {
       requestStatus,
       filteredData,
       tHeaders,
-      actionButtons
-    }
+      actionButtons,
+      pagination,
+      handlePageChange,
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
-.container {
+.list {
   @apply relative;
 
   .wrapper {
     @apply relative;
+  }
+  .read-by-col {
+    @apply flex flex-wrap justify-center;
+    max-width: 200px;
+
+    span {
+      @apply mt-1 mr-1;
+    }
   }
 }
 </style>

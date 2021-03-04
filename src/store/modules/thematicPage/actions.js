@@ -1,71 +1,57 @@
-import ThematicPageService from '@service/api/thematicPage'
+import Thematic from '@service/api/thematicPage';
 
 const actions = {
-  async fetchData({ commit }) {
-    commit('fetchStart')
+  async fetchData({ commit }, payload) {
+    commit('fetchStart');
 
     try {
-      const response = await ThematicPageService.getList()
-      const collections = await response.data
-      
-      commit('fetchSuccess', collections)
-    } catch (error) { 
-      commit('fetchFailed', error)
+      const response = await Thematic.getList(payload);
+      const collections = await response.data;
+
+      commit('fetchSuccess', collections);
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
   async postData({ commit }, payload) {
-    commit('fetchStart')
+    commit('fetchStart');
 
     try {
-      const response = await ThematicPageService.create(payload.data)
-      const collections = await response.data
-    
-      commit('fetchSuccess', {...payload, ...collections})
-    } catch(error) {
-      commit('fetchFailed', {
-        ...payload, 
-        status: 'failed', 
-        message: 'Failed to create data', 
-        error
-      })
+      const response = await Thematic.create(payload.data);
+      const collections = await response.data;
+
+      commit('fetchSuccess', { ...payload, ...collections });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
   async updateData({ commit }, payload) {
-    commit('fetchStart')
+    commit('fetchStart');
 
     try {
-      const response = await ThematicPageService.update(payload.data)
-      const collections = await response.data
-    
-      commit('fetchSuccess', {...payload, ...collections})
-    } catch(error) {
-      commit('fetchFailed', {
-        ...payload, 
-        status: 'failed', 
-        message: 'Failed to create data', 
-        error
-      })
+      const response = await Thematic.update(payload.data);
+      const collections = await response.data;
+
+      commit('fetchSuccess', { ...payload, ...collections });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
   async deleteData({ commit, dispatch }, payload) {
-    commit('fetchStart')
-    
+    commit('fetchStart');
+
+    console.log(payload);
     try {
-      const response = await ThematicPageService.delete(payload)
-      const collections = await response.data
+      const response = await Thematic.delete(payload.hash_id);
+      const collections = await response.data;
 
-      commit('fetchSuccess', {...payload, ...collections})
-    } catch(error) {
-      commit('fetchFailed', {
-        ...payload, 
-        status: 'failed', 
-        message: 'Failed to delete data', 
-        error
-      })
+      commit('fetchSuccess', { ...payload, ...collections });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
     } finally {
-      dispatch('fetchData')
+      dispatch('fetchData', payload.params);
     }
-  }
-}
+  },
+};
 
-export default actions
+export default actions;

@@ -7,14 +7,14 @@ const transform = {
   preRequestHooks: (config, options) => {
     const { joinPrefix } = options;
 
-    if (joinPrefix) config.url = MP2_API_PREFIX + config.url;
+    if (joinPrefix) config.url = SATPAM_API_PREFIX + config.url;
 
     return config;
   },
   requestInterceptors: config => {
     const token = TokenManager.getToken();
 
-    config.headers.Clientkey = MP2_API_KEY;
+    config.headers.Clientkey = SATPAM_API_KEY;
 
     if (token) config.headers.Authorization = 'Bearer ' + token;
 
@@ -33,27 +33,31 @@ const transform = {
 
     try {
       if (errorCode.includes(code) || Boolean(~message.indexOf('timeout'))) {
-        self.$alert.show({
+        $alert.show({
           variant: 'danger',
           content: '<b>Request timeout</b>',
         });
       }
 
       if (message?.includes('Network Error')) {
-        self.$alert.show({
+        $alert.show({
           variant: 'danger',
           content: '<b>Please check you internet connnection</b>',
         });
       }
 
-      if (response?.status === 403) {
+      if ([403, 404].includes(response?.status)) {
         TokenManager.flush();
+
+        $alert.show({
+          variant: 'danger',
+          content: 'Session expired',
+        });
+
         setTimeout(() => {
           router.push({ name: 'Login' });
         }, 2000);
       }
-
-      // throw error
     } catch (error) {
       throw new Error(error);
     }
@@ -64,8 +68,8 @@ const transform = {
 const initHttp = () => {
   return new CAxios({
     timeout: 10000,
-    baseURL: MP2_PROXY ? '/' : MP2_API_URL,
-    prefixUrl: MP2_API_PREFIX,
+    baseURL: SATPAM_PROXY ? '/' : SATPAM_API_URL,
+    prefixUrl: SATPAM_API_PREFIX,
     transform,
     requestOptions: {
       joinPrefix: true,

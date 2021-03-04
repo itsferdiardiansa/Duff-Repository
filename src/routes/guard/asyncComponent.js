@@ -17,7 +17,7 @@ export default function asyncComponent(router) {
     };
 
     nextTick(() => {
-      document.title = `${to.name} - ${MP2_APP_TITLE}`;
+      document.title = `${to.name} - ${SATPAM_APP_TITLE}`;
     });
 
     return true;

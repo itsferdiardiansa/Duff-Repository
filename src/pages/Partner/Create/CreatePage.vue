@@ -7,7 +7,6 @@
 /* eslint-disable */
 import { computed, onMounted, reactive, ref, unref } from 'vue';
 import { useStore } from 'vuex';
-import { useRoute } from 'vue-router';
 import Card from '@common/Card';
 import PartnerForm from '@fragment/Partner/ActionForm';
 

@@ -10,7 +10,9 @@ function resolve(dir = '') {
 function setup(env) {
   return {
     publicPath:
-      process.env.NODE_ENV === 'production' ? process.env.MP2_ASSETS_URL : '/',
+      process.env.NODE_ENV === 'production'
+        ? process.env.SATPAM_ASSETS_URL
+        : '/',
     productionSourceMap: false,
     devServer: createDevProxy(env),
     css: {
@@ -19,7 +21,7 @@ function setup(env) {
           additionalData: `
             @import "./src/styles/index.scss";
             
-            $prefixClass: ${env.MP2_PREFIX_CLASS};
+            $prefixClass: ${env.SATPAM_PREFIX_CLASS};
           `,
         },
       },
@@ -45,7 +47,8 @@ function setup(env) {
           '@icon': resolve('assets/icons'),
           '@style': resolve('styles'),
           '@service': resolve('services'),
-          '@data': path.resolve(__dirname, 'data'),
+          '@data': path.resolve(__dirname, '.data'),
+          __mock__: path.resolve(__dirname, '__mocks__'),
         },
       },
     },

@@ -55,7 +55,7 @@ export default {
   emits: ['update:modelValue'],
   setup(props, { emit }) {
     const content = ref('');
-    const API_KEY = ref(MP2_TINY_MCE_KEY);
+    const API_KEY = ref(SATPAM_TINY_MCE_KEY);
     const editorEl = ref();
     const plugins = reactive([
       'advlist autolink lists link image charmap print preview anchor',

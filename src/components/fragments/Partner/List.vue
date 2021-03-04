@@ -18,11 +18,10 @@
 
     <Table
       :headers="tHeaders"
-      :items="filteredPartner"
+      :items="filteredData"
       :isFetching="requestStatus.fetch"
       :onError="requestStatus.error.status"
       :onFailedFetchHandler="fetchData"
-      :withPagination="true"
       :pagination="pagination"
       :onPageChange="handlePageChange"
     >
@@ -131,7 +130,7 @@ export default {
       return store.getters['partner/getPagination'];
     });
 
-    const filteredPartner = computed(() => {
+    const filteredData = computed(() => {
       return store.getters['partner/getItems'];
     });
 
@@ -143,11 +142,11 @@ export default {
 
     const deleteData = ({ hash_id }) => {
       store.dispatch('partner/deleteData', {
-        hash_id,
-        params,
         action: 'form.delete',
         message: 'Succesfully delete',
         status: 'success',
+        hash_id,
+        params,
       });
     };
 
@@ -168,7 +167,7 @@ export default {
     return {
       requestStatus,
       pagination,
-      filteredPartner,
+      filteredData,
       fetchData,
       tHeaders,
       emptyDataComponent,

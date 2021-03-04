@@ -1,60 +1,60 @@
-import http from '@service/http'
+import http from '@service/http';
 
 export default {
   getList: params => {
     return http.request({
       url: '/thematic-page/',
-      params
-    })
+      params,
+    });
   },
   create: params => {
     return http.request({
       url: '/thematic-page/',
       method: 'POST',
-      data: params
-    })
+      data: params,
+    });
   },
   update: params => {
     return http.request({
       url: `/thematic-page/${params.hash_id}`,
       method: 'POST',
-      data: params
-    })
+      data: params,
+    });
   },
   delete: params => {
     return http.request({
-      url: `/thematic-page/${params.hash_id}`,
+      url: `/thematic-page/${params}`,
       method: 'DELETE',
       data: {
-        name
-      }
-    })
+        name,
+      },
+    });
   },
   detail: params => {
     return http.request({
       url: `/thematic-page/${params.hash_id}`,
       method: 'GET',
       params: {
-        params
-      }
-    })
+        params,
+      },
+    });
   },
   createEvent: params => {
     return http.request({
       url: `/thematic-page/${params.hash_id}/event`,
       method: 'POST',
       data: {
-        params
-      }
-    }) 
+        params,
+      },
+    });
   },
   deleteEvent: params => {
     return http.request({
       url: `/thematic-page/${params.hash_id}`,
       method: 'DELETE',
       data: {
-        params
-      }
-    })
-  }
-}
+        params,
+      },
+    });
+  },
+};

@@ -10,7 +10,7 @@ const actions = {
 
       commit('fetchSuccess', collections);
     } catch (error) {
-      commit('fetchFailed', error);
+      commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
   async postData({ commit }, payload) {
@@ -22,12 +22,7 @@ const actions = {
 
       commit('fetchSuccess', { ...payload, ...collections });
     } catch (error) {
-      commit('fetchFailed', {
-        ...payload,
-        status: 'failed',
-        message: 'Failed to create data',
-        error,
-      });
+      commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
   async updateData({ commit }, payload) {
@@ -39,12 +34,7 @@ const actions = {
 
       commit('fetchSuccess', { ...payload, ...collections });
     } catch (error) {
-      commit('fetchFailed', {
-        ...payload,
-        status: 'failed',
-        message: 'Failed to create data',
-        error,
-      });
+      commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
   async deleteData({ commit, dispatch }, payload) {
@@ -56,12 +46,7 @@ const actions = {
 
       commit('fetchSuccess', { ...payload, ...collections });
     } catch (error) {
-      commit('fetchFailed', {
-        ...payload,
-        status: 'failed',
-        message: 'Failed to delete data',
-        error,
-      });
+      commit('fetchFailed', { requestData: payload, responseData: error });
     } finally {
       dispatch('fetchData', payload.params);
     }

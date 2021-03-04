@@ -12,8 +12,8 @@
       :isFetching="requestStatus.fetch"
       :onError="requestStatus.error.status"
       :onFailedFetchHandler="fetchData"
-      :withPagination="true"
       :pagination="pagination"
+      :onPageChange="handlePageChange"
     >
       <template #banner="{ data }">
         <img :src="data.banner" class="h-10 m-auto" />
@@ -41,14 +41,6 @@
         </div>
       </template>
 
-      <!-- <template #status>
-        Active
-      </template> -->
-
-      <!-- <template #order="{ data }">
-        <OrderButton :data="data" />
-      </template> -->
-
       <template #action="{ data }">
         <ActionButton :data="actionButtons" :item="data" />
       </template>
@@ -56,7 +48,8 @@
   </div>
 </template>
 <script>
-import { computed, onMounted, ref, unref } from 'vue';
+import { computed, onMounted, reactive, ref, unref } from 'vue';
+import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import Table, { ActionButton } from '@common/Table';
 import { ErrorTable, EmptyTable } from '@common/Table';
@@ -70,6 +63,8 @@ export default {
   },
   setup() {
     const store = useStore();
+    const router = useRouter();
+    const params = reactive({ page: 1, limit: 2 });
 
     const tHeaders = ref([
       {
@@ -80,7 +75,6 @@ export default {
       { title: 'Banner', accessor: 'banner', width: '10%' },
       { title: 'Url', accessor: 'url' },
       { title: 'Description', accessor: 'description' },
-      // { title: 'Status', accessor: 'status', width: '5%', align: 'center' },
       {
         title: 'Action',
         accessor: 'action',
@@ -95,7 +89,13 @@ export default {
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          console.log(e, data);
+          router.push({
+            name: 'Update Hero',
+            params: {
+              hash_id: data.hash_id,
+              data: JSON.stringify(data),
+            },
+          });
         },
       },
       {
@@ -113,8 +113,9 @@ export default {
 
     const deleteData = ({ hash_id }) => {
       store.dispatch('hero/deleteData', {
-        hash_id,
         action: 'form.delete',
+        hash_id,
+        params,
       });
     };
 
@@ -123,7 +124,7 @@ export default {
     });
 
     const fetchData = () => {
-      store.dispatch('hero/fetchData');
+      store.dispatch('hero/fetchData', params);
     };
 
     const filteredData = computed(() => {
@@ -140,6 +141,12 @@ export default {
       return request.error.status ? ErrorTable : EmptyTable;
     });
 
+    const handlePageChange = pageParams => {
+      Object.assign(params, pageParams);
+
+      fetchData();
+    };
+
     onMounted(fetchData);
 
     return {
@@ -151,6 +158,7 @@ export default {
       emptyDataComponent,
       actionButtons,
       deleteData,
+      handlePageChange,
     };
   },
 };

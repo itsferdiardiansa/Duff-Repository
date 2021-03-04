@@ -17,7 +17,7 @@
 </template>
 <script>
 /* eslint-disable vue/no-unused-components */
-import { computed, reactive } from 'vue';
+import { computed, inject, reactive } from 'vue';
 import { useRoute } from 'vue-router';
 import Breadcrumb from '@common/Breadcrumb';
 import Header from '@fragment/@Base/Header';
@@ -31,6 +31,7 @@ export default {
   },
   setup() {
     const route = useRoute();
+    const { isCollapsed } = inject('sidebarContext');
     let onPageError = reactive(route.name === 'Page Not Found');
 
     const contentTitle = computed(() => {
@@ -46,6 +47,7 @@ export default {
     });
 
     return {
+      isCollapsed,
       contentTitle,
       breadcrumbs,
       onPageError,

@@ -14,8 +14,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-.wrapper {
-  @apply py-3 px-5;
-}
-</style>

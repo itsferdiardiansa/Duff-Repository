@@ -1,43 +1,46 @@
 <template>
-  <div class="container">
-    <div class="wrapper">
-      <Modal
-        title="Delete confirmation"
-        description="Are you sure you want to delete this item?"
-        :onConfirmFn="deleteData"
-      />
+  <div class="list">
+    <Modal
+      title="Delete confirmation"
+      description="Are you sure you want to delete this item?"
+      :onConfirmFn="deleteData"
+    />
 
-      <Table
-        :headers="tHeaders"
-        :items="filteredData"
-        :isFetching="requestStatus.fetch"
-        :onError="requestStatus.error.status"
-        :onFailedFetchHandler="fetchData"
-      >
-        <template #previlage="{ data }">
-          <div class="previlage-col">
-            <template v-for="(item, key) in data.previlege" :key="key">
-              <Badge variant="primary" :inverse="true" class="mr-2">
-                {{ item.id_privilege }}
-              </Badge>
-            </template>
-          </div>
-        </template>
+    <Table
+      :headers="tHeaders"
+      :items="filteredData"
+      :isFetching="requestStatus.fetch"
+      :onError="requestStatus.error.status"
+      :onFailedFetchHandler="fetchData"
+      :pagination="pagination"
+      :onPageChange="handlePageChange"
+    >
+      <template #previlage="{ data }">
+        <div class="previlage-col">
+          <template v-for="(item, key) in data.previlege" :key="key">
+            <Badge variant="primary" :inverse="true" class="mr-2">
+              {{ item.id_privilege }}
+            </Badge>
+          </template>
+        </div>
+      </template>
 
-        <template #action="{ data }">
-          <ActionButton :data="actionButtons" :item="data" />
-        </template>
-      </Table>
-    </div>
+      <template #action="{ data }">
+        <ActionButton :data="actionButtons" :item="data" />
+      </template>
+    </Table>
   </div>
 </template>
 <script>
-import { computed, onMounted, ref } from 'vue'
-import { useStore } from 'vuex'
-import Table, { EmptyTable  as emptyComponent, ActionButton } from '@common/Table'
-import Badge from '@common/Badge'
-import Modal from '@common/Modal'
-import { useRouter } from 'vue-router'
+import { computed, onMounted, reactive, ref } from 'vue';
+import { useStore } from 'vuex';
+import Table, {
+  EmptyTable as emptyComponent,
+  ActionButton,
+} from '@common/Table';
+import Badge from '@common/Badge';
+import Modal from '@common/Modal';
+import { useRouter } from 'vue-router';
 
 export default {
   components: {
@@ -47,14 +50,15 @@ export default {
     ActionButton,
   },
   setup() {
-    const store = useStore()
-    const router = useRouter()
+    const store = useStore();
+    const router = useRouter();
+    const params = reactive({ page: 1, limit: 5 });
 
     const tHeaders = ref([
       {
         title: 'Role Name',
         accessor: 'name',
-        width: '20%'
+        width: '20%',
       },
       { title: 'Previlage', accessor: 'previlage' },
       { title: 'Created at', accessor: 'created_at' },
@@ -65,49 +69,64 @@ export default {
         colSpan: 1,
         align: 'center',
       },
-    ])
+    ]);
 
     const actionButtons = ref([
       {
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          router.push({ name: 'Update Role', params: {hash_id: data.hash_id, name: data.name, previleges: JSON.stringify(data.previlege)} })
-        }
+          console.log(data);
+          router.push({
+            name: 'Update Role',
+            params: { data: JSON.stringify(data) },
+          });
+        },
       },
       {
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          toggleModal(e, data)
-        }
-      }
-    ])
+          toggleModal(e, data);
+        },
+      },
+    ]);
 
     const toggleModal = (e, data) => {
-      self.$modal.show(data)
-    }
+      self.$modal.show(data);
+    };
 
     const deleteData = ({ hash_id }) => {
       store.dispatch('role/deleteData', {
-        hash_id,
         action: 'form.delete',
-      })
-    }
+        hash_id,
+        params,
+      });
+    };
 
     const fetchData = () => {
-      store.dispatch('role/fetchData')
-    }
+      store.dispatch('role/fetchData', params);
+    };
 
     const filteredData = computed(() => {
-      return store.getters['role/getItems']
-    })
+      return store.getters['role/getItems'];
+    });
+
+    const pagination = computed(() => {
+      return store.getters['role/getPagination'];
+    });
 
     const requestStatus = computed(() => {
-      return store.getters['role/getRequestStatus']
-    })
+      return store.getters['role/getRequestStatus'];
+    });
 
-    onMounted(fetchData)
+    const handlePageChange = pageParams => {
+      Object.assign(params, pageParams);
+
+      fetchData();
+    };
+
+    onMounted(fetchData);
 
     return {
       requestStatus,
@@ -117,13 +136,15 @@ export default {
       deleteData,
       emptyComponent,
       actionButtons,
-      toggleModal
-    }
+      toggleModal,
+      pagination,
+      handlePageChange,
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
-.container {
+.content-container {
   @apply relative;
 
   .wrapper {

@@ -54,9 +54,9 @@ export default {
     });
 
     const showPagination = computed(() => {
-      const { withPagination, isFetching, items } = unref(getProps);
+      const { withPagination, isFetching, items, onError } = unref(getProps);
 
-      return Boolean(!isFetching && items.length && withPagination);
+      return Boolean(!isFetching && items.length && withPagination && !onError);
     });
 
     const selectAllRows = e => {

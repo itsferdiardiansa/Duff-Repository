@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fragment/Base/Sidebar/AppLogo will render and match snapshot 1`] = `
+<div class="app-logo mono">
+  <router-link-stub to="/" class="app-logo--link"></router-link-stub>
+</div>
+`;
+
+exports[`fragment/Base/Sidebar/AppLogo will render collapse view and match snapshot 1`] = `
+<div class="app-logo mono">
+  <router-link-stub to="/" class="app-logo--link"></router-link-stub>
+</div>
+`;

@@ -2,7 +2,7 @@ export default {
   isFetching: false,
   onError: {
     status: false,
-    data: {}
-  }, 
+    body: {},
+  },
   items: [],
-}
+};

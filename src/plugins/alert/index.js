@@ -9,7 +9,7 @@ import uuid from '@util/uuid';
 const createElement = (instance, app) => {
   const root = document.querySelector('#app');
   const div = document.createElement('div');
-  const elementId = uuid(`${MP2_PREFIX_CLASS}-alert`);
+  const elementId = uuid(`${SATPAM_PREFIX_CLASS}-alert`);
 
   div.setAttribute('id', elementId);
   div.setAttribute('role', 'alert');

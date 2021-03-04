@@ -1,0 +1,52 @@
+{
+  "message": "cms.notification.list.success",
+  "result": {
+    "current_page": 1,
+    "data": [
+      {
+        "id": 49,
+        "logo": "",
+        "tagline": "This is tagline",
+        "hero": "",
+        "site": "https://twitch.dev",
+        "is_active": "1",
+        "description": "<p>Text</p>",
+        "position": "1",
+        "created_at": "2021-02-26T07:54:06Z",
+        "updated_at": "2021-02-26T07:54:06Z",
+        "hash_id": "26c040fb-757d-4b40-807f-0b6544a111a8",
+        "ldp_id": "47364"
+      },
+      {
+        "id": 47,
+        "logo": "https://loket-development.s3.amazonaws.com/30845ae2-7139-4def-bd9c-962ab523ba44",
+        "tagline": "taglinne",
+        "hero": "https://loket-development.s3.amazonaws.com/4478f417-c641-4188-9af6-0ee44f7cbe46",
+        "site": "https://google.com",
+        "is_active": "1",
+        "description": "1",
+        "position": "1",
+        "created_at": "2021-02-22T10:23:02Z",
+        "updated_at": "2021-02-22T10:23:02Z",
+        "hash_id": "405afefe-b7fa-4ee2-bdb3-baf94bc88347",
+        "ldp_id": "1002"
+      },
+      {
+        "id": 20,
+        "logo": "https://loket-development.s3.amazonaws.com/images/temporary/20210219/1613712872_przeXh.png",
+        "tagline": "Ini tagline partner",
+        "hero": "https://loket-development.s3.amazonaws.com/images/temporary/20210219/1613712873_OkUS6X.jpg",
+        "site": "https://google.com",
+        "is_active": "1",
+        "description": "Deskripsi partner",
+        "position": "-17",
+        "created_at": "2021-02-10T08:18:58Z",
+        "updated_at": "2021-02-19T12:34:33Z",
+        "hash_id": "f72cdc87-8792-4e36-b434-b2be1d4f1603",
+        "ldp_id": "133"
+      }
+    ],
+    "per_page": 10,
+    "total_page": 1
+  }
+}

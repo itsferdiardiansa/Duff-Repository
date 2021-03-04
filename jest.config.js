@@ -14,10 +14,10 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.{js,vue}',
     '!src/main.js',
+    '!src/App.vue',
     '!src/services/**/*.js',
     '!src/pages/**/*.{js,vue}',
     '!src/routes/**/*.js',
-    '!src/store/**/*.js',
     '!src/layouts/**/*.{js,vue}',
   ],
   setupFiles: ['./tools/client.js', './tools/setupEnvFiles.js'],

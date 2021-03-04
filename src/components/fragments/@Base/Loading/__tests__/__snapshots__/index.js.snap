@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fragment/Base/Loading will render and match snapshot 1`] = `
+<div class="ss-loading fade-enter-from fade-enter-active">
+  <div class="anim">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <h1>Please wait</h1>
+</div>
+`;

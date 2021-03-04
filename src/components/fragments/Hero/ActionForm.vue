@@ -1,0 +1,133 @@
+<template>
+  <Form ref="formEl" :model="state.form" @submit="handleSubmit">
+    <FormControl
+      label="Title"
+      :rules="{
+        title: [{ required: true, message: 'Title is required' }],
+      }"
+    >
+      <Input
+        placeholder="Title"
+        name="Title"
+        v-model="state.form.title"
+        autofocus
+      />
+    </FormControl>
+
+    <FormControl
+      label="Button URL"
+      :rules="{
+        button_url: [{ required: true, message: 'Button URL is required' }],
+      }"
+    >
+      <Input
+        placeholder="Button URL"
+        name="ldp_id"
+        v-model="state.form.button_url"
+        autofocus
+      />
+    </FormControl>
+
+    <FormControl
+      label="Banner"
+      :rules="{
+        banner: [{ required: true, message: 'Banner is required' }],
+      }"
+    >
+      <FileUpload name="banner" v-model="state.form.banner" />
+    </FormControl>
+
+    <FormControl
+      label="Banner"
+      :rules="{
+        banner_mobile: [
+          { required: true, message: 'Banner Mobile is required' },
+        ],
+      }"
+    >
+      <FileUpload name="banner_mobile" v-model="state.form.banner_mobile" />
+    </FormControl>
+
+    <FormControl :colspan="3">
+      <Button
+        type="submit"
+        :label="isCreate ? 'Create' : 'Update'"
+        :variant="isCreate ? 'dark' : 'warning'"
+        :icon="['fa', 'save']"
+        :bold="true"
+        :isLoading="isFetching"
+      />
+    </FormControl>
+  </Form>
+</template>
+<script>
+/* eslint-disable */
+import { onMounted, reactive, ref, unref } from 'vue';
+import Form, { FormControl, FileUpload, Input, Textarea } from '@common/Form';
+import Button from '@common/Button';
+
+export default {
+  name: 'HeroActionForm',
+  components: {
+    Button,
+    Form,
+    FormControl,
+    FileUpload,
+    Input,
+    Textarea,
+  },
+  emits: ['submit'],
+  props: {
+    data: {
+      type: Object,
+      default: () => {},
+    },
+    isCreate: {
+      type: Boolean,
+      default: true,
+    },
+    isFetching: {
+      type: Boolean,
+      default: false,
+    },
+    withValidation: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  setup(props, { emit }) {
+    const formEl = ref();
+    const state = reactive({
+      form: {
+        title: '',
+        button_url: '',
+        banner: '',
+        banner_mobile: '',
+      },
+    });
+
+    const handleSubmit = () => {
+      const { withValidation } = props;
+      const form = unref(formEl);
+
+      form.validate(valid => {
+        if (valid || !withValidation) {
+          emit('submit', state.form);
+        }
+      });
+    };
+
+    onMounted(() => {
+      const { data, isCreate } = props;
+
+      if (data && !isCreate) Object.assign(state.form, data);
+    });
+
+    return {
+      formEl,
+      state,
+      handleSubmit,
+    };
+  },
+};
+</script>

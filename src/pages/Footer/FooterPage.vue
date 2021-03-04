@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="list-container">
     <Card>
       <div class="wrapper">
         <div class="mt-2">
@@ -10,15 +10,15 @@
   </div>
 </template>
 <script>
-import Card from '@common/Card'
-import ContentList from '@fragment/Footer/List'
+import Card from '@common/Card';
+import ContentList from '@fragment/Footer/List';
 
 export default {
   components: {
     Card,
     ContentList,
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .wrapper {

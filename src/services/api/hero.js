@@ -1,26 +1,33 @@
-import http from '@service/http'
+import http from '@service/http';
 
 export default {
   getList: params => {
     return http.request({
       url: '/hero/',
-      params
-    })
+      params,
+    });
   },
   create: params => {
     return http.request({
       url: '/hero/',
       method: 'POST',
-      data: params
-    })
+      data: params,
+    });
+  },
+  update: params => {
+    return http.request({
+      url: `/hero/${params.hash_id}`,
+      method: 'POST',
+      data: params,
+    });
   },
   delete: params => {
     return http.request({
       url: `/hero/${params}`,
       method: 'DELETE',
       data: {
-        name
-      }
-    })
-  }
-}
+        name,
+      },
+    });
+  },
+};

@@ -13,7 +13,17 @@ const routes = [
         path: 'create',
         name: 'Create Hero',
         component: () =>
-          import(/* webpackChunkName: 'page.hero.form' */ '@page/Hero/Form'),
+          import(
+            /* webpackChunkName: 'page.hero.form.create' */ '@page/Hero/Create'
+          ),
+      },
+      {
+        path: 'update',
+        name: 'Update Hero',
+        component: () =>
+          import(
+            /* webpackChunkName: 'page.hero.form.update' */ '@page/Hero/Update'
+          ),
       },
     ],
   },
@@ -52,7 +62,7 @@ const routes = [
         name: 'Create Partner',
         component: () =>
           import(
-            /* webpackChunkName: 'page.partner.form' */ '@page/Partner/Create'
+            /* webpackChunkName: 'page.partner.form.create' */ '@page/Partner/Create'
           ),
       },
       {
@@ -60,7 +70,7 @@ const routes = [
         name: 'Update Partner',
         component: () =>
           import(
-            /* webpackChunkName: 'page.partner.form' */ '@page/Partner/Update'
+            /* webpackChunkName: 'page.partner.form.update' */ '@page/Partner/Update'
           ),
       },
     ],
@@ -127,16 +137,20 @@ const routes = [
     component: () => import(/* webpackChunkName: 'page.role' */ '@page/Role'),
     children: [
       {
-        path: 'add',
+        path: 'create',
         name: 'Add Role',
         component: () =>
-          import(/* webpackChunkName: 'page.role.form' */ '@page/Role/Add'),
+          import(
+            /* webpackChunkName: 'page.role.form.create' */ '@page/Role/Create'
+          ),
       },
       {
         path: 'update',
         name: 'Update Role',
         component: () =>
-          import(/* webpackChunkName: 'page.role.form' */ '@page/Role/Add'),
+          import(
+            /* webpackChunkName: 'page.role.form.update' */ '@page/Role/Update'
+          ),
       },
     ],
   },
@@ -163,11 +177,11 @@ const routes = [
       import(/* webpackChunkName: 'page.notification' */ '@page/Notification'),
     children: [
       {
-        path: 'add',
+        path: 'create',
         name: 'Add Notification',
         component: () =>
           import(
-            /* webpackChunkName: 'page.notification.form' */ '@page/Notification/Add'
+            /* webpackChunkName: 'page.notification.form.create' */ '@page/Notification/Create'
           ),
       },
       {
@@ -175,7 +189,7 @@ const routes = [
         name: 'Update Notification',
         component: () =>
           import(
-            /* webpackChunkName: 'page.notification.form' */ '@page/Notification/Add'
+            /* webpackChunkName: 'page.notification.form.update' */ '@page/Notification/Update'
           ),
       },
     ],

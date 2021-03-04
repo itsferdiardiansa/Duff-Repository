@@ -1,8 +1,8 @@
 const createDevProxy = env => {
-  const { MP2_API_PROXY, MP2_APP_PORT } = env;
+  const { SATPAM_API_PROXY, SATPAM_APP_PORT } = env;
   let proxy;
 
-  for (const { path, host, pathRewrite } of MP2_API_PROXY) {
+  for (const { path, host, pathRewrite } of SATPAM_API_PROXY) {
     proxy = {
       ...proxy,
       [path]: {
@@ -16,7 +16,7 @@ const createDevProxy = env => {
   }
 
   return {
-    port: MP2_APP_PORT,
+    port: SATPAM_APP_PORT,
     proxy,
   };
 };

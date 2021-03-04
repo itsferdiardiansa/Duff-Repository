@@ -1,0 +1,414 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fragment/Feedback/List will render and match snapshot 1`] = `
+<div class="list">
+  <!--v-if-->
+  <table class="ss-table">
+    <thead class="ss-table--head" headers="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" isfetching="false" pagination="[object Object]" emptymessage="Empty data" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="false" filteroptions="">
+      <tr>
+        <th width="4%">
+          <!--v-if--><span>#</span>
+        </th>
+        <th class="" width="15%" align="left">Email</th>
+        <th class="" width="15%">Name</th>
+        <th class="">Page</th>
+        <th class="">Section</th>
+        <th class="">Responded by</th>
+        <th class="">Read by</th>
+        <th colspan="1" class="" align="center">Action</th>
+      </tr>
+    </thead>
+    <tbody class="ss-table--body">
+      <!--v-if-->
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>1</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>test01@test.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>dev test</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>create-event</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820596858">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820596858">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>2</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>test@test.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>firstname lastname</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>create-event</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820596889">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820596889">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>3</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>test@test.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>firstname lastname</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>create-event</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820596895">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820596895">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>4</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>test@test01.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>firstname lastname</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>create-event</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820596928">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820596928">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>5</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>test@test01.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>firstname lastname</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>create-event</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820596996">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820596996">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>6</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>test@test.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>firstname lastname</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>create-event</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820597001">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820597001">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>7</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>test@test.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>firstname lastname</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>create-event</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820597059">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820597059">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>8</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>test@test.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>firstname lastname</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>create-event</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820597070">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820597070">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>9</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>test@test.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>firstname lastname</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>create-event</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div></div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820597076">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820597076">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>10</label></td>
+        <td class="ss-table--body-col text-left">
+          <div>ferdi.ardiansa@gojek.com</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>Random</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>Dashboard</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>General</div>
+        </td>
+        <td class="ss-table--body-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></td>
+        <td class="ss-table--body-col">
+          <div class="read-by-col"><span class="ss-badge ss-badge--primary ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">qa@loket.com</div></div></span></div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base text-bold" data-id="1614820597108">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l75.4-75.4-128.02-128.02-75.4 75.4zM485.49 26.51c-35.35-35.35-92.67-35.35-128.02 0l-21.76 21.76-36.56-36.55c-15.62-15.62-40.95-15.62-56.56 0L138.47 115.84c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0l87.15-87.15 19.59 19.59L191.98 192 320 320.02l165.49-165.49c35.35-35.35 35.35-92.66 0-128.02z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as responded</div>
+                </div>
+              </button><button class="ss-button ss-button--dark-inverse ss-button--base text-bold" data-id="1614820597108">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 384 512">
+                      <path fill="currentColor" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Mark as read</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="ss-pagination">
+    <div class="ss-pagination--info">
+      <p> Showing <span>1</span> to <span>10</span> of <span>20</span> results </p>
+    </div>
+    <div class="ss-pagination--page">
+      <!--v-if--><span class="page-number active">1</span><span class="page-number">2</span><span class="nav-btn next"><img svg-inline=""></span>
+    </div>
+  </div>
+</div>
+`;

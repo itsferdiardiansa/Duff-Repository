@@ -1,0 +1,933 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fragment/Hero/ActionForm will overide local data when in update mode 1`] = `
+Object {
+  "form": Object {
+    "banner": "/9xbg6dsds==",
+    "banner_mobile": "/7343bxx==",
+    "button_url": "https://google.com",
+    "title": "Hero name",
+  },
+}
+`;
+
+exports[`fragment/Hero/ActionForm will post data on failed and bring up an alert 1`] = `
+<body>
+  
+  
+  <div
+    id="app"
+  >
+    
+
+    <div
+      data-v-app=""
+      id="ss-alert_11228141111614821062009"
+      role="alert"
+    >
+      <div
+        class="ss-alert ss-alert--success fade-slide-enter-from fade-slide-enter-active"
+      >
+        <div
+          class="ss-alert--wrapper"
+        >
+          <div
+            class="ss-alert--close"
+          >
+            <svg
+              class=""
+              viewBox="0 0 352 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            class="ss-alert--content"
+          >
+            cms.hero.create.success
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`fragment/Hero/ActionForm will post data on success and bring up an alert then redirect it to the list 1`] = `
+<body>
+  
+  
+  <div
+    id="app"
+  >
+    
+
+    <div
+      data-v-app=""
+      id="ss-alert_11228141111614821062009"
+      role="alert"
+    >
+      <div
+        class="ss-alert ss-alert--success fade-slide-enter-from fade-slide-enter-active"
+      >
+        <div
+          class="ss-alert--wrapper"
+        >
+          <div
+            class="ss-alert--close"
+          >
+            <svg
+              class=""
+              viewBox="0 0 352 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            class="ss-alert--content"
+          >
+            cms.hero.create.success
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`fragment/Hero/ActionForm will render and match snapshot 1`] = `
+<form
+  class="ss-form"
+>
+  
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Title
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        autofocus=""
+        class="ss-control--input"
+        name="Title"
+      >
+        <!--v-if-->
+        <input
+          autocomplete="off"
+          autofocus=""
+          class="ss-input"
+          id="input-4-undefined"
+          name="Title"
+          placeholder="Title"
+          type="text"
+        />
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Button URL
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        autofocus=""
+        class="ss-control--input"
+        name="ldp_id"
+      >
+        <!--v-if-->
+        <input
+          autocomplete="off"
+          autofocus=""
+          class="ss-input"
+          id="input-6-undefined"
+          name="ldp_id"
+          placeholder="Button URL"
+          type="text"
+        />
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Banner
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        class="ss-control--file"
+        name="banner"
+      >
+        <input
+          accept="image/png, image/jpeg"
+          name="banner"
+          type="file"
+        />
+        <!--v-if-->
+        
+        <div
+          class="file-hero"
+        >
+          <svg
+            class=""
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+              fill="currentColor"
+            />
+          </svg>
+          <label>
+            Click or drag to upload
+          </label>
+        </div>
+        
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Banner
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        class="ss-control--file"
+        name="banner_mobile"
+      >
+        <input
+          accept="image/png, image/jpeg"
+          name="banner_mobile"
+          type="file"
+        />
+        <!--v-if-->
+        
+        <div
+          class="file-hero"
+        >
+          <svg
+            class=""
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+              fill="currentColor"
+            />
+          </svg>
+          <label>
+            Click or drag to upload
+          </label>
+        </div>
+        
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <!---->
+    <div
+      class="ss-form-control--wrapper col-3"
+    >
+      <button
+        class="ss-button ss-button--dark ss-button--base text-bold"
+        type="submit"
+      >
+        <div
+          class="ss-button--wrapper"
+        >
+          
+          <div
+            class="ss-button--icon"
+          >
+            <svg
+              class=""
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          
+          
+          <div
+            class="ss-button--label has-icon"
+          >
+            
+            Create
+            
+          </div>
+          
+        </div>
+      </button>
+      <!---->
+    </div>
+  </div>
+  
+</form>
+`;
+
+exports[`fragment/Hero/ActionForm will render the spinner during the request process 1`] = `
+<form
+  class="ss-form"
+>
+  
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Title
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        autofocus=""
+        class="ss-control--input"
+        name="Title"
+      >
+        <!--v-if-->
+        <input
+          autocomplete="off"
+          autofocus=""
+          class="ss-input"
+          id="input-94-undefined"
+          name="Title"
+          placeholder="Title"
+          type="text"
+        />
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Button URL
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        autofocus=""
+        class="ss-control--input"
+        name="ldp_id"
+      >
+        <!--v-if-->
+        <input
+          autocomplete="off"
+          autofocus=""
+          class="ss-input"
+          id="input-96-undefined"
+          name="ldp_id"
+          placeholder="Button URL"
+          type="text"
+        />
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Banner
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        class="ss-control--file"
+        name="banner"
+      >
+        <input
+          accept="image/png, image/jpeg"
+          name="banner"
+          type="file"
+        />
+        <!--v-if-->
+        
+        <div
+          class="file-hero"
+        >
+          <svg
+            class=""
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+              fill="currentColor"
+            />
+          </svg>
+          <label>
+            Click or drag to upload
+          </label>
+        </div>
+        
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Banner
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        class="ss-control--file"
+        name="banner_mobile"
+      >
+        <input
+          accept="image/png, image/jpeg"
+          name="banner_mobile"
+          type="file"
+        />
+        <!--v-if-->
+        
+        <div
+          class="file-hero"
+        >
+          <svg
+            class=""
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+              fill="currentColor"
+            />
+          </svg>
+          <label>
+            Click or drag to upload
+          </label>
+        </div>
+        
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <!---->
+    <div
+      class="ss-form-control--wrapper col-3"
+    >
+      <button
+        class="ss-button ss-button--dark ss-button--base text-bold"
+        disabled=""
+        type="submit"
+      >
+        <div
+          class="ss-button--wrapper"
+        >
+          
+          <!--v-if-->
+          
+          
+          <div
+            class="ss-button--spinner"
+          >
+            <div
+              class="ss-spinner"
+              style="width: 20px; height: 20px;"
+            >
+              <div />
+              <div />
+              <div />
+            </div>
+          </div>
+          
+        </div>
+      </button>
+      <!---->
+    </div>
+  </div>
+  
+</form>
+`;
+
+exports[`fragment/Hero/ActionForm will render the text, override local state and color for the form update 1`] = `
+<form
+  class="ss-form"
+>
+  
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Title
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        autofocus=""
+        class="ss-control--input"
+        name="Title"
+      >
+        <!--v-if-->
+        <input
+          autocomplete="off"
+          autofocus=""
+          class="ss-input"
+          id="input-110-undefined"
+          name="Title"
+          placeholder="Title"
+          type="text"
+        />
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Button URL
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        autofocus=""
+        class="ss-control--input"
+        name="ldp_id"
+      >
+        <!--v-if-->
+        <input
+          autocomplete="off"
+          autofocus=""
+          class="ss-input"
+          id="input-112-undefined"
+          name="ldp_id"
+          placeholder="Button URL"
+          type="text"
+        />
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Banner
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        class="ss-control--file"
+        name="banner"
+      >
+        <input
+          accept="image/png, image/jpeg"
+          name="banner"
+          type="file"
+        />
+        <!--v-if-->
+        
+        <div
+          class="file-hero"
+        >
+          <svg
+            class=""
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+              fill="currentColor"
+            />
+          </svg>
+          <label>
+            Click or drag to upload
+          </label>
+        </div>
+        
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Banner
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        class="ss-control--file"
+        name="banner_mobile"
+      >
+        <input
+          accept="image/png, image/jpeg"
+          name="banner_mobile"
+          type="file"
+        />
+        <!--v-if-->
+        
+        <div
+          class="file-hero"
+        >
+          <svg
+            class=""
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+              fill="currentColor"
+            />
+          </svg>
+          <label>
+            Click or drag to upload
+          </label>
+        </div>
+        
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <!---->
+    <div
+      class="ss-form-control--wrapper col-3"
+    >
+      <button
+        class="ss-button ss-button--warning ss-button--base text-bold"
+        type="submit"
+      >
+        <div
+          class="ss-button--wrapper"
+        >
+          
+          <div
+            class="ss-button--icon"
+          >
+            <svg
+              class=""
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          
+          
+          <div
+            class="ss-button--label has-icon"
+          >
+            
+            Update
+            
+          </div>
+          
+        </div>
+      </button>
+      <!---->
+    </div>
+  </div>
+  
+</form>
+`;
+
+exports[`fragment/Hero/ActionForm will render with error validation on all fields and match snapshot 1`] = `
+<form
+  class="ss-form"
+>
+  
+  <div
+    class="ss-form-control has-feedback"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Title
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        autofocus=""
+        class="ss-control--input"
+        name="Title"
+      >
+        <!--v-if-->
+        <input
+          autocomplete="off"
+          autofocus=""
+          class="ss-input"
+          id="input-23-undefined"
+          name="Title"
+          placeholder="Title"
+          type="text"
+        />
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div
+        class="ss-control--info slide-top-enter-from slide-top-enter-active"
+      >
+        Title is required
+      </div>
+    </div>
+  </div>
+  <div
+    class="ss-form-control has-feedback"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Button URL
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        autofocus=""
+        class="ss-control--input"
+        name="ldp_id"
+      >
+        <!--v-if-->
+        <input
+          autocomplete="off"
+          autofocus=""
+          class="ss-input"
+          id="input-25-undefined"
+          name="ldp_id"
+          placeholder="Button URL"
+          type="text"
+        />
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div
+        class="ss-control--info slide-top-enter-from slide-top-enter-active"
+      >
+        Button URL is required
+      </div>
+    </div>
+  </div>
+  <div
+    class="ss-form-control has-feedback"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Banner
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        class="ss-control--file"
+        name="banner"
+      >
+        <input
+          accept="image/png, image/jpeg"
+          name="banner"
+          type="file"
+        />
+        <!--v-if-->
+        
+        <div
+          class="file-hero"
+        >
+          <svg
+            class=""
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+              fill="currentColor"
+            />
+          </svg>
+          <label>
+            Click or drag to upload
+          </label>
+        </div>
+        
+      </div>
+      <div
+        class="ss-control--info slide-top-enter-from slide-top-enter-active"
+      >
+        Banner is required
+      </div>
+    </div>
+  </div>
+  <div
+    class="ss-form-control has-feedback"
+  >
+    <div
+      class="ss-form-control--label"
+    >
+      Banner
+    </div>
+    <div
+      class="ss-form-control--wrapper"
+    >
+      <div
+        class="ss-control--file"
+        name="banner_mobile"
+      >
+        <input
+          accept="image/png, image/jpeg"
+          name="banner_mobile"
+          type="file"
+        />
+        <!--v-if-->
+        
+        <div
+          class="file-hero"
+        >
+          <svg
+            class=""
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+              fill="currentColor"
+            />
+          </svg>
+          <label>
+            Click or drag to upload
+          </label>
+        </div>
+        
+      </div>
+      <div
+        class="ss-control--info slide-top-enter-from slide-top-enter-active"
+      >
+        Banner Mobile is required
+      </div>
+    </div>
+  </div>
+  <div
+    class="ss-form-control"
+  >
+    <!---->
+    <div
+      class="ss-form-control--wrapper col-3"
+    >
+      <button
+        class="ss-button ss-button--dark ss-button--base text-bold"
+        type="submit"
+      >
+        <div
+          class="ss-button--wrapper"
+        >
+          
+          <div
+            class="ss-button--icon"
+          >
+            <svg
+              class=""
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          
+          
+          <div
+            class="ss-button--label has-icon"
+          >
+            
+            Create
+            
+          </div>
+          
+        </div>
+      </button>
+      <!---->
+    </div>
+  </div>
+  
+</form>
+`;

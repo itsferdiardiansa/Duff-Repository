@@ -1,71 +1,56 @@
-import NotificationService from '@service/api/notification'
+import NotificationService from '@service/api/notification';
 
 const actions = {
-  async fetchData({ commit }) {
-    commit('fetchStart')
+  async fetchData({ commit }, payload) {
+    commit('fetchStart');
 
     try {
-      const response = await NotificationService.getList()
-      const collections = await response.data
-      
-      commit('fetchSuccess', collections)
-    } catch (error) { 
-      commit('fetchFailed', error)
+      const response = await NotificationService.getList(payload);
+      const collections = await response.data;
+
+      commit('fetchSuccess', collections);
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
   async postData({ commit }, payload) {
-    commit('fetchStart')
+    commit('fetchStart');
 
     try {
-      const response = await NotificationService.create(payload.data)
-      const collections = await response.data
-    
-      commit('fetchSuccess', {...payload, ...collections})
-    } catch(error) {
-      commit('fetchFailed', {
-        ...payload, 
-        status: 'failed', 
-        message: 'Failed to create data', 
-        error
-      })
+      const response = await NotificationService.create(payload.data);
+      const collections = await response.data;
+
+      commit('fetchSuccess', { ...payload, ...collections });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
   async updateData({ commit }, payload) {
-    commit('fetchStart')
+    commit('fetchStart');
 
     try {
-      const response = await NotificationService.update(payload.data)
-      const collections = await response.data
-    
-      commit('fetchSuccess', {...payload, ...collections})
-    } catch(error) {
-      commit('fetchFailed', {
-        ...payload, 
-        status: 'failed', 
-        message: 'Failed to update data', 
-        error
-      })
+      const response = await NotificationService.update(payload.data);
+      const collections = await response.data;
+
+      commit('fetchSuccess', { ...payload, ...collections });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
   async deleteData({ commit, dispatch }, payload) {
-    commit('fetchStart')
-    
+    commit('fetchStart');
+
     try {
-      const response = await NotificationService.delete(payload.hash_id)
-      const collections = await response.data
+      const response = await NotificationService.delete('4343');
+      const collections = await response.data;
 
-      commit('fetchSuccess', {...payload, ...collections})
-    } catch(error) {
-      commit('fetchFailed', {
-        ...payload, 
-        status: 'failed', 
-        message: 'Failed to delete data', 
-        error
-      })
+      commit('fetchSuccess', { ...payload, ...collections });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
     } finally {
-      dispatch('fetchData')
+      dispatch('fetchData', payload.params);
     }
-  }
-}
+  },
+};
 
-export default actions
+export default actions;

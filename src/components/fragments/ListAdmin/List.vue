@@ -1,7 +1,6 @@
 <template>
-  <div class="container">
+  <div class="content-container">
     <div class="wrapper">
-
       <Table
         :headers="tHeaders"
         :items="filteredData"
@@ -10,10 +9,8 @@
         :rowLoader="2"
       >
         <template #adminAccess="{ data: { is_super_admin } }">
-          <Badge 
-            :variant="getVariant(is_super_admin)"
-          >
-            {{ (is_super_admin) ? 'inactive' : 'active' }}
+          <Badge :variant="getVariant(is_super_admin)">
+            {{ is_super_admin ? 'inactive' : 'active' }}
           </Badge>
         </template>
 
@@ -25,11 +22,11 @@
   </div>
 </template>
 <script>
-import { computed, onMounted, ref } from 'vue'
-import { useStore } from 'vuex'
-import Table from '@common/Table'
-import Badge from '@common/Badge'
-import ActionButton from './ActionButton'
+import { computed, onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
+import Table from '@common/Table';
+import Badge from '@common/Badge';
+import ActionButton from './ActionButton';
 
 export default {
   components: {
@@ -38,7 +35,7 @@ export default {
     ActionButton,
   },
   setup() {
-    const store = useStore()
+    const store = useStore();
 
     let tHeaders = ref([
       {
@@ -56,37 +53,35 @@ export default {
         colSpan: 1,
         align: 'center',
       },
-    ])
+    ]);
 
     const getAdmin = () => {
-      store.dispatch('admin/fetchData')
-    }
+      store.dispatch('admin/fetchData');
+    };
 
     const filteredData = computed(() => {
-      return store.getters['admin/getItems']
-    })
+      return store.getters['admin/getItems'];
+    });
 
     const requestStatus = computed(() => {
-      return store.getters['admin/getRequestStatus']
-    })
+      return store.getters['admin/getRequestStatus'];
+    });
 
-    const getVariant = status => (
-      (status) ? 'success' : 'warning'
-    )
+    const getVariant = status => (status ? 'success' : 'warning');
 
-    onMounted(getAdmin)
+    onMounted(getAdmin);
 
     return {
       requestStatus,
       filteredData,
       tHeaders,
-      getVariant
-    }
+      getVariant,
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
-.container {
+.content-container {
   @apply relative;
 
   .wrapper {

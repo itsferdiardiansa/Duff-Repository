@@ -1,0 +1,58 @@
+{
+  "message": "cms.footer.list.success",
+  "result": {
+    "current_page": 2,
+    "data": [
+      {
+        "id": 8,
+        "name": "section a",
+        "position": "1",
+        "created_at": "2021-02-11T05:04:28Z",
+        "updated_at": "2021-02-11T05:04:28Z",
+        "hash_id": "3e1740df-151f-4888-b73a-45c19ae184fd"
+      },
+      {
+        "id": 7,
+        "name": "section a",
+        "position": "0",
+        "created_at": "2021-02-11T04:46:42Z",
+        "updated_at": "2021-02-11T04:46:42Z",
+        "hash_id": "4f614314-1ea3-4764-bf12-79c11cfac964"
+      },
+      {
+        "id": 6,
+        "name": "section a",
+        "position": "0",
+        "created_at": "2021-01-29T08:25:48Z",
+        "updated_at": "2021-01-29T08:25:48Z",
+        "hash_id": "38c584a5-f5e4-4627-8710-bbb6e58790a4"
+      },
+      {
+        "id": 4,
+        "name": "Lokasi event position has been updated to (2)",
+        "position": "2",
+        "created_at": "2019-11-21T17:14:22Z",
+        "updated_at": "2021-02-22T08:36:09Z",
+        "hash_id": "todhttge"
+      },
+      {
+        "id": 2,
+        "name": "section a(edited)",
+        "position": "2",
+        "created_at": "2019-11-21T17:13:48Z",
+        "updated_at": "2021-02-05T13:22:05Z",
+        "hash_id": "nwqn9wju"
+      },
+      {
+        "id": 1,
+        "name": "section has been updated",
+        "position": "0",
+        "created_at": "2019-11-21T17:13:15Z",
+        "updated_at": "2021-02-05T13:21:59Z",
+        "hash_id": "mmcyfmhn"
+      }
+    ],
+    "per_page": 10,
+    "total_page": 2
+  }
+}

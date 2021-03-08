@@ -32,15 +32,6 @@ export default {
       });
     };
 
-    const updateData = () => {
-      // store.dispatch('thematicPage/updateData', {
-      //   data: unref(state.form),
-      //   action: 'form.update',
-      //   redirectUrl: '/thematic-page',
-      //   status: 'success',
-      // })
-    };
-
     return {
       handleSubmit,
       requestStatus,

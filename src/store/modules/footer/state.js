@@ -2,7 +2,7 @@ export default {
   isFetching: false,
   onError: {
     status: false,
-    data: {},
+    body: {},
   },
   items: [],
   position: [
@@ -11,4 +11,4 @@ export default {
     { value: 2, text: 'Position Bottom' },
     { value: 3, text: 'Position Left' },
   ],
-}
+};

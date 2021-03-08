@@ -86,7 +86,7 @@ const routes = [
         name: 'Create Footer',
         component: () =>
           import(
-            /* webpackChunkName: 'page.partner.form' */ '@page/Footer/FooterForm'
+            /* webpackChunkName: 'page.partner.form.create' */ '@page/Footer/Create'
           ),
       },
       {
@@ -94,7 +94,7 @@ const routes = [
         name: 'Update Footer',
         component: () =>
           import(
-            /* webpackChunkName: 'page.partner.form' */ '@page/Footer/FooterForm'
+            /* webpackChunkName: 'page.partner.form.update' */ '@page/Footer/Update'
           ),
       },
       {

@@ -1,27 +1,16 @@
 <template>
-  <div class="list-container">
-    <Card>
-      <div class="wrapper">
-        <div class="mt-2">
-          <ContentList />
-        </div>
-      </div>
-    </Card>
-  </div>
+  <ContentWrapper>
+    <ContentList />
+  </ContentWrapper>
 </template>
 <script>
-import Card from '@common/Card';
+import ContentWrapper from '@base/Content/ContentWrapper';
 import ContentList from '@fragment/Footer/List';
 
 export default {
   components: {
-    Card,
+    ContentWrapper,
     ContentList,
   },
 };
 </script>
-<style lang="scss" scoped>
-.wrapper {
-  @apply py-3 px-5;
-}
-</style>

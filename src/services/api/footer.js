@@ -1,58 +1,58 @@
-import http from '@service/http'
+import http from '@service/http';
 
 export default {
   getList: params => {
     return http.request({
       url: '/footer/',
-      params
-    })
+      params,
+    });
   },
   create: params => {
     return http.request({
       url: '/footer/',
       method: 'POST',
-      data: params
-    })
+      data: params,
+    });
   },
   update: params => {
     return http.request({
       url: `/footer/${params.hash_id}`,
       method: 'POST',
-      data: params
-    })
+      data: params,
+    });
   },
   delete: params => {
     return http.request({
-      url: `/footer/${params.hash_id}`,
+      url: `/footer/${params}`,
       method: 'DELETE',
       data: {
-        name
-      }
-    })
+        name,
+      },
+    });
   },
   menuList: params => {
-    console.log(params)
+    console.log(params);
     return http.request({
       url: `/footer/${params.hash_id}/menu`,
       method: 'GET',
-    })
+    });
   },
   createMenuList: params => {
     return http.request({
       url: `/footer/${params.hash_id}/menu`,
       method: 'POST',
       data: {
-        params
-      }
-    }) 
+        params,
+      },
+    });
   },
   updateMenuList: params => {
     return http.request({
       url: `/footer/${params.footer_hash_id}/menu/${params.hash_id}`,
       method: 'DELETE',
       data: {
-        params
-      }
-    })
-  }
-}
+        params,
+      },
+    });
+  },
+};

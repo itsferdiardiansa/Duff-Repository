@@ -16,7 +16,9 @@
         :items="filteredData"
         :isFetching="requestStatus.fetch"
         :onError="requestStatus.error.status"
-        :onFailedFetchHandler="getFooter"
+        :onFailedFetchHandler="fetchData"
+        :pagination="pagination"
+        :onPageChange="handlePageChange"
       >
         <template #position="{ data }">
           <p v-text="getPosition(data.position)"></p>
@@ -36,7 +38,7 @@
   />
 </template>
 <script>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, reactive, ref } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import Table, { ActionButton } from '@common/Table';
@@ -53,8 +55,8 @@ export default {
   setup() {
     const store = useStore();
     const router = useRouter();
+    const params = reactive({ page: 1, limit: 5 });
 
-    console.log(router);
     const tHeaders = ref([
       {
         title: 'Section Name',
@@ -107,12 +109,16 @@ export default {
       self.$modal.show(data);
     };
 
-    const getFooter = () => {
-      store.dispatch('footer/fetchData');
+    const fetchData = () => {
+      store.dispatch('footer/fetchData', params);
     };
 
+    const pagination = computed(() => {
+      return store.getters['footer/getPagination'];
+    });
+
     const filteredData = computed(() => {
-      return store.getters['footer/getFooter'];
+      return store.getters['footer/getItems'];
     });
 
     const requestStatus = computed(() => {
@@ -121,9 +127,10 @@ export default {
 
     const deleteData = ({ hash_id }) => {
       store.dispatch('footer/deleteData', {
-        hash_id,
         action: 'form.delete',
         status: 'success',
+        hash_id,
+        params,
       });
     };
 
@@ -133,6 +140,7 @@ export default {
         { value: 1, text: 'Position Right' },
         { value: 2, text: 'Position Bottom' },
         { value: 3, text: 'Position Left' },
+        { value: 4, text: 'Position Front' },
       ];
 
       return list.find(item => item.value == position).text;
@@ -142,10 +150,16 @@ export default {
       router.push('/footer/create');
     };
 
-    onMounted(getFooter);
+    const handlePageChange = pageParams => {
+      Object.assign(params, pageParams);
+
+      fetchData();
+    };
+
+    onMounted(fetchData);
 
     return {
-      getFooter,
+      fetchData,
       requestStatus,
       filteredData,
       tHeaders,
@@ -153,6 +167,8 @@ export default {
       getPosition,
       deleteData,
       createFooter,
+      handlePageChange,
+      pagination,
     };
   },
 };

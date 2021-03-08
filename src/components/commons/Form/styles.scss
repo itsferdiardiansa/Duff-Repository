@@ -2,7 +2,7 @@ $defaultColWidth: 8.333333333333334;
 
 .#{$prefixClass}-form {
   &-control {
-    @apply grid grid-cols-2 md:grid-cols-12 gap-1 md:gap-4;
+    @apply grid grid-cols-2 md:grid-cols-12 gap-1 md:gap-4 items-baseline;
     margin-bottom: 24px;
 
     @include screen-md {

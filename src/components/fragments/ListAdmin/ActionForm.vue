@@ -12,7 +12,10 @@
     <FormControl
       label="Email"
       :rules="{
-        email: [{ required: true, message: 'Email is required' }],
+        email: [
+          { required: true, message: 'Email is required' },
+          { pattern: emailPattern, message: 'Please check the email format' },
+        ],
       }"
     >
       <Input placeholder="Email" v-model="state.form.email" autofocus />
@@ -59,6 +62,7 @@ import Form, {
 } from '@common/Form';
 import Button from '@common/Button';
 import { Rect as RectSkeleton } from '@common/Skeleton';
+import { emailPattern } from '@util/pattern';
 
 export default {
   name: 'AdminActionForm',
@@ -128,6 +132,7 @@ export default {
       formEl,
       state,
       handleSubmit,
+      emailPattern,
     };
   },
 };

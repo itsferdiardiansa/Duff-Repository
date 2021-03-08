@@ -25,8 +25,6 @@ const findMockModule = dir => {
   });
 };
 
-const initMocks = () => {
-  findMockModule(path.join(rootPath, 'services'));
+export default () => {
+  findMockModule(path.join(rootPath));
 };
-
-initMocks();

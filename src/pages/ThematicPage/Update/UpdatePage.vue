@@ -1,13 +1,18 @@
 <template>
   <Card class="form">
-    <ThematicForm :isFetching="requestStatus.fetch" @submit="handleSubmit" />
+    <ThematicForm
+      :data="formData"
+      :isFetching="requestStatus.fetch"
+      :isCreate="false"
+      @submit="handleSubmit"
+    />
   </Card>
 </template>
 <script>
 /* eslint-disable */
 import { reactive, ref, computed, unref, onMounted } from 'vue';
 import { useStore } from 'vuex';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import Card from '@common/Card';
 import ThematicForm from '@fragment/Thematic/ActionForm';
 
@@ -19,29 +24,33 @@ export default {
   setup() {
     const store = useStore();
     const route = useRoute();
+    const router = useRouter();
+    const formData = reactive({});
 
     const requestStatus = computed(() => {
       return store.getters['thematicPage/getRequestStatus'];
     });
 
     const handleSubmit = data => {
-      store.dispatch('thematicPage/postData', {
+      store.dispatch('thematicPage/updateData', {
         action: 'form.create',
         redirectUrl: '/thematic-page',
         data,
       });
     };
 
-    const updateData = () => {
-      // store.dispatch('thematicPage/updateData', {
-      //   data: unref(state.form),
-      //   action: 'form.update',
-      //   redirectUrl: '/thematic-page',
-      //   status: 'success',
-      // })
-    };
+    onMounted(() => {
+      const {
+        params: { data },
+      } = route;
+
+      if (data) {
+        Object.assign(formData, JSON.parse(data));
+      } else router.push('/thematic-page');
+    });
 
     return {
+      formData,
       handleSubmit,
       requestStatus,
     };

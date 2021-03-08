@@ -21,7 +21,7 @@ module.exports = {
     '!src/layouts/**/*.{js,vue}',
   ],
   setupFiles: ['./tools/client.js', './tools/setupEnvFiles.js'],
-  setupFilesAfterEnv: ['./tools/setupConsole.js'],
+  setupFilesAfterEnv: [],
   moduleNameMapper: {
     '^@data(.*)$': '<rootDir>/data$1',
     '^@build(.*)$': '<rootDir>/build$1',

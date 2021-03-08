@@ -1,4 +1,5 @@
 import * as utils from '@util/textFormat';
+import Schema from 'async-validator';
 
 export default {
   data() {
@@ -9,6 +10,7 @@ export default {
     };
   },
   methods: {
+    Schema,
     ...utils,
   },
 };

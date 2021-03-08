@@ -12,13 +12,21 @@
       </p>
     </div>
 
-    <div :class="`${prefixClass}-pagination--page`">
+    <transition-group
+      name="slide-left"
+      tag="div"
+      mode="out-in"
+      v-bind="$attrs"
+      :class="`${prefixClass}-pagination--page`"
+    >
       <span
         class="nav-btn prev"
         v-if="getPagination.prevBtn"
         @click="handlePageChange('prev')"
+        key="nav"
       >
-        <img svg-inline src="@icon/arrow.svg" />
+        <font-awesome-icon :icon="['fa', 'chevron-left']" />
+        <label>Previous</label>
       </span>
 
       <template v-for="(page, key) in getPagination.pages" :key="key">
@@ -33,11 +41,13 @@
       <span
         class="nav-btn next"
         v-if="getPagination.nextBtn"
+        type="nav"
         @click="handlePageChange('next')"
       >
-        <img svg-inline src="@icon/arrow.svg" />
+        <label>Next</label>
+        <font-awesome-icon :icon="['fa', 'chevron-right']" />
       </span>
-    </div>
+    </transition-group>
   </div>
 </template>
 <script>
@@ -97,7 +107,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .#{$prefixClass}-pagination {
-  @apply px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6;
+  @apply px-4 py-3 flex items-center justify-between sm:px-6 transition-all duration-500;
 
   &--info {
     p {
@@ -110,10 +120,11 @@ export default {
   }
 
   &--page {
-    @apply relative z-0 inline-flex shadow-sm -space-x-px;
+    @apply relative z-0 grid grid-flow-col gap-1 cursor-pointer;
 
     .page-number {
-      @apply w-10 h-10 relative inline-flex cursor-pointer justify-center items-center border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50;
+      @apply w-8 h-8 relative flex justify-center items-center rounded-md text-sm font-medium;
+      @apply border border-transparent hover:border-gray-300 text-gray-500;
 
       &.active {
         @apply bg-primary border-primary text-gray-200 cursor-default;
@@ -121,22 +132,15 @@ export default {
     }
 
     .nav-btn {
-      @apply w-10 h-10 relative inline-flex cursor-pointer justify-center items-center;
-      @apply mx-0 bg-white text-sm font-medium border border-gray-300 text-gray-500 hover:bg-gray-50;
+      @apply w-full h-8 px-2 relative flex justify-center items-center;
+      @apply mx-0 text-sm font-medium text-primary fill-current;
 
-      &.prev {
-        @apply rounded-l-md;
-
-        svg {
-          @apply transform rotate-180;
-        }
-      }
-
-      &.next {
-        @apply rounded-r-md;
-      }
       svg {
-        @apply w-3;
+        @apply w-2;
+      }
+
+      label {
+        @apply mx-2 pointer-events-none;
       }
     }
   }

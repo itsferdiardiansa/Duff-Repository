@@ -1,0 +1,5 @@
+.#{$prefixClass}-alert-container {
+  @apply w-auto h-auto fixed top-3 z-50;
+  left: calc(100vw / 2.5);
+  display: inline-table;
+}

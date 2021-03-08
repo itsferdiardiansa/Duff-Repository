@@ -128,7 +128,7 @@ export default {
     };
 
     const filteredData = computed(() => {
-      return store.getters['thematicPage/getThematicPage'];
+      return store.getters['thematicPage/getItems'];
     });
 
     const requestStatus = computed(() => {

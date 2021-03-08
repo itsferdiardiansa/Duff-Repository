@@ -1,37 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fragment/Role/List will render and match snapshot 1`] = `
+exports[`fragment/Thematic/List will render and match snapshot 1`] = `
 <div class="list">
-  <!--v-if-->
+  <div class="py-6 flex justify-end items-center"><button class="ss-button ss-button--primary ss-button--base text-bold">
+      <div class="ss-button--wrapper">
+        <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+          </svg></div>
+        <div class="ss-button--label has-icon">Create Thematic Page</div>
+      </div>
+    </button></div>
   <!--v-if-->
   <table class="ss-table">
-    <thead class="ss-table--head" headers="[object Object],[object Object],[object Object],[object Object],[object Object]" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" isfetching="false" pagination="[object Object]" emptymessage="Empty data" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="false" filteroptions="">
+    <thead class="ss-table--head" headers="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" isfetching="false" pagination="[object Object]" emptymessage="Empty data" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="false" filteroptions="">
       <tr>
         <th width="4%">
           <!--v-if--><span>#</span>
         </th>
-        <th class="" width="20%">Role Name</th>
-        <th class="">Previlage</th>
-        <th class="">Created at</th>
-        <th class="">Updated at</th>
-        <th colspan="1" class="" align="center">Action</th>
+        <th class="" width="10%">Banner</th>
+        <th class="" width="10%" align="center">Banner Mobile</th>
+        <th class="" width="15%" align="center">Thematic Name</th>
+        <th class="">Page Info</th>
+        <th class="" width="11%" align="center">Path</th>
+        <th class="" align="center">Created At</th>
+        <th class="" align="center">Action</th>
       </tr>
     </thead>
     <tbody class="ss-table--body">
       <!--v-if-->
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>1</label></td>
-        <td class="ss-table--body-col">
-          <div>dav create an role has been update</div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src="https://loket-development.s3.amazonaws.com/338f1e30-3dcc-430f-8b30-1a942042c1e1"></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src="https://loket-development.s3.amazonaws.com/a115b28e-a924-4735-bb5d-55ef3da1a546"></td>
+        <td class="ss-table--body-col text-center">
+          <div>thematic</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>asadsd</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-26T06:51:08Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>sad</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-26T08:06:46Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-03-03T06:19:20Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -55,17 +66,19 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>2</label></td>
-        <td class="ss-table--body-col">
-          <div>new role updated</div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center">
+          <div>Create a thematic page</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>This is meta title has been edited</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-16T05:15:58Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>This is path</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-03-04T04:22:43Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-02-26T07:52:02Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -89,17 +102,19 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>3</label></td>
-        <td class="ss-table--body-col">
-          <div>new name</div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src="https://loket-development.s3.amazonaws.com/98828b83-dbbb-4a0d-8260-d3bcd905a6c8"></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src="https://loket-development.s3.amazonaws.com/0e82debf-b60d-4bc8-a337-105f8707c078"></td>
+        <td class="ss-table--body-col text-center">
+          <div>thematic updateed</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>updated</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-16T05:02:58Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>updat/sad</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-16T05:02:58Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-02-18T11:06:52Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -123,17 +138,19 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>4</label></td>
-        <td class="ss-table--body-col">
-          <div>updated yess</div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center">
+          <div>thematic neww</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>asadsd</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-15T11:03:01Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>sad</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-16T05:19:10Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-02-18T11:05:42Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -157,17 +174,19 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>5</label></td>
-        <td class="ss-table--body-col">
-          <div></div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center">
+          <div>thematic</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>asadsd</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-15T10:56:18Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>sad</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-15T10:56:18Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-02-18T11:04:44Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -191,17 +210,19 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>6</label></td>
-        <td class="ss-table--body-col">
-          <div>Make new role</div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center">
+          <div>thematic</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>asadsd</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T08:07:44Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>sad</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T08:07:44Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-02-18T11:03:48Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -225,17 +246,19 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>7</label></td>
-        <td class="ss-table--body-col">
-          <div>New top</div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center">
+          <div>thematic</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>asadsd</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T05:37:11Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>sad</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T05:37:11Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-02-18T11:00:50Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -259,17 +282,19 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>8</label></td>
-        <td class="ss-table--body-col">
-          <div>New create</div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src="iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAIABJREFUeJzt3XmcnHWZ9/vr+t3d6UTCYjpiIiJBPS6gcXAbkUdlkBkWdVx42c7yuGQEc4Z0VXUWBlSGssEFDkm6ayFzWpSg+OghI+goGEQElUUFFQVcHmU0iEKQdKMkkF6qruv8QesDCiHJ/au6a/m8/9LXy/r"></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src="iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAIABJREFUeJzt3XmcnHWZ9/vr+t3d6UTCYjpiIiJBPS6gcXAbkUdlkBkWdVx42c7yuGQEc4Z0VXUWBlSGssEFDkm6ayFzWpSg+OghI+goGEQElUUFFQVcHmU0iEKQdKMkkF6qruv8QesDCiHJ/au6a/m8/9LXy/r"></td>
+        <td class="ss-table--body-col text-center">
+          <div>thematic</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>asadsd</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T05:35:56Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>sad</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T05:35:56Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-02-18T10:58:48Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -293,17 +318,19 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>9</label></td>
-        <td class="ss-table--body-col">
-          <div>Anyone</div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center">
+          <div>Thematic name</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>Meta title</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T04:41:04Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>Path</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T04:41:04Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-02-15T02:45:05Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -327,17 +354,19 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
       <tr class="table-content--body-row">
         <td class="ss-table--body-col"><label>10</label></td>
-        <td class="ss-table--body-col">
-          <div>Error everywhere</div>
+        <td class="ss-table--body-col"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center"><img class="h-10 inline-block" src=""></td>
+        <td class="ss-table--body-col text-center">
+          <div>Add new thematic</div>
         </td>
         <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
+          <div>Meta title</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T04:40:34Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>https://youtube.com</div>
         </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T04:40:34Z</div>
+        <td class="ss-table--body-col text-center">
+          <div>2021-02-15T02:42:39Z</div>
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -368,4 +397,5 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
     <div class="ss-pagination--page"><span class="page-number active">1</span><span class="page-number">2</span><span class="nav-btn next" type="nav"><label>Next</label><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span></div>
   </div>
 </div>
+<!--v-if-->
 `;

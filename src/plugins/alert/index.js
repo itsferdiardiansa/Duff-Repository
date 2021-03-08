@@ -5,21 +5,17 @@ import globalSetting from '@plugin/globalSetting';
 import { FontAwesomeIcon } from '@plugin/fontAwesome';
 import Emitter from 'mitt';
 import uuid from '@util/uuid';
+import './styles.scss';
 
 const createElement = (instance, app) => {
-  const root = document.querySelector('#app');
+  const root = document.querySelector('body');
   const div = document.createElement('div');
   const elementId = uuid(`${SATPAM_PREFIX_CLASS}-alert`);
 
   div.setAttribute('id', elementId);
   div.setAttribute('role', 'alert');
-  // console.log(root.innerHTML)
+  div.setAttribute('class', `${SATPAM_PREFIX_CLASS}-alert-container`);
 
-  // document.removeChild(alertEl)
-  // document.getElementsByTagName('role="alert"').remove()
-  // if(alertEl !== null) return false
-  // console.log('alert', Object.keys(alertEl), alertEl._vnode)
-  // if(alertEl) return false
   root.appendChild(div);
 
   return elementId;
@@ -32,20 +28,26 @@ export const AlertPlugin = app => {
 
   if (alertEl) return false;
 
-  const $alert = {
+  const alertContext = {
     show: (...args) => {
-      let { $emitter } = instance._context.provides;
+      const {
+        alertContext: { emitter },
+      } = instance._context.provides;
 
-      $emitter.emit('show-alert', ...args);
+      emitter.emit('show-alert', ...args);
     },
     init: async () => {
       try {
+        const items = [];
         rootContainer = await app;
         instance = createApp(Alert);
 
         instance.mixin(globalSetting);
         instance.component('FontAwesomeIcon', FontAwesomeIcon);
-        instance.provide('$emitter', new Emitter());
+        instance.provide('alertContext', {
+          emitter: new Emitter(),
+          items,
+        });
 
         const elementId = createElement(instance, app);
 
@@ -56,9 +58,10 @@ export const AlertPlugin = app => {
     },
   };
 
-  $alert.init();
+  alertContext.init();
 
-  window.$alert = $alert;
+  window.$alert = alertContext;
+  window.sAlert = alertContext;
 };
 
 export default {

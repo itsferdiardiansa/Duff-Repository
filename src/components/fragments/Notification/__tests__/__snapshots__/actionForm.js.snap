@@ -25,39 +25,46 @@ exports[`fragment/Notification/ActionForm will post data on failed and bring up 
   >
     
 
+  </div>
+  <div
+    class="ss-alert-container"
+    data-v-app=""
+    id="ss-alert__12e5"
+    role="alert"
+  >
+    
     <div
-      data-v-app=""
-      id="ss-alert_22906689111614839174803"
-      role="alert"
+      class="ss-alert ss-alert--success slide-top-enter-from slide-top-enter-active"
     >
       <div
-        class="ss-alert ss-alert--success fade-slide-enter-from fade-slide-enter-active"
+        class="ss-alert--icon"
       >
-        <div
-          class="ss-alert--wrapper"
+        <svg
+          class=""
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <div
-            class="ss-alert--close"
-          >
-            <svg
-              class=""
-              viewBox="0 0 352 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          <div
-            class="ss-alert--content"
-          >
+          <path
+            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div
+        class="ss-alert--wrapper"
+      >
+        <!--v-if-->
+        <!--v-if-->
+        <div
+          class="ss-alert--content"
+        >
+          <label>
             cms.notification.create.success
-          </div>
+          </label>
         </div>
       </div>
     </div>
+    
   </div>
 </body>
 `;
@@ -71,39 +78,46 @@ exports[`fragment/Notification/ActionForm will post data on success and bring up
   >
     
 
+  </div>
+  <div
+    class="ss-alert-container"
+    data-v-app=""
+    id="ss-alert__12e5"
+    role="alert"
+  >
+    
     <div
-      data-v-app=""
-      id="ss-alert_22906689111614839174803"
-      role="alert"
+      class="ss-alert ss-alert--success slide-top-enter-from slide-top-enter-active"
     >
       <div
-        class="ss-alert ss-alert--success fade-slide-enter-from fade-slide-enter-active"
+        class="ss-alert--icon"
       >
-        <div
-          class="ss-alert--wrapper"
+        <svg
+          class=""
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <div
-            class="ss-alert--close"
-          >
-            <svg
-              class=""
-              viewBox="0 0 352 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          <div
-            class="ss-alert--content"
-          >
+          <path
+            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div
+        class="ss-alert--wrapper"
+      >
+        <!--v-if-->
+        <!--v-if-->
+        <div
+          class="ss-alert--content"
+        >
+          <label>
             cms.notification.create.success
-          </div>
+          </label>
         </div>
       </div>
     </div>
+    
   </div>
 </body>
 `;
@@ -133,7 +147,6 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-4-undefined"
           placeholder="Title"
           type="text"
         />
@@ -159,7 +172,7 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
         name="description"
       >
         <textarea
-          id="tiny-vue_75246413821614839174781"
+          id="tiny-mce__12e4"
           visibility="hidden"
         />
       </div>
@@ -184,7 +197,6 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
         <input
           autocomplete="off"
           class="ss-input"
-          id="input-9-undefined"
           placeholder="Link"
           type="text"
         />
@@ -212,7 +224,6 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
         <input
           autocomplete="off"
           class="ss-input"
-          id="input-11-undefined"
           placeholder="Link"
           type="text"
         />
@@ -295,7 +306,6 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-89-undefined"
           placeholder="Title"
           type="text"
         />
@@ -321,7 +331,7 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
         name="description"
       >
         <textarea
-          id="tiny-vue_6373317071614839175008"
+          id="tiny-mce__12e4"
           visibility="hidden"
         />
       </div>
@@ -346,7 +356,6 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
         <input
           autocomplete="off"
           class="ss-input"
-          id="input-94-undefined"
           placeholder="Link"
           type="text"
         />
@@ -374,7 +383,6 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
         <input
           autocomplete="off"
           class="ss-input"
-          id="input-96-undefined"
           placeholder="Link"
           type="text"
         />
@@ -450,7 +458,6 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-104-undefined"
           placeholder="Title"
           type="text"
         />
@@ -476,7 +483,7 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
         name="description"
       >
         <textarea
-          id="tiny-vue_67040120881614839175065"
+          id="tiny-mce__12e4"
           visibility="hidden"
         />
       </div>
@@ -501,7 +508,6 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
         <input
           autocomplete="off"
           class="ss-input"
-          id="input-109-undefined"
           placeholder="Link"
           type="text"
         />
@@ -529,7 +535,6 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
         <input
           autocomplete="off"
           class="ss-input"
-          id="input-111-undefined"
           placeholder="Link"
           type="text"
         />
@@ -612,7 +617,6 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-22-undefined"
           placeholder="Title"
           type="text"
         />
@@ -642,7 +646,7 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
         name="description"
       >
         <textarea
-          id="tiny-vue_26512965231614839174808"
+          id="tiny-mce__12e4"
           visibility="hidden"
         />
       </div>
@@ -671,7 +675,6 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
         <input
           autocomplete="off"
           class="ss-input"
-          id="input-27-undefined"
           placeholder="Link"
           type="text"
         />
@@ -703,7 +706,6 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
         <input
           autocomplete="off"
           class="ss-input"
-          id="input-29-undefined"
           placeholder="Link"
           type="text"
         />

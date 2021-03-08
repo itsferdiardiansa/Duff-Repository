@@ -19,7 +19,6 @@
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
-      :id="getElUid"
       v-bind="$attrs"
       autocomplete="off"
       @keyup="handleChange"

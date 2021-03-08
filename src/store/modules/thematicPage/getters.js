@@ -3,7 +3,7 @@ const getters = {
     fetch: state.isFetching,
     error: state.onError,
   }),
-  getThematicPage: state => state.items,
+  getItems: state => state.items,
   getPagination: state => state.pagination,
 };
 

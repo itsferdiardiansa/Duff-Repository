@@ -38,7 +38,7 @@ const routes = [
         name: 'Create Thematic Page',
         component: () =>
           import(
-            /* webpackChunkName: 'page.thematic-page.form' */ '@page/ThematicPage/Create'
+            /* webpackChunkName: 'page.thematic-page.form.create' */ '@page/ThematicPage/Create'
           ),
       },
       {
@@ -46,7 +46,7 @@ const routes = [
         name: 'Update Thematic Page',
         component: () =>
           import(
-            /* webpackChunkName: 'page.thematic-page.form' */ '@page/ThematicPage/Create'
+            /* webpackChunkName: 'page.thematic-page.form.update' */ '@page/ThematicPage/Update'
           ),
       },
     ],

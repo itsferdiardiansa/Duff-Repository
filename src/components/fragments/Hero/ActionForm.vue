@@ -17,7 +17,10 @@
     <FormControl
       label="Button URL"
       :rules="{
-        button_url: [{ required: true, message: 'Button URL is required' }],
+        button_url: [
+          { required: true, message: 'Button URL is required' },
+          { pattern: urlPattern, message: 'Please check the URL format' },
+        ],
       }"
     >
       <Input
@@ -38,7 +41,7 @@
     </FormControl>
 
     <FormControl
-      label="Banner"
+      label="Banner Mobile"
       :rules="{
         banner_mobile: [
           { required: true, message: 'Banner Mobile is required' },
@@ -65,6 +68,7 @@
 import { onMounted, reactive, ref, unref } from 'vue';
 import Form, { FormControl, FileUpload, Input, Textarea } from '@common/Form';
 import Button from '@common/Button';
+import { urlPattern } from '@util/pattern';
 
 export default {
   name: 'HeroActionForm',
@@ -127,6 +131,7 @@ export default {
       formEl,
       state,
       handleSubmit,
+      urlPattern,
     };
   },
 };

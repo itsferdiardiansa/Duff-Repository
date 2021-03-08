@@ -1,27 +1,33 @@
 $variants: (
   'light': (
     'inverse': 'border-gray-600 text-gray-600',
-    'base': 'bg-light text-gray-600', 
+    'base': 'bg-gray-50 text-gray-600',
+    'icon': 'text-blue-400',
   ),
   'primary': (
     'inverse': 'border-blue-600 text-blue-800',
-    'base': 'bg-primary text-gray-200', 
+    'base': 'bg-blue-200 text-gray-700',
+    'icon': 'text-blue-400',
   ),
   'danger': (
     'inverse': 'border-red-600 text-red-600',
-    'base': 'bg-danger text-gray-200',
+    'base': 'bg-red-200 text-gray-700 fill-current',
+    'icon': 'text-red-400',
   ),
   'warning': (
     'inverse': 'border-yellow-600 text-yellow-600',
-    'base': 'bg-warning text-gray-100',
+    'base': 'bg-yellow-100 text-gray-600',
+    'icon': 'text-yellow-400',
   ),
   'success': (
     'inverse': 'border-green-600 text-green-600',
-    'base': 'bg-success text-gray-100',
+    'base': 'bg-green-200 text-gray-700',
+    'icon': 'text-green-400',
   ),
   'dark': (
     'inverse': 'border-gray-600 text-gray-600',
-    'base': 'bg-dark text-gray-200'
+    'base': 'bg-dark text-gray-200',
+    'icon': 'text-gray-100',
   ),
 );
 
@@ -38,6 +44,10 @@ $variants: (
 
       &-inverse {
         @apply bg-transparent border #{map-get($tailwindClass, 'inverse')};
+      }
+
+      .#{$prefixClass}-alert--icon {
+        @apply #{map-get($tailwindClass, 'icon')} fill-current;
       }
     }
     // @debug 'key: #{$key}, variant #{$tailwindClass}';

@@ -160,7 +160,7 @@ export default {
     });
     const pagination = reactive({
       current_page: 1,
-      total_page: 2,
+      total_page: 10,
       per_page: 10,
     });
     const privileges = reactive([

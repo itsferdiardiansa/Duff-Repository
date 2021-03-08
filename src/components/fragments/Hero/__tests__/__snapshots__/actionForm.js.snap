@@ -20,39 +20,46 @@ exports[`fragment/Hero/ActionForm will post data on failed and bring up an alert
   >
     
 
+  </div>
+  <div
+    class="ss-alert-container"
+    data-v-app=""
+    id="ss-alert__12e5"
+    role="alert"
+  >
+    
     <div
-      data-v-app=""
-      id="ss-alert_18552893611614839172419"
-      role="alert"
+      class="ss-alert ss-alert--success slide-top-enter-from slide-top-enter-active"
     >
       <div
-        class="ss-alert ss-alert--success fade-slide-enter-from fade-slide-enter-active"
+        class="ss-alert--icon"
       >
-        <div
-          class="ss-alert--wrapper"
+        <svg
+          class=""
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <div
-            class="ss-alert--close"
-          >
-            <svg
-              class=""
-              viewBox="0 0 352 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          <div
-            class="ss-alert--content"
-          >
+          <path
+            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div
+        class="ss-alert--wrapper"
+      >
+        <!--v-if-->
+        <!--v-if-->
+        <div
+          class="ss-alert--content"
+        >
+          <label>
             cms.hero.create.success
-          </div>
+          </label>
         </div>
       </div>
     </div>
+    
   </div>
 </body>
 `;
@@ -66,39 +73,46 @@ exports[`fragment/Hero/ActionForm will post data on success and bring up an aler
   >
     
 
+  </div>
+  <div
+    class="ss-alert-container"
+    data-v-app=""
+    id="ss-alert__12e5"
+    role="alert"
+  >
+    
     <div
-      data-v-app=""
-      id="ss-alert_18552893611614839172419"
-      role="alert"
+      class="ss-alert ss-alert--success slide-top-enter-from slide-top-enter-active"
     >
       <div
-        class="ss-alert ss-alert--success fade-slide-enter-from fade-slide-enter-active"
+        class="ss-alert--icon"
       >
-        <div
-          class="ss-alert--wrapper"
+        <svg
+          class=""
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <div
-            class="ss-alert--close"
-          >
-            <svg
-              class=""
-              viewBox="0 0 352 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          <div
-            class="ss-alert--content"
-          >
+          <path
+            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div
+        class="ss-alert--wrapper"
+      >
+        <!--v-if-->
+        <!--v-if-->
+        <div
+          class="ss-alert--content"
+        >
+          <label>
             cms.hero.create.success
-          </div>
+          </label>
         </div>
       </div>
     </div>
+    
   </div>
 </body>
 `;
@@ -129,7 +143,6 @@ exports[`fragment/Hero/ActionForm will render and match snapshot 1`] = `
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-4-undefined"
           name="Title"
           placeholder="Title"
           type="text"
@@ -161,7 +174,6 @@ exports[`fragment/Hero/ActionForm will render and match snapshot 1`] = `
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-6-undefined"
           name="ldp_id"
           placeholder="Button URL"
           type="text"
@@ -222,7 +234,7 @@ exports[`fragment/Hero/ActionForm will render and match snapshot 1`] = `
     <div
       class="ss-form-control--label"
     >
-      Banner
+      Banner Mobile
     </div>
     <div
       class="ss-form-control--wrapper"
@@ -334,7 +346,6 @@ exports[`fragment/Hero/ActionForm will render the spinner during the request pro
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-94-undefined"
           name="Title"
           placeholder="Title"
           type="text"
@@ -366,7 +377,6 @@ exports[`fragment/Hero/ActionForm will render the spinner during the request pro
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-96-undefined"
           name="ldp_id"
           placeholder="Button URL"
           type="text"
@@ -427,7 +437,7 @@ exports[`fragment/Hero/ActionForm will render the spinner during the request pro
     <div
       class="ss-form-control--label"
     >
-      Banner
+      Banner Mobile
     </div>
     <div
       class="ss-form-control--wrapper"
@@ -532,7 +542,6 @@ exports[`fragment/Hero/ActionForm will render the text and color for the form up
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-110-undefined"
           name="Title"
           placeholder="Title"
           type="text"
@@ -564,7 +573,6 @@ exports[`fragment/Hero/ActionForm will render the text and color for the form up
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-112-undefined"
           name="ldp_id"
           placeholder="Button URL"
           type="text"
@@ -625,7 +633,7 @@ exports[`fragment/Hero/ActionForm will render the text and color for the form up
     <div
       class="ss-form-control--label"
     >
-      Banner
+      Banner Mobile
     </div>
     <div
       class="ss-form-control--wrapper"
@@ -737,7 +745,6 @@ exports[`fragment/Hero/ActionForm will render with error validation on all field
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-23-undefined"
           name="Title"
           placeholder="Title"
           type="text"
@@ -773,7 +780,6 @@ exports[`fragment/Hero/ActionForm will render with error validation on all field
           autocomplete="off"
           autofocus=""
           class="ss-input"
-          id="input-25-undefined"
           name="ldp_id"
           placeholder="Button URL"
           type="text"
@@ -842,7 +848,7 @@ exports[`fragment/Hero/ActionForm will render with error validation on all field
     <div
       class="ss-form-control--label"
     >
-      Banner
+      Banner Mobile
     </div>
     <div
       class="ss-form-control--wrapper"

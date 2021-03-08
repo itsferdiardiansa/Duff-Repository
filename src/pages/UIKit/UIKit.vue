@@ -1,12 +1,14 @@
 <template>
   <div class="p-4">
-    <!-- <ButtonUI /> -->
+    <ButtonUI />
 
-    <!-- <BadgeUI /> -->
+    <BadgeUI />
 
     <FormInputUI />
 
-    <!-- <AlertUI /> -->
+    <AlertUI />
+
+    <ModalUI />
   </div>
 </template>
 <script>
@@ -14,14 +16,16 @@
 import ButtonUI from './components/ButtonUI';
 import BadgeUI from './components/BadgeUI';
 import FormInputUI from './components/FormInputUI';
-// import AlertUI from './components/AlertUI'
+import AlertUI from './components/AlertUI';
+import ModalUI from './components/ModalUI';
 
 export default {
   layout: 'Blank',
   components: {
     ButtonUI,
     BadgeUI,
-    // AlertUI,
+    ModalUI,
+    AlertUI,
     FormInputUI,
   },
 };

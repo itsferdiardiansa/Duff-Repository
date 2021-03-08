@@ -94,24 +94,9 @@ export default defineComponent({
       return h(
         'div',
         {
-          class: `${prefixClass}-form-control`,
+          class: 'w-full relative',
         },
-        [
-          h(
-            'label',
-            {
-              class: `${prefixClass}-form-control--label`,
-            },
-            label
-          ),
-          h(
-            'div',
-            {
-              class: 'w-full relative',
-            },
-            renderInline()
-          ),
-        ]
+        renderInline()
       );
     };
 

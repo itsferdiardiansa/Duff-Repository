@@ -4,10 +4,16 @@ import { FontAwesomeIcon } from '@plugin/fontAwesome';
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 import { AlertPlugin } from '@plugin/alert';
 import globalSetting from '@plugin/globalSetting';
-import './setupEnvVars';
-import './setupMockModule';
+import registerMockModule from './setupMockModule';
+import setupEnvVars from './setupEnvVars';
+import register from 'ignore-styles';
 
+register(['.css', '.sass', '.scss']);
+setupEnvVars();
 registerRequireContextHook();
+registerMockModule();
+
+jest.mock('@util/uuid', () => jest.fn(() => 'ss-alert__12e5'));
 
 config.global = {
   components: {
@@ -18,5 +24,3 @@ config.global = {
 };
 
 config.plugins.VueWrapper.install(AlertPlugin);
-
-global.$handleClick = jest.fn();

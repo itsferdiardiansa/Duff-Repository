@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test": "vue-cli-service test:unit --updateSnapshot",
+    "test": "vue-cli-service test:unit --passWithNoTests",
     "test:CI": "CI=true npm run test -- --env=jsdom",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage --silent -u",
@@ -57,6 +57,7 @@
     "eslint-plugin-jest": "^24.1.3",
     "eslint-plugin-vue": "^7.0.0-0",
     "husky": "^4.3.7",
+    "ignore-styles": "^5.0.1",
     "inject-loader": "^4.0.1",
     "jest": "^26.6.3",
     "jest-serializer-vue": "^2.0.2",

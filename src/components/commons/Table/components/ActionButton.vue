@@ -8,7 +8,6 @@
           :icon="item.icon"
           :bold="item.bold"
           :inverse="item.inverse"
-          :data-id="new Date().getTime()"
           @click="($event, $attrs) => item.onClickFn($event, dataBind)"
         />
       </template>
@@ -16,28 +15,28 @@
   </div>
 </template>
 <script>
-import { unref } from 'vue'
-import Button from '@common/Button'
+import { unref } from 'vue';
+import Button from '@common/Button';
 
 export default {
   components: {
-    Button
+    Button,
   },
   props: {
     data: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     item: {
-      type: [Array, String, Number, Object, Boolean]
-    }
+      type: [Array, String, Number, Object, Boolean],
+    },
   },
   setup(props) {
     return {
-      dataBind: unref(props.item)
-    }
-  }
-}
+      dataBind: unref(props.item),
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .#{$prefixClass}-tb--action {

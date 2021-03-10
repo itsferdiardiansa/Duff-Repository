@@ -10,15 +10,15 @@
   </div>
 </template>
 <script>
-import Card from '@common/Card'
-import List from '@fragment/Footer/MenuList'
+import Card from '@common/Card';
+import List from '@fragment/Footer/MenuList';
 
 export default {
   components: {
     Card,
     List,
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .wrapper {

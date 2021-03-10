@@ -60,9 +60,9 @@ describe('fragment/Role/ActionForm', () => {
     const data = {};
 
     await Component.vm.$store.dispatch('role/postData', {
-      data,
       action: 'form.create',
       redirectUrl: '/role',
+      data,
     });
     expect(document.body).toMatchSnapshot();
     expect(mockRouterPush).toHaveBeenCalledWith('/role');
@@ -82,7 +82,8 @@ describe('fragment/Role/ActionForm', () => {
 
     mockCreateRole.mockReset();
     mockCreateRole.mockRejectedValue({
-      data: { message: 'internal.error', result: {} },
+      message: 'internal.error',
+      result: {},
     });
 
     await Component.vm.$store.dispatch('role/postData', {

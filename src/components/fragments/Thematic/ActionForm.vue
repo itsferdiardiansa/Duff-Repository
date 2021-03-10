@@ -37,7 +37,9 @@
         <FormControl
           label="Description"
           :rules="{
-            description_text: [{ required: true, message: 'Description' }],
+            description_text: [
+              { required: true, message: 'Description is required' },
+            ],
           }"
         >
           <Textarea v-model="state.form.description_text" />

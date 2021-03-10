@@ -4,7 +4,7 @@ const mutations = {
     state.onError = false;
   },
   fetchSuccess(state, payload) {
-    const { data, ...pagination } = payload?.result;
+    const { data, ...pagination } = payload?.responseData?.result;
     state.isFetching = false;
     state.items = data;
     state.pagination = pagination;

@@ -16,22 +16,24 @@ describe('fragment/Thematic/ActionForm', () => {
   });
 
   it('will render and match snapshot', () => {
-    const Component = mount(<ActionForm />);
+    const Component = mount(<ActionForm />, {
+      global: { plugins: [store], stubs: ['ColorPicker'] },
+    });
 
     expect(Component.element).toMatchSnapshot();
   });
 
   it('will render with error validation on all fields and match snapshot', async () => {
-    const Component = mount(<ActionForm />);
+    const Component = mount(<ActionForm />, { global: { plugins: [store] } });
 
     await Component.find('form').trigger('submit.prevent');
 
-    // Total fields is 7 and shl=ould be 6
+    // Total fields is 9 and should be 9
     const errorFields = Component.findAll(
       `.${Component.rootVM.prefixClass}-control--info`
     );
 
-    expect(errorFields.length).toBe(6);
+    expect(errorFields.length).toBe(9);
 
     await Component.vm.$nextTick(() => {
       expect(Component.element).toMatchSnapshot();
@@ -43,22 +45,18 @@ describe('fragment/Thematic/ActionForm', () => {
       <AppWrapper>
         <ActionForm />
       </AppWrapper>,
-      {
-        global: {
-          plugins: [store],
-        },
-      }
+      { global: { plugins: [store], stubs: ['ColorPicker'] } }
     );
 
     const data = {};
 
-    await Component.vm.$store.dispatch('partner/postData', {
-      data,
+    await Component.vm.$store.dispatch('thematicPage/postData', {
       action: 'form.create',
-      redirectUrl: '/partner',
+      redirectUrl: '/thematic-page',
+      data,
     });
     expect(document.body).toMatchSnapshot();
-    expect(mockRouterPush).toHaveBeenCalledWith('/partner');
+    expect(mockRouterPush).toHaveBeenCalledWith('/thematic-page');
   });
 
   it('will post data on failed and bring up an alert', async () => {
@@ -66,19 +64,16 @@ describe('fragment/Thematic/ActionForm', () => {
       <AppWrapper>
         <ActionForm />
       </AppWrapper>,
-      {
-        global: {
-          plugins: [store],
-        },
-      }
+      { global: { plugins: [store], stubs: ['ColorPicker'] } }
     );
 
     mockCreateThematic.mockReset();
     mockCreateThematic.mockRejectedValue({
-      data: { message: 'internal.error', result: {} },
+      message: 'internal.error',
+      result: {},
     });
 
-    await Component.vm.$store.dispatch('partner/postData', {
+    await Component.vm.$store.dispatch('thematicPage/postData', {
       action: 'form.create',
     });
 
@@ -92,14 +87,17 @@ describe('fragment/Thematic/ActionForm', () => {
       site: 'https://google.com',
       description: '<p>Type your description here</p>',
       position: '1',
-      ldp_id: '123456',
       is_active: '1',
       logo: '/9xbg6dsds==', // base64 format
-      hero: '/7343bxx==', // base64 format
     };
     const Component = mount(
-      <ActionForm model={formData} onSubmit={handleSubmit} />,
-      { props: { withValidation: false } }
+      <AppWrapper>
+        <ActionForm model={formData} onSubmit={handleSubmit} />
+      </AppWrapper>,
+      {
+        props: { withValidation: false },
+        global: { plugins: [store], stubs: ['ColorPicker'] },
+      }
     );
 
     await Component.find('form').trigger('submit.prevent');
@@ -108,7 +106,10 @@ describe('fragment/Thematic/ActionForm', () => {
   });
 
   it('will render the spinner during the request process', async () => {
-    const Component = mount(<ActionForm />, { props: { isFetching: true } });
+    const Component = mount(<ActionForm />, {
+      props: { isFetching: true },
+      global: { plugins: [store], stubs: ['ColorPicker'] },
+    });
 
     expect(
       Component.find(
@@ -119,7 +120,10 @@ describe('fragment/Thematic/ActionForm', () => {
   });
 
   it('will render the text and color for the form update', async () => {
-    const Component = mount(<ActionForm />, { props: { isCreate: false } });
+    const Component = mount(<ActionForm />, {
+      props: { isCreate: false },
+      global: { plugins: [store], stubs: ['ColorPicker'] },
+    });
 
     expect(Component.find(`[type="submit"]`).text()).toEqual('Update');
     expect(Component.find(`[type="submit"]`).attributes('class')).toContain(
@@ -134,13 +138,13 @@ describe('fragment/Thematic/ActionForm', () => {
       site: 'https://google.com',
       description: '<p>Type your description here</p>',
       position: '1',
-      ldp_id: '123456',
-      is_active: '1',
-      logo: '/9xbg6dsds==', // base64 format
-      hero: '/7343bxx==', // base64 format
     };
     const Component = mount(<ActionForm />, {
       props: { data: formData, isCreate: false },
+      global: {
+        plugins: [store],
+        stubs: ['ColorPicker'],
+      },
     });
 
     expect(Component.vm.state.form).toMatchObject(formData);
@@ -151,6 +155,10 @@ describe('fragment/Thematic/ActionForm', () => {
     const handleSubmit = jest.fn();
     const Component = mount(<ActionForm onSubmit={handleSubmit} />, {
       props: { withValidation: false },
+      global: {
+        plugins: [store],
+        stubs: ['ColorPicker'],
+      },
     });
 
     await Component.find('form').trigger('submit.prevent');

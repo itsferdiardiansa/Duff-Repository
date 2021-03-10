@@ -15,7 +15,7 @@
         </div>
 
         <Form ref="formEl" :model="state" @submit="onSubmit">
-          <FormControl class="mb-0" :rules="{ email: rules.email }">
+          <FormControl :rules="{ email: rules.email }">
             <Input
               placeholder="Email"
               autocomplete="off"
@@ -43,7 +43,7 @@
               class="btn-login"
               :bold="true"
               :pill="true"
-              :isLoading="processLogin"
+              :isLoading="requestStatus.fetch"
             />
           </FormControl>
         </Form>
@@ -91,7 +91,7 @@ export default {
       password: [{ required: true, message: 'Please input password' }],
     });
 
-    const processLogin = computed(() => store.getters['user/getProcessLogin']);
+    const requestStatus = computed(() => store.getters['user/getLoginStatus']);
 
     const onSubmit = () => {
       const form = unref(formEl);
@@ -114,7 +114,7 @@ export default {
       state,
       rules,
       onSubmit,
-      processLogin,
+      requestStatus,
     };
   },
 };
@@ -187,11 +187,27 @@ export default {
         }
       }
 
-      .#{$prefixClass}-form-control--wrapper {
-        @apply relative pb-5 pt-1;
+      .#{$prefixClass}-form-control {
+        @apply px-2;
 
-        .#{$prefixClass}-control--info {
-          @apply absolute bottom-0;
+        &.has-feedback {
+          @apply mb-0;
+        }
+
+        &:first-child:not(.has-feedback) {
+          @apply mb-6;
+        }
+
+        &--wrapper {
+          .#{$prefixClass}-control--input {
+            input {
+              @apply border-0 border-b;
+            }
+          }
+
+          .#{$prefixClass}-control--info {
+            @apply mb-0 mt-1;
+          }
         }
       }
 

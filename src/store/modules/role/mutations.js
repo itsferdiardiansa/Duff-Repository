@@ -4,7 +4,7 @@ const mutations = {
     state.onError = false;
   },
   fetchSuccess(state, payload) {
-    const { data, ...pagination } = payload?.result;
+    const { data, ...pagination } = payload?.responseData.result;
     state.isFetching = false;
     state.items = data;
     state.pagination = pagination;
@@ -20,14 +20,17 @@ const mutations = {
     state.privileges = {
       ...state.privileges,
       isFetching: true,
-      onError: false,
+      onError: {
+        status: false,
+        body: {},
+      },
     };
   },
   fetchPrivilegesSuccess(state, payload) {
     state.privileges = {
       ...state.privileges,
       isFetching: false,
-      items: payload?.result,
+      items: payload?.responseData.result,
     };
   },
   fetchPrivilegesFailed(state, payload) {

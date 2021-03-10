@@ -13,7 +13,7 @@ setupEnvVars();
 registerRequireContextHook();
 registerMockModule();
 
-jest.mock('@util/uuid', () => jest.fn(() => 'ss-alert__12e5'));
+jest.mock('@util/uuid', () => jest.fn(() => 'plugin__12e5'));
 
 config.global = {
   components: {

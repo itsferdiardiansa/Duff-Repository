@@ -1,8 +1,9 @@
+/* eslint-disable */
 import UserService from '@service/api/user';
 
 const actions = {
   async doLogin({ commit }, payload) {
-    commit('processLogin', true);
+    commit('loginStart');
 
     try {
       const response = await UserService.login(payload);
@@ -13,20 +14,15 @@ const actions = {
         user = payload.email,
       } = collections;
 
-      self.$alert.show({
-        content: message,
-        variant: 'success',
-        timeout: 2000,
-      });
-
-      commit('setToken', { token, user });
+      commit('loginSuccess', { token, user });
 
       return true;
     } catch (error) {
-      console.error(error);
-    } finally {
-      commit('processLogin', false);
+      commit('loginFailed', { requestData: payload, responseData: error });
     }
+  },
+  doLogout({ commit }) {
+    commit('removeAuth');
   },
 };
 

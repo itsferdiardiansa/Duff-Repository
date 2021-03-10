@@ -1,28 +1,97 @@
 <template>
   <nav class="navigation" aria-label="primary">
     <div class="navigation--wrapper">
-      <button class="profile">
-        <div class="profile--avatar">
-          <img
-            class="img-avatar"
-            src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-            alt="Avatar"
-          />
-        </div>
-
-        <div class="profile--username">Hi, qa@loket.com</div>
-      </button>
-
-      <div class="dropdown">
-        <div class="dropdown--collapsed">
-          <div class="list">
-            <a href="javascript:void(0)"> Logout </a>
-          </div>
-        </div>
+      <div ref="profile" class="profile" @click="toggleDropdown">
+        <img svg-inline src="@asset/avatar.svg" />
       </div>
+
+      <Dropdown
+        ref="profileDropdown"
+        :strict="true"
+        :safeNode="() => $refs.profile"
+      >
+        <template #header>
+          <div class="flex">
+            <div class="avatar">
+              <img
+                class="w-10 overflow-hidden rounded-full"
+                svg-inline
+                src="@asset/avatar.svg"
+              />
+            </div>
+
+            <div class="ml-3 flex flex-col">
+              <label class="font-medium">{{ user }}</label>
+              <span class="font-light">
+                <Badge variant="success" size="xs" :dot="true" class="mr-1" />
+                online
+              </span>
+            </div>
+          </div>
+        </template>
+
+        <template #menu>
+          <DropdownItem @click="tryLogout">
+            <div class="flex">
+              <font-awesome-icon
+                class="w-4 mr-2"
+                :icon="['fa', 'sign-out-alt']"
+              />
+              <span class="w-40">Logout</span>
+            </div>
+          </DropdownItem>
+        </template>
+      </Dropdown>
     </div>
   </nav>
 </template>
+<script>
+import { computed, ref, unref } from 'vue';
+import { useStore } from 'vuex';
+import { Dropdown, DropdownItem } from '@common/DropdownMenu';
+import Badge from '@common/Badge';
+
+export default {
+  components: {
+    Dropdown,
+    DropdownItem,
+    Badge,
+  },
+  setup() {
+    const store = useStore();
+    const profile = ref();
+    const profileDropdown = ref();
+
+    const toggleDropdown = () => {
+      const profileDropdownEl = unref(profileDropdown);
+
+      profileDropdownEl.toggleDropdown();
+    };
+
+    const user = computed(() => {
+      return store.getters['user/getUser'];
+    });
+
+    const tryLogout = async () => {
+      sModal.show({
+        title: 'Confirmation',
+        content: 'Are you sure to log out?',
+        onConfirmFn: () => {
+          store.dispatch('user/doLogout');
+        },
+      });
+    };
+
+    return {
+      user,
+      profile,
+      profileDropdown,
+      toggleDropdown,
+      tryLogout,
+    };
+  },
+};
+</script>
 <style lang="scss" scoped>
 .navigation {
   @apply relative z-20 flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row;
@@ -31,8 +100,9 @@
     @apply relative;
 
     .profile {
-      @apply flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left text-gray-50 bg-transparent rounded-lg;
-      @apply md:w-auto md:mt-0 md:ml-4 focus:outline-none;
+      @apply w-9 overflow-hidden rounded-full cursor-pointer inline-block;
+      // @apply flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left text-gray-50 bg-transparent rounded-lg;
+      // @apply md:w-auto md:mt-0 md:ml-4 focus:outline-none;
 
       &--avatar {
         @apply relative w-8 h-8;

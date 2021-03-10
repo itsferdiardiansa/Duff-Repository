@@ -10,18 +10,34 @@
     </FormControl>
 
     <FormControl
-      label="Previleges"
+      label="Privileges"
       :rules="{
         privileges: [{ required: true, message: 'Privileges is required' }],
       }"
     >
-      <Checkbox
-        type="button"
-        variant="dark"
-        keyname="id"
-        :items="privilegesList"
-        v-model="state.form.privileges"
-      />
+      <div>
+        <template v-if="privilegesRequestStatus.error.status">
+          <Button
+            variant="dark"
+            :icon="['fa', 'redo-alt']"
+            @click="fetchPrivileges"
+            :pill="true"
+          />
+          <span class="ml-2">We failed to load privileges</span>
+        </template>
+        <template v-else-if="privilegesRequestStatus.fetch">
+          <RectSkeleton width="20%" height="25px" :rounded="true" />
+        </template>
+        <template v-else>
+          <Checkbox
+            type="button"
+            variant="dark"
+            keyname="id"
+            :items="privilegesList"
+            v-model="state.form.privileges"
+          />
+        </template>
+      </div>
     </FormControl>
 
     <FormControl :offset="3">
@@ -56,6 +72,7 @@ import Form, {
 } from '@common/Form';
 import Button from '@common/Button';
 import { Rect as RectSkeleton } from '@common/Skeleton';
+import Spinner from '@common/Loader/Spinner';
 import { useStore } from 'vuex';
 
 export default {
@@ -69,6 +86,7 @@ export default {
     Textarea,
     Checkbox,
     RectSkeleton,
+    Spinner,
   },
   emits: ['submit'],
   props: {
@@ -109,6 +127,11 @@ export default {
 
       return filtered;
     });
+
+    const privilegesRequestStatus = computed(() => {
+      return store.getters['role/getPrivilegesRequestStatus'];
+    });
+
     const handleSubmit = () => {
       const { withValidation } = props;
       const form = unref(formEl);
@@ -138,7 +161,9 @@ export default {
     return {
       formEl,
       state,
+      fetchPrivileges,
       privilegesList,
+      privilegesRequestStatus,
       handleSubmit,
     };
   },

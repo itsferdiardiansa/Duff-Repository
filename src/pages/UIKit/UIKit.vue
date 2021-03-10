@@ -4,6 +4,8 @@
 
     <BadgeUI />
 
+    <DropdownUI />
+
     <FormInputUI />
 
     <AlertUI />
@@ -18,6 +20,7 @@ import BadgeUI from './components/BadgeUI';
 import FormInputUI from './components/FormInputUI';
 import AlertUI from './components/AlertUI';
 import ModalUI from './components/ModalUI';
+import DropdownUI from './components/DropdownUI';
 
 export default {
   layout: 'Blank',
@@ -27,6 +30,7 @@ export default {
     ModalUI,
     AlertUI,
     FormInputUI,
+    DropdownUI,
   },
 };
 </script>

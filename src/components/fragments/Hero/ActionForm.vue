@@ -25,7 +25,6 @@
     >
       <Input
         placeholder="Button URL"
-        name="ldp_id"
         v-model="state.form.button_url"
         autofocus
       />

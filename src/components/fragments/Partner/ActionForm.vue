@@ -3,7 +3,10 @@
     <FormControl
       label="LDP ID"
       :rules="{
-        ldp_id: [{ required: true, message: 'LDP ID is required' }],
+        ldp_id: [
+          { required: true, message: 'LDP ID is required' },
+          { pattern: /^([0-9])$/g, message: 'LDP ID must be number' },
+        ],
       }"
     >
       <Input
@@ -35,7 +38,10 @@
     <FormControl
       label="URL Site"
       :rules="{
-        site: [{ required: true, message: 'URL Site is required' }],
+        site: [
+          { required: true, message: 'URL Site is required' },
+          { pattern: urlPattern, message: 'Please check the URL format' },
+        ],
       }"
     >
       <Input placeholder="URL Site" name="url_site" v-model="state.form.site" />
@@ -76,6 +82,7 @@
 import { onMounted, reactive, ref, unref } from 'vue';
 import Form, { FormControl, FileUpload, Input, Textarea } from '@common/Form';
 import Button from '@common/Button';
+import { urlPattern } from '@util/pattern';
 
 export default {
   name: 'PartnerActionForm',
@@ -142,6 +149,7 @@ export default {
       formEl,
       state,
       handleSubmit,
+      urlPattern,
     };
   },
 };

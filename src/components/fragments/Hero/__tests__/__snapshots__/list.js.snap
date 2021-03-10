@@ -101,7 +101,7 @@ exports[`fragment/Hero/List will render and match snapshot 1`] = `
             <div class="w-6 h-6 rounded border-gray-100 border"></div>
           </div>
           <div class="flex items-center"><label class="mr-4">Color description: </label>
-            <div style="background-color: rgb(255, 255, 255);" class="w-6 h-6 rounded border-gray-100 border"></div>
+            <div class="w-6 h-6 rounded border-gray-100 border"></div>
           </div>
         </td>
         <td class="ss-table--body-col text-center">

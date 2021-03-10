@@ -2,7 +2,7 @@ $defaultColWidth: 8.333333333333334;
 
 .#{$prefixClass}-form {
   &-control {
-    @apply grid grid-cols-2 md:grid-cols-12 gap-1 md:gap-4 items-baseline;
+    @apply relative grid grid-cols-2 md:grid-cols-12 gap-1 md:gap-4 items-center;
     margin-bottom: 24px;
 
     @include screen-md {
@@ -56,7 +56,9 @@ $defaultColWidth: 8.333333333333334;
     }
 
     &.has-feedback {
+      // @apply items-baseline;
       margin-bottom: 0px;
+      padding-bottom: 30px;
 
       .#{$prefixClass}-control {
         &--input {
@@ -70,7 +72,7 @@ $defaultColWidth: 8.333333333333334;
         }
 
         &--info {
-          @apply text-sm font-semibold text-red-500 my-1 md:my-2;
+          @apply absolute text-sm font-semibold text-red-500 my-1 md:my-2;
         }
       }
     }

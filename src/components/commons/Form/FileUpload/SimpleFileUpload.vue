@@ -30,6 +30,15 @@
         <Spinner :width="40" :height="40" />
       </div>
     </template>
+    <template v-else-if="fileDamage">
+      <div class="file-hero" v-if="!imgSrc.length">
+        <img svg-inline src="@icon/image-broken.svg" />
+        <label class="flex flex-col justify-center text-center">
+          <span>Image not found</span>
+          <span>Click or drag to upload</span>
+        </label>
+      </div>
+    </template>
     <template v-else>
       <div class="file-hero" v-if="!imgSrc.length">
         <font-awesome-icon :icon="['fa', 'upload']" />
@@ -59,6 +68,7 @@ export default {
     const imgSrc = ref('');
     const showCloseBtn = ref(false);
     const convertingImage = ref(false);
+    const fileDamage = ref(false);
 
     const onMouseInteraction = () => {
       showCloseBtn.value = !showCloseBtn.value;
@@ -97,7 +107,8 @@ export default {
           imgSrc.value = url;
           emit('update:modelValue', btoa(url));
         } catch (error) {
-          console.log(error);
+          fileDamage.value = true;
+          emit('update:modelValue', '');
         } finally {
           convertingImage.value = false;
         }
@@ -105,6 +116,7 @@ export default {
     });
 
     return {
+      fileDamage,
       showCloseBtn,
       handleChange,
       onMouseInteraction,

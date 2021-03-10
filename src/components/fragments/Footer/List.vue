@@ -1,41 +1,39 @@
 <template>
-  <div class="content-container">
-    <div class="wrapper">
-      <div class="py-6 flex justify-end items-center">
-        <Button
-          label="Add Group"
-          variant="primary"
-          :bold="true"
-          :icon="['fa', 'plus']"
-          @click="createFooter"
-        />
-      </div>
-
-      <Table
-        :headers="tHeaders"
-        :items="filteredData"
-        :isFetching="requestStatus.fetch"
-        :onError="requestStatus.error.status"
-        :onFailedFetchHandler="fetchData"
-        :pagination="pagination"
-        :onPageChange="handlePageChange"
-      >
-        <template #position="{ data }">
-          <p v-text="getPosition(data.position)"></p>
-        </template>
-
-        <template #action="{ data }">
-          <ActionButton :data="actionButtons" :item="data" />
-        </template>
-      </Table>
+  <div class="list">
+    <div class="list--header">
+      <Button
+        label="Create Partner"
+        variant="primary"
+        :bold="true"
+        :icon="['fa', 'plus']"
+        @click="createFooter"
+      />
     </div>
-  </div>
 
-  <Modal
-    title="Delete confirmation"
-    description="Are you sure you want to delete this item?"
-    :onConfirmFn="deleteData"
-  />
+    <Table
+      :headers="tHeaders"
+      :items="filteredData"
+      :isFetching="requestStatus.fetch"
+      :onError="requestStatus.error.status"
+      :onFailedFetchHandler="fetchData"
+      :pagination="pagination"
+      :onPageChange="handlePageChange"
+    >
+      <template #position="{ data }">
+        <p v-text="getPosition(data.position)"></p>
+      </template>
+
+      <template #action="{ data }">
+        <ActionButton :data="actionButtons" :item="data" />
+      </template>
+    </Table>
+
+    <Modal
+      title="Delete confirmation"
+      description="Are you sure you want to delete this item?"
+      :onConfirmFn="deleteData"
+    />
+  </div>
 </template>
 <script>
 import { computed, onMounted, reactive, ref } from 'vue';
@@ -100,7 +98,11 @@ export default {
         bold: true,
         variant: 'dark',
         onClickFn: (e, { hash_id }) => {
-          router.push({ name: 'Footer Detail List', params: { hash_id } });
+          router.push({
+            name: 'Footer Detail List',
+            query: { hash_id },
+            params: { hash_id },
+          });
         },
       },
     ]);
@@ -135,15 +137,7 @@ export default {
     };
 
     const getPosition = position => {
-      const list = [
-        { value: 0, text: 'Position Top' },
-        { value: 1, text: 'Position Right' },
-        { value: 2, text: 'Position Bottom' },
-        { value: 3, text: 'Position Left' },
-        { value: 4, text: 'Position Front' },
-      ];
-
-      return list.find(item => item.value == position).text;
+      return store.getters['footer/getPositionByID'](position)?.label || null;
     };
 
     const createFooter = () => {
@@ -174,11 +168,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.content-container {
-  @apply relative;
+.list {
+  &--header {
+    @apply py-6 flex justify-end items-center;
+  }
 
-  .wrapper {
-    @apply relative;
+  .status {
+    @apply flex items-center justify-center;
   }
 }
 </style>

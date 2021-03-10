@@ -16,13 +16,21 @@ describe('fragment/Footer/ActionForm', () => {
   });
 
   it('will render and match snapshot', () => {
-    const Component = mount(<ActionForm />);
+    const Component = mount(<ActionForm />, {
+      global: {
+        plugins: [store],
+      },
+    });
 
     expect(Component.element).toMatchSnapshot();
   });
 
   it('will render with error validation on all fields and match snapshot', async () => {
-    const Component = mount(<ActionForm />);
+    const Component = mount(<ActionForm />, {
+      global: {
+        plugins: [store],
+      },
+    });
 
     await Component.find('form').trigger('submit.prevent');
 
@@ -75,7 +83,8 @@ describe('fragment/Footer/ActionForm', () => {
 
     mockCreateFooter.mockReset();
     mockCreateFooter.mockRejectedValue({
-      data: { message: 'internal.error', result: {} },
+      message: 'internal.error',
+      result: {},
     });
 
     await Component.vm.$store.dispatch('footer/postData', {
@@ -99,7 +108,7 @@ describe('fragment/Footer/ActionForm', () => {
     };
     const Component = mount(
       <ActionForm model={formData} onSubmit={handleSubmit} />,
-      { props: { withValidation: false } }
+      { props: { withValidation: false }, global: { plugins: [store] } }
     );
 
     await Component.find('form').trigger('submit.prevent');
@@ -108,7 +117,10 @@ describe('fragment/Footer/ActionForm', () => {
   });
 
   it('will render the spinner during the request process', async () => {
-    const Component = mount(<ActionForm />, { props: { isFetching: true } });
+    const Component = mount(<ActionForm />, {
+      props: { isFetching: true },
+      global: { plugins: [store] },
+    });
 
     expect(
       Component.find(
@@ -119,7 +131,10 @@ describe('fragment/Footer/ActionForm', () => {
   });
 
   it('will render the text and color for the form update', async () => {
-    const Component = mount(<ActionForm />, { props: { isCreate: false } });
+    const Component = mount(<ActionForm />, {
+      props: { isCreate: false },
+      global: { plugins: [store] },
+    });
 
     expect(Component.find(`[type="submit"]`).text()).toEqual('Update');
     expect(Component.find(`[type="submit"]`).attributes('class')).toContain(
@@ -141,6 +156,9 @@ describe('fragment/Footer/ActionForm', () => {
     };
     const Component = mount(<ActionForm />, {
       props: { data: formData, isCreate: false },
+      global: {
+        plugins: [store],
+      },
     });
 
     expect(Component.vm.state.form).toMatchObject(formData);
@@ -151,6 +169,9 @@ describe('fragment/Footer/ActionForm', () => {
     const handleSubmit = jest.fn();
     const Component = mount(<ActionForm onSubmit={handleSubmit} />, {
       props: { withValidation: false },
+      global: {
+        plugins: [store],
+      },
     });
 
     await Component.find('form').trigger('submit.prevent');

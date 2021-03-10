@@ -67,16 +67,18 @@ describe('common/Pagination', () => {
     const prevBtn = Component.find('.nav-btn.prev');
     const nextBtn = Component.find('.nav-btn.next');
 
-    // Click at page 3
-    await pages[2].trigger('click');
-    expect(handleChange).toHaveBeenCalledWith({ page: 3, limit: 10 });
+    // Click at page 2
+    await pages[1].trigger('click');
+    expect(handleChange).toHaveBeenCalledWith({ page: 2, limit: 10 });
+    await Component.setProps({ current_page: 2 });
 
     // Click at page 5
     await prevBtn.trigger('click');
-    expect(handleChange).toHaveBeenCalledWith({ page: 2, limit: 10 });
+    expect(handleChange).toHaveBeenCalledWith({ page: 1, limit: 10 });
+    await Component.setProps({ current_page: 1 });
 
     // Click at page 5
     await nextBtn.trigger('click');
-    expect(handleChange).toHaveBeenCalledWith({ page: 3, limit: 10 });
+    expect(handleChange).toHaveBeenCalledWith({ page: 1, limit: 10 });
   });
 });

@@ -6,9 +6,10 @@ export default {
   },
   items: [],
   position: [
-    { value: 0, text: 'Position Top' },
-    { value: 1, text: 'Position Right' },
-    { value: 2, text: 'Position Bottom' },
-    { value: 3, text: 'Position Left' },
+    { value: '0', label: 'Position Top' },
+    { value: '1', label: 'Position Right' },
+    { value: '2', label: 'Position Bottom' },
+    { value: '3', label: 'Position Left' },
+    { value: '4', label: 'Position Front' },
   ],
 };

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fragment/AppWrapper will render children and match snapshot 1`] = `<span class="ss-badge ss-badge--success ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">its_ferdi</div></div></span>`;
+
+exports[`fragment/AppWrapper will render error when progress fetch chunks fail 1`] = `
+<div class="ss-error fade-slide-enter-from fade-slide-enter-active">
+  <div class="ss-error--img"><img svg-inline=""></div>
+  <div class="ss-error--description">
+    <div class="message">
+      <h1>Sorry there is a problem with our system</h1>
+      <p> Wait a minute, let me clean up. Please try again or come back later. </p>
+    </div>
+    <div class="action-button"><button class="ss-button ss-button--dark ss-button--xl text-bold">
+        <div class="ss-button--wrapper">
+          <!--v-if-->
+          <div class="ss-button--label">Reload</div>
+        </div>
+      </button></div>
+  </div>
+</div>
+`;
+
+exports[`fragment/AppWrapper will render loading when progress fetch chunks 1`] = `
+<div class="ss-loading fade-enter-from fade-enter-active">
+  <div class="anim">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <h1>Please wait</h1>
+</div>
+`;

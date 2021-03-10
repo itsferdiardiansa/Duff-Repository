@@ -40,6 +40,14 @@ Storage.prototype.getToken = function () {
   return data?.token;
 };
 
+Storage.prototype.getUser = function () {
+  const { storage, cacheLabel } = this;
+  const { local } = storage;
+  const data = JSON.parse(local.getItem(cacheLabel));
+
+  return data?.user;
+};
+
 Storage.prototype.flush = function () {
   const {
     storage: { local, session },

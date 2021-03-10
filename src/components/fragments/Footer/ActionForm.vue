@@ -20,12 +20,7 @@
         placeholder="Please select position"
         keyname="value"
         v-model="state.form.position"
-        :items="[
-          { value: '0', label: 'Position Top' },
-          { value: '1', label: 'Position Right' },
-          { value: '2', label: 'Position Bottom' },
-          { value: '3', label: 'Position Left' },
-        ]"
+        :items="positionList"
       />
     </FormControl>
 
@@ -43,12 +38,13 @@
 </template>
 <script>
 /* eslint-disable */
-import { onMounted, reactive, ref, unref } from 'vue';
+import { computed, onMounted, reactive, ref, unref } from 'vue';
 import Form, { FormControl, Input, Select } from '@common/Form';
 import Button from '@common/Button';
+import { useStore } from 'vuex';
 
 export default {
-  name: 'PartnerActionForm',
+  name: 'FooterActionForm',
   components: {
     Button,
     Form,
@@ -76,6 +72,7 @@ export default {
     },
   },
   setup(props, { emit }) {
+    const store = useStore();
     const formEl = ref();
     const state = reactive({
       form: {
@@ -95,6 +92,10 @@ export default {
       });
     };
 
+    const positionList = computed(() => {
+      return store.getters['footer/getPosition'];
+    });
+
     onMounted(() => {
       const { data, isCreate } = props;
 
@@ -104,6 +105,7 @@ export default {
     return {
       formEl,
       state,
+      positionList,
       handleSubmit,
     };
   },

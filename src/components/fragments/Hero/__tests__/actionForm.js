@@ -75,7 +75,8 @@ describe('fragment/Hero/ActionForm', () => {
 
     mockCreateHero.mockReset();
     mockCreateHero.mockRejectedValue({
-      data: { message: 'internal.error', result: {} },
+      message: 'internal.error',
+      result: {},
     });
 
     await Component.vm.$store.dispatch('hero/postData', {

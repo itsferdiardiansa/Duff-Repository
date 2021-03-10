@@ -33,23 +33,23 @@ const transform = {
 
     try {
       if (errorCode.includes(code) || Boolean(~message.indexOf('timeout'))) {
-        $alert.show({
+        sAlert.show({
           variant: 'danger',
-          content: '<b>Request timeout</b>',
+          content: 'Request timeout',
         });
       }
 
       if (message?.includes('Network Error')) {
-        $alert.show({
+        sAlert.show({
           variant: 'danger',
-          content: '<b>Please check you internet connnection</b>',
+          content: 'Please check you internet connnection',
         });
       }
 
       if ([403, 404].includes(response?.status)) {
         TokenManager.flush();
 
-        $alert.show({
+        sAlert.show({
           variant: 'danger',
           content: 'Session expired',
         });
@@ -58,6 +58,14 @@ const transform = {
           router.push({ name: 'Login' });
         }, 2000);
       }
+
+      if ([500].includes(response?.status)) {
+        sAlert.show({
+          variant: 'danger',
+          content: 'Internal server error',
+        });
+      }
+      console.log('http', error, response, code, message);
     } catch (error) {
       throw new Error(error);
     }

@@ -28,11 +28,11 @@ export default {
     const formData = reactive({});
 
     const requestStatus = computed(() => {
-      return store.getters['hero/getRequestStatus'];
+      return store.getters['admin/getRequestStatus'];
     });
 
     const handleSubmit = data => {
-      store.dispatch('hero/updateData', {
+      store.dispatch('admin/updateData', {
         action: 'form.create',
         redirectUrl: '/list-admin',
         data,

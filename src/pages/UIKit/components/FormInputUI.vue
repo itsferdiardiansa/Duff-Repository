@@ -107,6 +107,21 @@
           <FileUpload v-model="state.banner" />
         </FormControl>
 
+        <FormControl
+          :offset="3"
+          :rules="{
+            banner_color: [
+              { required: true, message: 'Banner Color is required' },
+            ],
+          }"
+        >
+          <ColorPicker v-model="state.banner_color" />
+        </FormControl>
+
+        <FormControl :offset="3">
+          <Input v-model="state.banner_color" />
+        </FormControl>
+
         <Pagination
           v-bind="{ ...pagination }"
           @changePage="onPaginationChange"
@@ -130,6 +145,7 @@ import Textarea from '@common/Form/Textarea';
 import FileUpload from '@common/Form/FileUpload';
 import FormControl from './FormControl';
 import Select from '@common/Form/Select';
+import ColorPicker from '@common/ColorPicker';
 import Pagination from '@common/Pagination';
 import debounce from '@util/debounce';
 
@@ -137,6 +153,7 @@ export default {
   components: {
     Form,
     Input,
+    ColorPicker,
     FormControl,
     Button,
     Checkbox,
@@ -157,6 +174,7 @@ export default {
       role: '',
       isPublic: false,
       banner: '',
+      banner_color: '#dadade',
     });
     const pagination = reactive({
       current_page: 1,
@@ -218,6 +236,7 @@ export default {
     onMounted(() => {
       setTimeout(() => {
         state.description = 'update desc';
+        Object.assign(state, { banner_color: '#4287f5' });
       }, 4000);
     });
 

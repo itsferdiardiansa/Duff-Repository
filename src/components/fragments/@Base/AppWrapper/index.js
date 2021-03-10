@@ -14,6 +14,7 @@ import globalSetting from '@plugin/globalSetting';
 import ErrorComponent from '@base/Error';
 import LoadingComponent from '@base/Loading';
 import subscribeFormAction from './subscribeFormAction';
+import subscribeAuthAction from './subscribeAuthAction';
 import asyncModuleLoad from './asyncModuleLoad';
 
 const AppWrapper = defineComponent({
@@ -25,7 +26,9 @@ const AppWrapper = defineComponent({
     const router = useRouter();
 
     store.subscribe(({ type, payload }, state) => {
-      subscribeFormAction(payload, router);
+      subscribeFormAction(type, payload, router);
+
+      subscribeAuthAction(type, router);
     });
 
     // Handle async module load
@@ -37,9 +40,6 @@ const AppWrapper = defineComponent({
     window.addEventListener('beforeunload', () => {
       console.log('window unload');
     });
-  },
-  beforeRouteLeave() {
-    console.log('before router enter wrapper');
   },
   errorCaptured(error, component) {},
   setup(props, { slots }) {

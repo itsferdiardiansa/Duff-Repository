@@ -8,7 +8,7 @@
 
     <div class="list--header">
       <Button
-        label="Create Partner"
+        label="Create Footer"
         variant="primary"
         :bold="true"
         :icon="['fa', 'plus']"

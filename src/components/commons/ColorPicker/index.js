@@ -1,5 +1,13 @@
 /* eslint-disable */
-import { defineComponent, getCurrentInstance, h, onMounted, ref } from 'vue';
+import {
+  defineComponent,
+  getCurrentInstance,
+  h,
+  nextTick,
+  onMounted,
+  ref,
+  watch,
+} from 'vue';
 import Pickr from '@simonwep/pickr';
 import uuid from '@util/uuid';
 import defaultConfig from './defaultConfig';
@@ -41,7 +49,7 @@ export default defineComponent({
     let modelAction = props.modelAction || 'save';
     let eventList = ['save', 'change', 'swatchselect'];
     let formatColor = props.formatColor || 'HEXA';
-    let defaultColor = props.modelValue || '#42445a';
+    let defaultColor = props.modelValue;
     let selectedColor;
 
     let initElement = () => {
@@ -87,6 +95,14 @@ export default defineComponent({
     const renderInline = () => {
       return h('div', { id: elementId, ref: element });
     };
+
+    onMounted(() => {
+      if (!props.modelValue) context.emit('update:modelValue', '#42445a');
+    });
+
+    nextTick(() => {
+      pickrPlugin.options.default = props.modelValue;
+    });
 
     const renderWithGroup = () => {
       const { prefixClass } = root.data;

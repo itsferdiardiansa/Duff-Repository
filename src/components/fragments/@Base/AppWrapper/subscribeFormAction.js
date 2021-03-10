@@ -1,18 +1,21 @@
-export default (payload, router) => {
-  if (['form.create', 'form.update', 'form.delete'].includes(payload?.action)) {
-    const alertType = payload.status === 'failed' ? 'danger' : 'success';
+export default (type, payload, router) => {
+  if (
+    ['form.create', 'form.update', 'form.delete'].includes(
+      payload?.requestData?.action
+    )
+  ) {
+    const variant = type.match(/fetchFailed/g) ? 'danger' : 'success';
+    const content = payload?.responseData?.message;
 
-    $alert.show({
-      variant: alertType,
-      content: payload.message,
-    });
+    console.log(payload.responseData);
+    sAlert.show({ variant, content });
 
     if (
-      ['form.create', 'form.update'].includes(payload.action) &&
-      payload.status !== 'failed' &&
-      Reflect.has(payload, 'redirectUrl')
+      ['form.create', 'form.update'].includes(payload?.requestData?.action) &&
+      variant !== 'danger' &&
+      Reflect.has(payload?.requestData, 'redirectUrl')
     ) {
-      router.push(payload.redirectUrl);
+      router.push(payload?.requestData.redirectUrl);
     }
   }
 };

@@ -8,7 +8,10 @@ const actions = {
       const response = await AdminService.getList(payload);
       const collections = await response.data;
 
-      commit('fetchSuccess', collections);
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
     } catch (error) {
       commit('fetchFailed', { requestData: payload, responseData: error });
     }
@@ -20,7 +23,10 @@ const actions = {
       const response = await AdminService.create(payload.data);
       const collections = await response.data;
 
-      commit('fetchSuccess', { ...payload, ...collections });
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
     } catch (error) {
       commit('fetchFailed', { requestData: payload, responseData: error });
     }
@@ -32,7 +38,10 @@ const actions = {
       const response = await AdminService.update(payload.data);
       const collections = await response.data;
 
-      commit('fetchSuccess', { ...payload, ...collections });
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
     } catch (error) {
       commit('fetchFailed', { requestData: payload, responseData: error });
     }
@@ -44,7 +53,10 @@ const actions = {
       const response = await AdminService.delete(payload.hash_id);
       const collections = await response.data;
 
-      commit('fetchSuccess', { ...payload, ...collections });
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
     } catch (error) {
       commit('fetchFailed', { requestData: payload, responseData: error });
     } finally {

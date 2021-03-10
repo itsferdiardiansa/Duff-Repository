@@ -31,28 +31,24 @@ export default {
     });
   },
   menuList: params => {
-    console.log(params);
     return http.request({
       url: `/footer/${params.hash_id}/menu`,
       method: 'GET',
+      params: params.pagination,
     });
   },
-  createMenuList: params => {
+  createMenu: (hash_id, data) => {
     return http.request({
-      url: `/footer/${params.hash_id}/menu`,
+      url: `/footer/${hash_id}/menu`,
       method: 'POST',
-      data: {
-        params,
-      },
+      data,
     });
   },
-  updateMenuList: params => {
+  updateMenu: (hash_id, data) => {
     return http.request({
-      url: `/footer/${params.footer_hash_id}/menu/${params.hash_id}`,
-      method: 'DELETE',
-      data: {
-        params,
-      },
+      url: `/footer/${hash_id}/menu/${data.hash_id}`,
+      method: 'POST',
+      data,
     });
   },
 };

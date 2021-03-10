@@ -16,4 +16,5 @@ global.console = {
 
 document.body.innerHTML = `
   <div id="app"></app>
+  <div id="plugin__12e5"</div>
 `;

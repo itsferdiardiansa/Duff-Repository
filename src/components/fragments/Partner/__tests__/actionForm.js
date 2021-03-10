@@ -75,7 +75,8 @@ describe('fragment/Partner/ActionForm', () => {
 
     mockCreatePartner.mockReset();
     mockCreatePartner.mockRejectedValue({
-      data: { message: 'internal.error', result: {} },
+      message: 'internal.error',
+      result: {},
     });
 
     await Component.vm.$store.dispatch('partner/postData', {

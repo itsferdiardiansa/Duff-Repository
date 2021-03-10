@@ -9,7 +9,10 @@ const actions = {
       const response = await FeedbackService.getList(payload);
       const collections = await response.data;
 
-      commit('fetchSuccess', collections);
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
     } catch (error) {
       commit('fetchFailed', { requestData: payload, responseData: error });
     }
@@ -21,7 +24,10 @@ const actions = {
       const response = await FeedbackService.markAsResponded(payload.data);
       const collections = await response.data;
 
-      commit('fetchSuccess', { ...payload, ...collections });
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
     } catch (error) {
       commit('fetchFailed', { requestData: payload, responseData: error });
     } finally {
@@ -35,7 +41,10 @@ const actions = {
       const response = await FeedbackService.markAsRead(payload.data);
       const collections = await response.data;
 
-      commit('fetchSuccess', { ...payload, ...collections });
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
     } catch (error) {
       commit('fetchFailed', { requestData: payload, responseData: error });
     } finally {

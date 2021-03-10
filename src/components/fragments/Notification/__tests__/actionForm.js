@@ -74,7 +74,8 @@ describe('fragment/Notification/ActionForm', () => {
 
     mockCreateNotification.mockReset();
     mockCreateNotification.mockRejectedValue({
-      data: { message: 'internal.error', result: {} },
+      message: 'internal.error',
+      result: {},
     });
 
     await Component.vm.$store.dispatch('notification/postData', {

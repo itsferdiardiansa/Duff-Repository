@@ -10,6 +10,7 @@ module.exports = {
   transform: {
     '^.+\\.vue$': 'vue-jest',
   },
+  transformIgnorePatterns: [],
   collectCoverage: false,
   collectCoverageFrom: [
     'src/**/*.{js,vue}',
@@ -39,5 +40,6 @@ module.exports = {
     '^@service(.*)$': '<rootDir>/src/services$1',
     '^@icon(.*)$': '<rootDir>/src/assets/icons$1',
     '^__mock__(.*)$': '<rootDir>__mocks__$1',
+    '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
   },
 };

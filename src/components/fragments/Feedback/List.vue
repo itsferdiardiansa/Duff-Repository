@@ -7,6 +7,7 @@
       :onError="requestStatus.error.status"
       :pagination="pagination"
       :onPageChange="handlePageChange"
+      :onFailedFetchHandler="fetchData"
     >
       <template #read_by_slice="{ data }">
         <div class="read-by-col">
@@ -125,6 +126,7 @@ export default {
     onMounted(fetchData);
 
     return {
+      fetchData,
       requestStatus,
       filteredData,
       tHeaders,

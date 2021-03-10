@@ -45,7 +45,7 @@ export default {
   setup() {
     const store = useStore();
     const router = useRouter();
-    const params = reactive({ page: 1, limit: 5 });
+    const params = reactive({ page: 1, limit: 2 });
 
     let tHeaders = ref([
       {

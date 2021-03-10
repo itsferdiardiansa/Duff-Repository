@@ -82,6 +82,8 @@ export default {
       const { current_page, per_page } = props;
       let value = { page: null, limit: per_page };
 
+      if (page === current_page) return false;
+
       switch (page) {
         case 'prev':
           value.page = current_page - 1;

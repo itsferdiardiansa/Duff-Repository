@@ -8,8 +8,8 @@
     "test": "vue-cli-service test:unit --passWithNoTests",
     "test:CI": "CI=true npm run test -- --env=jsdom",
     "test:watch": "npm run test -- --watch",
-    "test:coverage": "npm run test -- --coverage --silent -u",
-    "test:coverage:CI": "npm run test:CI -- --coverage --silent -u",
+    "test:coverage": "npm run test -- --coverage --silent",
+    "test:coverage:CI": "npm run test:CI -- --coverage --silent",
     "lint": "vue-cli-service lint",
     "lint:watch": "npm run lint -- --watch"
   },

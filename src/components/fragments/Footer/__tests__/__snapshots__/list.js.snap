@@ -1,287 +1,285 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`fragment/Footer/List will render and match snapshot 1`] = `
-<div class="content-container">
-  <div class="wrapper">
-    <div class="py-6 flex justify-end items-center"><button class="ss-button ss-button--primary ss-button--base text-bold">
-        <div class="ss-button--wrapper">
-          <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-              <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
-            </svg></div>
-          <div class="ss-button--label has-icon">Add Group</div>
-        </div>
-      </button></div>
-    <!--v-if-->
-    <table class="ss-table">
-      <thead class="ss-table--head" headers="[object Object],[object Object],[object Object],[object Object],[object Object]" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" isfetching="false" pagination="[object Object]" emptymessage="Empty data" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="false" filteroptions="">
-        <tr>
-          <th width="4%">
-            <!--v-if--><span>#</span>
-          </th>
-          <th class="" width="20%" align="center">Section Name</th>
-          <th class="">Position</th>
-          <th class="">Updated At</th>
-          <th class="">Created At</th>
-          <th colspan="3" class="" width="25%" align="center">Action</th>
-        </tr>
-      </thead>
-      <tbody class="ss-table--body">
-        <!--v-if-->
-        <tr class="table-content--body-row">
-          <td class="ss-table--body-col"><label>1</label></td>
-          <td class="ss-table--body-col text-center">
-            <div>section a</div>
-          </td>
-          <td class="ss-table--body-col">
-            <p>Position Right</p>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2021-02-11T05:04:28Z</div>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2021-02-11T05:04:28Z</div>
-          </td>
-          <td class="ss-table--body-col text-center">
-            <div class="ss-tb--action">
-              <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
-                        <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base text-bold">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
-                      </svg></div>
-                    <div class="ss-button--label has-icon">Add Menu</div>
-                  </div>
-                </button></div>
-            </div>
-          </td>
-        </tr>
-        <tr class="table-content--body-row">
-          <td class="ss-table--body-col"><label>2</label></td>
-          <td class="ss-table--body-col text-center">
-            <div>section a</div>
-          </td>
-          <td class="ss-table--body-col">
-            <p>Position Top</p>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2021-02-11T04:46:42Z</div>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2021-02-11T04:46:42Z</div>
-          </td>
-          <td class="ss-table--body-col text-center">
-            <div class="ss-tb--action">
-              <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
-                        <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base text-bold">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
-                      </svg></div>
-                    <div class="ss-button--label has-icon">Add Menu</div>
-                  </div>
-                </button></div>
-            </div>
-          </td>
-        </tr>
-        <tr class="table-content--body-row">
-          <td class="ss-table--body-col"><label>3</label></td>
-          <td class="ss-table--body-col text-center">
-            <div>section a</div>
-          </td>
-          <td class="ss-table--body-col">
-            <p>Position Top</p>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2021-01-29T08:25:48Z</div>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2021-01-29T08:25:48Z</div>
-          </td>
-          <td class="ss-table--body-col text-center">
-            <div class="ss-tb--action">
-              <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
-                        <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base text-bold">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
-                      </svg></div>
-                    <div class="ss-button--label has-icon">Add Menu</div>
-                  </div>
-                </button></div>
-            </div>
-          </td>
-        </tr>
-        <tr class="table-content--body-row">
-          <td class="ss-table--body-col"><label>4</label></td>
-          <td class="ss-table--body-col text-center">
-            <div>Lokasi event position has been updated to (2)</div>
-          </td>
-          <td class="ss-table--body-col">
-            <p>Position Bottom</p>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2021-02-22T08:36:09Z</div>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2019-11-21T17:14:22Z</div>
-          </td>
-          <td class="ss-table--body-col text-center">
-            <div class="ss-tb--action">
-              <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
-                        <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base text-bold">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
-                      </svg></div>
-                    <div class="ss-button--label has-icon">Add Menu</div>
-                  </div>
-                </button></div>
-            </div>
-          </td>
-        </tr>
-        <tr class="table-content--body-row">
-          <td class="ss-table--body-col"><label>5</label></td>
-          <td class="ss-table--body-col text-center">
-            <div>section a(edited)</div>
-          </td>
-          <td class="ss-table--body-col">
-            <p>Position Bottom</p>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2021-02-05T13:22:05Z</div>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2019-11-21T17:13:48Z</div>
-          </td>
-          <td class="ss-table--body-col text-center">
-            <div class="ss-tb--action">
-              <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
-                        <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base text-bold">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
-                      </svg></div>
-                    <div class="ss-button--label has-icon">Add Menu</div>
-                  </div>
-                </button></div>
-            </div>
-          </td>
-        </tr>
-        <tr class="table-content--body-row">
-          <td class="ss-table--body-col"><label>6</label></td>
-          <td class="ss-table--body-col text-center">
-            <div>section has been updated</div>
-          </td>
-          <td class="ss-table--body-col">
-            <p>Position Top</p>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2021-02-05T13:21:59Z</div>
-          </td>
-          <td class="ss-table--body-col">
-            <div>2019-11-21T17:13:15Z</div>
-          </td>
-          <td class="ss-table--body-col text-center">
-            <div class="ss-tb--action">
-              <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
-                        <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                      </svg></div>
-                    <!--v-if-->
-                  </div>
-                </button><button class="ss-button ss-button--dark ss-button--base text-bold">
-                  <div class="ss-button--wrapper">
-                    <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
-                      </svg></div>
-                    <div class="ss-button--label has-icon">Add Menu</div>
-                  </div>
-                </button></div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="ss-pagination">
-      <div class="ss-pagination--info">
-        <p> Showing <span>11</span> to <span>20</span> of <span>20</span> results </p>
+<div class="list">
+  <div class="list--header"><button class="ss-button ss-button--primary ss-button--base text-bold">
+      <div class="ss-button--wrapper">
+        <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+          </svg></div>
+        <div class="ss-button--label has-icon">Create Partner</div>
       </div>
-      <div class="ss-pagination--page"><span class="nav-btn prev"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg><label>Previous</label></span><span class="page-number">1</span><span class="page-number active">2</span></div>
+    </button></div>
+  <!--v-if-->
+  <table class="ss-table">
+    <thead class="ss-table--head" headers="[object Object],[object Object],[object Object],[object Object],[object Object]" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" isfetching="false" pagination="[object Object]" emptymessage="Empty data" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="false" filteroptions="">
+      <tr>
+        <th width="4%">
+          <!--v-if--><span>#</span>
+        </th>
+        <th class="" width="20%" align="center">Section Name</th>
+        <th class="">Position</th>
+        <th class="">Updated At</th>
+        <th class="">Created At</th>
+        <th colspan="3" class="" width="25%" align="center">Action</th>
+      </tr>
+    </thead>
+    <tbody class="ss-table--body">
+      <!--v-if-->
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>1</label></td>
+        <td class="ss-table--body-col text-center">
+          <div>section a</div>
+        </td>
+        <td class="ss-table--body-col">
+          <p>Position Right</p>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-11T05:04:28Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-11T05:04:28Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base text-bold">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Add Menu</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>2</label></td>
+        <td class="ss-table--body-col text-center">
+          <div>section a</div>
+        </td>
+        <td class="ss-table--body-col">
+          <p>Position Top</p>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-11T04:46:42Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-11T04:46:42Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base text-bold">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Add Menu</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>3</label></td>
+        <td class="ss-table--body-col text-center">
+          <div>section a</div>
+        </td>
+        <td class="ss-table--body-col">
+          <p>Position Top</p>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-01-29T08:25:48Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-01-29T08:25:48Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base text-bold">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Add Menu</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>4</label></td>
+        <td class="ss-table--body-col text-center">
+          <div>Lokasi event position has been updated to (2)</div>
+        </td>
+        <td class="ss-table--body-col">
+          <p>Position Bottom</p>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-22T08:36:09Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2019-11-21T17:14:22Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base text-bold">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Add Menu</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>5</label></td>
+        <td class="ss-table--body-col text-center">
+          <div>section a(edited)</div>
+        </td>
+        <td class="ss-table--body-col">
+          <p>Position Bottom</p>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-05T13:22:05Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2019-11-21T17:13:48Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base text-bold">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Add Menu</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="table-content--body-row">
+        <td class="ss-table--body-col"><label>6</label></td>
+        <td class="ss-table--body-col text-center">
+          <div>section has been updated</div>
+        </td>
+        <td class="ss-table--body-col">
+          <p>Position Top</p>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2021-02-05T13:21:59Z</div>
+        </td>
+        <td class="ss-table--body-col">
+          <div>2019-11-21T17:13:15Z</div>
+        </td>
+        <td class="ss-table--body-col text-center">
+          <div class="ss-tb--action">
+            <div class="wrapper"><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
+                    </svg></div>
+                  <!--v-if-->
+                </div>
+              </button><button class="ss-button ss-button--dark ss-button--base text-bold">
+                <div class="ss-button--wrapper">
+                  <div class="ss-button--icon"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                    </svg></div>
+                  <div class="ss-button--label has-icon">Add Menu</div>
+                </div>
+              </button></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="ss-pagination">
+    <div class="ss-pagination--info">
+      <p> Showing <span>11</span> to <span>20</span> of <span>20</span> results </p>
     </div>
+    <div class="ss-pagination--page"><span class="nav-btn prev"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg><label>Previous</label></span><span class="page-number">1</span><span class="page-number active">2</span></div>
   </div>
+  <!--v-if-->
 </div>
-<!--v-if-->
 `;

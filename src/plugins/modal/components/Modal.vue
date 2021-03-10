@@ -1,43 +1,41 @@
 <template>
-  <transition name="slide-top" appear>
-    <template v-if="isShow">
-      <div :class="`${prefixClass}-modal`" ref="modalEl">
-        <div :class="`${prefixClass}-modal--container`">
-          <div
-            :class="`${prefixClass}-modal--overlay`"
-            aria-hidden="true"
-            @click="toggleModal(false)"
-          >
-            <div :class="`${prefixClass}-modal--overlay-bg`"></div>
-          </div>
+  <template v-if="isShow">
+    <div :class="`${prefixClass}-modal`" ref="modalEl">
+      <div :class="`${prefixClass}-modal--container`">
+        <div
+          :class="`${prefixClass}-modal--overlay`"
+          aria-hidden="true"
+          @click="toggleModal(false)"
+        >
+          <div :class="`${prefixClass}-modal--overlay-bg`"></div>
+        </div>
 
-          <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
-            >&#8203;</span
-          >
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
+          >&#8203;</span
+        >
 
-          <div :class="`${prefixClass}-modal--body`" ref="modalBodyEl">
-            <div :class="`${prefixClass}-modal--panel`">
-              <div :class="`${prefixClass}-modal--panel-content`">
-                <h3 class="content-header" v-if="title">
-                  <slot name="header">
-                    {{ title }}
-                  </slot>
-                </h3>
+        <div :class="`${prefixClass}-modal--body`" ref="modalBodyEl">
+          <div :class="`${prefixClass}-modal--panel`">
+            <div :class="`${prefixClass}-modal--panel-content`">
+              <h3 class="content-header" v-if="title">
+                <slot name="header">
+                  {{ title }}
+                </slot>
+              </h3>
 
-                <div class="content-desc">
-                  <component :is="getContent" />
-                </div>
+              <div class="content-desc">
+                <component :is="getContent" />
               </div>
             </div>
+          </div>
 
-            <div ref="modalFooterEl" :class="getFooterClass" v-if="footer">
-              <component :is="getFooter" />
-            </div>
+          <div ref="modalFooterEl" :class="getFooterClass" v-if="footer">
+            <component :is="getFooter" />
           </div>
         </div>
       </div>
-    </template>
-  </transition>
+    </div>
+  </template>
 </template>
 <script>
 /* eslint-disable */

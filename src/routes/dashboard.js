@@ -79,14 +79,14 @@ const routes = [
     path: '/footer',
     name: 'Footer',
     component: () =>
-      import(/* webpackChunkName: 'page.partner' */ '@page/Footer'),
+      import(/* webpackChunkName: 'page.footer' */ '@page/Footer'),
     children: [
       {
         path: 'create',
         name: 'Create Footer',
         component: () =>
           import(
-            /* webpackChunkName: 'page.partner.form.create' */ '@page/Footer/Create'
+            /* webpackChunkName: 'page.footer.form.create' */ '@page/Footer/Create'
           ),
       },
       {
@@ -94,7 +94,7 @@ const routes = [
         name: 'Update Footer',
         component: () =>
           import(
-            /* webpackChunkName: 'page.partner.form.update' */ '@page/Footer/Update'
+            /* webpackChunkName: 'page.footer.form.update' */ '@page/Footer/Update'
           ),
       },
       {
@@ -102,7 +102,7 @@ const routes = [
         name: 'Footer Detail List',
         component: () =>
           import(
-            /* webpackChunkName: 'page.partner.form' */ '@page/Footer/MenuList'
+            /* webpackChunkName: 'page.footer.list' */ '@page/Footer/Menu'
           ),
         children: [
           {
@@ -110,7 +110,7 @@ const routes = [
             name: 'Create Footer Detail',
             component: () =>
               import(
-                /* webpackChunkName: 'page.partner.form' */ '@page/Footer/FormDetail'
+                /* webpackChunkName: 'page.footer.list.form.create' */ '@page/Footer/CreateMenu'
               ),
           },
           {
@@ -118,7 +118,7 @@ const routes = [
             name: 'Update Footer Detail',
             component: () =>
               import(
-                /* webpackChunkName: 'page.partner.form' */ '@page/Footer/FormDetail'
+                /* webpackChunkName: 'page.footer.list.form.update' */ '@page/Footer/UpdateMenu'
               ),
           },
         ],

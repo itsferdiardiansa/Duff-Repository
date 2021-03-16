@@ -205,4 +205,11 @@ exports[`fragment/AppWrapper/subscribeFormAction will not display a success aler
 </body>
 `;
 
-exports[`fragment/AppWrapper/subscribeFormAction will render children and match snapshot 1`] = `<span class="ss-badge ss-badge--success ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">its_ferdi</div></div></span>`;
+exports[`fragment/AppWrapper/subscribeFormAction will render children and match snapshot 1`] = `
+<div class="ss-badge ss-badge--success ss-badge--xs text-bold">
+  <div class="ss-badge--wrapper">
+    <!--v-if-->
+    <div class="ss-badge--label">its_ferdi</div>
+  </div>
+</div>
+`;

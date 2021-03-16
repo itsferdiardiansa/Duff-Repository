@@ -1,7 +1,7 @@
 <template>
   <div class="create">
     <Button
-      variant="primary"
+      variant="orange"
       label="Add Role"
       :icon="['fa', 'plus']"
       :bold="true"

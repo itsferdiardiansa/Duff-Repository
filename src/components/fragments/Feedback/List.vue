@@ -10,11 +10,7 @@
       :onFailedFetchHandler="fetchData"
     >
       <template #read_by_slice="{ data }">
-        <div class="read-by-col">
-          <template v-for="(item, key) in data.read_by_slice" :key="key">
-            <Badge variant="primary" :label="item" />
-          </template>
-        </div>
+        <div @click="openReadBy(data.read_by)">See</div>
       </template>
 
       <template #responded_by="{ data }">
@@ -85,6 +81,27 @@ export default {
       },
     ]);
 
+    const openReadBy = data => {
+      const items = JSON.parse(data);
+
+      sModal.show({
+        footer: false,
+        title: 'Read By',
+        content: () => (
+          <div
+            class="grid grid-cols-6 gap-2"
+            style="max-height: 200px;overflow-y: scroll;"
+          >
+            {items.length ? (
+              items.map(item => <Badge variant="primary" label={item} />)
+            ) : (
+              <span class="italic font-thin text-sm">Empty</span>
+            )}
+          </div>
+        ),
+      });
+    };
+
     const fetchData = () => {
       store.dispatch('feedback/fetchData', params);
     };
@@ -133,6 +150,7 @@ export default {
       actionButtons,
       pagination,
       handlePageChange,
+      openReadBy,
     };
   },
 };

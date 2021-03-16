@@ -4,7 +4,7 @@
       <Button
         :data-title="data.path"
         size="sm"
-        variant="dark"
+        variant="orange"
         @click="handleClick(data)"
       >
         <img svg-inline class="w-3" src="@icon/pencil.svg" />
@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import Button from '@common/Button'
+import Button from '@common/Button';
 
 export default {
   components: {
@@ -27,12 +27,12 @@ export default {
   },
   setup() {
     const handleClick = data => {
-      console.log('Clicked ...', data)
-    }
+      console.log('Clicked ...', data);
+    };
 
     return {
       handleClick,
-    }
+    };
   },
-}
+};
 </script>

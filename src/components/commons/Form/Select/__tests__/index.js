@@ -7,7 +7,13 @@ describe('common/Form/Select', () => {
 
   beforeAll(() => {
     const props = {
-      items: ['Muse', 'Alterbridge', 'Lamb of God', 'Erra', 'Architects'],
+      items: [
+        { value: 'Muse', label: 'Muse' },
+        { value: 'Alterbridge', label: 'Alterbridge' },
+        { value: 'Lamb of God', label: 'Lamb of God' },
+        { value: 'Erra', label: 'Erra' },
+        { value: 'Architects', label: 'Architects' },
+      ],
     };
 
     Component = mount(<Select v-model={artist} {...props} />);

@@ -4,6 +4,7 @@ module.exports = {
     '@babel/plugin-proposal-export-default-from',
     '@babel/plugin-proposal-nullish-coalescing-operator',
     '@babel/plugin-proposal-optional-chaining',
+    '@vue/babel-plugin-jsx',
   ],
   env: {
     test: {

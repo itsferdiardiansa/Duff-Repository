@@ -1,11 +1,11 @@
 $variants: (
   'light': (
     'inverse': 'border-gray-600 text-gray-600',
-    'base': 'bg-light text-gray-600', 
+    'base': 'bg-light text-gray-600',
   ),
   'primary': (
     'inverse': 'border-blue-600 text-blue-800',
-    'base': 'bg-primary text-gray-200', 
+    'base': 'bg-primary text-gray-200',
   ),
   'danger': (
     'inverse': 'border-red-600 text-red-600',
@@ -21,7 +21,11 @@ $variants: (
   ),
   'dark': (
     'inverse': 'border-gray-600 text-gray-600',
-    'base': 'bg-dark text-gray-200'
+    'base': 'bg-dark text-gray-200',
+  ),
+  'orange': (
+    'inverse': 'border-orange text-orange',
+    'base': 'bg-orange text-white',
   ),
 );
 

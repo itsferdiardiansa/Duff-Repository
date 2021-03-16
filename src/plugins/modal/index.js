@@ -7,18 +7,23 @@ import {
   mergeProps,
   reactive,
   ref,
+  Transition,
   unref,
+  cloneVNode,
+  Teleport,
+  getCurrentInstance,
 } from 'vue';
 import Modal from './components/Modal';
 import globalSetting from '@plugin/globalSetting';
 import { FontAwesomeIcon } from '@plugin/fontAwesome';
 import Emitter from 'mitt';
 import uuid from '@util/uuid';
+import './components/styles.scss';
 
 const createElement = (instance, app) => {
   const root = document.querySelector('body');
   const div = document.createElement('div');
-  const elementId = uuid(`${SATPAM_PREFIX_CLASS}-modal`);
+  const elementId = `${SATPAM_PREFIX_CLASS}-modal`;
 
   div.setAttribute('id', elementId);
   div.setAttribute('role', 'modal');
@@ -32,20 +37,46 @@ const createElement = (instance, app) => {
 export const ModalPlugin = app => {
   const emitter = new Emitter();
   const modalEl = document.querySelector('[role="modal"]');
-  let instance;
 
   if (modalEl) return false;
 
-  let componentProps = {};
+  let instance;
+  let componentProps = { closeable: true };
   let childModal = {
     default: Modal,
   };
 
   const modalContext = {
-    pushModal: vnode => {
-      const { name } = vnode.props;
+    windowScrollable: () => {
+      const className = `${SATPAM_PREFIX_CLASS}-no-scroll`;
 
-      childModal[name] = vnode;
+      emitter.on('show-modal', () => {
+        document.body.classList.add(className);
+      });
+
+      emitter.on('hide-modal', () => {
+        document.body.classList.remove(className);
+      });
+    },
+    remove: child => {
+      const parent = child.parentNode;
+
+      parent.removeChild(child);
+    },
+    pushModal: (vnode, elm) => {
+      const {
+        props: { name },
+        el,
+      } = vnode;
+
+      if (name) {
+        childModal[name] = cloneVNode(vnode);
+      }
+
+      modalContext.remove(unref(elm));
+    },
+    hide: callback => {
+      emitter.emit('hide-modal');
     },
     show: (...args) => {
       const {
@@ -61,16 +92,17 @@ export const ModalPlugin = app => {
         app.component('Modal', Modal);
         app.provide('modalContext', {
           pushModal: modalContext.pushModal,
+          hide: modalContext.hide,
           emitter,
         });
 
         instance.mixin(globalSetting);
         instance.component('FontAwesomeIcon', FontAwesomeIcon);
-        instance.provide('modalContext', {
-          emitter,
-        });
+        instance.provide('modalContext', { emitter });
 
         const elementId = createElement(instance, app);
+
+        modalContext.windowScrollable();
 
         if (elementId) instance.mount(`#${elementId}`);
       } catch (error) {
@@ -78,20 +110,51 @@ export const ModalPlugin = app => {
       }
     },
     renderModal: defineComponent({
-      setup() {
+      props: mergeProps(
+        {
+          onShow: {
+            type: Boolean,
+            default: false,
+          },
+        },
+        Modal.props
+      ),
+      beforeCreate() {
+        const modalContext = inject('modalContext');
+        const root = getCurrentInstance();
+
+        if (
+          Reflect.has(modalContext, 'pushModal') &&
+          modalContext !== undefined
+        ) {
+          modalContext.pushModal(root.vnode);
+        }
+      },
+      setup(props) {
         const componentName = ref(false);
         const modalContext = inject('modalContext');
 
         modalContext.emitter.on('show-modal', params => {
-          const [modalName, options] = params;
-          componentProps = reactive({});
+          const [modalName, props] = params;
+          componentProps = { closeable: true };
 
-          if (typeof modalName === 'string') {
+          if (typeof modalName === 'string' && childModal[modalName]) {
             componentName.value = modalName;
-            Object.assign(componentProps, childModal[modalName].props);
+            Object.assign(componentProps, childModal[modalName].props, props);
           } else {
+            if (typeof params[0] == 'string' && !childModal[modalName]) {
+              console.warn(
+                'you must provide a property name in the modal dialog'
+              );
+              return false;
+            }
+
             componentName.value = 'default';
-            componentProps = params[0];
+            Object.assign(
+              componentProps,
+              { content: 'Default content' },
+              params[0]
+            );
           }
         });
 
@@ -100,24 +163,54 @@ export const ModalPlugin = app => {
         });
 
         return {
+          modalContext,
           componentName,
           componentProps,
         };
       },
+      renderOverlay() {
+        return h('div', {
+          class: 'ss-modal--overlay',
+        });
+      },
       render() {
-        const { componentName } = this;
+        const { componentName, modalContext } = this;
         let component;
 
         if (componentName) {
           component = childModal[componentName];
         }
 
-        return !componentName
-          ? null
-          : h(component, {
-              ...componentProps,
-              onShow: true,
-            });
+        return Transition(
+          {
+            name: 'ss-modal',
+            appear: true,
+            duration: 400,
+          },
+          {
+            slots: () =>
+              !component
+                ? null
+                : h(
+                    'div',
+                    {
+                      class: 'ss-modal--container',
+                    },
+                    [
+                      h('div', {
+                        class: 'ss-modal--overlay',
+                        onClick: () =>
+                          componentProps.closeable &&
+                          modalContext.emitter.emit('hide-modal'),
+                      }),
+                      h(component, {
+                        ...componentProps,
+                        onShow: true,
+                      }),
+                    ]
+                  ),
+          }
+        );
       },
     }),
   };

@@ -54,7 +54,6 @@ Storage.prototype.flush = function () {
     cacheLabel,
   } = this;
 
-  console.log(local);
   local.removeItem(cacheLabel);
   session.removeItem(cacheLabel);
 };

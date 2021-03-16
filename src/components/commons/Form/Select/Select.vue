@@ -1,6 +1,7 @@
 <template>
   <div
     ref="dropdownEl"
+    v-bind="$attrs"
     :class="`${prefixClass}-control--input`"
     @keydown.prevent="onKeyInteraction"
   >
@@ -63,6 +64,7 @@ export default {
     },
     keyname: {
       type: String,
+      default: 'value',
     },
     placeholder: {
       type: String,
@@ -237,7 +239,7 @@ export default {
 
   &--button {
     @apply relative w-full bg-white border border-gray-300 rounded-md;
-    @apply cursor-pointer shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+    @apply cursor-pointer shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-primary-light focus:border-primary-light sm:text-sm;
 
     .button-label {
       @apply flex items-center;
@@ -256,13 +258,14 @@ export default {
     @apply absolute mt-1 w-full rounded-md bg-white shadow-lg z-50;
 
     .dropdown-list {
-      @apply max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm;
+      @apply max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-x-auto overflow-y-scroll focus:outline-none sm:text-sm;
+      max-height: 200px;
 
       .dropdown-item {
         @apply cursor-pointer text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9;
 
         &--selected {
-          @apply bg-indigo-700 text-gray-100;
+          @apply bg-primary-light text-gray-800;
         }
       }
     }

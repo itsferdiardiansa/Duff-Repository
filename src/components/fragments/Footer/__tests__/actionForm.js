@@ -138,7 +138,7 @@ describe('fragment/Footer/ActionForm', () => {
 
     expect(Component.find(`[type="submit"]`).text()).toEqual('Update');
     expect(Component.find(`[type="submit"]`).attributes('class')).toContain(
-      `${Component.rootVM.prefixClass}-button--warning`
+      `${Component.rootVM.prefixClass}-button--orange`
     );
     expect(Component.element).toMatchSnapshot();
   });

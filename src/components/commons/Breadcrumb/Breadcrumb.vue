@@ -8,7 +8,7 @@
         <template v-if="data.length - 1 === key">
           <Button
             size="sm"
-            variant="primary"
+            variant="orange"
             :label="item.name"
             :inverse="true"
             :rounded="false"
@@ -18,7 +18,7 @@
         <template v-else>
           <Button
             size="sm"
-            variant="primary"
+            variant="orange"
             :rounded="false"
             :label="item.name"
             @click="changePage(item.path)"
@@ -30,9 +30,9 @@
 </template>
 <script>
 /* eslint-disable */
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import Button from '@common/Button'
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import Button from '@common/Button';
 
 export default {
   name: 'CMBreadcrumb',
@@ -50,27 +50,27 @@ export default {
     },
   },
   setup(props) {
-    const router = useRouter()
-    const breadcrumbEl = ref()
-    const breadcrumbItemEl = ref([])
+    const router = useRouter();
+    const breadcrumbEl = ref();
+    const breadcrumbItemEl = ref([]);
 
     const handleClick = path => {
-      router.push(path)
-    }
+      router.push(path);
+    };
 
     const shouldShowSeparator = key => {
-      const { data } = props
+      const { data } = props;
 
-      return data.length - 1 !== key && data.length > 1
-    }
+      return data.length - 1 !== key && data.length > 1;
+    };
 
     const collectBreadcrumItemEl = el => {
-      breadcrumbItemEl.value.push(el)
-    }
+      breadcrumbItemEl.value.push(el);
+    };
 
     const changePage = path => {
-      router.push(path)
-    }
+      router.push(path);
+    };
 
     return {
       breadcrumbEl,
@@ -79,9 +79,9 @@ export default {
       collectBreadcrumItemEl,
       changePage,
       breadcrumbItemEl,
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .#{$prefixClass}-breadcrumb {

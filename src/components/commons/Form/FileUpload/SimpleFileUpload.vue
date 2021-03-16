@@ -20,7 +20,14 @@
 
       <div class="file-preview--btn" v-if="showCloseBtn">
         <transition name="slide-top" mode="out-in" appear>
-          <font-awesome-icon :icon="['fa', 'trash']" @click="removeImage" />
+          <div class="flex">
+            <font-awesome-icon
+              class="w-6 mr-3"
+              :icon="['fa', 'eye']"
+              @click="previewImage"
+            />
+            <font-awesome-icon :icon="['fa', 'trash']" @click="removeImage" />
+          </div>
         </transition>
       </div>
     </div>
@@ -30,7 +37,7 @@
         <Spinner :width="40" :height="40" />
       </div>
     </template>
-    <template v-else-if="fileDamage">
+    <template v-else-if="onFileError">
       <div class="file-hero" v-if="!imgSrc.length">
         <img svg-inline src="@icon/image-broken.svg" />
         <label class="flex flex-col justify-center text-center">
@@ -68,7 +75,7 @@ export default {
     const imgSrc = ref('');
     const showCloseBtn = ref(false);
     const convertingImage = ref(false);
-    const fileDamage = ref(false);
+    const onFileError = ref(false);
 
     const onMouseInteraction = () => {
       showCloseBtn.value = !showCloseBtn.value;
@@ -78,6 +85,17 @@ export default {
       imgSrc.value = '';
 
       emit('update:modelValue', '');
+    };
+
+    const previewImage = () => {
+      sModal.show({
+        footer: false,
+        content: () => (
+          <div>
+            <img class="w-full" src={imgSrc.value} alt="image preview" />
+          </div>
+        ),
+      });
     };
 
     const handleChange = async e => {
@@ -107,7 +125,7 @@ export default {
           imgSrc.value = url;
           emit('update:modelValue', btoa(url));
         } catch (error) {
-          fileDamage.value = true;
+          onFileError.value = true;
           emit('update:modelValue', '');
         } finally {
           convertingImage.value = false;
@@ -116,11 +134,12 @@ export default {
     });
 
     return {
-      fileDamage,
+      onFileError,
       showCloseBtn,
       handleChange,
       onMouseInteraction,
       removeImage,
+      previewImage,
       imgSrc,
       convertingImage,
     };

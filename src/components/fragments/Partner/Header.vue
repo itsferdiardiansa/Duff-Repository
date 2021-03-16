@@ -7,34 +7,34 @@
     </div>
 
     <div class="btn-create float-right">
-      <Button 
-        variant="primary"
+      <Button
+        variant="orange"
         label="Create"
         :bold="true"
         :icon="['fa', 'plus']"
-        @click="createPArtner" 
+        @click="createPArtner"
       />
     </div>
   </div>
 </template>
 <script>
-import { useRouter } from 'vue-router'
-import Button from '@common/Button'
+import { useRouter } from 'vue-router';
+import Button from '@common/Button';
 
 export default {
   components: {
     Button,
   },
   setup() {
-    const router = useRouter()
+    const router = useRouter();
 
     const createPArtner = () => {
-      router.push('/partner/create')
-    }
+      router.push('/partner/create');
+    };
 
     return {
       createPArtner,
-    }
+    };
   },
-}
+};
 </script>

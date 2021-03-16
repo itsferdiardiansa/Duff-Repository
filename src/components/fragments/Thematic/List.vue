@@ -1,15 +1,5 @@
 <template>
   <div class="list">
-    <div class="py-6 flex justify-end items-center">
-      <Button
-        label="Create Thematic Page"
-        variant="primary"
-        :bold="true"
-        :icon="['fa', 'plus']"
-        @click="createThematicPage"
-      />
-    </div>
-
     <Table
       :headers="tHeaders"
       :items="filteredData"
@@ -36,6 +26,16 @@
 
       <template #action="{ data }">
         <ActionButton :data="actionButtons" :item="data" />
+      </template>
+
+      <template #filter>
+        <Button
+          label="Create Thematic Page"
+          variant="orange"
+          :bold="true"
+          :icon="['fa', 'plus']"
+          @click="createThematicPage"
+        />
       </template>
     </Table>
   </div>
@@ -84,11 +84,12 @@ export default {
       { title: 'Page Info', accessor: 'meta_title' },
       { title: 'Path', accessor: 'path', width: '11%', align: 'center' },
       { title: 'Created At', accessor: 'created_at', align: 'center' },
-      { title: 'Action', accessor: 'action', align: 'center' },
+      { accessor: 'action', align: 'center' },
     ]);
 
     const actionButtons = ref([
       {
+        text: 'Edit',
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -99,6 +100,7 @@ export default {
         },
       },
       {
+        text: 'Delete',
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {

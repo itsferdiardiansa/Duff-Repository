@@ -3,7 +3,7 @@
     <div class="font-black text-lg mb-4">Dropdown Menu</div>
 
     <div ref="codeEl" class="dropdown-menu-demo">
-      <div ref="profile" class="avatar" @click="toggleDropdown">
+      <div ref="profile" class="avatar">
         <img svg-inline src="@asset/avatar.svg" />
       </div>
 

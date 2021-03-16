@@ -18,7 +18,7 @@ exports[`common/Breadcrumb will render the item according to the property data p
     class="ss-breadcrumb--item"
   >
     <button
-      class="ss-button ss-button--primary ss-button--sm no-rounded"
+      class="ss-button ss-button--orange ss-button--sm no-rounded"
     >
       <div
         class="ss-button--wrapper"
@@ -40,7 +40,7 @@ exports[`common/Breadcrumb will render the item according to the property data p
     class="ss-breadcrumb--item"
   >
     <button
-      class="ss-button ss-button--primary ss-button--sm no-rounded"
+      class="ss-button ss-button--orange ss-button--sm no-rounded"
     >
       <div
         class="ss-button--wrapper"
@@ -62,7 +62,7 @@ exports[`common/Breadcrumb will render the item according to the property data p
     class="ss-breadcrumb--item"
   >
     <button
-      class="ss-button ss-button--primary-inverse ss-button--sm no-rounded disabled"
+      class="ss-button ss-button--orange-inverse ss-button--sm no-rounded disabled"
       disabled=""
     >
       <div

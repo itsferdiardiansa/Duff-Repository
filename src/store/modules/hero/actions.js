@@ -13,7 +13,6 @@ const actions = {
         responseData: collections,
       });
     } catch (error) {
-      console.log(error);
       commit('fetchFailed', { requestData: payload, responseData: error });
     }
   },
@@ -24,7 +23,6 @@ const actions = {
       const response = await HeroService.create(payload.data);
       const collections = await response.data;
 
-      // console.log(collections)
       commit('fetchSuccess', {
         requestData: payload,
         responseData: collections,

@@ -24,7 +24,7 @@ module.exports = {
   setupFiles: ['./tools/client.js', './tools/setupEnvFiles.js'],
   setupFilesAfterEnv: [],
   moduleNameMapper: {
-    '^@data(.*)$': '<rootDir>/data$1',
+    '^@data(.*)$': '<rootDir>/.data$1',
     '^@build(.*)$': '<rootDir>/build$1',
     '^@common(.*)$': '<rootDir>/src/components/commons$1',
     '^@fragment(.*)$': '<rootDir>/src/components/fragments$1',
@@ -39,6 +39,7 @@ module.exports = {
     '^@layout(.*)$': '<rootDir>/src/layouts$1',
     '^@service(.*)$': '<rootDir>/src/services$1',
     '^@icon(.*)$': '<rootDir>/src/assets/icons$1',
+    '^@asset(.*)$': '<rootDir>/src/assets$1',
     '^__mock__(.*)$': '<rootDir>__mocks__$1',
     '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
   },

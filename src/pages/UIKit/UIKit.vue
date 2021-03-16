@@ -4,13 +4,13 @@
 
     <BadgeUI />
 
-    <DropdownUI />
-
-    <FormInputUI />
+    <ModalUI />
 
     <AlertUI />
 
-    <ModalUI />
+    <DropdownUI />
+
+    <FormInputUI />
   </div>
 </template>
 <script>

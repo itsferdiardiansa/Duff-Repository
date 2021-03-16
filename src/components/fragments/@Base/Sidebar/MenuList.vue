@@ -1,6 +1,6 @@
 <template>
   <template v-for="(item, key) in data" :key="item.link">
-    <MenuItem 
+    <MenuItem
       :item="item"
       :orderId="key"
       @setIndexMenuItem="handleIndexMenuItem"
@@ -9,13 +9,13 @@
   </template>
 </template>
 <script>
-import { computed, ref } from 'vue'
-import { useRoute } from 'vue-router'
-import MenuItem from './MenuItem'
+import { computed, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import MenuItem from './MenuItem';
 
 export default {
   components: {
-    MenuItem
+    MenuItem,
   },
   props: {
     data: {
@@ -24,51 +24,55 @@ export default {
     },
   },
   setup(props) {
-    const router = useRoute()
-    const indexMenuItem = ref(-1)
-    const orderMenuItem = ref(0)
+    const router = useRoute();
+    const indexMenuItem = ref(-1);
+    const orderMenuItem = ref(0);
 
     const activeLink = computed(() => {
-      return router.path
-    })
+      return router.path;
+    });
 
     const filteredData = computed(() => {
       return props.data.map(item => {
-        return item.lists.map(list => ({ icon: false, ...list }))
-      })
-    })
+        return item.lists.map(list => ({ icon: false, ...list }));
+      });
+    });
 
     const handleIndexMenuItem = id => {
-      indexMenuItem.value = id
-    }
+      indexMenuItem.value = id;
+    };
 
     const handleOrderMenuItem = async () => {
-      orderMenuItem.value = await orderMenuItem.value++
-      
-      // console.log('increment', orderMenuItem.value)
-    }
+      orderMenuItem.value = await orderMenuItem.value++;
 
-    return {  
+      // console.log('increment', orderMenuItem.value)
+    };
+
+    return {
       handleIndexMenuItem,
       handleOrderMenuItem,
       activeLink,
       filteredData,
       indexMenuItem,
-      orderMenuItem
-    }
+      orderMenuItem,
+    };
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .menu-item {
-  @apply capitalize font-medium text-sm text-gray-500 hover:bg-indigo-700 hover:text-gray-100 transition ease-in-out duration-500;
+  @apply capitalize font-medium text-sm text-white hover:text-gray-100;
+  &:hover {
+    background-color: $bg-orange;
+  }
 
   &[disabled='true'] {
     @apply text-gray-300 cursor-not-allowed;
   }
 
   &.active {
-    @apply bg-indigo-700 text-gray-100 pointer-events-none;
+    @apply text-gray-100 pointer-events-none;
+    // background-color: $bg-orange;
   }
 
   a {

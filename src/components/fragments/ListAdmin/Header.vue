@@ -6,7 +6,7 @@
 
     <div class="top-list--create">
       <Button
-        variant="primary"
+        variant="orange"
         :icon="['fa', 'plus']"
         :bold="true"
         @click="addAdmin"

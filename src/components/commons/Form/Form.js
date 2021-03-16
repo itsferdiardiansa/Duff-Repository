@@ -23,7 +23,7 @@ export default defineComponent({
   },
   emits: ['onValidateField'],
   setup(props, { slots, emit }) {
-    const _this = getCurrentInstance();
+    const root = getCurrentInstance();
     const fields = reactive([]);
     const errorFields = reactive(new Set());
 
@@ -74,7 +74,7 @@ export default defineComponent({
     });
 
     provide('formContext', {
-      ..._this.vnode,
+      ...root.vnode,
       ...props,
       addField,
       addErrorField,

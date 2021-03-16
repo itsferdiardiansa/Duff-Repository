@@ -9,11 +9,30 @@ module.exports = {
       colors: {
         default: colors.coolGray['100'],
         light: colors.coolGray['200'],
-        primary: colors.blue['600'],
-        danger: colors.red['600'],
-        warning: colors.yellow['500'],
-        success: colors.green['600'],
-        dark: colors.coolGray['600'],
+        primary: {
+          light: colors.blue['100'],
+          DEFAULT: colors.blue['600'],
+        },
+        danger: {
+          light: colors.red['100'],
+          DEFAULT: colors.red['600'],
+        },
+        warning: {
+          light: colors.yellow['100'],
+          DEFAULT: colors.yellow['500'],
+        },
+        success: {
+          light: colors.green['100'],
+          DEFAULT: colors.green['600'],
+        },
+        dark: {
+          light: colors.coolGray['100'],
+          DEFAULT: colors.coolGray['600'],
+        },
+        orange: {
+          DEFAULT: '#e86b32',
+          dark: '#f55b14',
+        },
       },
     },
   },

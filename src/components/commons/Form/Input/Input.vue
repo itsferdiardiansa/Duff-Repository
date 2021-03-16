@@ -75,7 +75,7 @@ export default {
       type: String,
       default: 'text', // text, email, password
       validator: function (variant) {
-        return ~['text', 'email', 'password'].indexOf(variant);
+        return ~['text', 'email', 'password', 'search'].indexOf(variant);
       },
     },
     placeholder: {
@@ -129,7 +129,7 @@ export default {
   }
 
   input {
-    @apply w-full border rounded py-1 px-4;
+    @apply w-full border rounded py-1 px-4 focus:outline-none;
 
     &[type='file'] {
       @apply w-auto inline border-0 focus:outline-none px-0;

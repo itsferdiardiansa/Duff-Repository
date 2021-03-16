@@ -15,11 +15,11 @@
     </div>
 
     <div class="btn-create float-right">
-      <Button 
-        variant="primary"
+      <Button
+        variant="orange"
         :bold="true"
-        :icon="['fa', 'plus']" 
-        @click="handleClick" 
+        :icon="['fa', 'plus']"
+        @click="handleClick"
       >
         Create Hero
       </Button>
@@ -27,23 +27,23 @@
   </div>
 </template>
 <script>
-import Button from '@common/Button'
-import { useRouter } from 'vue-router'
+import Button from '@common/Button';
+import { useRouter } from 'vue-router';
 
 export default {
   components: {
     Button,
   },
   setup() {
-    const router = useRouter()
+    const router = useRouter();
 
     const handleClick = () => {
-      router.push('/hero/create')
-    }
+      router.push('/hero/create');
+    };
 
     return {
       handleClick,
-    }
+    };
   },
-}
+};
 </script>

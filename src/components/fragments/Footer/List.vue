@@ -1,15 +1,5 @@
 <template>
   <div class="list">
-    <div class="list--header">
-      <Button
-        label="Create Partner"
-        variant="primary"
-        :bold="true"
-        :icon="['fa', 'plus']"
-        @click="createFooter"
-      />
-    </div>
-
     <Table
       :headers="tHeaders"
       :items="filteredData"
@@ -25,6 +15,16 @@
 
       <template #action="{ data }">
         <ActionButton :data="actionButtons" :item="data" />
+      </template>
+
+      <template #filter>
+        <Button
+          label="Create Footer"
+          variant="orange"
+          :bold="true"
+          :icon="['fa', 'plus']"
+          @click="createFooter"
+        />
       </template>
     </Table>
 
@@ -66,7 +66,6 @@ export default {
       { title: 'Updated At', accessor: 'updated_at' },
       { title: 'Created At', accessor: 'created_at' },
       {
-        title: 'Action',
         accessor: 'action',
         colSpan: 3,
         width: '25%',
@@ -76,6 +75,7 @@ export default {
 
     const actionButtons = ref([
       {
+        text: 'Edit',
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -86,6 +86,7 @@ export default {
         },
       },
       {
+        text: 'Delete',
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {

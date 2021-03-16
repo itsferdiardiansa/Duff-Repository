@@ -7,7 +7,6 @@ export default (type, payload, router) => {
     const variant = type.match(/fetchFailed/g) ? 'danger' : 'success';
     const content = payload?.responseData?.message;
 
-    console.log(payload.responseData);
     sAlert.show({ variant, content });
 
     if (

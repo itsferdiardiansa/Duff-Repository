@@ -11,22 +11,28 @@
       />
 
       <Button
-        label="Modal with custom footer and content"
-        variant="warning"
+        label="Modal with async event"
+        variant="danger"
         class="ml-2"
         :icon="['fa', 'sticky-note']"
         @click="showModalDelete"
       />
 
-      <Modal name="delete-confirmation" :onConfirmFn="showAlert">
-        <div class="description">Are you sure to delete this content ...</div>
+      <Button
+        label="Modal with JSX content"
+        variant="warning"
+        class="ml-2"
+        :icon="['fa', 'sticky-note']"
+        @click="showModalWarning(lists)"
+      />
+
+      <Modal name="delete-confirmation" :onShow="true" :closeable="false">
+        <div class="description" v-text="message"></div>
       </Modal>
 
       <Modal
-        name="update-confirmation"
         title="Update Confirmation"
         content="Are you sure to update this contents"
-        :onConfirmFn="showAlert"
       />
     </div>
   </div>
@@ -43,50 +49,74 @@ export default {
   beforeCreate() {},
   setup() {
     const codeEl = ref();
+    const lists = ['a', 'b', 'c'];
+    const modalShow = ref(false);
+    const message = ref('Click to close modal ...');
 
     const showModalDefault = () => {
-      sModal.show('update-confirmation', {
-        animation: 'slide-bottom',
-        content: (
-          <div>
-            <marquee>Alert content ...</marquee>
-          </div>
-        ),
-      });
+      sModal.show();
     };
 
-    const showAlert = () => {
-      alert('Clicked');
-    };
-
+    // Modal will be close after
     const showModalDelete = () => {
-      sModal.show({
-        footer: (
-          <Button
-            variant="primary"
-            icon={['fa', 'search']}
-            rounded={false}
-            onClick={showAlert}
-          >
-            Preview
-          </Button>
-        ),
-        content: (
-          <div>
-            <img src="https://cdn.wallpapersafari.com/60/19/FfWM9R.jpg" />
-          </div>
-        ),
-        onConfirmFn: () => {
-          console.log('Confirm ...');
+      const loading = ref(false);
+      sModal.show('delete-confirmation', {
+        footer: ({ hideModal }) => {
+          const handleClick = async () => {
+            loading.value = true;
+            message.value = 'Modal will be close after successfully fetch';
+
+            try {
+              const response = await fetch(
+                'https://jsonplaceholder.typicode.com/todos/1'
+              );
+              const collections = await response.json();
+
+              hideModal();
+              message.value = 'Click to close modal ...';
+            } catch (error) {}
+          };
+
+          return (
+            <Button
+              variant="primary"
+              label="Fetch Data"
+              isLoading={loading.value}
+              onClick={handleClick}
+            />
+          );
+        },
+        // closeable: false,
+        onConfirmFn: hideModal => {
+          setTimeout(() => {
+            hideModal();
+          }, 3000);
         },
       });
     };
 
+    const showModalWarning = data => {
+      sModal.show({
+        title: 'JSX Content',
+        footer: false,
+        content: () => (
+          <div>
+            {data.map(item => (
+              <label>{item}</label>
+            ))}
+          </div>
+        ),
+      });
+    };
+
     return {
+      lists,
+      message,
       codeEl,
+      showModalWarning,
       showModalDefault,
       showModalDelete,
-      showAlert,
+      modalShow,
     };
   },
 };

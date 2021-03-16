@@ -4,25 +4,7 @@ exports[`common/Pagination it does not render the next navigation when it is on 
 <div
   class="ss-pagination"
 >
-  <div
-    class="ss-pagination--info"
-  >
-    <p>
-       Showing 
-      <span>
-        91
-      </span>
-       to 
-      <span>
-        100
-      </span>
-       of 
-      <span>
-        100
-      </span>
-       results 
-    </p>
-  </div>
+  <!--v-if-->
   <div
     class="ss-pagination--page"
   >
@@ -39,9 +21,6 @@ exports[`common/Pagination it does not render the next navigation when it is on 
           fill="currentColor"
         />
       </svg>
-      <label>
-        Previous
-      </label>
     </span>
     <span
       class="page-number"
@@ -76,25 +55,7 @@ exports[`common/Pagination it does not render the prev navigation when it is on 
 <div
   class="ss-pagination"
 >
-  <div
-    class="ss-pagination--info"
-  >
-    <p>
-       Showing 
-      <span>
-        1
-      </span>
-       to 
-      <span>
-        10
-      </span>
-       of 
-      <span>
-        100
-      </span>
-       results 
-    </p>
-  </div>
+  <!--v-if-->
   <div
     class="ss-pagination--page"
   >
@@ -127,9 +88,6 @@ exports[`common/Pagination it does not render the prev navigation when it is on 
       class="nav-btn next"
       type="nav"
     >
-      <label>
-        Next
-      </label>
       <svg
         class=""
         viewBox="0 0 320 512"
@@ -151,25 +109,7 @@ exports[`common/Pagination will render and match snapshot 1`] = `
 <div
   class="ss-pagination"
 >
-  <div
-    class="ss-pagination--info"
-  >
-    <p>
-       Showing 
-      <span>
-        1
-      </span>
-       to 
-      <span>
-        10
-      </span>
-       of 
-      <span>
-        20
-      </span>
-       results 
-    </p>
-  </div>
+  <!--v-if-->
   <div
     class="ss-pagination--page"
   >
@@ -187,9 +127,6 @@ exports[`common/Pagination will render and match snapshot 1`] = `
       class="nav-btn next"
       type="nav"
     >
-      <label>
-        Next
-      </label>
       <svg
         class=""
         viewBox="0 0 320 512"

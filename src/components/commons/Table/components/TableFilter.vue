@@ -1,66 +1,114 @@
 <template>
   <div :class="`${prefixClass}-table-filter`">
-    <div :class="`${prefixClass}-table-filter--category`">
-      <label :class="`${prefixClass}-table-filter--title`">Category</label>
-      <select :class="`${prefixClass}-table-filter--select`" v-model="category">
-        <option value="">All</option>
-        <template v-for="(item, key) in data" :key="key">
-          <option :value="item" v-text="snakeToTitle(item)" v-if="item !== 'action'"></option>
-        </template>
-      </select>
+    <div :class="`${prefixClass}-table-filter--top`">
+      <div :class="`${prefixClass}-table-filter--input-form`">
+        <Form class="search-form" @submit="handleSubmit">
+          <Input
+            type="search"
+            class="bg-gray-100"
+            placeholder="Search"
+            :icon="['fa', 'search']"
+            v-model="keyword"
+          />
+        </Form>
+      </div>
+
+      <div :class="`${prefixClass}-table-filter--extend`" v-if="$slots.default">
+        <slot />
+      </div>
     </div>
 
-    <div :class="`${prefixClass}-table-filter--input-form`">
-      <!-- <input class="form-control" type="text" placeholder="Search or filter results" v-model="keyword" @keyup="handleInput" /> -->
+    <div :class="`${prefixClass}-table-filter--bottom`">
+      <div :class="`${prefixClass}-table-filter--category`">
+        <label :class="`${prefixClass}-table-filter--title`">Sort By</label>
+
+        <Select
+          class="w-40"
+          v-model="sortBy"
+          @change="handleSubmit"
+          :items="[
+            { value: 'newest', label: 'Newest' },
+            { value: 'oldest', label: 'Oldest' },
+          ]"
+        />
+      </div>
     </div>
   </div>
 </template>
 <script>
-import { computed, getCurrentInstance, ref } from 'vue'
-import debounce from '@util/debounce'
+import { computed, getCurrentInstance, ref, unref } from 'vue';
+import Form, { Input, Select } from '@common/Form';
+import debounce from '@util/debounce';
 
 export default {
+  components: {
+    Form,
+    Input,
+    Select,
+  },
   props: {
     data: {
-      type: Array
+      type: Array,
     },
     onCallback: {
-      type: Function
-    }
+      type: Function,
+    },
   },
   setup(props) {
-    const keyword = ref('')
-    const category = ref('')
-    const { parent } = getCurrentInstance()
+    const keyword = ref('');
+    const category = ref('');
+    const sortBy = ref('newest');
+    const { parent } = getCurrentInstance();
 
     const handleInput = debounce(() => {
       parent.emit('onSearchCallback', {
-        q: keyword.value, 
-        category: category.value
-      })
-    }, 100)
+        q: keyword.value,
+        category: category.value,
+      });
+    }, 100);
 
     const filteredOptions = computed(() => {
-      let items = [].concat(props.data)
-      // console.log(props.data
-      return Object.keys(items.pop())
-    })
+      let items = [].concat(props.data);
+      return Object.keys(items.pop());
+    });
+
+    const handleSubmit = () => {
+      parent.emit('onSearchCallback', {
+        q: unref(keyword),
+        sortBy: unref(sortBy),
+      });
+    };
 
     return {
       keyword,
       category,
-      handleInput, 
-      filteredOptions
-    }
-  }
-}
+      sortBy,
+      handleInput,
+      filteredOptions,
+      handleSubmit,
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .#{$prefixClass}-table-filter {
-  @apply mb-2 flex items-center text-base text-gray-500 justify-between;
+  @apply block mb-4;
+
+  &--top {
+    @apply grid gap-2 mb-4;
+    grid-template-columns: 1fr 20%;
+  }
+
+  &--bottom {
+    @apply w-8/12 inline-block;
+  }
+
+  &--extend {
+    @apply grid grid-flow-col gap-2;
+  }
 
   &--title {
-    @apply text-base mr-6 font-bold;  
+    @apply text-base mr-6 font-bold;
   }
 
   &--select {
@@ -72,7 +120,15 @@ export default {
   }
 
   &--input-form {
-    @apply w-96;
+    @apply w-5/12;
+
+    .search-form {
+      @apply h-full;
+    }
+  }
+
+  &--category {
+    @apply flex items-center;
   }
 
   .form-group {

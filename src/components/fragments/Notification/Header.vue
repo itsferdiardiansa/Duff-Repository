@@ -1,7 +1,7 @@
 <template>
   <div class="create-notification">
     <Button
-      variant="primary"
+      variant="orange"
       label="Add Notification"
       :icon="['fa', 'plus']"
       :bold="true"

@@ -96,7 +96,6 @@ export default {
   },
   created() {
     self.$modal = this.modal;
-    console.log('Modal common init ...');
   },
   setup(props) {
     const modalEl = ref();

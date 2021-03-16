@@ -32,6 +32,16 @@
       <template #action="{ data }">
         <ActionButton :data="actionButtons" :item="data" />
       </template>
+
+      <template #filter>
+        <Button
+          variant="orange"
+          label="Add Notification"
+          :icon="['fa', 'plus']"
+          :bold="true"
+          @click="addNotification"
+        />
+      </template>
     </Table>
   </div>
 </template>
@@ -39,13 +49,14 @@
 /* eslint-disable */
 import { computed, onMounted, reactive, ref } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 import Table, {
   EmptyTable as emptyComponent,
   ActionButton,
 } from '@common/Table';
 import Badge from '@common/Badge';
 import Modal from '@common/Modal';
-import { useRouter } from 'vue-router';
+import Button from '@common/Button';
 
 export default {
   components: {
@@ -53,6 +64,7 @@ export default {
     Badge,
     Modal,
     ActionButton,
+    Button,
   },
   setup() {
     const store = useStore();
@@ -62,7 +74,6 @@ export default {
     const tHeaders = ref([
       { title: 'Message', width: '80%', accessor: 'description' },
       {
-        title: 'Action',
         accessor: 'action',
         align: 'center',
       },
@@ -70,6 +81,7 @@ export default {
 
     const actionButtons = ref([
       {
+        text: 'Edit',
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -83,6 +95,7 @@ export default {
         },
       },
       {
+        text: 'Delete',
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -125,6 +138,10 @@ export default {
       fetchData();
     };
 
+    const addNotification = () => {
+      router.push('/notification/create');
+    };
+
     onMounted(fetchData);
 
     return {
@@ -138,6 +155,7 @@ export default {
       toggleModal,
       pagination,
       handlePageChange,
+      addNotification,
     };
   },
 };

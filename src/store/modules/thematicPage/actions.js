@@ -49,7 +49,6 @@ const actions = {
   async deleteData({ commit, dispatch }, payload) {
     commit('fetchStart');
 
-    console.log(payload);
     try {
       const response = await Thematic.delete(payload.hash_id);
       const collections = await response.data;

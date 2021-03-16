@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fragment/AppWrapper/subscribeAuthAction will render children and match snapshot 1`] = `<span class="ss-badge ss-badge--success ss-badge--xs text-bold"><div class="ss-badge--wrapper"><!--v-if--><div class="ss-badge--label">its_ferdi</div></div></span>`;
+exports[`fragment/AppWrapper/subscribeAuthAction will render children and match snapshot 1`] = `
+<div class="ss-badge ss-badge--success ss-badge--xs text-bold">
+  <div class="ss-badge--wrapper">
+    <!--v-if-->
+    <div class="ss-badge--label">its_ferdi</div>
+  </div>
+</div>
+`;
 
 exports[`fragment/AppWrapper/subscribeAuthAction will show an alert danger when failed login 1`] = `
 <body>

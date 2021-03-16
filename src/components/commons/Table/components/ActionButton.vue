@@ -2,26 +2,22 @@
   <div :class="`${prefixClass}-tb--action`">
     <div class="wrapper">
       <template v-for="(item, key) in data" :key="key">
-        <Button
-          :label="item.text"
-          :variant="item.variant"
-          :icon="item.icon"
-          :bold="item.bold"
-          :inverse="item.inverse"
+        <div
+          class="btn"
           @click="($event, $attrs) => item.onClickFn($event, dataBind)"
-        />
+        >
+          <font-awesome-icon class="w-4" :icon="item.icon" />
+          <span v-text="item.text"></span>
+        </div>
       </template>
     </div>
   </div>
 </template>
 <script>
 import { unref } from 'vue';
-import Button from '@common/Button';
 
 export default {
-  components: {
-    Button,
-  },
+  components: {},
   props: {
     data: {
       type: Array,
@@ -44,6 +40,18 @@ export default {
 
   .wrapper {
     @apply mr-2 grid grid-flow-col gap-2;
+
+    .btn {
+      @apply flex items-center hover:text-orange cursor-pointer mr-2;
+
+      &:last-child {
+        @apply mr-0;
+      }
+
+      span {
+        @apply ml-2 font-medium;
+      }
+    }
   }
 }
 </style>

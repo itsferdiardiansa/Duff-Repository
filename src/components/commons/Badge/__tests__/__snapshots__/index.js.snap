@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`common/Badge will have a disabled attribute correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold"
   disabled="true"
 >
@@ -21,20 +21,20 @@ exports[`common/Badge will have a disabled attribute correctly 1`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a dot correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold pill dot"
   disabled="true"
 >
   <!--v-if-->
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a icon correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold"
 >
   <div
@@ -53,11 +53,11 @@ exports[`common/Badge will have a icon correctly 1`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a inverse variant color correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--primary-inverse ss-badge--xs text-bold"
 >
   <div
@@ -72,11 +72,11 @@ exports[`common/Badge will have a inverse variant color correctly 1`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a inverse variant color correctly 2`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--xs text-bold"
 >
   <div
@@ -91,11 +91,11 @@ exports[`common/Badge will have a inverse variant color correctly 2`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a label correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--light ss-badge--xs text-bold"
 >
   <div
@@ -110,11 +110,11 @@ exports[`common/Badge will have a label correctly 1`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a pill correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold pill"
   disabled="true"
 >
@@ -134,11 +134,11 @@ exports[`common/Badge will have a pill correctly 1`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a size correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--xs text-bold"
 >
   <div
@@ -153,11 +153,11 @@ exports[`common/Badge will have a size correctly 1`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a size correctly 2`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--sm text-bold"
 >
   <div
@@ -172,11 +172,11 @@ exports[`common/Badge will have a size correctly 2`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a size correctly 3`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--base text-bold"
 >
   <div
@@ -191,11 +191,11 @@ exports[`common/Badge will have a size correctly 3`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a size correctly 4`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--lg text-bold"
 >
   <div
@@ -210,11 +210,11 @@ exports[`common/Badge will have a size correctly 4`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a size correctly 5`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold"
 >
   <div
@@ -229,20 +229,20 @@ exports[`common/Badge will have a size correctly 5`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a text bold correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold pill dot"
   disabled="true"
 >
   <!--v-if-->
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a variant color correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--primary ss-badge--xs text-bold"
 >
   <div
@@ -257,11 +257,11 @@ exports[`common/Badge will have a variant color correctly 1`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a variant color correctly 2`] = `
-<span
+<div
   class="ss-badge ss-badge--danger ss-badge--xs text-bold"
 >
   <div
@@ -276,11 +276,11 @@ exports[`common/Badge will have a variant color correctly 2`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a variant color correctly 3`] = `
-<span
+<div
   class="ss-badge ss-badge--warning ss-badge--xs text-bold"
 >
   <div
@@ -295,11 +295,11 @@ exports[`common/Badge will have a variant color correctly 3`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a variant color correctly 4`] = `
-<span
+<div
   class="ss-badge ss-badge--dark ss-badge--xs text-bold"
 >
   <div
@@ -314,11 +314,11 @@ exports[`common/Badge will have a variant color correctly 4`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will have a variant color correctly 5`] = `
-<span
+<div
   class="ss-badge ss-badge--success ss-badge--xs text-bold"
 >
   <div
@@ -333,11 +333,11 @@ exports[`common/Badge will have a variant color correctly 5`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will not a rounded correctly 1`] = `
-<span
+<div
   class="ss-badge ss-badge--danger-inverse ss-badge--xl text-bold no-rounded"
   disabled="true"
 >
@@ -357,11 +357,11 @@ exports[`common/Badge will not a rounded correctly 1`] = `
       
     </div>
   </div>
-</span>
+</div>
 `;
 
 exports[`common/Badge will render and match snapshot 1`] = `
-<span
+<div
   class="ss-badge ss-badge--light ss-badge--xs text-bold"
 >
   <div
@@ -370,5 +370,5 @@ exports[`common/Badge will render and match snapshot 1`] = `
     <!--v-if-->
     <!--v-if-->
   </div>
-</span>
+</div>
 `;

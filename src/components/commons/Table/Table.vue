@@ -1,5 +1,7 @@
 <template>
-  <TableFilter v-if="withFilter" :data="filteredOptions" />
+  <TableFilter v-if="withFilter" :data="filteredOptions">
+    <slot name="filter" />
+  </TableFilter>
 
   <table :class="`${prefixClass}-table`">
     <TableHead

@@ -317,7 +317,7 @@ exports[`fragment/Footer/ActionForm will render and match snapshot 1`] = `
       class="ss-form-control--wrapper col-offset-3"
     >
       <button
-        class="ss-button ss-button--dark ss-button--base text-bold"
+        class="ss-button ss-button--orange ss-button--base text-bold"
         type="submit"
       >
         <div
@@ -481,7 +481,7 @@ exports[`fragment/Footer/ActionForm will render the spinner during the request p
       class="ss-form-control--wrapper col-offset-3"
     >
       <button
-        class="ss-button ss-button--dark ss-button--base text-bold"
+        class="ss-button ss-button--orange ss-button--base text-bold"
         disabled=""
         type="submit"
       >
@@ -638,7 +638,7 @@ exports[`fragment/Footer/ActionForm will render the text and color for the form 
       class="ss-form-control--wrapper col-offset-3"
     >
       <button
-        class="ss-button ss-button--warning ss-button--base text-bold"
+        class="ss-button ss-button--orange ss-button--base text-bold"
         type="submit"
       >
         <div
@@ -810,7 +810,7 @@ exports[`fragment/Footer/ActionForm will render with error validation on all fie
       class="ss-form-control--wrapper col-offset-3"
     >
       <button
-        class="ss-button ss-button--dark ss-button--base text-bold"
+        class="ss-button ss-button--orange ss-button--base text-bold"
         type="submit"
       >
         <div

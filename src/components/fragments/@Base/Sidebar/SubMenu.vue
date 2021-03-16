@@ -69,22 +69,27 @@ export default {
 </script>
 <style lang="scss" scoped>
 .menu-item {
-  @apply capitalize font-medium text-sm text-gray-500;
+  @apply capitalize font-medium text-sm text-white transition duration-500;
 
   &[disabled='true'] {
     @apply text-gray-300 cursor-not-allowed;
   }
 
   &.active {
-    @apply bg-indigo-700 text-gray-100 pointer-events-none;
+    @apply text-white pointer-events-none;
+    background-color: $bg-orange;
   }
 
   &.inactive {
-    @apply text-gray-300 pointer-events-none;
+    @apply text-gray-600 pointer-events-none;
   }
 
   a {
-    @apply flex items-center px-6 py-2.5 hover:bg-indigo-700 hover:text-gray-100 transition ease-in-out duration-500;
+    @apply flex items-center px-6 py-2.5;
+
+    &:hover {
+      background-color: $bg-orange;
+    }
   }
 
   &-open {

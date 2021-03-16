@@ -18,7 +18,7 @@
       <div>
         <template v-if="privilegesRequestStatus.error.status">
           <Button
-            variant="dark"
+            variant="orange"
             :icon="['fa', 'redo-alt']"
             @click="fetchPrivileges"
             :pill="true"
@@ -31,7 +31,7 @@
         <template v-else>
           <Checkbox
             type="button"
-            variant="dark"
+            variant="orange"
             keyname="id"
             :items="privilegesList"
             v-model="state.form.privileges"
@@ -43,8 +43,8 @@
     <FormControl :offset="3">
       <Button
         type="submit"
+        variant="orange"
         :label="isCreate ? 'Create' : 'Update'"
-        :variant="isCreate ? 'dark' : 'warning'"
         :icon="['fa', 'save']"
         :bold="true"
         :isLoading="isFetching"

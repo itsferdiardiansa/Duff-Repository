@@ -1,51 +1,31 @@
 <template>
-  <nav class="navigation" aria-label="primary">
+  <nav class="navigation" aria-label="profile">
     <div class="navigation--wrapper">
-      <div ref="profile" class="profile" @click="toggleDropdown">
-        <img svg-inline src="@asset/avatar.svg" />
+      <div class="top">
+        {{ user }}
       </div>
 
-      <Dropdown
-        ref="profileDropdown"
-        :strict="true"
-        :safeNode="() => $refs.profile"
-      >
-        <template #header>
-          <div class="flex">
-            <div class="avatar">
-              <img
-                class="w-10 overflow-hidden rounded-full"
-                svg-inline
-                src="@asset/avatar.svg"
-              />
-            </div>
+      <div class="bottom">
+        <div class="status">
+          <Badge variant="orange" :inverse="true" :pill="true">
+            <label class="text-gray-800 px-4">Admin</label>
+          </Badge>
+        </div>
 
-            <div class="ml-3 flex flex-col">
-              <label class="font-medium">{{ user }}</label>
-              <span class="font-light">
-                <Badge variant="success" size="xs" :dot="true" class="mr-1" />
-                online
-              </span>
-            </div>
-          </div>
-        </template>
-
-        <template #menu>
-          <DropdownItem @click="tryLogout">
-            <div class="flex">
-              <font-awesome-icon
-                class="w-4 mr-2"
-                :icon="['fa', 'sign-out-alt']"
-              />
-              <span class="w-40">Logout</span>
-            </div>
-          </DropdownItem>
-        </template>
-      </Dropdown>
+        <div
+          class="logout"
+          @click="tryLogout"
+          role="button"
+          aria-label="logout"
+        >
+          <span>Logout</span>
+        </div>
+      </div>
     </div>
   </nav>
 </template>
 <script>
+/* eslint-disable */
 import { computed, ref, unref } from 'vue';
 import { useStore } from 'vuex';
 import { Dropdown, DropdownItem } from '@common/DropdownMenu';
@@ -94,15 +74,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .navigation {
-  @apply relative z-20 flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row;
+  @apply relative inline-block float-right py-4;
 
   &--wrapper {
     @apply relative;
 
     .profile {
       @apply w-9 overflow-hidden rounded-full cursor-pointer inline-block;
-      // @apply flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left text-gray-50 bg-transparent rounded-lg;
-      // @apply md:w-auto md:mt-0 md:ml-4 focus:outline-none;
 
       &--avatar {
         @apply relative w-8 h-8;
@@ -126,6 +104,22 @@ export default {
         .list {
           @apply grid grid-cols-1 gap-4 md:grid-cols-2 text-base;
         }
+      }
+    }
+
+    .top {
+      @apply px-4 text-left font-extrabold;
+    }
+
+    .bottom {
+      @apply flex items-center;
+
+      .status {
+        @apply py-2 px-4 flex items-center;
+      }
+
+      .logout {
+        @apply py-2 px-4 font-semibold text-orange cursor-pointer;
       }
     }
   }

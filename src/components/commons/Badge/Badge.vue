@@ -1,7 +1,5 @@
 <template>
-  <span
-    :class="customClass"
-  >
+  <div v-bind="$attrs" :class="customClass">
     <div :class="`${prefixClass}-badge--wrapper`" v-if="!dot">
       <template v-if="icon.length">
         <div :class="`${prefixClass}-badge--icon`">
@@ -10,68 +8,68 @@
       </template>
 
       <template v-if="hasSlot || label.length">
-        <div :class="[`${prefixClass}-badge--label`, {'has-icon': icon.length}]">
+        <div
+          :class="[`${prefixClass}-badge--label`, { 'has-icon': icon.length }]"
+        >
           <slot>
             {{ label }}
           </slot>
         </div>
       </template>
     </div>
-  </span>
+  </div>
 </template>
 <script>
-import { computed, getCurrentInstance, ref } from 'vue'
-import defaultProps from './props'
+import { computed, getCurrentInstance, ref } from 'vue';
+import defaultProps from './props';
 
 export default {
   name: 'CMBadge',
   props: defaultProps,
   setup(props, { slots }) {
-    let root = getCurrentInstance()
-    let iconEl = ref()
+    let root = getCurrentInstance();
+    let iconEl = ref();
 
-    const getVariantClass = (prefixBtnClass) => {
-      const { inverse, variant } = props 
-      let btnClass = `${prefixBtnClass}--${variant}`
+    const getVariantClass = prefixBtnClass => {
+      const { inverse, variant } = props;
+      let btnClass = `${prefixBtnClass}--${variant}`;
 
-      if(inverse) btnClass += '-inverse'
-      
-      return btnClass
-    }
+      if (inverse) btnClass += '-inverse';
+
+      return btnClass;
+    };
 
     const customClass = computed(() => {
-      const { data: { prefixClass } } = root
-      const { size, rounded, bold, pill, dot } = props
-      const btnClass = prefixClass.concat('-badge')
-      let customClass = [btnClass]
+      const {
+        data: { prefixClass },
+      } = root;
+      const { size, rounded, bold, pill, dot } = props;
+      const btnClass = prefixClass.concat('-badge');
+      let customClass = [btnClass];
 
-      customClass.push(getVariantClass(btnClass))
+      customClass.push(getVariantClass(btnClass));
 
-      if(size) customClass.push(btnClass.concat('--' + size))
+      if (size) customClass.push(btnClass.concat('--' + size));
 
-      if (bold) customClass.push('text-bold')
+      if (bold) customClass.push('text-bold');
 
-      if(pill)
-        customClass.push('pill')
-      else
-        if (!rounded) customClass.push('no-rounded')
+      if (pill) customClass.push('pill');
+      else if (!rounded) customClass.push('no-rounded');
 
-      if(dot) customClass.push('dot')
+      if (dot) customClass.push('dot');
 
-      return [customClass.join(' ')]
-    })
+      return [customClass.join(' ')];
+    });
 
-    const hasSlot = computed(() => (
-      !!slots.default
-    ))
+    const hasSlot = computed(() => !!slots.default);
 
     return {
       customClass,
       hasSlot,
-      iconEl
-    }
+      iconEl,
+    };
   },
-}
+};
 </script>
 <style lang="scss">
 @import './variant.scss';
@@ -100,7 +98,7 @@ export default {
   &.disabled {
     @apply disabled:opacity-70 pointer-events-none;
   }
-  
+
   &--wrapper {
     @apply h-full flex-grow-0 flex flex-wrap items-center justify-center;
   }

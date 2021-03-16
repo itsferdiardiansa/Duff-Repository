@@ -1,10 +1,10 @@
 <template>
   <main class="app-content">
-    <!-- <div class="app-content--header">
+    <div class="app-content--header" v-if="false">
       <h3>{{ contentTitle }}</h3>
-    </div> -->
+    </div>
 
-    <div class="app-content--breadcrumb">
+    <div class="app-content--breadcrumb" v-if="false">
       <Breadcrumb :data="breadcrumbs" />
     </div>
 
@@ -58,7 +58,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .app-content {
-  @apply text-left bg-gray-100;
+  @apply text-left;
   margin-left: $pageContentPaddingLeft;
   margin-top: $pageContentPaddingTop;
 
@@ -75,7 +75,7 @@ export default {
   }
 
   &--main {
-    @apply h-full flex flex-row flex-wrap px-6;
+    @apply h-full flex flex-row flex-wrap p-6;
   }
 }
 </style>

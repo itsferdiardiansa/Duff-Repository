@@ -313,7 +313,7 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
       class="ss-form-control--wrapper col-offset-3"
     >
       <button
-        class="ss-button ss-button--dark ss-button--base text-bold"
+        class="ss-button ss-button--orange ss-button--base text-bold"
         type="submit"
       >
         <div
@@ -472,7 +472,7 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
       class="ss-form-control--wrapper col-offset-3"
     >
       <button
-        class="ss-button ss-button--dark ss-button--base text-bold"
+        class="ss-button ss-button--orange ss-button--base text-bold"
         disabled=""
         type="submit"
       >
@@ -624,7 +624,7 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
       class="ss-form-control--wrapper col-offset-3"
     >
       <button
-        class="ss-button ss-button--warning ss-button--base text-bold"
+        class="ss-button ss-button--orange ss-button--base text-bold"
         type="submit"
       >
         <div
@@ -799,7 +799,7 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
       class="ss-form-control--wrapper col-offset-3"
     >
       <button
-        class="ss-button ss-button--dark ss-button--base text-bold"
+        class="ss-button ss-button--orange ss-button--base text-bold"
         type="submit"
       >
         <div

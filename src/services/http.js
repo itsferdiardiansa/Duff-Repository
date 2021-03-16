@@ -26,6 +26,7 @@ const transform = {
     return opr;
   },
   responseInterceptors: response => {
+    console.log(response);
     return response;
   },
   responseInterceptorsError: error => {
@@ -65,7 +66,6 @@ const transform = {
           content: 'Internal server error',
         });
       }
-      console.log('http', error, response, code, message);
     } catch (error) {
       throw new Error(error);
     }

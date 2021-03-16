@@ -18,6 +18,7 @@ export default {
         'dark',
         'success',
         'light',
+        'orange',
       ].indexOf(variant);
     },
   },

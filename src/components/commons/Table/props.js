@@ -61,7 +61,7 @@ export default {
   },
   withFilter: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   filterOptions: {
     type: Array,

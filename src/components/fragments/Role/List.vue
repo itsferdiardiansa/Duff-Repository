@@ -28,6 +28,16 @@
       <template #action="{ data }">
         <ActionButton :data="actionButtons" :item="data" />
       </template>
+
+      <template #filter>
+        <Button
+          variant="orange"
+          label="Add Role"
+          :icon="['fa', 'plus']"
+          :bold="true"
+          @click="addRole"
+        />
+      </template>
     </Table>
   </div>
 </template>
@@ -41,6 +51,7 @@ import Table, {
 } from '@common/Table';
 import Badge from '@common/Badge';
 import Modal from '@common/Modal';
+import Button from '@common/Button';
 
 export default {
   components: {
@@ -48,6 +59,7 @@ export default {
     Badge,
     Modal,
     ActionButton,
+    Button,
   },
   setup() {
     const store = useStore();
@@ -60,11 +72,10 @@ export default {
         accessor: 'name',
         width: '20%',
       },
-      { title: 'Previlage', accessor: 'previlage' },
+      { title: 'Privilage', accessor: 'previlage' },
       { title: 'Created at', accessor: 'created_at' },
       { title: 'Updated at', accessor: 'updated_at' },
       {
-        title: 'Action',
         accessor: 'action',
         colSpan: 1,
         align: 'center',
@@ -73,6 +84,7 @@ export default {
 
     const actionButtons = ref([
       {
+        text: 'Edit',
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -83,6 +95,7 @@ export default {
         },
       },
       {
+        text: 'Delete',
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -125,6 +138,10 @@ export default {
       fetchData();
     };
 
+    const addRole = () => {
+      router.push('/role/create');
+    };
+
     onMounted(fetchData);
 
     return {
@@ -138,6 +155,7 @@ export default {
       toggleModal,
       pagination,
       handlePageChange,
+      addRole,
     };
   },
 };

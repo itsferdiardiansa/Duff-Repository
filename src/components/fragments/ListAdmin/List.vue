@@ -24,6 +24,17 @@
       <template #action="{ data }">
         <ActionButton :data="actionButtons" :item="data" />
       </template>
+
+      <template #filter>
+        <Button
+          variant="orange"
+          :icon="['fa', 'plus']"
+          :bold="true"
+          @click="addAdmin"
+        >
+          Add Admin
+        </Button>
+      </template>
     </Table>
   </div>
 </template>
@@ -34,6 +45,7 @@ import { useRouter } from 'vue-router';
 import Table, { ActionButton } from '@common/Table';
 import Badge from '@common/Badge';
 import Modal from '@common/Modal';
+import Button from '@common/Button';
 
 export default {
   components: {
@@ -41,6 +53,7 @@ export default {
     Badge,
     ActionButton,
     Modal,
+    Button,
   },
   setup() {
     const store = useStore();
@@ -58,7 +71,6 @@ export default {
       { title: 'Admin Access', accessor: 'adminAccess' },
       { title: 'Created at', accessor: 'created_at' },
       {
-        title: 'Action',
         accessor: 'action',
         colSpan: 1,
         align: 'center',
@@ -67,6 +79,7 @@ export default {
 
     const actionButtons = ref([
       {
+        text: 'Edit',
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -77,6 +90,7 @@ export default {
         },
       },
       {
+        text: 'Delete',
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -121,6 +135,10 @@ export default {
       fetchData();
     };
 
+    const addAdmin = () => {
+      router.push('/list-admin/create');
+    };
+
     onMounted(fetchData);
 
     return {
@@ -134,6 +152,7 @@ export default {
       toggleModal,
       pagination,
       handlePageChange,
+      addAdmin,
     };
   },
 };

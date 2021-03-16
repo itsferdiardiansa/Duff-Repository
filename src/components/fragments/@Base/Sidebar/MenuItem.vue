@@ -2,7 +2,7 @@
   <div class="flex flex-col">
     <template v-if="!isCollapsed">
       <p
-        class="uppercase text-xs text-gray-400 mb-4 mt-4 tracking-wider px-6"
+        class="uppercase text-xs font-black text-white mb-4 mt-4 tracking-wider px-6"
         v-text="item.title"
         v-if="item.title"
       ></p>
@@ -64,4 +64,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>

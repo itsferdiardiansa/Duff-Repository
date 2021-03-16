@@ -28,7 +28,6 @@ export default {
         body: { ...payload },
       },
     };
-    console.log(state, TokenManager.getToken());
   },
   removeAuth(state) {
     state.user = null;

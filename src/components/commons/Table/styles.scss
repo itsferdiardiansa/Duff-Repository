@@ -25,7 +25,11 @@
 
   &--body {
     &-row {
-      @apply hover:bg-blue-100;
+      @apply hover:bg-primary-light cursor-pointer transition duration-500;
+
+      &:nth-child(2n) {
+        @apply bg-gray-100 hover:bg-primary-light;
+      }
 
       &.selected {
         @apply bg-blue-100;
@@ -33,7 +37,7 @@
     }
 
     &-col {
-      @apply text-gray-600 leading-normal relative py-4 break-all text-center;
+      @apply text-gray-600 leading-normal relative py-3 break-all text-center;
 
       @include fade-in-animation(0.4s);
     }

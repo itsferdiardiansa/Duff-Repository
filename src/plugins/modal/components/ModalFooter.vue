@@ -3,7 +3,8 @@
     <Button
       ref="modalCancelBtnEL"
       label="No"
-      variant="danger"
+      variant="dark"
+      :inverse="true"
       :bold="true"
       :icon="['fa', 'times-circle']"
       @click="handleCancel"
@@ -12,7 +13,7 @@
     <Button
       ref="modalConfirmBtnEl"
       label="Yes"
-      variant="success"
+      variant="dark"
       class="ml-2"
       :bold="true"
       :icon="['fa', 'check-circle']"

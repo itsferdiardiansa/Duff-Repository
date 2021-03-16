@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @apply bg-gray-100;
+  @apply bg-white;
 }
 
 svg,
@@ -25,4 +25,8 @@ i {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.#{$prefixClass}-no-scroll {
+  @apply overflow-hidden h-screen;
 }

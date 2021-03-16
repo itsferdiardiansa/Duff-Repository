@@ -68,8 +68,8 @@
     <FormControl :offset="3">
       <Button
         type="submit"
+        variant="orange"
         :label="isCreate ? 'Create' : 'Update'"
-        :variant="isCreate ? 'dark' : 'warning'"
         :icon="['fa', 'save']"
         :bold="true"
         :isLoading="isFetching"

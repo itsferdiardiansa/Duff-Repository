@@ -39,7 +39,7 @@
   </template>
 </template>
 <script>
-import { computed, defineComponent, ref } from 'vue';
+import { computed, defineComponent, getCurrentInstance, ref } from 'vue';
 import errorComponentDefault from './TableError';
 import emptyComponentDefault from './TableEmpty';
 
@@ -57,6 +57,7 @@ export default defineComponent({
   emits: ['onFailedFetchHandler'],
   setup(props, { emit }) {
     const dataRows = ref([]);
+    const root = getCurrentInstance();
 
     let selectedRows = computed(() => {
       const { selected } = props;
@@ -82,7 +83,7 @@ export default defineComponent({
     };
 
     const getRowClass = id => [
-      'table-content--body-row',
+      `${root.data.prefixClass}-table--body-row`,
       {
         selected: selectedRows.value.ids.includes(id),
       },

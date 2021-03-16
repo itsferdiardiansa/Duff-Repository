@@ -14,6 +14,7 @@
       :onFailedFetchHandler="fetchData"
       :pagination="pagination"
       :onPageChange="handlePageChange"
+      @onSearchCallback="handleSearchCallback"
     >
       <template #banner="{ data }">
         <img :src="data.banner" class="h-10 m-auto" />
@@ -44,6 +45,17 @@
       <template #action="{ data }">
         <ActionButton :data="actionButtons" :item="data" />
       </template>
+
+      <template #filter>
+        <Button
+          variant="orange"
+          :bold="true"
+          :icon="['fa', 'plus']"
+          @click="createHero"
+        >
+          Create Hero
+        </Button>
+      </template>
     </Table>
   </div>
 </template>
@@ -54,12 +66,14 @@ import { useStore } from 'vuex';
 import Table, { ActionButton } from '@common/Table';
 import { ErrorTable, EmptyTable } from '@common/Table';
 import Modal from '@common/Modal';
+import Button from '@common/Button';
 
 export default {
   components: {
     Table,
     ActionButton,
     Modal,
+    Button,
   },
   setup() {
     const store = useStore();
@@ -76,16 +90,16 @@ export default {
       { title: 'Url', accessor: 'url' },
       { title: 'Description', accessor: 'description' },
       {
-        title: 'Action',
         accessor: 'action',
         colSpan: 3,
-        width: '10%',
+        width: '12%',
         align: 'center',
       },
     ]);
 
     const actionButtons = ref([
       {
+        text: 'Edit',
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -99,6 +113,7 @@ export default {
         },
       },
       {
+        text: 'Delete',
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
@@ -147,6 +162,14 @@ export default {
       fetchData();
     };
 
+    const createHero = () => {
+      router.push('/hero/create');
+    };
+
+    const handleSearchCallback = () => {
+      // console.log(params)
+    };
+
     onMounted(fetchData);
 
     return {
@@ -159,6 +182,8 @@ export default {
       actionButtons,
       deleteData,
       handlePageChange,
+      handleSearchCallback,
+      createHero,
     };
   },
 };

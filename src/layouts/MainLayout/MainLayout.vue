@@ -29,6 +29,9 @@ export default {
 <style lang="scss" scoped>
 .app-container {
   &.menu-collapse {
+    .app-header {
+      @apply pl-16;
+    }
     .app-content {
       margin-left: $pageContentCollapsedPaddingLeft;
     }

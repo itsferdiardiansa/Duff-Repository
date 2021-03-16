@@ -37,7 +37,14 @@ export default {
 <style lang="scss" scoped>
 .app-sidebar {
   @apply w-64 z-50 max-h-full relative;
-  @apply md:fixed md:top-0 md:shadow-xl text-left;
+  @apply md:fixed md:top-0 md:shadow-xl text-left text-white;
+  background-color: $bg-blue-10;
+
+  &:hover {
+    .collapse-toggle {
+      @apply block;
+    }
+  }
 
   &.collapsed {
     @apply w-16;

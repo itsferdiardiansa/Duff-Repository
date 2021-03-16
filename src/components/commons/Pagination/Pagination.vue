@@ -1,6 +1,6 @@
 <template>
   <div :class="`${prefixClass}-pagination`" v-if="getPagination.isApplicable">
-    <div :class="`${prefixClass}-pagination--info`">
+    <div :class="`${prefixClass}-pagination--info`" v-if="false">
       <p>
         Showing
         <span v-text="getPagination.info.from"></span>
@@ -26,7 +26,6 @@
         key="nav"
       >
         <font-awesome-icon :icon="['fa', 'chevron-left']" />
-        <label>Previous</label>
       </span>
 
       <template v-for="(page, key) in getPagination.pages" :key="key">
@@ -44,7 +43,6 @@
         type="nav"
         @click="handlePageChange('next')"
       >
-        <label>Next</label>
         <font-awesome-icon :icon="['fa', 'chevron-right']" />
       </span>
     </transition-group>
@@ -109,7 +107,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .#{$prefixClass}-pagination {
-  @apply px-4 py-3 flex items-center justify-between sm:px-6 transition-all duration-500;
+  @apply px-4 py-3 flex items-center justify-center sm:px-6 transition-all duration-500;
 
   &--info {
     p {
@@ -126,16 +124,16 @@ export default {
 
     .page-number {
       @apply w-8 h-8 relative flex justify-center items-center rounded-md text-sm font-medium;
-      @apply border border-transparent hover:border-gray-300 text-gray-500;
+      @apply border border-transparent hover:border-gray-300 text-gray-300;
 
       &.active {
-        @apply bg-primary border-primary text-gray-200 cursor-default;
+        @apply text-orange cursor-default;
       }
     }
 
     .nav-btn {
       @apply w-full h-8 px-2 relative flex justify-center items-center;
-      @apply mx-0 text-sm font-medium text-primary fill-current;
+      @apply mx-0 text-sm font-medium text-orange fill-current;
 
       svg {
         @apply w-2;

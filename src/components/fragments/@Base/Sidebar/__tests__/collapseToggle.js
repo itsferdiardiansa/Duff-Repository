@@ -30,7 +30,7 @@ describe('fragment/Base/Sidebar/CollapseToggle', () => {
       },
     });
 
-    await Component.find('.collapse-toggle').trigger('click');
+    await Component.find('.collapse-toggle--container').trigger('click');
 
     expect(toggleCollapse).toHaveBeenCalled();
     expect(Component.html()).toMatchSnapshot();

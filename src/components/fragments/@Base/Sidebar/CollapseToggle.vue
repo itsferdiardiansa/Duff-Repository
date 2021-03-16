@@ -1,7 +1,9 @@
 <template>
-  <div class="collapse-toggle" @click="handleCollapse">
-    <div class="collapse-toggle--wrapper">
-      <font-awesome-icon :icon="['fa', 'bars']" />
+  <div class="collapse-toggle">
+    <div class="collapse-toggle--container" @click="handleCollapse">
+      <div class="collapse-toggle--wrapper">
+        <font-awesome-icon :icon="['fa', 'bars']" />
+      </div>
     </div>
   </div>
 </template>
@@ -23,14 +25,19 @@ export default {
 </script>
 <style lang="scss" scoped>
 .collapse-toggle {
-  @apply w-10 absolute top-2.5 hover:bg-indigo-900 rounded-full overflow-hidden cursor-pointer;
-  right: -50px;
+  @apply w-auto absolute top-2.5 shadow-2xl hidden;
+  right: -35px;
+  background-color: $bg-blue;
+
+  &--container {
+    @apply w-full rounded-full overflow-hidden cursor-pointer;
+  }
 
   &--wrapper {
-    @apply p-2.5;
+    @apply py-2.5 px-3;
 
     svg {
-      @apply text-gray-200;
+      @apply w-4 text-white inline-block;
     }
   }
 }

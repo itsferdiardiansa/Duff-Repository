@@ -17,21 +17,19 @@ import Modal from './components/Modal';
 import globalSetting from '@plugin/globalSetting';
 import { FontAwesomeIcon } from '@plugin/fontAwesome';
 import Emitter from 'mitt';
-import uuid from '@util/uuid';
 import './components/styles.scss';
 
 const createElement = (instance, app) => {
   const root = document.querySelector('body');
   const div = document.createElement('div');
-  const elementId = `${SATPAM_PREFIX_CLASS}-modal`;
+  const elementClass = `${SATPAM_PREFIX_CLASS}-modal`;
 
-  div.setAttribute('id', elementId);
   div.setAttribute('role', 'modal');
-  div.setAttribute('class', `${SATPAM_PREFIX_CLASS}-modal`);
+  div.setAttribute('class', elementClass);
 
   root.appendChild(div);
 
-  return elementId;
+  return elementClass;
 };
 
 export const ModalPlugin = app => {
@@ -75,9 +73,6 @@ export const ModalPlugin = app => {
 
       modalContext.remove(unref(elm));
     },
-    hide: callback => {
-      emitter.emit('hide-modal');
-    },
     show: (...args) => {
       const {
         modalContext: { emitter },
@@ -85,7 +80,7 @@ export const ModalPlugin = app => {
 
       emitter.emit('show-modal', args);
     },
-    init: async () => {
+    init: () => {
       try {
         instance = createApp(modalContext.renderModal);
 
@@ -100,11 +95,11 @@ export const ModalPlugin = app => {
         instance.component('FontAwesomeIcon', FontAwesomeIcon);
         instance.provide('modalContext', { emitter });
 
-        const elementId = createElement(instance, app);
+        const elementClass = createElement(instance, app);
 
         modalContext.windowScrollable();
 
-        if (elementId) instance.mount(`#${elementId}`);
+        if (elementClass) instance.mount(`.${elementClass}`);
       } catch (error) {
         console.error("We're failed to create modal", error);
       }
@@ -158,8 +153,10 @@ export const ModalPlugin = app => {
           }
         });
 
-        modalContext.emitter.on('hide-modal', () => {
+        modalContext.emitter.on('hide-modal', props => {
           componentName.value = false;
+
+          if (Reflect.has(props, 'afterClose')) props.afterClose();
         });
 
         return {
@@ -170,11 +167,11 @@ export const ModalPlugin = app => {
       },
       renderOverlay() {
         return h('div', {
-          class: 'ss-modal--overlay',
+          class: `${prefixClass}-modal--overlay`,
         });
       },
       render() {
-        const { componentName, modalContext } = this;
+        const { componentName, modalContext, prefixClass } = this;
         let component;
 
         if (componentName) {
@@ -183,7 +180,7 @@ export const ModalPlugin = app => {
 
         return Transition(
           {
-            name: 'ss-modal',
+            name: `${prefixClass}-modal`,
             appear: true,
             duration: 400,
           },
@@ -194,14 +191,17 @@ export const ModalPlugin = app => {
                 : h(
                     'div',
                     {
-                      class: 'ss-modal--container',
+                      class: `${prefixClass}-modal--container`,
                     },
                     [
                       h('div', {
-                        class: 'ss-modal--overlay',
+                        class: `${prefixClass}-modal--overlay`,
                         onClick: () =>
                           componentProps.closeable &&
-                          modalContext.emitter.emit('hide-modal'),
+                          modalContext.emitter.emit(
+                            'hide-modal',
+                            componentProps
+                          ),
                       }),
                       h(component, {
                         ...componentProps,

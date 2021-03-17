@@ -41,7 +41,7 @@ export default {
   setup(props) {
     const router = useRoute();
     const menuItem = ref([]);
-    const sidebarContext = inject('sidebarContext');
+    const appContext = inject('appContext');
 
     const activeLink = computed(() => {
       return router.path;
@@ -52,11 +52,11 @@ export default {
     });
 
     onMounted(() => {
-      // console.log(typeof menuItem.value)
+      console.log(menuItem);
     });
 
     return {
-      isCollapsed: sidebarContext.isCollapsed,
+      isCollapsed: appContext.isCollapsed,
       activeLink,
       filteredOrderId,
       menuItem,

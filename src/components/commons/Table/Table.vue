@@ -41,12 +41,7 @@ export default {
     Pagination,
     TableFilter,
   },
-  emits: [
-    'onSearchCallback',
-    'onSelectedRowCallback',
-    'onFailedFetchHandler',
-    'onPageChange',
-  ],
+  emits: ['onSearch', 'onSelectedRow', 'onFailedFetchHandler', 'onPageChange'],
   props: defaultProps,
   setup(props, { emit }) {
     const getProps = computed(() => ({ ...props }));
@@ -88,7 +83,7 @@ export default {
           return props.items[item];
         });
 
-        emit('onSelectedRowCallback', selectedRows);
+        emit('onSelectedRow', selectedRows);
       }
     );
 

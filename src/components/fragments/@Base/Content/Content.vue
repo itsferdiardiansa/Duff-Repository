@@ -31,7 +31,7 @@ export default {
   },
   setup() {
     const route = useRoute();
-    const { isCollapsed } = inject('sidebarContext');
+    const { isCollapsed } = inject('appContext');
     let onPageError = reactive(route.name === 'Page Not Found');
 
     const contentTitle = computed(() => {

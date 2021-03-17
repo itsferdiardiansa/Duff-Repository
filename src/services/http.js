@@ -9,7 +9,7 @@ const transform = {
 
     if (joinPrefix) config.url = SATPAM_API_PREFIX + config.url;
 
-    return config;
+    return Object.assign(config, options);
   },
   requestInterceptors: config => {
     const token = TokenManager.getToken();
@@ -26,7 +26,6 @@ const transform = {
     return opr;
   },
   responseInterceptors: response => {
-    console.log(response);
     return response;
   },
   responseInterceptorsError: error => {
@@ -76,7 +75,10 @@ const transform = {
 const initHttp = () => {
   return new CAxios({
     timeout: 10000,
-    baseURL: SATPAM_PROXY ? '/' : SATPAM_API_URL,
+    baseURL:
+      SATPAM_PROXY && process.env.NODE_ENV !== 'production'
+        ? '/'
+        : SATPAM_API_URL,
     prefixUrl: SATPAM_API_PREFIX,
     transform,
     requestOptions: {

@@ -40,11 +40,13 @@ export default {
           'dark',
           'success',
           'light',
+          'orange',
         ].indexOf(variant);
       },
     },
     type: String,
   },
+  emits: ['update:modelValue'],
   setup(props, { emit }) {
     const checkboxState = computed(() => {
       let modelValue = [].concat(props.modelValue);
@@ -78,7 +80,7 @@ export default {
       const itemIndex = unref(checkboxState).findIndex(item => item == value);
       let val = [].concat(unref(checkboxState));
 
-      if (checked) val.push(parseInt(event.target.value));
+      if (checked) val.push(event.target.value);
       else val.splice(itemIndex, 1);
 
       emit('update:modelValue', val);
@@ -94,7 +96,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$variants: ('primary', 'danger', 'warning', 'dark', 'success', 'light');
+$variants: (
+  'primary',
+  'danger',
+  'warning',
+  'dark',
+  'success',
+  'light',
+  'orange'
+);
 
 .ck {
   @each $variant in $variants {

@@ -1,10 +1,12 @@
 <template>
   <div class="list">
     <Modal
+      name="delete-confirmation"
       title="Delete confirmation"
-      description="Are you sure you want to delete this item?"
-      :onConfirmFn="deleteData"
-    />
+      content="Are you sure you want to delete this item?"
+    >
+      <template #footer> This is footer template </template>
+    </Modal>
 
     <Table
       :headers="tHeaders"
@@ -14,6 +16,7 @@
       :onFailedFetchHandler="fetchData"
       :pagination="pagination"
       :onPageChange="handlePageChange"
+      @onSearch="handleSearch"
     >
       <template #previlage="{ data }">
         <div class="previlage-col">
@@ -42,6 +45,7 @@
   </div>
 </template>
 <script>
+/* eslint-disable */
 import { computed, onMounted, reactive, ref } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
@@ -50,14 +54,12 @@ import Table, {
   ActionButton,
 } from '@common/Table';
 import Badge from '@common/Badge';
-import Modal from '@common/Modal';
 import Button from '@common/Button';
 
 export default {
   components: {
     Table,
     Badge,
-    Modal,
     ActionButton,
     Button,
   },
@@ -105,15 +107,23 @@ export default {
     ]);
 
     const toggleModal = (e, data) => {
-      self.$modal.show(data);
+      sModal.show('delete-confirmation', {
+        closeable: false,
+        onConfirmFn: params => {
+          console.log(params);
+          deleteData(data);
+          // console.log(params, e, data)
+        },
+      });
     };
 
     const deleteData = ({ hash_id }) => {
-      store.dispatch('role/deleteData', {
-        action: 'form.delete',
-        hash_id,
-        params,
-      });
+      console.log(hash_id);
+      // store.dispatch('role/deleteData', {
+      //   action: 'form.delete',
+      //   hash_id,
+      //   params,
+      // });
     };
 
     const fetchData = () => {
@@ -144,6 +154,10 @@ export default {
 
     onMounted(fetchData);
 
+    const handleSearch = params => {
+      console.log(params);
+    };
+
     return {
       requestStatus,
       filteredData,
@@ -156,6 +170,7 @@ export default {
       pagination,
       handlePageChange,
       addRole,
+      handleSearch,
     };
   },
 };

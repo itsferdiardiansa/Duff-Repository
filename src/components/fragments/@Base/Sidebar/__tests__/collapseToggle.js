@@ -22,7 +22,7 @@ describe('fragment/Base/Sidebar/CollapseToggle', () => {
         stubs: ['router-link'],
         provide: {
           isCollapsed: false,
-          sidebarContext: {
+          appContext: {
             isCollapsed: ref(true),
             toggleCollapseSidebar: toggleCollapse,
           },

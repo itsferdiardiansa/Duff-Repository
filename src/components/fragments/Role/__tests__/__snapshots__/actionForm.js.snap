@@ -188,281 +188,364 @@ exports[`fragment/Role/ActionForm will post data on success and bring up an aler
 `;
 
 exports[`fragment/Role/ActionForm will render and match snapshot 1`] = `
-<form
-  class="ss-form"
+<div
+  data-v-app=""
 >
   
-  <div
-    class="ss-form-control"
+  <pre>
+        
+    <!-- {{
+      JSON.stringify(state.form, null, 2)
+    }} -->
+    
+  
+  </pre>
+  <form
+    class="ss-form"
   >
+    
     <div
-      class="ss-form-control--label"
-    >
-      Role Name
-    </div>
-    <div
-      class="ss-form-control--wrapper"
+      class="ss-form-control"
     >
       <div
-        autofocus=""
-        class="ss-control--input"
+        class="ss-form-control--label"
       >
-        <!--v-if-->
-        <input
-          autocomplete="off"
+        Role Name
+      </div>
+      <div
+        class="ss-form-control--wrapper"
+      >
+        <div
           autofocus=""
-          class="ss-input"
-          placeholder="Role Name"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <!---->
-    </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Privileges
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div>
-        <div
-          class="ss-control--checkbox ck-button ck-orange"
+          class="ss-control--input"
         >
-          
-          
+          <!--v-if-->
+          <input
+            autocomplete="off"
+            autofocus=""
+            class="ss-input"
+            placeholder="Role Name"
+            type="text"
+          />
+          <!--v-if-->
+          <!--v-if-->
         </div>
+        <!---->
       </div>
-      <!---->
     </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <!---->
     <div
-      class="ss-form-control--wrapper col-offset-3"
+      class="ss-form-control"
     >
-      <button
-        class="ss-button ss-button--orange ss-button--base text-bold"
-        type="submit"
+      <div
+        class="ss-form-control--label"
       >
-        <div
-          class="ss-button--wrapper"
-        >
-          
+        Privileges
+      </div>
+      <div
+        class="ss-form-control--wrapper"
+      >
+        <div>
           <div
-            class="ss-button--icon"
-          >
-            <svg
-              class=""
-              viewBox="0 0 448 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          
-          
-          <div
-            class="ss-button--label has-icon"
+            class="ss-control--checkbox ck-button ck-dark grid grid-cols-6 gap-1"
           >
             
-            Create
             
           </div>
-          
         </div>
-      </button>
-      <!---->
+        <!---->
+      </div>
     </div>
-  </div>
+    <div
+      class="ss-form-control"
+    >
+      <!---->
+      <div
+        class="ss-form-control--wrapper col-offset-3"
+      >
+        <button
+          class="ss-button ss-button--orange ss-button--base text-bold"
+          type="submit"
+        >
+          <div
+            class="ss-button--wrapper"
+          >
+            
+            <div
+              class="ss-button--icon"
+            >
+              <svg
+                class=""
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            
+            
+            <div
+              class="ss-button--label has-icon"
+            >
+              
+              Create
+              
+            </div>
+            
+          </div>
+        </button>
+        <!---->
+      </div>
+    </div>
+    
+  </form>
   
-</form>
+</div>
 `;
 
 exports[`fragment/Role/ActionForm will render the spinner during the request process 1`] = `
-<form
-  class="ss-form"
+<div
+  data-v-app=""
 >
   
-  <div
-    class="ss-form-control"
+  <pre>
+        
+    <!-- {{
+      JSON.stringify(state.form, null, 2)
+    }} -->
+    
+  
+  </pre>
+  <form
+    class="ss-form"
   >
+    
     <div
-      class="ss-form-control--label"
-    >
-      Role Name
-    </div>
-    <div
-      class="ss-form-control--wrapper"
+      class="ss-form-control"
     >
       <div
-        autofocus=""
-        class="ss-control--input"
+        class="ss-form-control--label"
       >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          autofocus=""
-          class="ss-input"
-          placeholder="Role Name"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
+        Role Name
       </div>
+      <div
+        class="ss-form-control--wrapper"
+      >
+        <div
+          autofocus=""
+          class="ss-control--input"
+        >
+          <!--v-if-->
+          <input
+            autocomplete="off"
+            autofocus=""
+            class="ss-input"
+            placeholder="Role Name"
+            type="text"
+          />
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <div
+      class="ss-form-control"
+    >
+      <div
+        class="ss-form-control--label"
+      >
+        Privileges
+      </div>
+      <div
+        class="ss-form-control--wrapper"
+      >
+        <div>
+          
+          <button
+            class="ss-button ss-button--orange ss-button--base pill"
+          >
+            <div
+              class="ss-button--wrapper"
+            >
+              
+              <div
+                class="ss-button--icon"
+              >
+                <svg
+                  class=""
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              
+              <!--v-if-->
+            </div>
+          </button>
+          <span
+            class="ml-2"
+          >
+            We failed to load privileges
+          </span>
+          
+        </div>
+        <!---->
+      </div>
+    </div>
+    <div
+      class="ss-form-control"
+    >
       <!---->
-    </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Privileges
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div>
-        
+      <div
+        class="ss-form-control--wrapper col-offset-3"
+      >
         <button
-          class="ss-button ss-button--orange ss-button--base pill"
+          class="ss-button ss-button--orange ss-button--base text-bold"
+          disabled=""
+          type="submit"
         >
           <div
             class="ss-button--wrapper"
           >
             
+            <!--v-if-->
+            
+            
             <div
-              class="ss-button--icon"
+              class="ss-button--spinner"
             >
-              <svg
-                class=""
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="ss-spinner"
+                style="width: 20px; height: 20px;"
               >
-                <path
-                  d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
-                  fill="currentColor"
-                />
-              </svg>
+                <div />
+                <div />
+                <div />
+              </div>
             </div>
             
-            <!--v-if-->
           </div>
         </button>
-        <span
-          class="ml-2"
-        >
-          We failed to load privileges
-        </span>
-        
+        <!---->
       </div>
-      <!---->
     </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <!---->
-    <div
-      class="ss-form-control--wrapper col-offset-3"
-    >
-      <button
-        class="ss-button ss-button--orange ss-button--base text-bold"
-        disabled=""
-        type="submit"
-      >
-        <div
-          class="ss-button--wrapper"
-        >
-          
-          <!--v-if-->
-          
-          
-          <div
-            class="ss-button--spinner"
-          >
-            <div
-              class="ss-spinner"
-              style="width: 20px; height: 20px;"
-            >
-              <div />
-              <div />
-              <div />
-            </div>
-          </div>
-          
-        </div>
-      </button>
-      <!---->
-    </div>
-  </div>
+    
+  </form>
   
-</form>
+</div>
 `;
 
 exports[`fragment/Role/ActionForm will render the text and color for the form update 1`] = `
-<form
-  class="ss-form"
+<div
+  data-v-app=""
 >
   
-  <div
-    class="ss-form-control"
+  <pre>
+        
+    <!-- {{
+      JSON.stringify(state.form, null, 2)
+    }} -->
+    
+  
+  </pre>
+  <form
+    class="ss-form"
   >
+    
     <div
-      class="ss-form-control--label"
-    >
-      Role Name
-    </div>
-    <div
-      class="ss-form-control--wrapper"
+      class="ss-form-control"
     >
       <div
-        autofocus=""
-        class="ss-control--input"
+        class="ss-form-control--label"
       >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          autofocus=""
-          class="ss-input"
-          placeholder="Role Name"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
+        Role Name
       </div>
+      <div
+        class="ss-form-control--wrapper"
+      >
+        <div
+          autofocus=""
+          class="ss-control--input"
+        >
+          <!--v-if-->
+          <input
+            autocomplete="off"
+            autofocus=""
+            class="ss-input"
+            placeholder="Role Name"
+            type="text"
+          />
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <div
+      class="ss-form-control"
+    >
+      <div
+        class="ss-form-control--label"
+      >
+        Privileges
+      </div>
+      <div
+        class="ss-form-control--wrapper"
+      >
+        <div>
+          
+          <button
+            class="ss-button ss-button--orange ss-button--base pill"
+          >
+            <div
+              class="ss-button--wrapper"
+            >
+              
+              <div
+                class="ss-button--icon"
+              >
+                <svg
+                  class=""
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              
+              <!--v-if-->
+            </div>
+          </button>
+          <span
+            class="ml-2"
+          >
+            We failed to load privileges
+          </span>
+          
+        </div>
+        <!---->
+      </div>
+    </div>
+    <div
+      class="ss-form-control"
+    >
       <!---->
-    </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Privileges
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div>
-        
+      <div
+        class="ss-form-control--wrapper col-offset-3"
+      >
         <button
-          class="ss-button ss-button--orange ss-button--base pill"
+          class="ss-button ss-button--orange ss-button--base text-bold"
+          type="submit"
         >
           <div
             class="ss-button--wrapper"
@@ -473,130 +556,148 @@ exports[`fragment/Role/ActionForm will render the text and color for the form up
             >
               <svg
                 class=""
-                viewBox="0 0 512 512"
+                viewBox="0 0 448 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
+                  d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"
                   fill="currentColor"
                 />
               </svg>
             </div>
             
-            <!--v-if-->
+            
+            <div
+              class="ss-button--label has-icon"
+            >
+              
+              Update
+              
+            </div>
+            
           </div>
         </button>
-        <span
-          class="ml-2"
-        >
-          We failed to load privileges
-        </span>
-        
+        <!---->
       </div>
-      <!---->
     </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <!---->
-    <div
-      class="ss-form-control--wrapper col-offset-3"
-    >
-      <button
-        class="ss-button ss-button--orange ss-button--base text-bold"
-        type="submit"
-      >
-        <div
-          class="ss-button--wrapper"
-        >
-          
-          <div
-            class="ss-button--icon"
-          >
-            <svg
-              class=""
-              viewBox="0 0 448 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          
-          
-          <div
-            class="ss-button--label has-icon"
-          >
-            
-            Update
-            
-          </div>
-          
-        </div>
-      </button>
-      <!---->
-    </div>
-  </div>
+    
+  </form>
   
-</form>
+</div>
 `;
 
 exports[`fragment/Role/ActionForm will render with error validation on all fields and match snapshot 1`] = `
-<form
-  class="ss-form"
+<div
+  data-v-app=""
 >
   
-  <div
-    class="ss-form-control has-feedback"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Role Name
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div
-        autofocus=""
-        class="ss-control--input"
-      >
-        <!--v-if-->
-        <input
-          autocomplete="off"
-          autofocus=""
-          class="ss-input"
-          placeholder="Role Name"
-          type="text"
-        />
-        <!--v-if-->
-        <!--v-if-->
-      </div>
-      <div
-        class="ss-control--info slide-top-enter-from slide-top-enter-active"
-      >
-        Role name is required
-      </div>
-    </div>
-  </div>
-  <div
-    class="ss-form-control has-feedback"
-  >
-    <div
-      class="ss-form-control--label"
-    >
-      Privileges
-    </div>
-    <div
-      class="ss-form-control--wrapper"
-    >
-      <div>
+  <pre>
         
+    <!-- {{
+      JSON.stringify(state.form, null, 2)
+    }} -->
+    
+  
+  </pre>
+  <form
+    class="ss-form"
+  >
+    
+    <div
+      class="ss-form-control has-feedback"
+    >
+      <div
+        class="ss-form-control--label"
+      >
+        Role Name
+      </div>
+      <div
+        class="ss-form-control--wrapper"
+      >
+        <div
+          autofocus=""
+          class="ss-control--input"
+        >
+          <!--v-if-->
+          <input
+            autocomplete="off"
+            autofocus=""
+            class="ss-input"
+            placeholder="Role Name"
+            type="text"
+          />
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div
+          class="ss-control--info slide-top-enter-from slide-top-enter-active"
+        >
+          Role name is required
+        </div>
+      </div>
+    </div>
+    <div
+      class="ss-form-control has-feedback"
+    >
+      <div
+        class="ss-form-control--label"
+      >
+        Privileges
+      </div>
+      <div
+        class="ss-form-control--wrapper"
+      >
+        <div>
+          
+          <button
+            class="ss-button ss-button--orange ss-button--base pill"
+          >
+            <div
+              class="ss-button--wrapper"
+            >
+              
+              <div
+                class="ss-button--icon"
+              >
+                <svg
+                  class=""
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              
+              <!--v-if-->
+            </div>
+          </button>
+          <span
+            class="ml-2"
+          >
+            We failed to load privileges
+          </span>
+          
+        </div>
+        <div
+          class="ss-control--info slide-top-enter-from slide-top-enter-active"
+        >
+          Privileges is required
+        </div>
+      </div>
+    </div>
+    <div
+      class="ss-form-control"
+    >
+      <!---->
+      <div
+        class="ss-form-control--wrapper col-offset-3"
+      >
         <button
-          class="ss-button ss-button--orange ss-button--base pill"
+          class="ss-button ss-button--orange ss-button--base text-bold"
+          type="submit"
         >
           <div
             class="ss-button--wrapper"
@@ -607,77 +708,32 @@ exports[`fragment/Role/ActionForm will render with error validation on all field
             >
               <svg
                 class=""
-                viewBox="0 0 512 512"
+                viewBox="0 0 448 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
+                  d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"
                   fill="currentColor"
                 />
               </svg>
             </div>
             
-            <!--v-if-->
+            
+            <div
+              class="ss-button--label has-icon"
+            >
+              
+              Create
+              
+            </div>
+            
           </div>
         </button>
-        <span
-          class="ml-2"
-        >
-          We failed to load privileges
-        </span>
-        
-      </div>
-      <div
-        class="ss-control--info slide-top-enter-from slide-top-enter-active"
-      >
-        Privileges is required
+        <!---->
       </div>
     </div>
-  </div>
-  <div
-    class="ss-form-control"
-  >
-    <!---->
-    <div
-      class="ss-form-control--wrapper col-offset-3"
-    >
-      <button
-        class="ss-button ss-button--orange ss-button--base text-bold"
-        type="submit"
-      >
-        <div
-          class="ss-button--wrapper"
-        >
-          
-          <div
-            class="ss-button--icon"
-          >
-            <svg
-              class=""
-              viewBox="0 0 448 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          
-          
-          <div
-            class="ss-button--label has-icon"
-          >
-            
-            Create
-            
-          </div>
-          
-        </div>
-      </button>
-      <!---->
-    </div>
-  </div>
+    
+  </form>
   
-</form>
+</div>
 `;

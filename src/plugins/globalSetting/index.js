@@ -12,5 +12,6 @@ export default {
   methods: {
     Schema,
     ...utils,
+    range: size => [...Array(size).keys()],
   },
 };

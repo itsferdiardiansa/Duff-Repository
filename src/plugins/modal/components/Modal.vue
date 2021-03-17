@@ -72,12 +72,17 @@ export default {
       type: Function,
       default: () => {},
     },
+    afterClose: {
+      type: Function,
+      default: () => {},
+    },
     closeable: {
       type: Boolean,
       default: true,
     },
   },
-  setup(props, { attrs, slots }) {
+  emits: ['onConfirm', 'onCancel'],
+  setup(props, { attrs, slots, emit }) {
     const modalEl = ref();
     const modalBodyEl = ref();
     const modalFooterEl = ref();
@@ -102,7 +107,7 @@ export default {
 
     const hideModal = () => {
       setTimeout(() => {
-        modalContext.emitter.emit('hide-modal');
+        modalContext.emitter.emit('hide-modal', props);
       }, 100);
     };
 
@@ -120,6 +125,8 @@ export default {
 
     const getFooter = computed(() => {
       const { footer } = props;
+
+      if (slots.footer) return slots.footer;
 
       if (
         typeof footer !== 'boolean' &&
@@ -158,7 +165,7 @@ export default {
       modalFooterEl,
       modalConfirmBtnEl,
       modalCancelBtnEl,
-      // isShow,
+      hideModal,
       handleConfirm,
       handleCancel,
       toggleModal,

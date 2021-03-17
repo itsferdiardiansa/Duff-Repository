@@ -11,10 +11,10 @@
 import { inject } from 'vue';
 export default {
   setup() {
-    const sidebarContext = inject('sidebarContext');
+    const appContext = inject('appContext');
 
     const handleCollapse = () => {
-      sidebarContext.toggleCollapseSidebar();
+      appContext.toggleCollapseSidebar();
     };
 
     return {

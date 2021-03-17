@@ -21,7 +21,7 @@ describe('fragment/Base/Sidebar/AppLogo', () => {
         stubs: ['router-link'],
         provide: {
           isCollapsed: false,
-          sidebarContext: {
+          appContext: {
             isCollapsed: ref(true),
             toggleCollapseSidebar: jest.fn(),
           },
@@ -38,7 +38,7 @@ describe('fragment/Base/Sidebar/AppLogo', () => {
         plugins: [store],
         stubs: ['router-link'],
         provide: {
-          sidebarContext: {
+          appContext: {
             isCollapsed: ref(true),
             toggleCollapseSidebar: jest.fn(),
           },

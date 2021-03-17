@@ -2,7 +2,7 @@
 
 exports[`fragment/Role/List will render and match snapshot 1`] = `
 <div class="list">
-  <!--v-if-->
+  <modal name="delete-confirmation" title="Delete confirmation" content="Are you sure you want to delete this item?"></modal>
   <div class="ss-table-filter">
     <div class="ss-table-filter--top">
       <div class="ss-table-filter--input-form">

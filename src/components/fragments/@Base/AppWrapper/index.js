@@ -50,7 +50,7 @@ const AppWrapper = defineComponent({
       isCollapsed.value = !isCollapsed.value;
     };
 
-    provide('sidebarContext', {
+    provide('appContext', {
       isCollapsed: isCollapsed,
       toggleCollapseSidebar,
     });

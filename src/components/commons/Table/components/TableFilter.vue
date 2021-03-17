@@ -61,7 +61,7 @@ export default {
     const { parent } = getCurrentInstance();
 
     const handleInput = debounce(() => {
-      parent.emit('onSearchCallback', {
+      parent.emit('onSearch', {
         q: keyword.value,
         category: category.value,
       });
@@ -73,7 +73,7 @@ export default {
     });
 
     const handleSubmit = () => {
-      parent.emit('onSearchCallback', {
+      parent.emit('onSearch', {
         q: unref(keyword),
         sortBy: unref(sortBy),
       });

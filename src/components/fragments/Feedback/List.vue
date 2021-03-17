@@ -88,14 +88,11 @@ export default {
         footer: false,
         title: 'Read By',
         content: () => (
-          <div
-            class="grid grid-cols-6 gap-2"
-            style="max-height: 200px;overflow-y: scroll;"
-          >
+          <div class="read-by-col">
             {items.length ? (
               items.map(item => <Badge variant="primary" label={item} />)
             ) : (
-              <span class="italic font-thin text-sm">Empty</span>
+              <span class="empty-label">Empty</span>
             )}
           </div>
         ),
@@ -155,20 +152,21 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .list {
   @apply relative;
 
   .wrapper {
     @apply relative;
   }
-  .read-by-col {
-    @apply flex flex-wrap justify-center;
-    max-width: 200px;
+}
 
-    span {
-      @apply mt-1 mr-1;
-    }
+.read-by-col {
+  @apply grid grid-cols-6 gap-2 overflow-y-scroll;
+  max-height: 200px;
+
+  .empty-label {
+    @apply italic font-thin text-sm;
   }
 }
 </style>

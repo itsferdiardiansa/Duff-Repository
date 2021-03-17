@@ -71,13 +71,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -116,13 +109,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -161,13 +147,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -206,13 +185,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -251,13 +223,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -296,13 +261,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -341,13 +299,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -386,13 +337,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -431,13 +375,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
@@ -476,13 +413,6 @@ exports[`fragment/Feedback/List will render and match snapshot 1`] = `
         </td>
         <td class="ss-table--body-col">
           <div>See</div>
-          <!-- <Modal name="read-by-col">
-          <div class="read-by-col">
-            <template v-for="(item, key) in data.read_by_slice" :key="key">
-              <Badge variant="primary" :label="item" />
-            </template>
-          </div>
-        </Modal> -->
         </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">

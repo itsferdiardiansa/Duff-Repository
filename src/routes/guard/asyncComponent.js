@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 import { nextTick, ref } from 'vue';
+import http from '@service/http';
 
 export default function asyncComponent(router) {
-  router.beforeEach((to, from) => {
+  router.beforeEach(to => {
     let routeComponents = [].concat(to.matched);
 
     to.meta = {
@@ -18,6 +17,8 @@ export default function asyncComponent(router) {
 
     nextTick(() => {
       document.title = `${to.name} - ${SATPAM_APP_TITLE}`;
+
+      http.requestCancel?.cancel('the page has been navigated');
     });
 
     return true;

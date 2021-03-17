@@ -1,4 +1,9 @@
 <template>
+  <pre>
+    <!-- {{
+      JSON.stringify(state.form, null, 2)
+    }} -->
+  </pre>
   <Form ref="formEl" :model="state.form" @submit="handleSubmit">
     <FormControl
       label="Role Name"
@@ -30,8 +35,9 @@
         </template>
         <template v-else>
           <Checkbox
+            class="grid grid-cols-6 gap-1"
             type="button"
-            variant="orange"
+            variant="dark"
             keyname="id"
             :items="privilegesList"
             v-model="state.form.privileges"

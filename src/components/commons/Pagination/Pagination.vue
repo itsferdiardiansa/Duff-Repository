@@ -58,12 +58,15 @@ export default {
   props: {
     current_page: {
       type: Number,
+      default: 1,
     },
     total_page: {
       type: Number,
+      default: 0,
     },
     per_page: {
       type: Number,
+      default: 10,
     },
   },
   setup(props, { emit }) {

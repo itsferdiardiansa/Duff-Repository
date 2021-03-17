@@ -35,7 +35,7 @@ export default {
   setup(props) {
     const router = useRoute();
     const { parent } = getCurrentInstance();
-    const sidebarContext = inject('sidebarContext');
+    const appContext = inject('appContext');
 
     const activeLink = computed(() => {
       return router.path;
@@ -58,7 +58,7 @@ export default {
     });
 
     return {
-      isCollapsed: sidebarContext.isCollapsed,
+      isCollapsed: appContext.isCollapsed,
       activeLink,
       isHasChildren,
       selectMenuItem,

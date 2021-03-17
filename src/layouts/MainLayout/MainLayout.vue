@@ -18,10 +18,10 @@ export default {
     LayoutContent,
   },
   setup() {
-    const sidebarContext = inject('sidebarContext');
+    const appContext = inject('appContext');
 
     return {
-      isCollapsed: sidebarContext.isCollapsed,
+      isCollapsed: appContext.isCollapsed,
     };
   },
 };

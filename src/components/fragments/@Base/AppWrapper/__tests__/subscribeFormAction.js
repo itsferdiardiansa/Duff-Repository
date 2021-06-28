@@ -57,34 +57,4 @@ describe('fragment/AppWrapper/subscribeFormAction', () => {
 
     expect(document.body).toMatchSnapshot();
   });
-
-  it('will display a danger alert when the request fails', async () => {
-    const Component = mount(
-      <AppWrapper>
-        <ActionForm />
-      </AppWrapper>,
-      {
-        global: {
-          plugins: [store],
-        },
-      }
-    );
-
-    mockCreateHero.mockReset();
-    mockCreateHero.mockRejectedValue({
-      message: 'internal.error',
-      result: {},
-    });
-
-    await Component.vm.$store.dispatch('hero/postData', {
-      action: 'form.create',
-    });
-
-    expect(
-      document.body.querySelector(
-        `.${Component.rootVM.prefixClass}-alert--danger`
-      )
-    ).toBeTruthy();
-    expect(document.body).toMatchSnapshot();
-  });
 });

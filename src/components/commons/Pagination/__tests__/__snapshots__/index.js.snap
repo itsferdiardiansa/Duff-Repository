@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`common/Pagination it does not render the next navigation when it is on the last page 1`] = `
+exports[`common/Pagination does not render the next navigation when it is on the last page 1`] = `
 <div
   class="ss-pagination"
 >
@@ -51,7 +51,7 @@ exports[`common/Pagination it does not render the next navigation when it is on 
 </div>
 `;
 
-exports[`common/Pagination it does not render the prev navigation when it is on the first page 1`] = `
+exports[`common/Pagination does not render the prev navigation when it is on the first page 1`] = `
 <div
   class="ss-pagination"
 >

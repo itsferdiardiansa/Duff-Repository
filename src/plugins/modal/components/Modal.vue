@@ -1,7 +1,9 @@
 <template>
-  <!-- <teleport to="#ss-modal"> -->
-  <div :class="`${prefixClass}-modal--body`" ref="modalEl">
-    <div :class="`${prefixClass}-modal--panel`">
+  <div
+    :class="[`${prefixClass}-modal--body`, { 'auto-width': autoWidth }]"
+    ref="modalEl"
+  >
+    <div :class="`${prefixClass}-modal--panel`" v-bind="customPanel">
       <div :class="`${prefixClass}-modal--panel-content`">
         <h3 class="content-header" v-if="title || $slots.header">
           <slot name="header">
@@ -19,19 +21,9 @@
       <component :is="getFooter" />
     </div>
   </div>
-  <!-- </teleport> -->
 </template>
 <script>
-/* eslint-disable */
-import {
-  computed,
-  getCurrentInstance,
-  h,
-  inject,
-  nextTick,
-  onMounted,
-  ref,
-} from 'vue';
+import { computed, getCurrentInstance, h, inject, onMounted, ref } from 'vue';
 import Button from '@common/Button';
 import ModalDefaultFooter from './ModalFooter';
 
@@ -51,6 +43,14 @@ export default {
     content: {
       type: [String, Object, Function],
       default: '',
+    },
+    customPanel: {
+      type: Object,
+      default: () => {},
+    },
+    autoWidth: {
+      type: Boolean,
+      default: false,
     },
     footer: {
       type: [Boolean, Object, Function],
@@ -82,14 +82,14 @@ export default {
     },
   },
   emits: ['onConfirm', 'onCancel'],
-  setup(props, { attrs, slots, emit }) {
+  setup(props, { slots }) {
+    const modalContext = inject('modalContext');
+    const root = getCurrentInstance();
     const modalEl = ref();
     const modalBodyEl = ref();
     const modalFooterEl = ref();
     const modalConfirmBtnEl = ref();
     const modalCancelBtnEl = ref();
-    const modalContext = inject('modalContext');
-    const root = getCurrentInstance();
 
     const handleConfirm = () => {
       toggleModal();
@@ -139,9 +139,7 @@ export default {
     });
 
     const getFooterClass = computed(() => {
-      const {
-        data: { prefixClass },
-      } = getCurrentInstance();
+      const { prefixClass } = root.data;
       const { footerAlign } = props;
       let footerClass = [`${prefixClass}-modal--footer`];
 
@@ -176,4 +174,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" src="./styles.scss" scoped></style>

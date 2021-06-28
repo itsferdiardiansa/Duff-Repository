@@ -57,6 +57,7 @@ export default {
       current_page: 1,
       per_page: 5,
       total_page: 0,
+      last_page: 0,
     }),
   },
   withFilter: {

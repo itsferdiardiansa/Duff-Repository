@@ -193,9 +193,6 @@ exports[`fragment/Partner/List will render and match snapshot 1`] = `
       </tr>
     </tbody>
   </table>
-  <div class="ss-pagination">
-    <!--v-if-->
-    <div class="ss-pagination--page"><span class="page-number active">1</span></div>
-  </div>
+  <!--v-if-->
 </div>
 `;

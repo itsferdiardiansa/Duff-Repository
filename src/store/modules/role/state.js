@@ -7,7 +7,7 @@ export default {
   items: [],
   privileges: {
     isFetching: false,
-    items: [],
+    items: {},
     onError: {
       status: false,
       body: {},

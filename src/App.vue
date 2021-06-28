@@ -5,8 +5,10 @@
 </template>
 <script>
 /* eslint-disable */
-import AppWrapper from '@base/AppWrapper'
-import LoadingComponent from '@fragment/@Base/Loading'
+import { getCurrentInstance } from 'vue';
+import AppWrapper from '@base/AppWrapper';
+import LoadingComponent from '@fragment/@Base/Loading';
+import * as utils from '@util';
 
 export default {
   name: 'AppRoot',
@@ -14,6 +16,10 @@ export default {
     AppWrapper,
     LoadingComponent,
   },
-  setup() {},
-}
+  created() {
+    const root = getCurrentInstance();
+
+    root.appContext.config.globalProperties.$util = utils;
+  },
+};
 </script>

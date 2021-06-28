@@ -68,7 +68,11 @@ export default {
   emits: ['change', 'update:modelValue'],
   props: {
     modelValue: {
+      type: [String, Object],
+    },
+    format: {
       type: String,
+      default: 'files',
     },
   },
   setup(props, { emit }) {
@@ -88,32 +92,96 @@ export default {
     };
 
     const previewImage = () => {
-      sModal.show({
+      SSModal.show({
         footer: false,
+        autoWidth: true,
+        customPanel: {
+          style: {
+            padding: 0,
+          },
+        },
         content: () => (
           <div>
-            <img class="w-full" src={imgSrc.value} alt="image preview" />
+            <img
+              style={{
+                maxWidth: '600px',
+                width: 'auto',
+                height: 'auto',
+                maxHeight: '400px',
+              }}
+              src={imgSrc.value}
+              alt="image preview"
+            />
           </div>
         ),
       });
     };
 
     const handleChange = async e => {
-      convertingImage.value = true;
+      const { format } = props;
+      const files = e.target.files[0];
+
       try {
         const url = await toBase64(e.target.files[0]);
+        const result = format === 'files' ? files : btoa(url);
 
         imgSrc.value = url;
 
-        emit('update:modelValue', btoa(url));
-        emit('change', e, url);
+        emit('update:modelValue', result);
+        emit('change', e, result);
       } catch (error) {
       } finally {
         convertingImage.value = false;
       }
     };
 
-    nextTick(async () => {
+    // const convertToFiles = e => {
+    //   const files = e.target.files[0]
+
+    //   emit('update:modelValue', files);
+    //   emit('change', e, files);
+    // }
+
+    // const convertToBase64 = async e => {
+    //   const { format } = props
+    //   const files = e.target.files[0]
+
+    //   try {
+    //     const url = await toBase64(e.target.files[0]);
+    //     const result = format === 'files' ? files : btoa(url)
+
+    //     imgSrc.value = url;
+
+    //     emit('update:modelValue', result);
+    //     emit('change', e, result);
+    //   } catch (error) {
+    //   } finally {
+    //     convertingImage.value = false;
+    //   }
+    // }
+
+    const getFilenameFromUrl = url => {
+      const pathname = new URL(url).pathname;
+      const index = pathname.lastIndexOf('/');
+
+      return -1 !== index ? pathname.substring(index + 1) : pathname;
+    };
+
+    const createFile = async url => {
+      try {
+        let response = await fetch(url);
+        let data = await response.blob();
+        let metadata = {
+          type: 'image/jpeg',
+        };
+
+        let files = new File([data], getFilenameFromUrl(url), metadata);
+
+        return [files, url];
+      } catch (error) {}
+    };
+
+    const createBlob = async () => {
       const modelValue = props.modelValue;
 
       if (modelValue !== undefined && modelValue.length) {
@@ -124,6 +192,26 @@ export default {
 
           imgSrc.value = url;
           emit('update:modelValue', btoa(url));
+        } catch (error) {
+          onFileError.value = true;
+          emit('update:modelValue', '');
+        } finally {
+          convertingImage.value = false;
+        }
+      }
+    };
+
+    nextTick(async () => {
+      const modelValue = props.modelValue;
+
+      if (modelValue !== undefined && modelValue.length) {
+        convertingImage.value = true;
+
+        try {
+          const [files, url] = await createFile(modelValue);
+
+          imgSrc.value = url;
+          emit('update:modelValue', files);
         } catch (error) {
           onFileError.value = true;
           emit('update:modelValue', '');
@@ -149,13 +237,13 @@ export default {
 <style lang="scss" scoped>
 .#{$prefixClass}-control {
   &--file {
-    @apply w-auto h-auto border border-gray-300 rounded-lg overflow-hidden relative;
+    @apply w-auto h-auto rounded-lg overflow-hidden relative;
     max-width: 200px;
     max-height: 200px;
-    min-height: 100px;
+    min-height: 150px;
 
     &.on-preview {
-      min-height: unset;
+      // min-height: unset;
     }
 
     input {
@@ -169,12 +257,14 @@ export default {
       }
 
       &-preview {
-        @apply w-auto h-auto flex justify-center relative z-10;
+        @apply w-auto h-auto flex justify-center relative z-10 bg-gray-300;
         max-width: 100%;
         max-height: 100%;
+        min-width: 100px;
+        min-height: 150px;
 
         &--img {
-          @apply w-auto h-auto left-0 top-0;
+          @apply absolute w-auto h-auto left-0 top-0 right-0 bottom-0 m-auto;
           max-width: 100%;
           max-height: 100%;
         }

@@ -68,6 +68,10 @@ export default {
       type: Number,
       default: 10,
     },
+    last_page: {
+      type: Number,
+      default: 0,
+    },
   },
   setup(props, { emit }) {
     const getProps = computed(() => ({ ...props }));

@@ -9,7 +9,7 @@ export default {
   },
   getPrivileges: params => {
     return http.request({
-      url: '/role/privileges',
+      url: '/role/privilege',
       params,
     });
   },

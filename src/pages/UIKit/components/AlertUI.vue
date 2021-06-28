@@ -1,12 +1,12 @@
 <template>
   <div class="w-8/12 text-left mt-10">
-    <div class="font-black text-lg mb-4">Alert</div>
+    <div class="font-black text-lg mb-4">Notification</div>
 
     <div ref="codeEl" class="alert-demo">
       <Button
         label="Default"
         :icon="['fa', 'sticky-note']"
-        @click="showAlertDefault"
+        @click="showNotificationDefault"
       />
 
       <Button
@@ -14,7 +14,7 @@
         variant="success"
         class="ml-2"
         :icon="['fa', 'sticky-note']"
-        @click="showAlertSuccess"
+        @click="showNotificationSuccess"
       />
 
       <Button
@@ -22,7 +22,7 @@
         variant="primary"
         class="ml-2"
         :icon="['fa', 'sticky-note']"
-        @click="showAlertPrimary"
+        @click="showNotificationPrimary"
       />
 
       <Button
@@ -30,7 +30,7 @@
         variant="dark"
         class="ml-2"
         :icon="['fa', 'sticky-note']"
-        @click="showAlertDark"
+        @click="showNotificationDark"
       />
 
       <Button
@@ -38,7 +38,7 @@
         variant="warning"
         class="ml-2"
         :icon="['fa', 'sticky-note']"
-        @click="showAlertWarning"
+        @click="showNotificationWarning"
       />
 
       <Button
@@ -46,55 +46,54 @@
         variant="danger"
         class="ml-2"
         :icon="['fa', 'sticky-note']"
-        @click="showAlertDanger"
+        @click="showNotificationDanger"
       />
     </div>
   </div>
 </template>
 <script>
 /* eslint-disable */
-import Alert from '@plugin/alert/components';
+import { ref } from 'vue';
+import Notification from '@plugin/notification/components';
 import Button from '@common/Button';
-import FontAwesomeIcon from '@common/FontAwesome';
-import { computed, ref } from 'vue';
 
 export default {
   components: {
-    Alert,
+    Notification,
     Button,
   },
   beforeCreate() {},
   setup() {
     const codeEl = ref();
 
-    const showAlertDefault = () => {
-      sAlert.show({
+    const showNotificationDefault = () => {
+      SSNotification({
         animation: 'slide-bottom',
         closeable: true,
         content: (
           <div>
-            <marquee>Alert content ...</marquee>
+            <marquee>Notification content ...</marquee>
           </div>
         ),
       });
     };
 
-    const showAlertSuccess = () => {
-      sAlert.show({
+    const showNotificationSuccess = () => {
+      SSNotification({
         variant: 'success',
         animation: 'slide-left',
         title: 'Success',
         content: (
           <div>
             <marquee>Success</marquee>
-            <p>Alert content 2 ...</p>
+            <p>Notification content 2 ...</p>
           </div>
         ),
       });
     };
 
-    const showAlertWarning = () => {
-      sAlert.show({
+    const showNotificationWarning = () => {
+      SSNotification({
         variant: 'warning',
         animation: 'slide-left',
         closeable: true,
@@ -102,56 +101,56 @@ export default {
         title: 'Warning',
         content: <div>You have been warned</div>,
         onClose: () => {
-          console.log('Alert warning has been close');
+          console.log('Notification warning has been close');
         },
       });
     };
 
-    const showAlertDanger = () => {
-      sAlert.show({
+    const showNotificationDanger = () => {
+      SSNotification({
         variant: 'danger',
         animation: 'slide-bottom',
         duration: 5000,
         content: <p>Your session is expired</p>,
         onClose: () => {
-          console.log('Alert warning has been close');
+          console.log('Notification warning has been close');
         },
       });
     };
 
-    const showAlertPrimary = () => {
-      sAlert.show({
+    const showNotificationPrimary = () => {
+      SSNotification({
         variant: 'primary',
         animation: 'slide-left',
         closeable: true,
         duration: 5000,
         content: 'Your session is expired',
         onClose: () => {
-          console.log('Alert warning has been close');
+          console.log('Notification warning has been close');
         },
       });
     };
 
-    const showAlertDark = () => {
-      sAlert.show({
+    const showNotificationDark = () => {
+      SSNotification({
         variant: 'dark',
         animation: 'slide-left',
         duration: 5000,
         content: 'Your session is expired',
         onClose: () => {
-          console.log('Alert warning has been close');
+          console.log('Notification warning has been close');
         },
       });
     };
 
     return {
       codeEl,
-      showAlertDefault,
-      showAlertSuccess,
-      showAlertWarning,
-      showAlertDanger,
-      showAlertPrimary,
-      showAlertDark,
+      showNotificationDefault,
+      showNotificationSuccess,
+      showNotificationWarning,
+      showNotificationDanger,
+      showNotificationPrimary,
+      showNotificationDark,
     };
   },
 };

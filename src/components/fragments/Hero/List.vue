@@ -1,11 +1,5 @@
 <template>
   <div class="list">
-    <Modal
-      title="Delete confirmation"
-      description="Are you sure you want to delete this item?"
-      :onConfirmFn="deleteData"
-    />
-
     <Table
       :headers="tHeaders"
       :items="filteredData"
@@ -20,26 +14,12 @@
         <img :src="data.banner" class="h-10 m-auto" />
       </template>
 
-      <template #url="{ data }">
-        <a :href="data.button_url" target="_blank">{{ data.button_url }}</a>
+      <template #banner_mobile="{ data }">
+        <img :src="data.banner_mobile" class="h-10 m-auto" />
       </template>
 
-      <template #description="{ data }">
-        <div class="flex items-center">
-          <label class="mr-4">Color title: </label>
-          <div
-            :style="{ backgroundColor: data.title_color }"
-            class="w-6 h-6 rounded border-gray-100 border"
-          ></div>
-        </div>
-
-        <div class="flex items-center">
-          <label class="mr-4">Color description: </label>
-          <div
-            :style="{ backgroundColor: data.description_color }"
-            class="w-6 h-6 rounded border-gray-100 border"
-          ></div>
-        </div>
+      <template #url="{ data }">
+        <a :href="data.button_url" target="_blank">{{ data.button_url }}</a>
       </template>
 
       <template #action="{ data }">
@@ -60,25 +40,24 @@
   </div>
 </template>
 <script>
+/* eslint-disable */
 import { computed, onMounted, reactive, ref, unref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import Table, { ActionButton } from '@common/Table';
 import { ErrorTable, EmptyTable } from '@common/Table';
-import Modal from '@common/Modal';
 import Button from '@common/Button';
 
 export default {
   components: {
     Table,
     ActionButton,
-    Modal,
     Button,
   },
   setup() {
     const store = useStore();
     const router = useRouter();
-    const params = reactive({ page: 1, limit: 2 });
+    const params = reactive({ page: 1, limit: 10 });
 
     const tHeaders = ref([
       {
@@ -87,8 +66,8 @@ export default {
         align: 'left',
       },
       { title: 'Banner', accessor: 'banner', width: '10%' },
+      { title: 'Banner Mobile', accessor: 'banner_mobile', width: '10%' },
       { title: 'Url', accessor: 'url' },
-      { title: 'Description', accessor: 'description' },
       {
         accessor: 'action',
         colSpan: 3,
@@ -117,14 +96,14 @@ export default {
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          toggleModal(e, data);
+          SSModal.show({
+            title: 'Delete confirmation',
+            content: 'Are you sure you want to delete this item?',
+            onConfirmFn: () => deleteData(data),
+          });
         },
       },
     ]);
-
-    const toggleModal = (e, data) => {
-      self.$modal.show(data);
-    };
 
     const deleteData = ({ hash_id }) => {
       store.dispatch('hero/deleteData', {

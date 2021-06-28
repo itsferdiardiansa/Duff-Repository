@@ -1,6 +1,8 @@
+/* eslint-disable */
 import CAxios from './axios';
 import errorCode from './vars/errorCode';
 import TokenManager from '@util/token';
+import checkStatus from './checkStatus';
 import router from '@route';
 
 const transform = {
@@ -9,6 +11,8 @@ const transform = {
 
     if (joinPrefix) config.url = SATPAM_API_PREFIX + config.url;
 
+    config.requestOptions = Object.assign({}, config.requestOptions, options);
+
     return Object.assign(config, options);
   },
   requestInterceptors: config => {
@@ -16,6 +20,16 @@ const transform = {
 
     config.headers.Clientkey = SATPAM_API_KEY;
 
+    if (!navigator.onLine) {
+      SSNotification(
+        'warning',
+        'Mohon periksa jaringan internet anda',
+        'warning'
+      );
+      return;
+    }
+
+    // Set toke to Header
     if (token) config.headers.Authorization = 'Bearer ' + token;
 
     return config;
@@ -28,53 +42,51 @@ const transform = {
   responseInterceptors: response => {
     return response;
   },
-  responseInterceptorsError: error => {
-    const { response, code, message } = error || {};
+  responseInterceptorsError: errorResponse => {
+    const {
+      response,
+      code,
+      message,
+      config: { requestOptions },
+    } = errorResponse || {};
 
     try {
-      if (errorCode.includes(code) || Boolean(~message.indexOf('timeout'))) {
-        sAlert.show({
-          variant: 'danger',
-          content: 'Request timeout',
-        });
+      if (Boolean(~message.indexOf('timeout'))) {
+        SSNotification('danger', 'Permintaan melebihi batas waktu');
+        // return
+        throw { timeout: true };
+      } else if (
+        errorCode.includes(code) ||
+        message?.includes('Network Error')
+      ) {
+        SSNotification('danger', 'Tidak dapat terhubung dengan server');
+        // return
+        throw { server: true };
       }
 
-      if (message?.includes('Network Error')) {
-        sAlert.show({
-          variant: 'danger',
-          content: 'Please check you internet connnection',
-        });
-      }
-
-      if ([403, 404].includes(response?.status)) {
+      if ([403].includes(response?.status)) {
         TokenManager.flush();
 
-        sAlert.show({
-          variant: 'danger',
-          content: 'Session expired',
-        });
+        SSNotification('danger', 'Session expired');
 
         setTimeout(() => {
           router.push({ name: 'Login' });
         }, 2000);
       }
 
-      if ([500].includes(response?.status)) {
-        sAlert.show({
-          variant: 'danger',
-          content: 'Internal server error',
-        });
-      }
+      // Check status contains notification when request returns error
+      requestOptions?.errorNotification && checkStatus(response);
     } catch (error) {
-      throw new Error(error);
+      return Promise.reject(Object.assign({}, error, errorResponse));
     }
-    return Promise.reject(error);
+    return Promise.reject(errorResponse);
   },
 };
 
 const initHttp = () => {
   return new CAxios({
-    timeout: 10000,
+    // if the request has reached the timeout limit, it will display an alert
+    timeout: 30000,
     baseURL:
       SATPAM_PROXY && process.env.NODE_ENV !== 'production'
         ? '/'
@@ -83,6 +95,7 @@ const initHttp = () => {
     transform,
     requestOptions: {
       joinPrefix: true,
+      errorNotification: true,
     },
   });
 };

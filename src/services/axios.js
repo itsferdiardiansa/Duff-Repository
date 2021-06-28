@@ -29,6 +29,14 @@ Axios.prototype.setupInstance = function () {
   );
 };
 
+Axios.prototype.createFormData = data => {
+  const formData = new FormData();
+
+  Object.keys(data).forEach(key => formData.append(key, data[key]));
+
+  return formData;
+};
+
 Axios.prototype.requestCancel = null;
 
 Axios.prototype.request = function (config, options) {

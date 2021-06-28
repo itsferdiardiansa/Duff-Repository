@@ -2,7 +2,6 @@
 
 exports[`fragment/Role/List will render and match snapshot 1`] = `
 <div class="list">
-  <modal name="delete-confirmation" title="Delete confirmation" content="Are you sure you want to delete this item?"></modal>
   <div class="ss-table-filter">
     <div class="ss-table-filter--top">
       <div class="ss-table-filter--input-form">
@@ -52,282 +51,49 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
       </tr>
     </thead>
     <tbody class="ss-table--body">
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
       <!--v-if-->
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>1</label></td>
-        <td class="ss-table--body-col">
-          <div>dav create an role has been update</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-26T06:51:08Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-26T08:06:46Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>2</label></td>
-        <td class="ss-table--body-col">
-          <div>new role updated</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-16T05:15:58Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-03-04T04:22:43Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>3</label></td>
-        <td class="ss-table--body-col">
-          <div>new name</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-16T05:02:58Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-16T05:02:58Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>4</label></td>
-        <td class="ss-table--body-col">
-          <div>updated yess</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-15T11:03:01Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-16T05:19:10Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>5</label></td>
-        <td class="ss-table--body-col">
-          <div></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-15T10:56:18Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-15T10:56:18Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>6</label></td>
-        <td class="ss-table--body-col">
-          <div>Make new role</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T08:07:44Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T08:07:44Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>7</label></td>
-        <td class="ss-table--body-col">
-          <div>New top</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T05:37:11Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T05:37:11Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>8</label></td>
-        <td class="ss-table--body-col">
-          <div>New create</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T05:35:56Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T05:35:56Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>9</label></td>
-        <td class="ss-table--body-col">
-          <div>Anyone</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T04:41:04Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T04:41:04Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>10</label></td>
-        <td class="ss-table--body-col">
-          <div>Error everywhere</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="previlage-col"></div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T04:40:34Z</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-10T04:40:34Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
     </tbody>
   </table>
-  <div class="ss-pagination">
-    <!--v-if-->
-    <div class="ss-pagination--page"><span class="page-number active">1</span><span class="page-number">2</span><span class="nav-btn next" type="nav"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span></div>
-  </div>
+  <!--v-if-->
 </div>
 `;

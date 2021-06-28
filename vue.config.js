@@ -1,21 +1,19 @@
-const path = require('path');
 const setupEnv = require('./build/setupEnv');
 const createDevProxy = require('./build/createDevProxy');
+const pathsAlias = require('./config/pathsAlias');
 const globalEnv = setupEnv();
 
-function resolve(dir = '') {
-  return path.resolve(__dirname, 'src', dir);
-}
+const isProduction = process.env.NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 function setup(env) {
-  return {
-    publicPath:
-      process.env.NODE_ENV === 'production'
-        ? process.env.SATPAM_ASSETS_URL
-        : '/',
-    productionSourceMap: false,
-    devServer: createDevProxy(env),
+  const config = {
+    filenameHashing: false,
+    runtimeCompiler: true,
+    assetsDir: 'assets-loket',
+    publicPath: isProduction ? process.env.SATPAM_ASSETS_URL : '/',
     css: {
+      requireModuleExtension: true,
       loaderOptions: {
         scss: {
           additionalData: `
@@ -24,31 +22,33 @@ function setup(env) {
             $prefixClass: ${env.SATPAM_PREFIX_CLASS};
           `,
         },
+        css: {
+          modules: {
+            localIdentName: isProduction
+              ? 'css-[hash:7]'
+              : '[path][name]-[hash:base64:8]',
+          },
+        },
       },
     },
     configureWebpack: {
       resolve: {
-        alias: {
-          vue$: require.resolve('vue/dist/vue.esm-browser.js'),
-          '@': resolve(),
-          '@common': resolve('components/commons'),
-          '@base': resolve('components/fragments/@Base'),
-          '@fragment': resolve('components/fragments'),
-          '@layout': resolve('layouts'),
-          '@mixin': resolve('mixins'),
-          '@directive': resolve('directives'),
-          '@page': resolve('pages'),
-          '@route': resolve('routes'),
-          '@store': resolve('store'),
-          '@lib': resolve('libs'),
-          '@util': resolve('utils'),
-          '@plugin': resolve('plugins'),
-          '@asset': resolve('assets'),
-          '@icon': resolve('assets/icons'),
-          '@style': resolve('styles'),
-          '@service': resolve('services'),
-          '@data': path.resolve(__dirname, '.data'),
-          __mock__: path.resolve(__dirname, '__mocks__'),
+        alias: pathsAlias,
+      },
+      devtool: isDevelopment ? 'source-map' : 'none',
+      performance: {
+        hints: false,
+      },
+      optimization: {
+        runtimeChunk: 'single',
+        splitChunks: {
+          cacheGroups: {
+            fontawesome: {
+              test: /node_modules\/@fortawesome/,
+              name: 'chunk-fontawesome',
+              chunks: 'all',
+            },
+          },
         },
       },
     },
@@ -65,6 +65,11 @@ function setup(env) {
         .loader('vue-svg-inline-loader');
     },
   };
+
+  // it doesn't work when in production mode
+  if (isDevelopment) config.devServer = createDevProxy(env);
+
+  return config;
 }
 
 module.exports = setup(globalEnv);

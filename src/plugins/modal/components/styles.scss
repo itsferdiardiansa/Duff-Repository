@@ -1,11 +1,11 @@
-.#{$prefixClass}-modal {
+.ss-modal {
   &-enter-active {
     opacity: 0;
     transition: all 0.3s;
 
-    .#{$prefixClass}-modal {
+    .ss-modal {
       &--body {
-        animation: #{prefixClass}-zoom-in-top 0.4s;
+        animation: ss-zoom-in-top 0.4s;
       }
     }
   }
@@ -17,16 +17,16 @@
   &-leave-active {
     opacity: 1;
     transition: all 0.3s;
-    .#{$prefixClass}-modal {
+    .ss-modal {
       &--body {
-        animation: #{$prefixClass}-zoom-out-bottom 0.4s;
+        animation: ss-zoom-out-bottom 0.4s;
       }
     }
   }
 
   &-leave-to {
     opacity: 0;
-    .#{$prefixClass}-modal {
+    .ss-modal {
       &--body {
         transform: scale(0);
       }
@@ -44,11 +44,18 @@
   }
 
   &--body {
-    @apply inline-block align-bottom bg-white rounded-md text-left z-50;
+    @apply w-full h-auto md:w-auto inline-block align-bottom bg-white rounded-md text-left z-50;
     @apply overflow-hidden shadow-xl transform transition-all sm:align-middle;
-    min-width: calc(100vw - 70em);
-    max-width: calc(100vw - 40em);
-    max-height: calc(100vh - 30px);
+
+    &.auto-width {
+      min-width: auto;
+    }
+
+    @include screen-md {
+      min-width: calc(100vw - 70em);
+      // max-width: calc(100vw - 40em);
+      max-height: calc(100vh - 30px);
+    }
   }
 
   &--footer {
@@ -67,8 +74,12 @@
     @apply bg-white p-6;
 
     &-content {
-      @apply mt-3 text-center sm:mt-0 sm:text-left overflow-hidden;
-      max-height: calc(100vh - 16rem);
+      @apply text-left sm:mt-0 sm:text-left overflow-hidden;
+      max-height: 100%;
+
+      @include screen-md {
+        max-height: calc(100vh - 16rem);
+      }
 
       .content-header {
         @apply mb-4 text-lg leading-6 font-medium text-gray-900;
@@ -80,7 +91,7 @@
   }
 }
 
-@keyframes #{prefixClass}-zoom-in-top {
+@keyframes ss-zoom-in-top {
   0% {
     transform: translate(0, -30px);
   }
@@ -90,7 +101,7 @@
   }
 }
 
-@keyframes #{$prefixClass}-zoom-out-bottom {
+@keyframes ss-zoom-out-bottom {
   0% {
     transform: translate(0);
   }

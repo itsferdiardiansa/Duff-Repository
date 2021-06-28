@@ -3,27 +3,27 @@ import http from '@service/http';
 export default {
   getList: params => {
     return http.request({
-      url: '/admin/',
+      url: '/administrator/',
       params,
     });
   },
   create: params => {
     return http.request({
-      url: '/admin/',
+      url: '/administrator/',
       method: 'POST',
       data: params,
     });
   },
   update: params => {
     return http.request({
-      url: `/admin/${params.hash_id}`,
+      url: `/administrator/${params.hash_id}`,
       method: 'POST',
       data: params,
     });
   },
   delete: params => {
     return http.request({
-      url: `/admin/${params}`,
+      url: `/administrator/${params}`,
       method: 'DELETE',
       data: {
         name,

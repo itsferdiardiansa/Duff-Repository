@@ -2,7 +2,6 @@
 
 exports[`fragment/Admin/List will render and match snapshot 1`] = `
 <div class="list">
-  <!--v-if-->
   <div class="ss-table-filter">
     <div class="ss-table-filter--top">
       <div class="ss-table-filter--input-form">
@@ -52,76 +51,49 @@ exports[`fragment/Admin/List will render and match snapshot 1`] = `
       </tr>
     </thead>
     <tbody class="ss-table--body">
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
       <!--v-if-->
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>1</label></td>
-        <td class="ss-table--body-col text-left">
-          <div>qa</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>qa@loket.com</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="ss-badge ss-badge--danger ss-badge--xs text-bold">
-            <div class="ss-badge--wrapper">
-              <!--v-if-->
-              <div class="ss-badge--label">inactive</div>
-            </div>
-          </div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2021-02-16T06:18:52Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>2</label></td>
-        <td class="ss-table--body-col text-left">
-          <div>admin</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>gokendriver01@gmail.com</div>
-        </td>
-        <td class="ss-table--body-col">
-          <div class="ss-badge ss-badge--primary ss-badge--xs text-bold">
-            <div class="ss-badge--wrapper">
-              <!--v-if-->
-              <div class="ss-badge--label">active</div>
-            </div>
-          </div>
-        </td>
-        <td class="ss-table--body-col">
-          <div>2018-12-27T20:41:53Z</div>
-        </td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
-      </tr>
     </tbody>
   </table>
-  <div class="ss-pagination">
-    <!--v-if-->
-    <div class="ss-pagination--page"><span class="page-number active">1</span><span class="page-number">2</span><span class="page-number">3</span><span class="page-number">4</span><span class="nav-btn next" type="nav"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span></div>
-  </div>
+  <!--v-if-->
 </div>
 `;

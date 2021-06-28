@@ -27,12 +27,12 @@
     <FormControl
       label="Role"
       :rules="{
-        id_role: [{ required: true, message: 'Role is required' }],
+        role_hash_id: [{ required: true, message: 'Role is required' }],
       }"
     >
       <div class="flex items-center">
         <Button
-          label="Choose Role"
+          :label="state.form.role ? 'Change role' : 'Choose role'"
           variant="dark"
           tabindex="-1"
           type="button"
@@ -90,11 +90,11 @@
           <div class="item">
             <input
               type="radio"
-              :id="item.id"
-              :value="item.id"
-              v-model="state.form.id_role"
+              :id="item.hash_id"
+              :value="item.hash_id"
+              v-model="state.form.role_hash_id"
             />
-            <label :for="item.id" class="ml-2 cursor-pointer">{{
+            <label :for="item.hash_id" class="ml-2 cursor-pointer">{{
               item.name
             }}</label>
           </div>
@@ -111,7 +111,7 @@
 </template>
 <script>
 /* eslint-disable */
-import { computed, onMounted, reactive, ref, unref } from 'vue';
+import { computed, nextTick, onMounted, reactive, ref, unref } from 'vue';
 import { useStore } from 'vuex';
 import Form, {
   FormControl,
@@ -166,7 +166,7 @@ export default {
       form: {
         name: '',
         email: '',
-        id_role: null,
+        role_hash_id: null,
       },
     });
 
@@ -200,7 +200,7 @@ export default {
     const handleSelectRole = () => {
       fetchRole();
 
-      sModal.show('role-list', {
+      SSModal.show('role-list', {
         title: 'Role List',
         footer: false,
         afterClose: () => {
@@ -215,11 +215,12 @@ export default {
       fetchRole();
     };
 
-    onMounted(() => {
+    nextTick(() => {
       const { data, isCreate } = props;
 
       if (data && !isCreate) {
         state.form = data;
+        state.form.role_hash_id = data.role?.hash_id;
       }
     });
 

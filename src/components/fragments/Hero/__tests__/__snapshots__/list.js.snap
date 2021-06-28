@@ -2,7 +2,6 @@
 
 exports[`fragment/Hero/List will render and match snapshot 1`] = `
 <div class="list">
-  <!--v-if-->
   <div class="ss-table-filter">
     <div class="ss-table-filter--top">
       <div class="ss-table-filter--input-form">
@@ -46,8 +45,8 @@ exports[`fragment/Hero/List will render and match snapshot 1`] = `
         </th>
         <th class="" align="left">Title</th>
         <th class="" width="10%">Banner</th>
+        <th class="" width="10%">Banner Mobile</th>
         <th class="">Url</th>
-        <th class="">Description</th>
         <th colspan="3" class="" width="12%" align="center"></th>
       </tr>
     </thead>
@@ -59,15 +58,8 @@ exports[`fragment/Hero/List will render and match snapshot 1`] = `
           <div>Hero title has been updated</div>
         </td>
         <td class="ss-table--body-col"><img src="" class="h-10 m-auto"></td>
+        <td class="ss-table--body-col"><img src="" class="h-10 m-auto"></td>
         <td class="ss-table--body-col"><a href="https://twitch.dev" target="_blank">https://twitch.dev</a></td>
-        <td class="ss-table--body-col">
-          <div class="flex items-center"><label class="mr-4">Color title: </label>
-            <div class="w-6 h-6 rounded border-gray-100 border"></div>
-          </div>
-          <div class="flex items-center"><label class="mr-4">Color description: </label>
-            <div class="w-6 h-6 rounded border-gray-100 border"></div>
-          </div>
-        </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
             <div class="wrapper">
@@ -87,15 +79,8 @@ exports[`fragment/Hero/List will render and match snapshot 1`] = `
           <div>new dev create an hero</div>
         </td>
         <td class="ss-table--body-col"><img src="" class="h-10 m-auto"></td>
+        <td class="ss-table--body-col"><img src="" class="h-10 m-auto"></td>
         <td class="ss-table--body-col"><a href="url" target="_blank">url</a></td>
-        <td class="ss-table--body-col">
-          <div class="flex items-center"><label class="mr-4">Color title: </label>
-            <div class="w-6 h-6 rounded border-gray-100 border"></div>
-          </div>
-          <div class="flex items-center"><label class="mr-4">Color description: </label>
-            <div class="w-6 h-6 rounded border-gray-100 border"></div>
-          </div>
-        </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
             <div class="wrapper">
@@ -115,15 +100,8 @@ exports[`fragment/Hero/List will render and match snapshot 1`] = `
           <div>Dev create an hero for test mobile banner (5) has been created</div>
         </td>
         <td class="ss-table--body-col"><img src="https://loket-development.s3.amazonaws.com/9c0eb73b-1757-472d-91fe-56796d1efca9" class="h-10 m-auto"></td>
+        <td class="ss-table--body-col"><img src="https://loket-development.s3.amazonaws.com/17bc0530-27c5-458f-86ce-b5d486194648" class="h-10 m-auto"></td>
         <td class="ss-table--body-col"><a href="https://google.com" target="_blank">https://google.com</a></td>
-        <td class="ss-table--body-col">
-          <div class="flex items-center"><label class="mr-4">Color title: </label>
-            <div class="w-6 h-6 rounded border-gray-100 border"></div>
-          </div>
-          <div class="flex items-center"><label class="mr-4">Color description: </label>
-            <div class="w-6 h-6 rounded border-gray-100 border"></div>
-          </div>
-        </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
             <div class="wrapper">
@@ -143,15 +121,8 @@ exports[`fragment/Hero/List will render and match snapshot 1`] = `
           <div>First</div>
         </td>
         <td class="ss-table--body-col"><img src="https://loket-development.s3.amazonaws.com/images/temporary/20210215/1613380141_3VWSUv.jpg" class="h-10 m-auto"></td>
+        <td class="ss-table--body-col"><img src="https://loket-development.s3.amazonaws.com/images/temporary/20210215/1613380143_smqGWO.jpg" class="h-10 m-auto"></td>
         <td class="ss-table--body-col"><a href="https://integration-loket-ss.golabs.io/" target="_blank">https://integration-loket-ss.golabs.io/</a></td>
-        <td class="ss-table--body-col">
-          <div class="flex items-center"><label class="mr-4">Color title: </label>
-            <div style="background-color: rgb(0, 0, 0);" class="w-6 h-6 rounded border-gray-100 border"></div>
-          </div>
-          <div class="flex items-center"><label class="mr-4">Color description: </label>
-            <div style="background-color: rgb(0, 0, 0);" class="w-6 h-6 rounded border-gray-100 border"></div>
-          </div>
-        </td>
         <td class="ss-table--body-col text-center">
           <div class="ss-tb--action">
             <div class="wrapper">
@@ -167,9 +138,6 @@ exports[`fragment/Hero/List will render and match snapshot 1`] = `
       </tr>
     </tbody>
   </table>
-  <div class="ss-pagination">
-    <!--v-if-->
-    <div class="ss-pagination--page"><span class="nav-btn prev"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg></span><span class="page-number">1</span><span class="page-number">2</span><span class="page-number active">3</span><span class="page-number">4</span><span class="nav-btn next" type="nav"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span></div>
-  </div>
+  <!--v-if-->
 </div>
 `;

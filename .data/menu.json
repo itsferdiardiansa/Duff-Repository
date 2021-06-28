@@ -30,11 +30,11 @@
       { "name": "Hashtag", "link": "", "icon": ["fa", "hashtag"] },
       { "name": "Loket Ads", "link": "", "icon": ["fa", "list"] },
       { "name": "Announcement", "link": "", "icon": ["fa", "bell"] },
-      { "name": "Partner", "link": "/partner", "icon": ["fa", "users"] },
-      { "name": "Footer", "link": "/footer", "icon": ["fa", "paw"] },
+      { "name": "Partner", "link": "", "icon": ["fa", "users"] },
+      { "name": "Footer", "link": "", "icon": ["fa", "paw"] },
       {
         "name": "Notification",
-        "link": "/notification",
+        "link": "",
         "icon": ["fa", "envelope"]
       }
     ]
@@ -73,9 +73,7 @@
   },
   {
     "title": "Feedback",
-    "lists": [
-      { "name": "Feedback", "link": "/feedback", "icon": ["fa", "list-alt"] }
-    ]
+    "lists": [{ "name": "Feedback", "link": "", "icon": ["fa", "list-alt"] }]
   },
   {
     "title": "User Management",

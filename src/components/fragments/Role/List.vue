@@ -1,13 +1,5 @@
 <template>
   <div class="list">
-    <Modal
-      name="delete-confirmation"
-      title="Delete confirmation"
-      content="Are you sure you want to delete this item?"
-    >
-      <template #footer> This is footer template </template>
-    </Modal>
-
     <Table
       :headers="tHeaders"
       :items="filteredData"
@@ -18,18 +10,27 @@
       :onPageChange="handlePageChange"
       @onSearch="handleSearch"
     >
-      <template #previlage="{ data }">
+      <template #previlage="{ data: { privileges } }">
         <div class="previlage-col">
-          <template v-for="(item, key) in data.previlege" :key="key">
-            <Badge variant="primary" :inverse="true" class="mr-2">
-              {{ item.id_privilege }}
-            </Badge>
-          </template>
+          <Button
+            label="See privilege"
+            size="xs"
+            variant="primary"
+            @click="handlePreviewPrivilages(privileges)"
+          />
         </div>
       </template>
 
       <template #action="{ data }">
         <ActionButton :data="actionButtons" :item="data" />
+      </template>
+
+      <template #created_at="{ data: { created_at } }">
+        {{ $util.formatDateTime(created_at, 'DD MMMM YYYY hh:mm WIB') }}
+      </template>
+
+      <template #updated_at="{ data: { updated_at } }">
+        {{ $util.formatDateTime(updated_at, 'DD MMMM YYYY hh:mm WIB') }}
       </template>
 
       <template #filter>
@@ -66,7 +67,7 @@ export default {
   setup() {
     const store = useStore();
     const router = useRouter();
-    const params = reactive({ page: 1, limit: 5 });
+    const params = reactive({ page: 1, limit: 10 });
 
     const tHeaders = ref([
       {
@@ -101,29 +102,21 @@ export default {
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          toggleModal(e, data);
+          SSModal.show({
+            title: 'Delete confirmation',
+            content: 'Are you sure you want to delete this item?',
+            onConfirmFn: () => deleteData(data),
+          });
         },
       },
     ]);
 
-    const toggleModal = (e, data) => {
-      sModal.show('delete-confirmation', {
-        closeable: false,
-        onConfirmFn: params => {
-          console.log(params);
-          deleteData(data);
-          // console.log(params, e, data)
-        },
-      });
-    };
-
     const deleteData = ({ hash_id }) => {
-      console.log(hash_id);
-      // store.dispatch('role/deleteData', {
-      //   action: 'form.delete',
-      //   hash_id,
-      //   params,
-      // });
+      store.dispatch('role/deleteData', {
+        action: 'form.delete',
+        hash_id,
+        params,
+      });
     };
 
     const fetchData = () => {
@@ -141,6 +134,21 @@ export default {
     const requestStatus = computed(() => {
       return store.getters['role/getRequestStatus'];
     });
+
+    const handlePreviewPrivilages = privileges => {
+      SSModal.show({
+        footer: false,
+        content: () => (
+          <>
+            {privileges.map(item => (
+              <Badge variant="primary" class="mr-2">
+                {item.name}
+              </Badge>
+            ))}
+          </>
+        ),
+      });
+    };
 
     const handlePageChange = pageParams => {
       Object.assign(params, pageParams);
@@ -166,9 +174,9 @@ export default {
       deleteData,
       emptyComponent,
       actionButtons,
-      toggleModal,
       pagination,
       handlePageChange,
+      handlePreviewPrivilages,
       addRole,
       handleSearch,
     };

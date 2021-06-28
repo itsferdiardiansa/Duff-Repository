@@ -17,6 +17,14 @@
         <ActionButton :data="actionButtons" :item="data" />
       </template>
 
+      <template #created_at="{ data: { created_at } }">
+        {{ $util.formatDateTime(created_at, 'DD MMMM YYYY hh:mm WIB') }}
+      </template>
+
+      <template #updated_at="{ data: { updated_at } }">
+        {{ $util.formatDateTime(updated_at, 'DD MMMM YYYY hh:mm WIB') }}
+      </template>
+
       <template #filter>
         <Button
           label="Create Footer"

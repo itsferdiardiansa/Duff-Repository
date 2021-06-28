@@ -77,7 +77,7 @@ export default {
     const router = useRouter();
     const state = reactive({
       email: 'qa@loket.com',
-      password: '5e7248c589c11f71142b2e8a7060672f',
+      password: 'qa@2020',
     });
     const rules = reactive({
       email: [

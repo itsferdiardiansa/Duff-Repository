@@ -1,15 +1,14 @@
-const alert = (content, variant) => sAlert.show({ content, variant });
-
-export default (type, router) => {
+export default (type, payload, router) => {
   switch (type) {
     case 'user/loginSuccess':
-      alert('Welcome aboard', 'success');
+      SSNotification('success', 'Selamat datang');
       break;
     case 'user/loginFailed':
-      alert('Failed to login', 'danger');
+      if (!(responseData?.timeout || responseData?.server))
+        SSNotification('danger', 'Gagal masuk');
       break;
     case 'user/removeAuth':
-      alert('Thank you!', 'success');
+      SSNotification('success', 'Terima kasih!');
 
       router.push('/login');
       break;

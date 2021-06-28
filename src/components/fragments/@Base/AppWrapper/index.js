@@ -28,7 +28,7 @@ const AppWrapper = defineComponent({
     store.subscribe(({ type, payload }, state) => {
       subscribeFormAction(type, payload, router);
 
-      subscribeAuthAction(type, router);
+      subscribeAuthAction(type, payload, router);
     });
 
     // Handle async module load

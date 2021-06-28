@@ -22,7 +22,7 @@ import './components/styles.scss';
 const createElement = (instance, app) => {
   const root = document.querySelector('body');
   const div = document.createElement('div');
-  const elementClass = `${SATPAM_PREFIX_CLASS}-modal`;
+  const elementClass = `ss-modal-root`;
 
   div.setAttribute('role', 'modal');
   div.setAttribute('class', elementClass);
@@ -46,14 +46,14 @@ export const ModalPlugin = app => {
 
   const modalContext = {
     windowScrollable: () => {
-      const className = `${SATPAM_PREFIX_CLASS}-no-scroll`;
+      const className = `ss-no-scroll`;
 
       emitter.on('show-modal', () => {
-        document.body.classList.add(className);
+        document.documentElement.classList.add(className);
       });
 
       emitter.on('hide-modal', () => {
-        document.body.classList.remove(className);
+        document.documentElement.classList.remove(className);
       });
     },
     remove: child => {
@@ -167,11 +167,11 @@ export const ModalPlugin = app => {
       },
       renderOverlay() {
         return h('div', {
-          class: `${prefixClass}-modal--overlay`,
+          class: `ss-modal--overlay`,
         });
       },
       render() {
-        const { componentName, modalContext, prefixClass } = this;
+        const { componentName, modalContext } = this;
         let component;
 
         if (componentName) {
@@ -180,7 +180,7 @@ export const ModalPlugin = app => {
 
         return Transition(
           {
-            name: `${prefixClass}-modal`,
+            name: `ss-modal`,
             appear: true,
             duration: 400,
           },
@@ -191,11 +191,11 @@ export const ModalPlugin = app => {
                 : h(
                     'div',
                     {
-                      class: `${prefixClass}-modal--container`,
+                      class: `ss-modal--container`,
                     },
                     [
                       h('div', {
-                        class: `${prefixClass}-modal--overlay`,
+                        class: `ss-modal--overlay`,
                         onClick: () =>
                           componentProps.closeable &&
                           modalContext.emitter.emit(
@@ -217,7 +217,7 @@ export const ModalPlugin = app => {
 
   modalContext.init();
 
-  window.sModal = modalContext;
+  window.SSModal = modalContext;
 };
 
 export default {

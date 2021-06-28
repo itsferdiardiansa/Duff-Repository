@@ -1,4 +1,7 @@
 <template>
+  <pre>
+    {{ state.form }}
+  </pre>
   <Form ref="formEl" :model="state.form" @submit="handleSubmit">
     <FormControl
       label="Title"
@@ -30,6 +33,14 @@
       />
     </FormControl>
 
+    <FormControl
+      label="Description"
+      :rules="{
+        description: [{ required: true, message: 'Description is required' }],
+      }"
+    >
+      <Textarea name="description" v-model="state.form.description" />
+    </FormControl>
     <FormControl
       label="Banner"
       :rules="{
@@ -106,6 +117,9 @@ export default {
         button_url: '',
         banner: '',
         banner_mobile: '',
+        position: 0,
+        is_active: 0,
+        banner_type: 'image',
       },
     });
 

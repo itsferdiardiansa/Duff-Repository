@@ -3,27 +3,37 @@ import http from '@service/http';
 export default {
   getList: params => {
     return http.request({
-      url: '/thematic-page/',
+      url: '/thematic',
       params,
     });
   },
   create: params => {
+    const formData = http.createFormData(params);
+
     return http.request({
-      url: '/thematic-page/',
+      url: '/thematic',
       method: 'POST',
-      data: params,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+      data: formData,
     });
   },
   update: params => {
+    const formData = http.createFormData(params);
+
     return http.request({
-      url: `/thematic-page/${params.hash_id}`,
+      url: `/thematic/${params.hash_id}`,
       method: 'POST',
-      data: params,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+      data: formData,
     });
   },
   delete: params => {
     return http.request({
-      url: `/thematic-page/${params}`,
+      url: `/thematic/${params}`,
       method: 'DELETE',
       data: {
         name,
@@ -32,7 +42,7 @@ export default {
   },
   detail: params => {
     return http.request({
-      url: `/thematic-page/${params.hash_id}`,
+      url: `/thematic/${params.hash_id}`,
       method: 'GET',
       params: {
         params,
@@ -41,7 +51,7 @@ export default {
   },
   createEvent: params => {
     return http.request({
-      url: `/thematic-page/${params.hash_id}/event`,
+      url: `/thematic/${params.hash_id}/event`,
       method: 'POST',
       data: {
         params,
@@ -50,7 +60,7 @@ export default {
   },
   deleteEvent: params => {
     return http.request({
-      url: `/thematic-page/${params.hash_id}`,
+      url: `/thematic/${params.hash_id}`,
       method: 'DELETE',
       data: {
         params,

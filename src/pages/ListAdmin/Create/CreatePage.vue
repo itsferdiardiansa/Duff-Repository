@@ -33,7 +33,7 @@ export default {
     const handleSubmit = data => {
       store.dispatch('admin/postData', {
         action: 'form.create',
-        redirectUrl: '/admin',
+        redirectUrl: '/list-admin',
         data,
       });
     };

@@ -41,7 +41,13 @@ export default {
     Pagination,
     TableFilter,
   },
-  emits: ['onSearch', 'onSelectedRow', 'onFailedFetchHandler', 'onPageChange'],
+  emits: [
+    'onSearch',
+    'onSelectedRow',
+    'onFailedFetchHandler',
+    'onPageChange',
+    'onSearchCallback',
+  ],
   props: defaultProps,
   setup(props, { emit }) {
     const getProps = computed(() => ({ ...props }));

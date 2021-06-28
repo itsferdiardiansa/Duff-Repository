@@ -28,6 +28,10 @@
         <ActionButton :data="actionButtons" :item="data" />
       </template>
 
+      <template #created_at="{ data: { created_at } }">
+        {{ $util.formatDateTime(created_at, 'DD MMMM YYYY hh:mm WIB') }}
+      </template>
+
       <template #filter>
         <Button
           label="Create Thematic Page"
@@ -39,12 +43,6 @@
       </template>
     </Table>
   </div>
-
-  <Modal
-    title="Delete confirmation"
-    description="Are you sure you want to delete this item?"
-    :onConfirmFn="deleteData"
-  />
 </template>
 <script>
 import { onMounted, computed, ref, unref, reactive } from 'vue';
@@ -53,19 +51,17 @@ import { useStore } from 'vuex';
 import Table, { ActionButton } from '@common/Table';
 import { ErrorTable, EmptyTable } from '@common/Table';
 import Button from '@common/Button';
-import Modal from '@common/Modal';
 
 export default {
   components: {
     Table,
     Button,
-    Modal,
     ActionButton,
   },
   setup() {
     const store = useStore();
     const router = useRouter();
-    const params = reactive({ page: 1, limit: 5 });
+    const params = reactive({ page: 1, limit: 10 });
 
     const tHeaders = ref([
       { title: 'Banner', accessor: 'header_image', width: '10%' },
@@ -104,7 +100,11 @@ export default {
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          toggleModal(e, data);
+          SSModal.show({
+            title: 'Delete confirmation',
+            content: 'Are you sure you want to delete this item?',
+            onConfirmFn: () => deleteData(data),
+          });
         },
       },
     ]);
@@ -116,10 +116,6 @@ export default {
     const pagination = computed(() => {
       return store.getters['thematicPage/getPagination'];
     });
-
-    const toggleModal = (e, data) => {
-      self.$modal.show(data);
-    };
 
     const deleteData = ({ hash_id }) => {
       store.dispatch('thematicPage/deleteData', {

@@ -1,24 +1,35 @@
+/* eslint-disable */
 import http from '@service/http';
 
 export default {
   getList: params => {
     return http.request({
-      url: '/hero/',
+      url: '/hero',
       params,
     });
   },
   create: params => {
+    const formData = http.createFormData(params);
+
     return http.request({
-      url: '/hero/',
+      url: '/hero',
       method: 'POST',
-      data: params,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+      data: formData,
     });
   },
   update: params => {
+    const formData = http.createFormData(params);
+
     return http.request({
       url: `/hero/${params.hash_id}`,
       method: 'POST',
-      data: params,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+      data: formData,
     });
   },
   delete: params => {

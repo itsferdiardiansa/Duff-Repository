@@ -1,4 +1,7 @@
 <template>
+  <pre>
+    {{ JSON.stringify(state.form, null, 2) }}
+  </pre>
   <Form ref="formEl" :model="state.form" @submit="handleSubmit">
     <Section title="Thematic Content">
       <template #content>

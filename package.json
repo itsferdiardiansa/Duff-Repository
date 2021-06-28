@@ -9,7 +9,7 @@
     "test:CI": "CI=true npm run test -- --env=jsdom",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage --silent",
-    "test:coverage:CI": "npm run test:CI -- --coverage --silent",
+    "test:coverage:CI": "CI=true npm run test:coverage",
     "lint": "vue-cli-service lint",
     "lint:watch": "npm run lint -- --watch"
   },
@@ -72,7 +72,8 @@
     "vue-color-picker-board": "^1.1.1",
     "vue-jest": "^5.0.0-0",
     "vue-svg-inline-loader": "^2.1.2",
-    "vuex-mock-store": "0.0.8"
+    "vuex-mock-store": "0.0.8",
+    "webpack-assets-manifest": "^4.0.6"
   },
   "browserslist": [
     "> 1%",

@@ -53,7 +53,7 @@ export default {
     });
 
     const tryLogout = async () => {
-      sModal.show({
+      SSModal.show({
         title: 'Confirmation',
         content: 'Are you sure to log out?',
         onConfirmFn: () => {

@@ -1,8 +1,6 @@
 <template>
   <pre>
-    <!-- {{
-      JSON.stringify(state.form, null, 2)
-    }} -->
+    {{ JSON.stringify(state.form, null, 2) }}
   </pre>
   <Form ref="formEl" :model="state.form" @submit="handleSubmit">
     <FormControl
@@ -125,11 +123,13 @@ export default {
 
     const privilegesList = computed(() => {
       const privileges = store.getters['role/getPrivilegesItems'];
+      let filtered = [];
 
-      const filtered = Object.keys(privileges).map(key => ({
-        id: key,
-        label: privileges[key],
-      }));
+      if (Reflect.has(privileges, 'data'))
+        filtered = Object.keys(privileges.data).map(key => ({
+          id: key,
+          label: privileges.data[key],
+        }));
 
       return filtered;
     });
@@ -153,12 +153,12 @@ export default {
       store.dispatch('role/fetchPrivileges');
     };
 
-    onMounted(() => {
+    nextTick(() => {
       const { data, isCreate } = props;
 
       if (data && !isCreate) {
         state.form = data;
-        state.form.privileges = [];
+        state.form.privileges = data.privileges.map(item => item.id_privilege);
       }
 
       fetchPrivileges();

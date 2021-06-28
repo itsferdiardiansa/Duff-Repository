@@ -1,5 +1,4 @@
 const setupEnv = (prefix = 'SATPAM_') => {
-  const envFiles = ['.env'];
   const arrayPattern = /[^{}]*(?=\})/g;
   const env = Object.assign({}, process.env);
   let variables = {},
@@ -12,7 +11,7 @@ const setupEnv = (prefix = 'SATPAM_') => {
 
       if (typeof value !== 'boolean')
         value =
-          key === 'SATPAM_APP_PORT'
+          key === prefix.concat('APP_PORT')
             ? parseInt(env[key])
             : env[key].match(arrayPattern)
             ? JSON.parse(env[key])

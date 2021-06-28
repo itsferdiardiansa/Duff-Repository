@@ -84,7 +84,7 @@ export default {
     const openReadBy = data => {
       const items = JSON.parse(data);
 
-      sModal.show({
+      SSModal.show({
         footer: false,
         title: 'Read By',
         content: () => (

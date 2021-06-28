@@ -2,7 +2,7 @@ import { RouterLink } from 'vue-router';
 import { config } from '@vue/test-utils';
 import { FontAwesomeIcon } from '@plugin/fontAwesome';
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
-import { AlertPlugin } from '@plugin/alert';
+import { NotificationPlugin } from '@plugin/notification';
 import globalSetting from '@plugin/globalSetting';
 import registerMockModule from './setupMockModule';
 import setupEnvVars from './setupEnvVars';
@@ -23,4 +23,4 @@ config.global = {
   mixins: [globalSetting],
 };
 
-config.plugins.VueWrapper.install(AlertPlugin);
+config.plugins.VueWrapper.install(NotificationPlugin);

@@ -1,11 +1,5 @@
 <template>
   <div class="list">
-    <Modal
-      title="Delete confirmation"
-      description="Are you sure you want to delete this item?"
-      :onConfirmFn="deleteData"
-    />
-
     <Table
       :headers="tHeaders"
       :items="filteredData"
@@ -19,6 +13,10 @@
         <Badge :variant="getVariant(is_super_admin)">
           {{ is_super_admin ? 'inactive' : 'active' }}
         </Badge>
+      </template>
+
+      <template #created_at="{ data: { created_at } }">
+        {{ $util.formatDateTime(created_at, 'DD MMMM YYYY hh:mm WIB') }}
       </template>
 
       <template #action="{ data }">
@@ -44,7 +42,6 @@ import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import Table, { ActionButton } from '@common/Table';
 import Badge from '@common/Badge';
-import Modal from '@common/Modal';
 import Button from '@common/Button';
 
 export default {
@@ -52,13 +49,12 @@ export default {
     Table,
     Badge,
     ActionButton,
-    Modal,
     Button,
   },
   setup() {
     const store = useStore();
     const router = useRouter();
-    const params = reactive({ page: 1, limit: 2 });
+    const params = reactive({ page: 1, limit: 10 });
 
     let tHeaders = ref([
       {
@@ -94,14 +90,14 @@ export default {
         icon: ['fa', 'trash'],
         variant: 'dark',
         onClickFn: (e, data) => {
-          toggleModal(e, data);
+          SSModal.show({
+            title: 'Delete confirmation',
+            content: 'Are you sure you want to delete this item?',
+            onConfirmFn: () => deleteData(data),
+          });
         },
       },
     ]);
-
-    const toggleModal = (e, data) => {
-      self.$modal.show(data);
-    };
 
     const deleteData = ({ hash_id }) => {
       store.dispatch('admin/deleteData', {
@@ -149,7 +145,6 @@ export default {
       fetchData,
       deleteData,
       actionButtons,
-      toggleModal,
       pagination,
       handlePageChange,
       addAdmin,

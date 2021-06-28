@@ -54,13 +54,13 @@ export default {
     const message = ref('Click to close modal ...');
 
     const showModalDefault = () => {
-      sModal.show();
+      SSModal.show();
     };
 
     // Modal will be close after
     const showModalDelete = () => {
       const loading = ref(false);
-      sModal.show('delete-confirmation', {
+      SSModal.show('delete-confirmation', {
         footer: ({ hideModal }) => {
           const handleClick = async () => {
             loading.value = true;
@@ -96,7 +96,7 @@ export default {
     };
 
     const showModalWarning = data => {
-      sModal.show({
+      SSModal.show({
         title: 'JSX Content',
         footer: false,
         content: () => (

@@ -5,9 +5,9 @@ export default (type, payload, router) => {
     )
   ) {
     const variant = type.match(/fetchFailed/g) ? 'danger' : 'success';
-    const content = payload?.responseData?.message;
+    const content = payload?.responseData?.result?.message;
 
-    sAlert.show({ variant, content });
+    !type.match(/fetchFailed/g) && SSNotification({ variant, content });
 
     if (
       ['form.create', 'form.update'].includes(payload?.requestData?.action) &&

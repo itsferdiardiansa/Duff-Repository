@@ -12,6 +12,7 @@ export default {
       },
       {
         errorNotification: false,
+        timeout: 60000,
       }
     );
   },

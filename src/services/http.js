@@ -47,13 +47,16 @@ const transform = {
     } = errorResponse || {};
 
     try {
-      if (Boolean(~message.indexOf('timeout'))) {
+      if (
+        Boolean(~message.indexOf('timeout')) &&
+        requestOptions?.errorNotification
+      ) {
         SSNotification('danger', 'Permintaan melebihi batas waktu');
         // return
         throw { timeout: true };
       } else if (
-        errorCode.includes(code) ||
-        message?.includes('Network Error')
+        (errorCode.includes(code) || message?.includes('Network Error')) &&
+        requestOptions?.errorNotification
       ) {
         SSNotification('danger', 'Tidak dapat terhubung dengan server');
         // return

@@ -12,7 +12,7 @@
       </div>
 
       <div class="se-search-content">
-        <template v-if="events.onError">
+        <template v-if="events.onError && !events.isFetching">
           <div class="se-search-failed">
             <Button
               variant="dark"
@@ -23,7 +23,7 @@
             <span class="ml-2">We failed to load your events</span>
           </div>
         </template>
-        <template v-else-if="events.isFetching">
+        <template v-if="events.isFetching">
           <div class="se-search-loader">
             <template v-for="item in range(6)" :key="item">
               <div class="se-loader-item">
@@ -39,7 +39,7 @@
             </template>
           </div>
         </template>
-        <template v-else-if="!events.isFetching || !events.onError">
+        <template v-else-if="!events.isFetching && !events.onError">
           <div class="se-result">
             <template v-if="events.items.length">
               <template v-for="(item, key) in events.items" :key="key">
@@ -87,6 +87,7 @@ import Button from '@common/Button';
 import Spinner from '@common/Loader/Spinner';
 import { Rect } from '@common/Skeleton';
 import EventService from '@service/api/event';
+import http from '@service/http';
 import { debounce, truncateText, range } from '@util';
 
 export default {
@@ -108,14 +109,14 @@ export default {
     const keyword = ref('');
     const selectedId = ref(-1);
     const events = reactive({
-      isFetching: false,
+      isFetching: 0,
       onError: false,
       items: [],
     });
 
     const fetchEvents = async () => {
       Object.assign(events, {
-        isFetching: true,
+        isFetching: ++events.isFetching,
         onError: false,
       });
 
@@ -124,14 +125,14 @@ export default {
         const collections = await response.data;
 
         Object.assign(events, {
-          isFetching: false,
           items: collections?.result?.data?.result?.details,
         });
       } catch (error) {
         Object.assign(events, {
-          isFetching: false,
           onError: true,
         });
+      } finally {
+        events.isFetching = --events.isFetching;
       }
     };
 

@@ -150,10 +150,6 @@ export default {
       });
     };
 
-    const handleChange = e => {
-      console.log(e.target);
-    };
-
     const fetchPrivileges = () => {
       store.dispatch('role/fetchPrivileges');
     };
@@ -166,10 +162,14 @@ export default {
           type === 'role/fetchPrivilegesSuccess' &&
           typeof data === 'object'
         ) {
-          if (Reflect.has(data, 'privileges'))
-            state.form.privileges = JSON.parse(data.privileges)?.map(
-              item => item?.id_privilege || []
-            );
+          if (Reflect.has(data, 'privileges')) {
+            state.form.privileges =
+              typeof data.privileges === 'string'
+                ? JSON.parse(data.privileges)?.map(
+                    item => item?.id_privilege || []
+                  )
+                : data.privileges;
+          }
         }
       });
     };
@@ -182,8 +182,8 @@ export default {
       }
     });
 
-    onMounted(async () => {
-      await fetchPrivileges();
+    onMounted(() => {
+      fetchPrivileges();
 
       watchPrivilegesAction();
     });
@@ -195,7 +195,6 @@ export default {
       privilegesList,
       privilegesRequestStatus,
       handleSubmit,
-      handleChange,
     };
   },
 };

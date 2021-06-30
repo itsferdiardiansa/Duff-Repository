@@ -51,9 +51,7 @@ export default {
       return props.orderId;
     });
 
-    onMounted(() => {
-      console.log(menuItem);
-    });
+    onMounted(() => {});
 
     return {
       isCollapsed: appContext.isCollapsed,

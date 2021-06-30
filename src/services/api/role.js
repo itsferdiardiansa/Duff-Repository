@@ -3,7 +3,7 @@ import http from '@service/http';
 export default {
   getList: params => {
     return http.request({
-      url: '/role/',
+      url: '/role',
       params,
     });
   },
@@ -15,7 +15,7 @@ export default {
   },
   create: params => {
     return http.request({
-      url: '/role/',
+      url: '/role',
       method: 'POST',
       data: params,
     });

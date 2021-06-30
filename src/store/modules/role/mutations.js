@@ -4,7 +4,15 @@ const mutations = {
     state.onError = false;
   },
   fetchSuccess(state, payload) {
-    const { data, ...pagination } = payload?.responseData.result;
+    let { data, ...pagination } = payload?.responseData.result;
+
+    // feel strange with the behavior of vuex
+    if (typeof data === 'object' && data !== undefined)
+      data = data?.map(item => ({
+        ...item,
+        privileges: JSON.stringify(item.privileges),
+      }));
+
     state.isFetching = false;
     state.items = data;
     state.pagination = pagination;

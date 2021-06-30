@@ -4,6 +4,7 @@ const getters = {
     error: state.onError,
   }),
   getItems: state => state.items,
+  getItemById: state => id => state.items.find(item => item.id === id),
   getFormData: state => state.form,
   getPagination: state => state.pagination,
   getPrivilegesItems: state => state.privileges.items,

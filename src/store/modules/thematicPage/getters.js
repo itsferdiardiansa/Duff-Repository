@@ -5,6 +5,7 @@ const getters = {
   }),
   getItems: state => state.items,
   getPagination: state => state.pagination,
+  getPosition: state => state.position,
 };
 
 export default getters;

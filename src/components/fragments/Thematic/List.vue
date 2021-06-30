@@ -45,6 +45,7 @@
   </div>
 </template>
 <script>
+/* eslint-disable */
 import { onMounted, computed, ref, unref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
@@ -104,6 +105,19 @@ export default {
             title: 'Delete confirmation',
             content: 'Are you sure you want to delete this item?',
             onConfirmFn: () => deleteData(data),
+          });
+        },
+      },
+      {
+        text: 'Add Event',
+        icon: ['fa', 'plus'],
+        variant: 'dark',
+        onClickFn: (e, data) => {
+          router.push({
+            name: 'Event Thematic Page',
+            params: {
+              thematicHashId: data.hash_id,
+            },
           });
         },
       },

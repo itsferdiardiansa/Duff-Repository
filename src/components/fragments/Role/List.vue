@@ -91,6 +91,8 @@ export default {
         icon: ['fa', 'pencil-alt'],
         variant: 'dark',
         onClickFn: (e, data) => {
+          const item = store.getters['role/getItemById'](data.id);
+
           router.push({
             name: 'Update Role',
             params: { data: JSON.stringify(data) },
@@ -136,16 +138,28 @@ export default {
     });
 
     const handlePreviewPrivilages = privileges => {
+      const filteredPrivileges = JSON.parse(privileges);
+
       SSModal.show({
         footer: false,
         content: () => (
-          <>
-            {privileges.map(item => (
-              <Badge variant="primary" class="mr-2">
-                {item.name}
-              </Badge>
-            ))}
-          </>
+          <div
+            style={{
+              maxWidth: '500px',
+            }}
+          >
+            {filteredPrivileges.length ? (
+              filteredPrivileges.map(item => (
+                <Badge variant="primary" class="mr-2">
+                  {item.name}
+                </Badge>
+              ))
+            ) : (
+              <label className="w-full block text-center text-sm italic">
+                Empty privileges...{' '}
+              </label>
+            )}
+          </div>
         ),
       });
     };

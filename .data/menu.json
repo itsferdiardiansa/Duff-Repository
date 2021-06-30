@@ -63,7 +63,7 @@
         "link": "",
         "icon": ["fa", "exclamation-circle"]
       },
-      { "name": "Pivot Bank", "link": "", "icon": ["fa", "folder"] },
+      { "name": "Pivot Bank", "link": "/pivot-bank", "icon": ["fa", "folder"] },
       { "name": "Failed Withdraw", "link": "", "icon": ["fa", "file-csv"] }
     ]
   },

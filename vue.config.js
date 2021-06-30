@@ -8,7 +8,6 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 
 function setup(env) {
   const config = {
-    filenameHashing: false,
     runtimeCompiler: true,
     assetsDir: 'assets-loket',
     publicPath: isProduction ? process.env.SATPAM_ASSETS_URL : '/',

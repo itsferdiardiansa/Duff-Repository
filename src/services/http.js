@@ -21,11 +21,7 @@ const transform = {
     config.headers.Clientkey = SATPAM_API_KEY;
 
     if (!navigator.onLine) {
-      SSNotification(
-        'warning',
-        'Mohon periksa jaringan internet anda',
-        'warning'
-      );
+      SSNotification('warning', 'Mohon periksa jaringan internet anda');
       return;
     }
 
@@ -72,6 +68,8 @@ const transform = {
         setTimeout(() => {
           router.push({ name: 'Login' });
         }, 2000);
+
+        return;
       }
 
       // Check status contains notification when request returns error

@@ -63,6 +63,68 @@ const actions = {
       dispatch('fetchData', payload.params);
     }
   },
+  async fetchEventListData({ commit }, payload) {
+    commit('fetchStart');
+
+    try {
+      const response = await Thematic.getEventList(payload);
+      const collections = await response.data;
+
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
+    }
+  },
+  async postEventData({ commit }, payload) {
+    commit('fetchStart');
+
+    try {
+      const response = await Thematic.createEvent(payload);
+      const collections = await response.data;
+
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
+    }
+  },
+  async updateEventData({ commit }, payload) {
+    commit('fetchStart');
+
+    try {
+      const response = await Thematic.updateEvent(payload);
+      const collections = await response.data;
+
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
+    }
+  },
+  async deleteEventData({ commit, dispatch }, payload) {
+    commit('fetchStart');
+
+    try {
+      const response = await Thematic.deleteEvent(payload);
+      const collections = await response.data;
+
+      commit('fetchSuccess', {
+        requestData: payload,
+        responseData: collections,
+      });
+    } catch (error) {
+      commit('fetchFailed', { requestData: payload, responseData: error });
+    } finally {
+      dispatch('fetchEventListData', payload);
+    }
+  },
 };
 
 export default actions;

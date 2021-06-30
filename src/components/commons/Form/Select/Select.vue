@@ -66,9 +66,17 @@ export default {
       type: String,
       default: 'value',
     },
+    labelKeyname: {
+      type: String,
+      default: 'label',
+    },
     placeholder: {
       type: String,
       default: 'Please select',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props, { emit }) {
@@ -79,6 +87,10 @@ export default {
     const selectedValue = ref();
 
     const toggleDropdown = e => {
+      const { keyname, disabled } = props;
+
+      if (disabled) return false;
+
       if (!isCollapsed.value && e?.type === 'blur') return false;
 
       isCollapsed.value = !isCollapsed.value;
@@ -90,12 +102,13 @@ export default {
     });
 
     const getLabel = (item, key) => {
-      const { keyname } = props;
+      const { keyname, labelKeyname } = props;
 
-      return item?.label || item;
+      return item[labelKeyname] || item;
     };
 
     const getSelectClass = computed(() => {
+      const { disabled } = props;
       const {
         data: { prefixClass },
       } = getCurrentInstance();
@@ -104,12 +117,13 @@ export default {
         `${prefixClass}-select`,
         {
           [`${prefixClass}-select--collapsed`]: unref(isCollapsed),
+          [`${prefixClass}-select--disabled`]: unref(disabled),
         },
       ];
     });
 
     const selectedItem = computed(() => {
-      const { items, modelValue, keyname, placeholder } = props;
+      const { items, modelValue, keyname, placeholder, labelKeyname } = props;
 
       isCollapsed.value = false;
 
@@ -119,7 +133,11 @@ export default {
         return value == selectedValue.value;
       });
 
-      return keyname === undefined ? findLabel : findLabel?.label;
+      return keyname === undefined
+        ? findLabel
+        : findLabel === undefined
+        ? placeholder
+        : findLabel[labelKeyname];
     });
 
     const getSelectedLabel = computed(() => {
@@ -131,7 +149,9 @@ export default {
     });
 
     const selectItem = item => {
-      const { keyname } = props;
+      const { keyname, disabled } = props;
+
+      if (disabled) return false;
 
       if (typeof item === 'object' && keyname === undefined) {
         console.warn('Please set keyname as prop => :keyname="value"');
@@ -236,6 +256,12 @@ export default {
 <style lang="scss" scoped>
 .#{$prefixClass}-select {
   @apply mt-1 relative;
+
+  &--disabled {
+    .#{$prefixClass}-select--button {
+      @apply bg-gray-200 cursor-not-allowed pointer-events-none;
+    }
+  }
 
   &--button {
     @apply relative w-full bg-white border border-gray-300 rounded-md;

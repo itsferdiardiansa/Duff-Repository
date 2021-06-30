@@ -1,3 +1,4 @@
+/* eslint-disable */
 import http from '@service/http';
 
 export default {
@@ -40,31 +41,33 @@ export default {
       },
     });
   },
-  detail: params => {
+  getEventList: ({ thematicHashId, ...otherParams }) => {
     return http.request({
-      url: `/thematic/${params.hash_id}`,
+      url: `/thematic/event/${thematicHashId}`,
       method: 'GET',
       params: {
-        params,
+        ...otherParams,
       },
     });
   },
-  createEvent: params => {
+  createEvent: ({ thematicHashId, data }) => {
     return http.request({
-      url: `/thematic/${params.hash_id}/event`,
+      url: `/thematic/event/${thematicHashId}`,
       method: 'POST',
-      data: {
-        params,
-      },
+      data,
     });
   },
-  deleteEvent: params => {
+  updateEvent: ({ thematicHashId, eventHashId, data }) => {
     return http.request({
-      url: `/thematic/${params.hash_id}`,
+      url: `/thematic/event/${thematicHashId}/${eventHashId}`,
+      method: 'POST',
+      data,
+    });
+  },
+  deleteEvent: ({ thematicHashId, eventHashId }) => {
+    return http.request({
+      url: `/thematic/event/${thematicHashId}/${eventHashId}`,
       method: 'DELETE',
-      data: {
-        params,
-      },
     });
   },
 };

@@ -1,7 +1,4 @@
 <template>
-  <pre>
-    {{ JSON.stringify(state.form, null, 2) }}
-  </pre>
   <Form ref="formEl" :model="state.form" @submit="handleSubmit">
     <FormControl
       label="Name"
@@ -111,7 +108,15 @@
 </template>
 <script>
 /* eslint-disable */
-import { computed, nextTick, onMounted, reactive, ref, unref } from 'vue';
+import {
+  computed,
+  nextTick,
+  onMounted,
+  reactive,
+  ref,
+  unref,
+  watch,
+} from 'vue';
 import { useStore } from 'vuex';
 import Form, {
   FormControl,
@@ -215,14 +220,22 @@ export default {
       fetchRole();
     };
 
-    nextTick(() => {
+    onMounted(() => {
       const { data, isCreate } = props;
 
       if (data && !isCreate) {
         state.form = data;
-        state.form.role_hash_id = data.role?.hash_id;
       }
     });
+
+    watch(
+      () => state.form,
+      value => {
+        const { isCreate } = props;
+
+        if (!isCreate) state.form.role_hash_id = value.role?.hash_id;
+      }
+    );
 
     return {
       formEl,

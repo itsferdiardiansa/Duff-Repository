@@ -17,6 +17,8 @@ import Modal from './components/Modal';
 import globalSetting from '@plugin/globalSetting';
 import { FontAwesomeIcon } from '@plugin/fontAwesome';
 import Emitter from 'mitt';
+import VueLazyLoad from '@jambonn/vue-lazyload';
+import errorImage from '@asset/image-default.jpg';
 import './components/styles.scss';
 
 const createElement = (instance, app) => {
@@ -94,6 +96,14 @@ export const ModalPlugin = app => {
         instance.mixin(globalSetting);
         instance.component('FontAwesomeIcon', FontAwesomeIcon);
         instance.provide('modalContext', { emitter });
+
+        // Image lazy load
+        instance.use(VueLazyLoad, {
+          preLoad: 1.3,
+          error: errorImage,
+          listenEvents: ['scroll'],
+          throttleWait: 800,
+        });
 
         const elementClass = createElement(instance, app);
 

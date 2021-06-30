@@ -49,6 +49,30 @@ const routes = [
             /* webpackChunkName: 'page.thematic-page.form.update' */ '@page/ThematicPage/Update'
           ),
       },
+      {
+        path: 'event/:thematicHashId',
+        name: 'Event Thematic Page',
+        component: () =>
+          import(
+            /* webpackChunkName: 'page.thematic-page.add.event' */ '@page/ThematicPage/AddEvent'
+          ),
+      },
+      {
+        path: 'event/:thematicHashId/add',
+        name: 'Create Event Thematic Page',
+        component: () =>
+          import(
+            /* webpackChunkName: 'page.thematic-page.add-new.event' */ '@page/ThematicPage/AddEvent/Create'
+          ),
+      },
+      {
+        path: 'event/:thematicHashId/update',
+        name: 'Update Event Thematic Page',
+        component: () =>
+          import(
+            /* webpackChunkName: 'page.thematic-page.update-new.event' */ '@page/ThematicPage/AddEvent/Update'
+          ),
+      },
     ],
   },
   {
@@ -71,6 +95,30 @@ const routes = [
         component: () =>
           import(
             /* webpackChunkName: 'page.partner.form.update' */ '@page/Partner/Update'
+          ),
+      },
+    ],
+  },
+  {
+    path: '/pivot-bank',
+    name: 'PivotBank',
+    component: () =>
+      import(/* webpackChunkName: 'page.pivot-bank' */ '@page/PivotBank'),
+    children: [
+      {
+        path: 'add',
+        name: 'Create PivotBank',
+        component: () =>
+          import(
+            /* webpackChunkName: 'page.pivot-bank.form.create' */ '@page/PivotBank/Create'
+          ),
+      },
+      {
+        path: 'update',
+        name: 'Update PivotBank',
+        component: () =>
+          import(
+            /* webpackChunkName: 'page.pivot-bank.form.update' */ '@page/PivotBank/Update'
           ),
       },
     ],

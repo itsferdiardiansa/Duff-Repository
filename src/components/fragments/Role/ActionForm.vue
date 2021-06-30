@@ -1,7 +1,4 @@
 <template>
-  <pre>
-    {{ JSON.stringify(state.form, null, 2) }}
-  </pre>
   <Form ref="formEl" :model="state.form" @submit="handleSubmit">
     <FormControl
       label="Role Name"
@@ -33,7 +30,7 @@
         </template>
         <template v-else>
           <Checkbox
-            class="grid grid-cols-6 gap-1"
+            class="ck-privileges"
             type="button"
             variant="dark"
             keyname="id"
@@ -122,7 +119,7 @@ export default {
     });
 
     const privilegesList = computed(() => {
-      const privileges = store.getters['role/getPrivilegesItems'];
+      const privileges = store.getters['role/getPrivilegesItems'] || {};
       let filtered = [];
 
       if (Reflect.has(privileges, 'data'))
@@ -131,7 +128,7 @@ export default {
           label: privileges.data[key],
         }));
 
-      return filtered;
+      return filtered.map(item => ({ ...item, id: parseInt(item.id) }));
     });
 
     const privilegesRequestStatus = computed(() => {
@@ -144,13 +141,37 @@ export default {
 
       form.validate(valid => {
         if (valid || !withValidation) {
+          state.form.privileges = state.form.privileges
+            .map(item => parseInt(item))
+            .sort((prev, next) => prev - next);
+
           emit('submit', state.form);
         }
       });
     };
 
+    const handleChange = e => {
+      console.log(e.target);
+    };
+
     const fetchPrivileges = () => {
       store.dispatch('role/fetchPrivileges');
+    };
+
+    const watchPrivilegesAction = () => {
+      const { data } = props;
+
+      store.subscribe(({ type, payload }) => {
+        if (
+          type === 'role/fetchPrivilegesSuccess' &&
+          typeof data === 'object'
+        ) {
+          if (Reflect.has(data, 'privileges'))
+            state.form.privileges = JSON.parse(data.privileges)?.map(
+              item => item?.id_privilege || []
+            );
+        }
+      });
     };
 
     nextTick(() => {
@@ -158,10 +179,13 @@ export default {
 
       if (data && !isCreate) {
         state.form = data;
-        state.form.privileges = data.privileges.map(item => item.id_privilege);
       }
+    });
 
-      fetchPrivileges();
+    onMounted(async () => {
+      await fetchPrivileges();
+
+      watchPrivilegesAction();
     });
 
     return {
@@ -171,7 +195,29 @@ export default {
       privilegesList,
       privilegesRequestStatus,
       handleSubmit,
+      handleChange,
     };
   },
 };
 </script>
+<style lang="scss">
+.ck-privileges {
+  @apply grid grid-cols-6 gap-0;
+
+  .ck-item {
+    @apply inline-grid m-0 border border-gray-200 border-t-0;
+
+    &:nth-child(2n) {
+      @apply border-l-0 border-r-0;
+    }
+
+    &:nth-child(-n + 6) {
+      @apply border-t;
+    }
+
+    .ck-label {
+      @apply rounded-none border-0;
+    }
+  }
+}
+</style>

@@ -119,7 +119,8 @@ export default {
         childContent = h('label', {}, content);
 
         return childContent;
-      }
+      } else if (typeof content === 'function') return content;
+
       return content ? content : slots.default;
     });
 

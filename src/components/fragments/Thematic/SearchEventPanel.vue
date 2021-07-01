@@ -154,7 +154,7 @@ export default {
     };
 
     const formatText = (value, limit = 300, type = 'desc') => {
-      return value.length
+      return value?.length
         ? truncateText(value, limit)
         : type === 'desc'
         ? 'No Desc'

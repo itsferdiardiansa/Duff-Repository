@@ -1,6 +1,7 @@
 /* eslint-disable */
 const Storage = function () {
-  this.cacheLabel = process.env.NODE_ENV ? 'ss_token_dev' : 'ss_token';
+  this.cacheLabel =
+    process.env.NODE_ENV === 'development' ? 'ss_token_dev' : 'ss_token';
   this.createdAt = null;
   this.expiresIn = 3600 * 5; // in 5 hours
   this.expiresAt = null;

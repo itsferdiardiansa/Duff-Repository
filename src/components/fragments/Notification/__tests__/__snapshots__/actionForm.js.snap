@@ -149,13 +149,11 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
       class="ss-form-control--wrapper"
     >
       <div
-        autofocus=""
         class="ss-control--input"
       >
         <!--v-if-->
         <input
           autocomplete="off"
-          autofocus=""
           class="ss-input"
           placeholder="Title"
           type="text"
@@ -308,13 +306,11 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
       class="ss-form-control--wrapper"
     >
       <div
-        autofocus=""
         class="ss-control--input"
       >
         <!--v-if-->
         <input
           autocomplete="off"
-          autofocus=""
           class="ss-input"
           placeholder="Title"
           type="text"
@@ -460,13 +456,11 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
       class="ss-form-control--wrapper"
     >
       <div
-        autofocus=""
         class="ss-control--input"
       >
         <!--v-if-->
         <input
           autocomplete="off"
-          autofocus=""
           class="ss-input"
           placeholder="Title"
           type="text"
@@ -619,13 +613,11 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
       class="ss-form-control--wrapper"
     >
       <div
-        autofocus=""
         class="ss-control--input"
       >
         <!--v-if-->
         <input
           autocomplete="off"
-          autofocus=""
           class="ss-input"
           placeholder="Title"
           type="text"

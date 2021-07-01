@@ -71,6 +71,10 @@ export default {
       type: String,
       default: '',
     },
+    autofocus: {
+      type: [Boolean],
+      default: false,
+    },
     type: {
       type: String,
       default: 'text', // text, email, password

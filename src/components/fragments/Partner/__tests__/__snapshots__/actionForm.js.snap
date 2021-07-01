@@ -148,14 +148,12 @@ exports[`fragment/Partner/ActionForm will render and match snapshot 1`] = `
       class="ss-form-control--wrapper"
     >
       <div
-        autofocus=""
         class="ss-control--input"
         name="ldp_id"
       >
         <!--v-if-->
         <input
           autocomplete="off"
-          autofocus=""
           class="ss-input"
           name="ldp_id"
           placeholder="LDP ID"
@@ -399,14 +397,12 @@ exports[`fragment/Partner/ActionForm will render the spinner during the request 
       class="ss-form-control--wrapper"
     >
       <div
-        autofocus=""
         class="ss-control--input"
         name="ldp_id"
       >
         <!--v-if-->
         <input
           autocomplete="off"
-          autofocus=""
           class="ss-input"
           name="ldp_id"
           placeholder="LDP ID"
@@ -643,14 +639,12 @@ exports[`fragment/Partner/ActionForm will render the text and color for the form
       class="ss-form-control--wrapper"
     >
       <div
-        autofocus=""
         class="ss-control--input"
         name="ldp_id"
       >
         <!--v-if-->
         <input
           autocomplete="off"
-          autofocus=""
           class="ss-input"
           name="ldp_id"
           placeholder="LDP ID"
@@ -894,14 +888,12 @@ exports[`fragment/Partner/ActionForm will render with error validation on all fi
       class="ss-form-control--wrapper"
     >
       <div
-        autofocus=""
         class="ss-control--input"
         name="ldp_id"
       >
         <!--v-if-->
         <input
           autocomplete="off"
-          autofocus=""
           class="ss-input"
           name="ldp_id"
           placeholder="LDP ID"

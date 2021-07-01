@@ -33,7 +33,7 @@
         </template>
         <template v-if="events.isFetching">
           <div class="se-search-loader">
-            <template v-for="item in range(6)" :key="item">
+            <template v-for="item in range(7)" :key="item">
               <div class="se-loader-item">
                 <div class="se-loader-item--thumb">
                   <Rect width="100px" height="100%" />
@@ -141,9 +141,10 @@ export default {
         const response = await EventService.getList(unref(keyword));
         const collections = await response.data;
 
-        Object.assign(events, {
-          items: collections?.result?.data?.result?.details,
-        });
+        if (events.isFetching < 2)
+          Object.assign(events, {
+            items: collections?.result?.data?.result?.details,
+          });
       } catch (error) {
         Object.assign(events, {
           onError: true,
@@ -154,7 +155,7 @@ export default {
     };
 
     const formatText = (value, limit = 300, type = 'desc') => {
-      return value.length
+      return value?.length
         ? truncateText(value, limit)
         : type === 'desc'
         ? 'No Desc'
@@ -213,8 +214,8 @@ export default {
 
     &-content {
       @apply grid grid-rows-1 gap-3 mt-4;
-      max-height: 400px;
-      min-height: 400px;
+      max-height: 450px;
+      min-height: 450px;
 
       .se-result {
         @apply flex-col overflow-y-scroll;
@@ -252,11 +253,11 @@ export default {
     }
 
     &-loader {
-      @apply grid grid-flow-row gap-3 items-center;
+      // @apply grid grid-flow-row items-center;
 
       .se-loader {
         &-item {
-          @apply grid px-4 py-2;
+          @apply grid p-4;
           grid-template-columns: 100px 1fr;
           height: 80px;
 

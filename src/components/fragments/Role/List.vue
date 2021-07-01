@@ -13,9 +13,10 @@
       <template #previlage="{ data: { privileges } }">
         <div class="previlage-col">
           <Button
-            label="See privilege"
+            label="See privileges"
             size="xs"
             variant="primary"
+            :bold="true"
             @click="handlePreviewPrivilages(privileges)"
           />
         </div>

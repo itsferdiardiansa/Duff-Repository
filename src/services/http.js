@@ -21,7 +21,7 @@ const transform = {
     config.headers.Clientkey = SATPAM_API_KEY;
 
     if (!navigator.onLine) {
-      SSNotification('warning', 'Mohon periksa jaringan internet anda');
+      SSNotification('dark', 'Please check your internet connection');
       return;
     }
 
@@ -51,14 +51,14 @@ const transform = {
         Boolean(~message.indexOf('timeout')) &&
         requestOptions?.errorNotification
       ) {
-        SSNotification('danger', 'Permintaan melebihi batas waktu');
+        SSNotification('danger', 'Request has exceeded the time limit');
         // return
         throw { timeout: true };
       } else if (
         (errorCode.includes(code) || message?.includes('Network Error')) &&
         requestOptions?.errorNotification
       ) {
-        SSNotification('danger', 'Tidak dapat terhubung dengan server');
+        SSNotification('danger', "Can't connect to server");
         // return
         throw { server: true };
       }

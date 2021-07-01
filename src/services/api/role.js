@@ -8,10 +8,15 @@ export default {
     });
   },
   getPrivileges: params => {
-    return http.request({
-      url: '/role/privilege',
-      params,
-    });
+    return http.request(
+      {
+        url: '/role/privilege',
+        params,
+      },
+      {
+        errorNotification: false,
+      }
+    );
   },
   create: params => {
     return http.request({

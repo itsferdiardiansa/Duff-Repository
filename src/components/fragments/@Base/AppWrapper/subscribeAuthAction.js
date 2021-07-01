@@ -1,14 +1,14 @@
 export default (type, payload, router) => {
   switch (type) {
     case 'user/loginSuccess':
-      SSNotification('success', 'Selamat datang');
+      SSNotification('success', 'Welcome aboard!');
       break;
     case 'user/loginFailed':
       if (!(responseData?.timeout || responseData?.server))
-        SSNotification('danger', 'Gagal masuk');
+        SSNotification('danger', 'Login failed');
       break;
     case 'user/removeAuth':
-      SSNotification('success', 'Terima kasih!');
+      SSNotification('success', 'Thank you!');
 
       router.push('/login');
       break;

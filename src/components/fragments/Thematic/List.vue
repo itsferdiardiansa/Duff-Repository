@@ -9,14 +9,6 @@
       :pagination="pagination"
       :onPageChange="handlePageChange"
     >
-      <template #header_image="{ data }">
-        <img class="h-10 inline-block" :src="data.header_image" />
-      </template>
-
-      <template #header_image_mobile="{ data }">
-        <img class="h-10 inline-block" :src="data.header_image_mobile" />
-      </template>
-
       <template #page_info="{ data }">
         <div class="text-left">
           <h3 class="font-bold" v-text="data.header_text"></h3>
@@ -29,7 +21,7 @@
       </template>
 
       <template #created_at="{ data: { created_at } }">
-        {{ $util.formatDateTime(created_at, 'DD MMMM YYYY hh:mm WIB') }}
+        {{ $util.formatDateTime(created_at, 'DD MMM YYYY hh:mm WIB') }}
       </template>
 
       <template #filter>
@@ -65,12 +57,18 @@ export default {
     const params = reactive({ page: 1, limit: 10 });
 
     const tHeaders = ref([
-      { title: 'Banner', accessor: 'header_image', width: '10%' },
+      {
+        title: 'Banner',
+        accessor: 'header_image',
+        width: '10%',
+        type: 'image',
+      },
       {
         title: 'Banner Mobile',
         accessor: 'header_image_mobile',
         width: '10%',
         align: 'center',
+        type: 'image',
       },
       {
         title: 'Thematic Name',

@@ -1,7 +1,4 @@
 <template>
-  <pre>
-    {{ JSON.stringify(state.form, null, 2) }}
-  </pre>
   <Form ref="formEl" :model="state.form" @submit="handleSubmit">
     <Section title="Thematic Content">
       <template #content>
@@ -258,3 +255,12 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.#{$prefixClass}-section {
+  margin-top: 0 !important;
+
+  &--title {
+    padding-top: 0 !important;
+  }
+}
+</style>

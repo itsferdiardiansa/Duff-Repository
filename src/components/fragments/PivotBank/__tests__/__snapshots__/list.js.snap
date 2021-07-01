@@ -38,7 +38,7 @@ exports[`fragment/Hero/List will render and match snapshot 1`] = `
     </div>
   </div>
   <table class="ss-table">
-    <thead class="ss-table--head" headers="[object Object],[object Object],[object Object],[object Object],[object Object]" items="[object Object],[object Object],[object Object],[object Object]" isfetching="false" pagination="[object Object]" emptymessage="Empty data" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="true" filteroptions="">
+    <thead class="ss-table--head" items="[object Object],[object Object],[object Object],[object Object]" isfetching="false" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="true" filteroptions="">
       <tr>
         <th width="4%">
           <!--v-if--><span>#</span>
@@ -51,90 +51,45 @@ exports[`fragment/Hero/List will render and match snapshot 1`] = `
       </tr>
     </thead>
     <tbody class="ss-table--body">
-      <!--v-if-->
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>1</label></td>
-        <td class="ss-table--body-col text-left">
-          <div>Hero title has been updated</div>
-        </td>
-        <td class="ss-table--body-col"><img src="" class="h-10 m-auto"></td>
-        <td class="ss-table--body-col"><img src="" class="h-10 m-auto"></td>
-        <td class="ss-table--body-col"><a href="https://twitch.dev" target="_blank">https://twitch.dev</a></td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
       </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>2</label></td>
-        <td class="ss-table--body-col text-left">
-          <div>new dev create an hero</div>
-        </td>
-        <td class="ss-table--body-col"><img src="" class="h-10 m-auto"></td>
-        <td class="ss-table--body-col"><img src="" class="h-10 m-auto"></td>
-        <td class="ss-table--body-col"><a href="url" target="_blank">url</a></td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
       </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>3</label></td>
-        <td class="ss-table--body-col text-left">
-          <div>Dev create an hero for test mobile banner (5) has been created</div>
-        </td>
-        <td class="ss-table--body-col"><img src="https://loket-development.s3.amazonaws.com/9c0eb73b-1757-472d-91fe-56796d1efca9" class="h-10 m-auto"></td>
-        <td class="ss-table--body-col"><img src="https://loket-development.s3.amazonaws.com/17bc0530-27c5-458f-86ce-b5d486194648" class="h-10 m-auto"></td>
-        <td class="ss-table--body-col"><a href="https://google.com" target="_blank">https://google.com</a></td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
       </tr>
-      <tr class="ss-table--body-row">
-        <td class="ss-table--body-col"><label>4</label></td>
-        <td class="ss-table--body-col text-left">
-          <div>First</div>
-        </td>
-        <td class="ss-table--body-col"><img src="https://loket-development.s3.amazonaws.com/images/temporary/20210215/1613380141_3VWSUv.jpg" class="h-10 m-auto"></td>
-        <td class="ss-table--body-col"><img src="https://loket-development.s3.amazonaws.com/images/temporary/20210215/1613380143_smqGWO.jpg" class="h-10 m-auto"></td>
-        <td class="ss-table--body-col"><a href="https://integration-loket-ss.golabs.io/" target="_blank">https://integration-loket-ss.golabs.io/</a></td>
-        <td class="ss-table--body-col text-center">
-          <div class="ss-tb--action">
-            <div class="wrapper">
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path>
-                </svg><span>Edit</span></div>
-              <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 448 512">
-                  <path fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path>
-                </svg><span>Delete</span></div>
-            </div>
-          </div>
-        </td>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+      </tr>
+      <tr>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
+        <td class="p-2 text-center"><span class="ss-skeleton--rect" style="width: 85%; height: 12px; border-radius: 4px;"></span></td>
       </tr>
     </tbody>
   </table>

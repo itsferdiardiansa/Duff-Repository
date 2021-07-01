@@ -8,13 +8,13 @@
  *
  * @return String
  */
-export default (value, formatReturn, defaultLang = 'id') => {
+export default (value, formatReturn, defaultLang = 'en') => {
   const lang = require(`./lang/${defaultLang}`).default;
   const months = lang.months.split('_');
   const shortMonths = months.map((item, id) =>
     id == 7 && defaultLang == 'id' ? 'Ags' : item.substring(0, 3)
   );
-  const initialDate = new Date(value);
+  const initialDate = new Date(value.replace(/-/g, '/'));
   const [day, date, month, year, hours, minutes, seconds] = [
     initialDate.getDay(),
     initialDate.getDate(),

@@ -18,7 +18,7 @@
       <div>
         <template v-if="privilegesRequestStatus.error.status">
           <Button
-            variant="orange"
+            variant="dark"
             :icon="['fa', 'redo-alt']"
             @click="fetchPrivileges"
             :pill="true"

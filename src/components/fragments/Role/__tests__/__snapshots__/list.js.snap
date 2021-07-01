@@ -38,7 +38,7 @@ exports[`fragment/Role/List will render and match snapshot 1`] = `
     </div>
   </div>
   <table class="ss-table">
-    <thead class="ss-table--head" headers="[object Object],[object Object],[object Object],[object Object],[object Object]" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" isfetching="false" pagination="[object Object]" emptymessage="Empty data" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="true" filteroptions="">
+    <thead class="ss-table--head" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" isfetching="false" rownumber="true" rowloader="5" selectablerows="false" withpagination="true" withfilter="true" filteroptions="">
       <tr>
         <th width="4%">
           <!--v-if--><span>#</span>

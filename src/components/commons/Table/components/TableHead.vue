@@ -29,7 +29,7 @@
   </thead>
 </template>
 <script>
-import { ref, unref, watch } from 'vue'
+import { ref, unref, watch } from 'vue';
 
 export default {
   props: {
@@ -39,29 +39,40 @@ export default {
     },
     selectedRows: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
+    headers: {
+      type: [Array, Object],
+      default: () => {},
+    },
+    pagination: {
+      type: [Array, Object],
+      default: () => {},
+    },
+    emptyMessage: {
+      type: [Array, Object, String, Function],
+      default: '',
+    },
   },
   setup(props, { attrs }) {
-    const checkboxSelectAllEl = ref()
-    const { selectedRows } = unref(props)
-    const { items } = attrs
+    const checkboxSelectAllEl = ref();
+    const { selectedRows } = unref(props);
+    const { items } = attrs;
 
     watch(
-      () => selectedRows.ids, 
+      () => selectedRows.ids,
       () => {
-        let _el = unref(checkboxSelectAllEl)
+        let _el = unref(checkboxSelectAllEl);
 
-        if((selectedRows.ids.length < items.length) && _el.checked)
-          _el.checked = false
-
+        if (selectedRows.ids.length < items.length && _el.checked)
+          _el.checked = false;
       }
-    )
+    );
 
     return {
       ...attrs,
-      checkboxSelectAllEl
-    }
-  }
-}
+      checkboxSelectAllEl,
+    };
+  },
+};
 </script>

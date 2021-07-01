@@ -17,17 +17,24 @@ const pluralMessages = (messages = {}) => {
   );
 };
 
+/**
+ * https://httpstatuses.com/
+ *
+ */
 const checkStatus = ({ status, data }) => {
   switch (true) {
     case /5+[0-9]{2}/.test(status):
-      SSNotification('danger', 'Terjadi kesalahan di server');
+      SSNotification('danger', 'Internal server error');
       break;
     case /4+[0-9]{2}/.test(status):
       const message =
         data?.result?.error_message ||
         pluralMessages(data?.result?.error_messages);
 
-      SSNotification('danger', message || 'Terjadi kesalahan di server (2)');
+      SSNotification('danger', message || 'A client error occured');
+      break;
+    case /3+[0-9]{2}/.test(status):
+      SSNotification('danger', 'Redirection');
       break;
     default:
       break;

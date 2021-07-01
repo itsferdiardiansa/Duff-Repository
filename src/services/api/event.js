@@ -5,7 +5,7 @@ export default {
   getList: event_name => {
     return http.request(
       {
-        url: '/event/',
+        url: '/event',
         params: {
           event_name,
         },

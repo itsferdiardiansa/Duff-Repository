@@ -10,14 +10,6 @@
       :onPageChange="handlePageChange"
       @onSearchCallback="handleSearchCallback"
     >
-      <template #banner="{ data }">
-        <img :src="data.banner" class="h-10 m-auto" />
-      </template>
-
-      <template #banner_mobile="{ data }">
-        <img :src="data.banner_mobile" class="h-10 m-auto" />
-      </template>
-
       <template #url="{ data }">
         <a :href="data.button_url" target="_blank">{{ data.button_url }}</a>
       </template>
@@ -65,8 +57,13 @@ export default {
         accessor: 'title',
         align: 'left',
       },
-      { title: 'Banner', accessor: 'banner', width: '10%' },
-      { title: 'Banner Mobile', accessor: 'banner_mobile', width: '10%' },
+      { title: 'Banner', accessor: 'banner', width: '10%', type: 'image' },
+      {
+        title: 'Banner Mobile',
+        accessor: 'banner_mobile',
+        width: '10%',
+        type: 'image',
+      },
       { title: 'Url', accessor: 'url' },
       {
         accessor: 'action',

@@ -17,7 +17,23 @@
           ]"
         >
           <slot name="content" :data="props">
-            <div v-html="props.item[props.headers.accessor]"></div>
+            <template v-if="props.headers?.type === 'image'">
+              <Tooltip
+                message="Click to preview"
+                :options="{
+                  showOnCreate: false,
+                  trigger: 'mouseenter',
+                }"
+              >
+                <Thumbnail
+                  style="width: 80px; height: 30px"
+                  :src="props.item[props.headers.accessor]"
+                />
+              </Tooltip>
+            </template>
+            <template v-else>
+              <div v-html="props.item[props.headers.accessor]"></div>
+            </template>
           </slot>
         </td>
       </template>
@@ -28,11 +44,15 @@
 import { computed, unref } from 'vue';
 import TableContent from './TableContent';
 import TableSkeleton from './TableSkeleton';
+import Thumbnail from '@common/Thumbnail';
+import Tooltip from '@common/Tooltip';
 
 export default {
   components: {
     TableContent,
     TableSkeleton,
+    Thumbnail,
+    Tooltip,
   },
   props: {
     selectedRows: {

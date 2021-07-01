@@ -5,6 +5,19 @@
     @click="selectMenuItem"
   >
     <router-link :to="item.link" :disabled="!item.link">
+      <div class="menu-item-tooltip" v-if="isCollapsed && item.link">
+        <Tooltip
+          :message="item.name"
+          :show="false"
+          :options="{
+            showOnCreate: false,
+            trigger: 'mouseenter',
+            placement: 'right-end',
+            touch: false,
+          }"
+        />
+      </div>
+
       <font-awesome-icon
         :icon="item.icon"
         :class="getMenuItemIcon(isCollapsed)"
@@ -25,8 +38,12 @@
 <script>
 import { computed, getCurrentInstance, inject, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import Tooltip from '@common/Tooltip';
 
 export default {
+  components: {
+    Tooltip,
+  },
   props: {
     item: {
       type: Object,
@@ -69,7 +86,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .menu-item {
-  @apply capitalize font-medium text-sm text-white transition duration-500;
+  @apply relative overflow-hidden capitalize font-medium text-sm text-white transition duration-500;
 
   &[disabled='true'] {
     @apply text-gray-300 cursor-not-allowed;
@@ -89,6 +106,14 @@ export default {
 
     &:hover {
       background-color: $bg-orange;
+    }
+  }
+
+  &-tooltip {
+    @apply w-full h-full absolute opacity-0 left-0;
+
+    [data-tooltip-id] {
+      @apply w-full h-full;
     }
   }
 

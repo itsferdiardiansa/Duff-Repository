@@ -1,7 +1,4 @@
 <template>
-  <pre>
-    {{ state.form }}
-  </pre>
   <Form ref="formEl" :model="state.form" @submit="handleSubmit">
     <FormControl
       label="Bank Name"

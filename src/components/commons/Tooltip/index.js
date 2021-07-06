@@ -40,7 +40,7 @@ export default defineComponent({
     } = root;
     const { onFormId } = props;
     const dataId = [
-      `${prefixClass}-tooltip`,
+      `ss-tooltip`,
       Math.floor(new Date().getTime() + Math.random()),
     ].join('-');
 

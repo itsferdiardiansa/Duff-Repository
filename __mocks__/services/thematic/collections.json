@@ -6,8 +6,8 @@
       {
         "id": 28,
         "name": "thematic",
-        "header_image": "https://loket-development.s3.amazonaws.com/338f1e30-3dcc-430f-8b30-1a942042c1e1",
-        "header_image_mobile": "https://loket-development.s3.amazonaws.com/a115b28e-a924-4735-bb5d-55ef3da1a546",
+        "header_image": "https://goplay-development.s3.amazonaws.com/338f1e30-3dcc-430f-8b30-1a942042c1e1",
+        "header_image_mobile": "https://goplay-development.s3.amazonaws.com/a115b28e-a924-4735-bb5d-55ef3da1a546",
         "header_text": "",
         "header_text_color": "#dadade",
         "description_text": "",
@@ -44,8 +44,8 @@
       {
         "id": 26,
         "name": "thematic updateed",
-        "header_image": "https://loket-development.s3.amazonaws.com/98828b83-dbbb-4a0d-8260-d3bcd905a6c8",
-        "header_image_mobile": "https://loket-development.s3.amazonaws.com/0e82debf-b60d-4bc8-a337-105f8707c078",
+        "header_image": "https://goplay-development.s3.amazonaws.com/98828b83-dbbb-4a0d-8260-d3bcd905a6c8",
+        "header_image_mobile": "https://goplay-development.s3.amazonaws.com/0e82debf-b60d-4bc8-a337-105f8707c078",
         "header_text": "",
         "header_text_color": "",
         "description_text": "",

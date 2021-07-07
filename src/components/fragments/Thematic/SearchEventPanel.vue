@@ -8,6 +8,7 @@
           ref="searchInputRef"
           placeholder="Relaxation at the beach ..."
           :autofocus="true"
+          type="search"
           v-model="keyword"
           @input="handleSearchInput"
         />
@@ -107,7 +108,7 @@ import EventService from '@service/api/event';
 import { debounce, truncateText, range } from '@util';
 
 export default {
-  name: 'ThematicActionForm',
+  name: 'SearchEventPanelForm',
   components: {
     Button,
     Input,
@@ -132,6 +133,8 @@ export default {
     });
 
     const fetchEvents = async () => {
+      focusSearchInput();
+
       Object.assign(events, {
         isFetching: ++events.isFetching,
         onError: false,
@@ -167,6 +170,10 @@ export default {
 
       emit('selected', item);
     };
+
+    const focusSearchInput = debounce(() => {
+      document.querySelector('.se-search-control input').focus();
+    }, 10);
 
     const handleSearchInput = debounce(e => {
       fetchEvents();

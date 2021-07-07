@@ -149,7 +149,7 @@ exports[`fragment/Hero/ActionForm will render and match snapshot 1`] = `
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           name="Title"
           placeholder="Title"
@@ -177,7 +177,6 @@ exports[`fragment/Hero/ActionForm will render and match snapshot 1`] = `
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Button URL"
           type="text"
@@ -369,7 +368,7 @@ exports[`fragment/Hero/ActionForm will render the spinner during the request pro
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           name="Title"
           placeholder="Title"
@@ -397,7 +396,6 @@ exports[`fragment/Hero/ActionForm will render the spinner during the request pro
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Button URL"
           type="text"
@@ -582,7 +580,7 @@ exports[`fragment/Hero/ActionForm will render the text and color for the form up
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           name="Title"
           placeholder="Title"
@@ -610,7 +608,6 @@ exports[`fragment/Hero/ActionForm will render the text and color for the form up
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Button URL"
           type="text"
@@ -802,7 +799,7 @@ exports[`fragment/Hero/ActionForm will render with error validation on all field
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           name="Title"
           placeholder="Title"
@@ -834,7 +831,6 @@ exports[`fragment/Hero/ActionForm will render with error validation on all field
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Button URL"
           type="text"

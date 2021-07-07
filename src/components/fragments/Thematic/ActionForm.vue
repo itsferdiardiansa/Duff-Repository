@@ -11,7 +11,7 @@
           <Input
             placeholder="Thematic Name"
             v-model="state.form.name"
-            autofocus
+            autofocus="true"
           />
         </FormControl>
 

@@ -1,8 +1,8 @@
 <template>
   <div :class="['app-logo', { mono: isCollapsed }]">
     <router-link to="/" class="app-logo--link">
-      <img src="@asset/logo-loket-white.png" v-show="!isCollapsed" />
-      <span v-show="isCollapsed"><strong>L</strong></span>
+      <img src="@asset/goplay-logo-white.svg" v-show="!isCollapsed" />
+      <span v-show="isCollapsed"><strong>G</strong></span>
     </router-link>
   </div>
 </template>

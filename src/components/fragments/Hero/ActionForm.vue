@@ -10,7 +10,7 @@
         placeholder="Title"
         name="Title"
         v-model="state.form.title"
-        autofocus
+        autofocus="true"
       />
     </FormControl>
 
@@ -23,11 +23,7 @@
         ],
       }"
     >
-      <Input
-        placeholder="Button URL"
-        v-model="state.form.button_url"
-        autofocus
-      />
+      <Input placeholder="Button URL" v-model="state.form.button_url" />
     </FormControl>
 
     <FormControl

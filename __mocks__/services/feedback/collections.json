@@ -11,13 +11,13 @@
         "section": "",
         "comment": "dev commented",
         "rate": 2,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-02-22T09:07:05Z",
         "updated_at": "2021-02-22T09:09:03Z",
         "responded_at": "2021-02-22T09:09:03Z",
         "hash_id": "fd47f0fc-558d-42a5-9257-4b619af5dd58",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       },
       {
         "id": 10,
@@ -27,13 +27,13 @@
         "section": "",
         "comment": "COMMEENT",
         "rate": 5,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-02-16T07:47:58Z",
         "updated_at": "2021-02-16T08:05:37Z",
         "responded_at": "2021-02-16T07:59:15Z",
         "hash_id": "4c051bcb-5f7f-4192-aa6f-d8f31b6c1220",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       },
       {
         "id": 9,
@@ -43,13 +43,13 @@
         "section": "",
         "comment": "BAGUS SKEALI",
         "rate": 5,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-02-16T07:47:32Z",
         "updated_at": "2021-02-24T11:07:18Z",
         "responded_at": "2021-02-24T11:07:18Z",
         "hash_id": "d5c1501b-f456-4c7d-a085-eaf7dd1402d7",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       },
       {
         "id": 8,
@@ -59,13 +59,13 @@
         "section": "",
         "comment": "BAGUS",
         "rate": 2,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-02-10T06:27:37Z",
         "updated_at": "2021-02-10T06:27:37Z",
         "responded_at": "2021-02-15T03:52:41Z",
         "hash_id": "3f7314f6-c6e3-47bd-b652-9fc6c6221d87",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       },
       {
         "id": 7,
@@ -75,13 +75,13 @@
         "section": "",
         "comment": "BAGUS",
         "rate": 2,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-02-10T06:22:50Z",
         "updated_at": "2021-02-10T06:22:50Z",
         "responded_at": "2021-02-15T02:28:55Z",
         "hash_id": "95261d24-b50e-4244-a1a6-c20a702f8707",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       },
       {
         "id": 6,
@@ -91,13 +91,13 @@
         "section": "",
         "comment": "BAGUS",
         "rate": 2,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-02-10T06:20:45Z",
         "updated_at": "2021-02-10T13:21:13Z",
         "responded_at": "2021-02-10T06:27:29Z",
         "hash_id": "e76a433a-9d2d-49a8-b24e-e80e6825d612",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       },
       {
         "id": 5,
@@ -107,13 +107,13 @@
         "section": "",
         "comment": "BAGUS SKEALI",
         "rate": 2,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-01-29T14:28:53Z",
         "updated_at": "2021-02-05T12:59:09Z",
         "responded_at": "2021-02-10T06:25:50Z",
         "hash_id": "5bca7fbd-578e-41d9-9f4e-dae567bdb475",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       },
       {
         "id": 4,
@@ -123,13 +123,13 @@
         "section": "",
         "comment": "BAGUS",
         "rate": 2,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-01-29T14:28:42Z",
         "updated_at": "2021-02-24T11:07:02Z",
         "responded_at": "2021-02-24T11:07:02Z",
         "hash_id": "b79cbc0b-62b8-4128-8827-472adb2810cd",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       },
       {
         "id": 3,
@@ -139,13 +139,13 @@
         "section": "",
         "comment": "BAGUS",
         "rate": 2,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-01-29T14:15:33Z",
         "updated_at": "2021-02-24T11:07:05Z",
         "responded_at": "2021-02-15T02:28:40Z",
         "hash_id": "0ae1ec17-5209-4c26-bd4a-df9cc9b508fc",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       },
       {
         "id": 2,
@@ -155,13 +155,13 @@
         "section": "General",
         "comment": "aa",
         "rate": 4,
-        "responded_by": "qa@loket.com",
-        "read_by": "[\"qa@loket.com\"]",
+        "responded_by": "qa@go-jek.com",
+        "read_by": "[\"qa@go-jek.com\"]",
         "created_at": "2021-01-07T11:20:09Z",
         "updated_at": "2021-01-25T13:40:39Z",
         "responded_at": "2021-02-15T02:29:02Z",
         "hash_id": "ossz1jnk",
-        "read_by_slice": ["qa@loket.com"]
+        "read_by_slice": ["qa@go-jek.com"]
       }
     ],
     "per_page": 10,

@@ -153,7 +153,7 @@ exports[`fragment/Partner/ActionForm will render and match snapshot 1`] = `
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           name="ldp_id"
           placeholder="LDP ID"
@@ -225,7 +225,6 @@ exports[`fragment/Partner/ActionForm will render and match snapshot 1`] = `
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Tagline"
           type="text"
@@ -253,7 +252,6 @@ exports[`fragment/Partner/ActionForm will render and match snapshot 1`] = `
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           name="url_site"
           placeholder="URL Site"
@@ -402,7 +400,7 @@ exports[`fragment/Partner/ActionForm will render the spinner during the request 
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           name="ldp_id"
           placeholder="LDP ID"
@@ -474,7 +472,6 @@ exports[`fragment/Partner/ActionForm will render the spinner during the request 
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Tagline"
           type="text"
@@ -502,7 +499,6 @@ exports[`fragment/Partner/ActionForm will render the spinner during the request 
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           name="url_site"
           placeholder="URL Site"
@@ -644,7 +640,7 @@ exports[`fragment/Partner/ActionForm will render the text and color for the form
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           name="ldp_id"
           placeholder="LDP ID"
@@ -716,7 +712,6 @@ exports[`fragment/Partner/ActionForm will render the text and color for the form
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Tagline"
           type="text"
@@ -744,7 +739,6 @@ exports[`fragment/Partner/ActionForm will render the text and color for the form
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           name="url_site"
           placeholder="URL Site"
@@ -893,7 +887,7 @@ exports[`fragment/Partner/ActionForm will render with error validation on all fi
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           name="ldp_id"
           placeholder="LDP ID"
@@ -973,7 +967,6 @@ exports[`fragment/Partner/ActionForm will render with error validation on all fi
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Tagline"
           type="text"
@@ -1005,7 +998,6 @@ exports[`fragment/Partner/ActionForm will render with error validation on all fi
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           name="url_site"
           placeholder="URL Site"

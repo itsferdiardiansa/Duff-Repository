@@ -152,7 +152,7 @@ exports[`fragment/Footer/ActionForm will render and match snapshot 1`] = `
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           placeholder="Footer name"
           type="text"
@@ -314,7 +314,7 @@ exports[`fragment/Footer/ActionForm will render the spinner during the request p
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           placeholder="Footer name"
           type="text"
@@ -469,7 +469,7 @@ exports[`fragment/Footer/ActionForm will render the text and color for the form 
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           placeholder="Footer name"
           type="text"
@@ -631,7 +631,7 @@ exports[`fragment/Footer/ActionForm will render with error validation on all fie
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           placeholder="Footer name"
           type="text"

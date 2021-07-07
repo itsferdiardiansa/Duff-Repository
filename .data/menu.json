@@ -28,7 +28,7 @@
       },
       { "name": "URL Redirection", "link": "", "icon": ["fa", "link"] },
       { "name": "Hashtag", "link": "", "icon": ["fa", "hashtag"] },
-      { "name": "Loket Ads", "link": "", "icon": ["fa", "list"] },
+      { "name": "Gojek Ads", "link": "", "icon": ["fa", "list"] },
       { "name": "Announcement", "link": "", "icon": ["fa", "bell"] },
       { "name": "Partner", "link": "", "icon": ["fa", "users"] },
       { "name": "Footer", "link": "", "icon": ["fa", "paw"] },

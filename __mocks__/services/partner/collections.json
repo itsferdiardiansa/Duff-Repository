@@ -19,9 +19,9 @@
       },
       {
         "id": 47,
-        "logo": "https://loket-development.s3.amazonaws.com/30845ae2-7139-4def-bd9c-962ab523ba44",
+        "logo": "https://goplay-development.s3.amazonaws.com/30845ae2-7139-4def-bd9c-962ab523ba44",
         "tagline": "taglinne",
-        "hero": "https://loket-development.s3.amazonaws.com/4478f417-c641-4188-9af6-0ee44f7cbe46",
+        "hero": "https://goplay-development.s3.amazonaws.com/4478f417-c641-4188-9af6-0ee44f7cbe46",
         "site": "https://google.com",
         "is_active": "1",
         "description": "1",
@@ -33,9 +33,9 @@
       },
       {
         "id": 20,
-        "logo": "https://loket-development.s3.amazonaws.com/images/temporary/20210219/1613712872_przeXh.png",
+        "logo": "https://goplay-development.s3.amazonaws.com/images/temporary/20210219/1613712872_przeXh.png",
         "tagline": "Ini tagline partner",
-        "hero": "https://loket-development.s3.amazonaws.com/images/temporary/20210219/1613712873_OkUS6X.jpg",
+        "hero": "https://goplay-development.s3.amazonaws.com/images/temporary/20210219/1613712873_OkUS6X.jpg",
         "site": "https://google.com",
         "is_active": "1",
         "description": "Deskripsi partner",

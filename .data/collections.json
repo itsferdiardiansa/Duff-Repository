@@ -3,7 +3,7 @@
     "result": [
       {
         "organizationName": {
-          "imgThumb": "https://s3.amazonaws.com/loket-sandbox/images/organization/20190712190520_5d2877806297a.png",
+          "imgThumb": "https://s3.amazonaws.com/goplay-sandbox/images/organization/20190712190520_5d2877806297a.png",
           "title": "SS Staging Organizations",
           "companyName": "MARIA",
           "email": "example.com",
@@ -64,7 +64,7 @@
     "result": [
       {
         "title": "Event On Boarding Core",
-        "imgThumb": "https://s3.amazonaws.com/loket-sandbox/images/organization/20190712190520_5d2877806297a.png",
+        "imgThumb": "https://s3.amazonaws.com/goplay-sandbox/images/organization/20190712190520_5d2877806297a.png",
         "eventDate": "2021-01-01 14:00:00",
         "eventType": "Public",
         "status": {
@@ -90,7 +90,7 @@
         "title": "Event On Boarding Core",
         "eventName": "[INT] Simple Paid - SS - E008",
         "link": "https://google.com",
-        "creator": "Loket inc",
+        "creator": "Goplay inc",
         "startDate": "2024-12-31 13:55:00",
         "potentialGMV": "Rp 200.000.000,-",
         "discount": {
@@ -153,7 +153,7 @@
         "title": "E-voucher link custom",
         "date": "Jun 12, 2019 - Jan 17, 2020",
         "time": "11:35 - 11:35",
-        "imgThumb": "https://s3.amazonaws.com/loket-sandbox/images/organization/20190712190520_5d2877806297a.png",
+        "imgThumb": "https://s3.amazonaws.com/goplay-sandbox/images/organization/20190712190520_5d2877806297a.png",
         "email": "example@gmail.com",
         "organizationName": "SS Staging",
         "phone": "122345678",
@@ -165,11 +165,11 @@
       }
     ]
   },
-  "loketAds": {
+  "goplayAds": {
     "status": true,
     "result": [
       {
-        "name": "Loket Ads",
+        "name": "Goplay Ads",
         "category": "Concert",
         "status": true
       },
@@ -200,27 +200,27 @@
     "result": [
       {
         "partnerName": "Tokopedia",
-        "icon": "https://www.loket.com/images/mitra/logo/tokopedia.png",
+        "icon": "https://www.goplay.com/images/mitra/logo/tokopedia.png",
         "status": true
       },
       {
         "partnerName": "Gotix",
-        "icon": "https://www.loket.com/images/mitra/logo/gotix.png",
+        "icon": "https://www.goplay.com/images/mitra/logo/gotix.png",
         "status": false
       },
       {
         "partnerName": "Traveloka",
-        "icon": "https://www.loket.com/images/mitra/logo/traveloka.png",
+        "icon": "https://www.goplay.com/images/mitra/logo/traveloka.png",
         "status": false
       },
       {
         "partnerName": "Tiket",
-        "icon": "https://www.loket.com/images/mitra/logo/tiketdotcom.png?v=07201827",
+        "icon": "https://www.goplay.com/images/mitra/logo/tiketdotcom.png?v=07201827",
         "status": true
       },
       {
         "partnerName": "JD.id",
-        "icon": "https://www.loket.com/images/mitra/logo/jdid.png",
+        "icon": "https://www.goplay.com/images/mitra/logo/jdid.png",
         "status": false
       }
     ]
@@ -234,7 +234,7 @@
       "items": [
         {
           "id": 313,
-          "title": "Loket Ads",
+          "title": "Goplay Ads",
           "content": "Concert",
           "link": "https://google.com",
           "expired": "2020-03-31 13:00:00",
@@ -290,8 +290,8 @@
     "status": true,
     "result": [
       {
-        "path": "Loket Indonesia",
-        "url": "https://loket.com",
+        "path": "Goplay Indonesia",
+        "url": "https://goplay.com",
         "status": "active"
       },
       {
@@ -327,8 +327,8 @@
         {
           "hash_id": "xhiz60dt",
           "name": "Event pilihan",
-          "header_image": "https://loket-development.s3.amazonaws.com/images/ss/blog/1588226070_xzQuLw.jpg",
-          "header_image_mobile": "https://loket-development.s3.amazonaws.com/images/ss/blog/1588093152_U74Oht.png",
+          "header_image": "https://goplay-development.s3.amazonaws.com/images/ss/blog/1588226070_xzQuLw.jpg",
+          "header_image_mobile": "https://goplay-development.s3.amazonaws.com/images/ss/blog/1588093152_U74Oht.png",
           "header_text": "Event pilihan",
           "header_text_color": "#000000",
           "description_text": "Event pilihan",
@@ -336,15 +336,15 @@
           "meta_title": "event-pilihan",
           "path": "event-pilihan",
           "custom_footer": false,
-          "custom_footer_image": "https://loket-development.s3.amazonaws.com/images/ss/blog/1591684217_tNxPVM.png",
+          "custom_footer_image": "https://goplay-development.s3.amazonaws.com/images/ss/blog/1591684217_tNxPVM.png",
           "custom_content": null,
-          "updated_by": "qa@loket.com"
+          "updated_by": "qa@goplay.com"
         },
         {
           "hash_id": "dewktzhg",
           "name": "Lorem Ipsum",
-          "header_image": "https://loket-development.s3.amazonaws.com/images/ss/blog/1544794728_WOZ7GL.jpg",
-          "header_image_mobile": "https://loket-development.s3.amazonaws.com/images/ss/blog/1544794741_d08llF.jpg",
+          "header_image": "https://goplay-development.s3.amazonaws.com/images/ss/blog/1544794728_WOZ7GL.jpg",
+          "header_image_mobile": "https://goplay-development.s3.amazonaws.com/images/ss/blog/1544794741_d08llF.jpg",
           "header_text": "Lorem ipsum",
           "header_text_color": "#aa7942",
           "description_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -354,7 +354,7 @@
           "custom_footer": false,
           "custom_footer_image": "",
           "custom_content": "<p><span >It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</span><br></p>",
-          "updated_by": "qa@loket.com"
+          "updated_by": "qa@goplay.com"
         }
       ]
     }
@@ -374,7 +374,7 @@
           "id": 212,
           "title": "Rock am Ring",
           "subtitle": "Agoda Create Data Channel",
-          "thumbnail": "https://s3.amazonaws.com/loket-sandbox/images/banner/20201203014748_5fc7e1547268e.jpg",
+          "thumbnail": "https://s3.amazonaws.com/goplay-sandbox/images/banner/20201203014748_5fc7e1547268e.jpg",
           "date": "Oct 22, 2020 - Oct 31, 2020",
           "time": "01:00 - 04:00",
           "event_id": "Event Id: 2378",
@@ -384,7 +384,7 @@
           "id": 217,
           "title": "Advenced Agora",
           "subtitle": "Agoda Create Data Channel",
-          "thumbnail": "https://s3.amazonaws.com/loket-sandbox/images/banner/20201203014748_5fc7e1547268e.jpg",
+          "thumbnail": "https://s3.amazonaws.com/goplay-sandbox/images/banner/20201203014748_5fc7e1547268e.jpg",
           "date": "Oct 22, 2020 - Oct 31, 2020",
           "time": "01:00 - 04:00",
           "event_id": "Event Id: 2378",

@@ -46,8 +46,8 @@
       {
         "id": 85,
         "hash_id": "6a9fafe9-93a6-453b-89d0-089dc56954a0",
-        "banner": "https://loket-development.s3.amazonaws.com/9c0eb73b-1757-472d-91fe-56796d1efca9",
-        "banner_mobile": "https://loket-development.s3.amazonaws.com/17bc0530-27c5-458f-86ce-b5d486194648",
+        "banner": "https://goplay-development.s3.amazonaws.com/9c0eb73b-1757-472d-91fe-56796d1efca9",
+        "banner_mobile": "https://goplay-development.s3.amazonaws.com/17bc0530-27c5-458f-86ce-b5d486194648",
         "banner_type": "image",
         "button_text": "button text has been cretaed",
         "button_url": "https://google.com",
@@ -66,11 +66,11 @@
       {
         "id": 56,
         "hash_id": "adfd8fa6-9435-4cac-8ca7-be00e038e4da",
-        "banner": "https://loket-development.s3.amazonaws.com/images/temporary/20210215/1613380141_3VWSUv.jpg",
-        "banner_mobile": "https://loket-development.s3.amazonaws.com/images/temporary/20210215/1613380143_smqGWO.jpg",
+        "banner": "https://goplay-development.s3.amazonaws.com/images/temporary/20210215/1613380141_3VWSUv.jpg",
+        "banner_mobile": "https://goplay-development.s3.amazonaws.com/images/temporary/20210215/1613380143_smqGWO.jpg",
         "banner_type": "image",
         "button_text": "",
-        "button_url": "https://integration-loket-ss.golabs.io/",
+        "button_url": "https://integration-goplay-ss.golabs.io/",
         "description": "saddsa",
         "description_color": "#000000",
         "is_active": "1",
@@ -81,7 +81,7 @@
         "title_color": "#000000",
         "created_at": "2021-02-15T11:34:36Z",
         "updated_at": "2021-02-22T07:58:36Z",
-        "updated_by": "qa@loket.com"
+        "updated_by": "qa@goplay.com"
       }
     ],
     "per_page": 9,

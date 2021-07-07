@@ -1,7 +1,7 @@
 <template>
   <div class="login-page">
     <div class="header-logo">
-      <img svg-inline src="@asset/loket-logo.svg" />
+      <img svg-inline src="@asset/goplay-logo.svg" />
     </div>
 
     <div class="content">
@@ -76,7 +76,7 @@ export default {
     const store = useStore();
     const router = useRouter();
     const state = reactive({
-      email: 'qa@loket.com',
+      email: 'qa@go-jek.com',
       password: 'qa@2020',
     });
     const rules = reactive({
@@ -124,7 +124,7 @@ export default {
   @apply max-w-screen-xl mx-auto;
 
   .header-logo {
-    @apply block mx-auto;
+    @apply block mx-auto mt-5;
 
     svg {
       @apply w-6/12 md:w-80 mx-auto;

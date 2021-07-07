@@ -7,6 +7,7 @@
             type="search"
             class="bg-gray-100"
             placeholder="Search"
+            autofocus="true"
             :icon="['fa', 'search']"
             v-model="keyword"
           />

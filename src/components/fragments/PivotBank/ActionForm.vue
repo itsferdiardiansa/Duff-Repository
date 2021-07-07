@@ -41,8 +41,8 @@
             <Button
               variant="orange"
               :icon="['fa', 'redo-alt']"
-              @click="fetchBankCore"
               :pill="true"
+              @click="fetchBankCore"
             />
             <span class="ml-2">We failed to load Bank NEO</span>
           </template>
@@ -75,8 +75,8 @@
             <Button
               variant="orange"
               :icon="['fa', 'redo-alt']"
-              @click="fetchCopyLps"
               :pill="true"
+              @click="fetchCopyLps"
             />
             <span class="ml-2">We failed to load Bank LPS</span>
           </template>

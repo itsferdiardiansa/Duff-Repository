@@ -1,7 +1,7 @@
 <template>
   <div class="top-list">
     <div class="top-list--title">
-      <h2 class="font-bold text-2xl">List Admin CMSLOKET</h2>
+      <h2 class="font-bold text-2xl">List Admin GOPLAY</h2>
     </div>
 
     <div class="top-list--create">

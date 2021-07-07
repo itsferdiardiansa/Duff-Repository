@@ -15,20 +15,16 @@
     </template>
 
     <input
+      ref="inputRef"
       :class="`${prefixClass}-input`"
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
+      :autofocus="autofocus"
       v-bind="$attrs"
-      autocomplete="off"
       @keyup="handleChange"
       @change="$emit('change', $event)"
-      @input="
-        $emit(
-          'update:modelValue',
-          type === 'checkbox' ? $event.target.checked : $event.target.value
-        )
-      "
+      @input="$emit('update:modelValue', $event.target.value)"
     />
 
     <label v-if="type === 'checkbox'" :for="getElUid">{{
@@ -41,8 +37,8 @@
   </div>
 </template>
 <script>
+import { computed, getCurrentInstance, onMounted, ref } from 'vue';
 import debounce from '@util/debounce';
-import { computed, getCurrentInstance, ref } from 'vue';
 
 export default {
   emits: ['update:modelValue'],
@@ -72,7 +68,7 @@ export default {
       default: '',
     },
     autofocus: {
-      type: [Boolean],
+      type: [Boolean, String],
       default: false,
     },
     type: {
@@ -92,7 +88,7 @@ export default {
     },
   },
   setup(props) {
-    const inputEl = ref();
+    const inputRef = ref();
 
     const handleChange = debounce(e => {
       const { onChange } = props;
@@ -108,10 +104,21 @@ export default {
 
       return `input-${uid}-${__hmrId}`;
     });
+
+    const setAutofocus = debounce(() => {
+      const { autofocus } = props;
+
+      if (autofocus == 'true') inputRef.value.focus();
+    }, 10);
+
+    onMounted(() => {
+      setAutofocus();
+    });
+
     return {
       handleChange,
       getElUid,
-      inputEl,
+      inputRef,
     };
   },
 };

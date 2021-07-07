@@ -153,7 +153,7 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           placeholder="Title"
           type="text"
@@ -203,7 +203,6 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Link"
           type="text"
@@ -230,7 +229,6 @@ exports[`fragment/Notification/ActionForm will render and match snapshot 1`] = `
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Link"
           type="text"
@@ -310,7 +308,7 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           placeholder="Title"
           type="text"
@@ -360,7 +358,6 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Link"
           type="text"
@@ -387,7 +384,6 @@ exports[`fragment/Notification/ActionForm will render the spinner during the req
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Link"
           type="text"
@@ -460,7 +456,7 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           placeholder="Title"
           type="text"
@@ -510,7 +506,6 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Link"
           type="text"
@@ -537,7 +532,6 @@ exports[`fragment/Notification/ActionForm will render the text and color for the
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Link"
           type="text"
@@ -617,7 +611,7 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
       >
         <!--v-if-->
         <input
-          autocomplete="off"
+          autofocus=""
           class="ss-input"
           placeholder="Title"
           type="text"
@@ -675,7 +669,6 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Link"
           type="text"
@@ -706,7 +699,6 @@ exports[`fragment/Notification/ActionForm will render with error validation on a
       >
         <!--v-if-->
         <input
-          autocomplete="off"
           class="ss-input"
           placeholder="Link"
           type="text"

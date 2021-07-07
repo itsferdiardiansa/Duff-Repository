@@ -1,4 +1,4 @@
-# loket-admin
+# goplay-admin
 
 ## Project setup
 

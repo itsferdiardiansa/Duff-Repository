@@ -33,7 +33,7 @@ export default {
 
     const handleSubmit = data => {
       store.dispatch('pivotBank/updateData', {
-        action: 'form.create',
+        action: 'form.update',
         redirectUrl: '/pivot-bank',
         data,
       });

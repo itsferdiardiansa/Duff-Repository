@@ -111,7 +111,6 @@ export default {
     };
 
     const handleSearchEvent = idEvent => {
-      console.log(idEvent);
       SSModal.show({
         footer: false,
         content: (

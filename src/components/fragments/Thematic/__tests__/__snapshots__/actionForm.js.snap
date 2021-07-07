@@ -162,7 +162,7 @@ exports[`fragment/Thematic/ActionForm will render and match snapshot 1`] = `
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Thematic Name"
               type="text"
@@ -190,7 +190,6 @@ exports[`fragment/Thematic/ActionForm will render and match snapshot 1`] = `
           >
             <!--v-if-->
             <input
-              autocomplete="off"
               class="ss-input"
               placeholder="Header Text"
               reqiured=""
@@ -309,7 +308,7 @@ exports[`fragment/Thematic/ActionForm will render and match snapshot 1`] = `
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Meta title"
               type="text"
@@ -336,7 +335,7 @@ exports[`fragment/Thematic/ActionForm will render and match snapshot 1`] = `
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Path"
               type="text"
@@ -649,7 +648,7 @@ exports[`fragment/Thematic/ActionForm will render the spinner during the request
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Thematic Name"
               type="text"
@@ -677,7 +676,6 @@ exports[`fragment/Thematic/ActionForm will render the spinner during the request
           >
             <!--v-if-->
             <input
-              autocomplete="off"
               class="ss-input"
               placeholder="Header Text"
               reqiured=""
@@ -796,7 +794,7 @@ exports[`fragment/Thematic/ActionForm will render the spinner during the request
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Meta title"
               type="text"
@@ -823,7 +821,7 @@ exports[`fragment/Thematic/ActionForm will render the spinner during the request
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Path"
               type="text"
@@ -1129,7 +1127,7 @@ exports[`fragment/Thematic/ActionForm will render the text and color for the for
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Thematic Name"
               type="text"
@@ -1157,7 +1155,6 @@ exports[`fragment/Thematic/ActionForm will render the text and color for the for
           >
             <!--v-if-->
             <input
-              autocomplete="off"
               class="ss-input"
               placeholder="Header Text"
               reqiured=""
@@ -1276,7 +1273,7 @@ exports[`fragment/Thematic/ActionForm will render the text and color for the for
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Meta title"
               type="text"
@@ -1303,7 +1300,7 @@ exports[`fragment/Thematic/ActionForm will render the text and color for the for
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Path"
               type="text"
@@ -1616,7 +1613,7 @@ exports[`fragment/Thematic/ActionForm will render with error validation on all f
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Thematic Name"
               type="text"
@@ -1648,7 +1645,6 @@ exports[`fragment/Thematic/ActionForm will render with error validation on all f
           >
             <!--v-if-->
             <input
-              autocomplete="off"
               class="ss-input"
               placeholder="Header Text"
               reqiured=""
@@ -1779,7 +1775,7 @@ exports[`fragment/Thematic/ActionForm will render with error validation on all f
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Meta title"
               type="text"
@@ -1810,7 +1806,7 @@ exports[`fragment/Thematic/ActionForm will render with error validation on all f
           >
             <!--v-if-->
             <input
-              autocomplete="off"
+              autofocus=""
               class="ss-input"
               placeholder="Path"
               type="text"

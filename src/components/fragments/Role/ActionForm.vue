@@ -6,7 +6,11 @@
         name: [{ required: true, message: 'Role name is required' }],
       }"
     >
-      <Input placeholder="Role Name" v-model="state.form.name" autofocus />
+      <Input
+        placeholder="Role Name"
+        v-model="state.form.name"
+        autofocus="true"
+      />
     </FormControl>
 
     <FormControl

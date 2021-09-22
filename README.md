@@ -1,5 +1,3 @@
-# goplay-admin
-
 ## Project setup
 
 ```

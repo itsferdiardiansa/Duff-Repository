@@ -1,4 +1,4 @@
-## Project setup
+## A Project setup
 
 ```
 npm install

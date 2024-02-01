@@ -1,8 +1,9 @@
 on: push
 jobs:
   run_test:
+    runs-on: ubuntu-latest
     steps:
+    - name: Publish to Codecov
     - uses: codecov/codecov-action@v4
-    - name: Publich to Codecov
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

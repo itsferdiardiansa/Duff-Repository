@@ -1,9 +1,10 @@
+name: Simple CI
 on: push
 jobs:
   run_test:
     runs-on: ubuntu-latest
     steps:
-    - name: Publish to Codecov
-    - uses: codecov/codecov-action@v4
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Publish to Codecov
+      - uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

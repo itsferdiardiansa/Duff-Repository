@@ -2,7 +2,7 @@ on: push
 jobs:
   run_test:
     steps:
-      - name: Publich to Codecov
-      - uses: codecov/codecov-action@v4
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    - uses: codecov/codecov-action@v4
+    - name: Publich to Codecov
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

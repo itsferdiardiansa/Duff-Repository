@@ -1,3 +1,4 @@
+on: push
 steps:
 - uses: codecov/codecov-action@v4
   env:

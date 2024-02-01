@@ -8,3 +8,7 @@ jobs:
       - uses: codecov/codecov-action@v4
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: npm install
+        run: npm i
+      - name: npm test
+        run: npm run test
